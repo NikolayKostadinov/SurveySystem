@@ -1,0 +1,36 @@
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.Domain.Entities.Identity
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@LayoutLocalizer.GetLocalizedHtmlString("HELLO") @UserManager.GetUserAsync(User).Result.FullName!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline navbar-right" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
+                <button type="submit" class="nav-link btn btn-link text-dark">@LayoutLocalizer.GetLocalizedHtmlString("LOGOUT")</button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <partial name="_LangBar" />
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">@LayoutLocalizer.GetLocalizedHtmlString("REGISTER")</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">@LayoutLocalizer.GetLocalizedHtmlString("LOGIN")</a>
+        </li>
+        <li class="nav-item">
+            <partial name="_LangBar" />
+        </li>
+    }
+</ul>

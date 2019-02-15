@@ -1,0 +1,70 @@
+﻿@page
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Resources
+@model BmsSurvey.WebApp.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("REGISTER");
+}
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h4>@LayoutLocalizer.GetLocalizedHtmlString("CREATE_A_NEW_ACCOUNT")</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.CultureId">@LayoutLocalizer.GetLocalizedHtmlString("CULTURE")</label>
+                @Html.DropDownListFor(m => m.Input.CultureId, Model.SuppurtedCultures, "Select an borrower...", new { @class = "form-control" })
+                <span asp-validation-for="Input.CultureId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.TabNumber">@LayoutLocalizer.GetLocalizedHtmlString("TABNUMBER")</label>
+                <input asp-for="Input.TabNumber" class="form-control" />
+                <span asp-validation-for="Input.TabNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.UserName">@LayoutLocalizer.GetLocalizedHtmlString("USERNAME")</label>
+                <input asp-for="Input.UserName" class="form-control" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.FirstName">@LayoutLocalizer.GetLocalizedHtmlString("FIRSTNAME")</label>
+                <input asp-for="Input.FirstName" class="form-control" />
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.SirName">@LayoutLocalizer.GetLocalizedHtmlString("SIRNAME")</label>
+                <input asp-for="Input.SirName" class="form-control" />
+                <span asp-validation-for="Input.SirName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.LastName">@LayoutLocalizer.GetLocalizedHtmlString("LASTNAME")</label>
+                <input asp-for="Input.LastName" class="form-control" />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email">@LayoutLocalizer.GetLocalizedHtmlString("EMAIL")</label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password">@LayoutLocalizer.GetLocalizedHtmlString("PASSWORD")</label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword">@LayoutLocalizer.GetLocalizedHtmlString("CONFIRM_PASSWORD")</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("REGISTER")</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

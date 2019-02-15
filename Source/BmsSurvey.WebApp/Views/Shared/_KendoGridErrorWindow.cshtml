@@ -1,0 +1,14 @@
+﻿@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Resources
+@inject ILocalizationService<LayoutResource> LocalizationService
+<div class='row row-err-window'>
+    <div class='col-lg-1'>
+        <img class="center-block" src='~/images/danger.png' width='64px' height='64px' alt='Error!'/>
+    </div>
+    <div class='col-lg-9 error-message-wrapper vcenter'>
+        <h2 class='text-danger'>@LocalizationService.GetLocalizedHtmlString("ERROR")!</h2>
+        <pre id='err-message'></pre>
+    </div>
+</div>
+<hr />
+<button class='center-block btn btn-default' onclick='kendoAdditional.CloseWindow("div#err-window")'>Затвори</button>

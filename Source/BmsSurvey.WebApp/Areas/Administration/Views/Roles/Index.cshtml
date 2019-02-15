@@ -1,0 +1,63 @@
+﻿@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Areas.Administration.Models.ViewModels
+@using BmsSurvey.WebApp.Resources
+@model IEnumerable<BmsSurvey.WebApp.Areas.Administration.Models.ViewModels.RolePresentationViewModel>
+@{
+    ViewBag.Title = "Роли";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">@ViewBag.Title</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.LabelFor(m => m.First().Id)</th>
+                <th>@Html.LabelFor(m => m.First().Name)</th>
+                <th>@Html.LabelFor(m => m.First().Description)</th>
+                <th>@Html.LabelFor(m => m.First().Users)</th>
+                <th style="min-width:220px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr><td colspan="4" class="text-center">Няма роли</td></tr>
+            }
+            else
+            {
+                foreach (RolePresentationViewModel role in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => role.Id)</td>
+                        <td>@Html.DisplayFor(m => role.Name)</td>
+                        <td>@Html.DisplayFor(m => role.Description)</td>
+                        <td>
+                            @if (role.Users == null || role.Users.Count() == 0)
+                            {
+                                @:Няма потребители асоциирани с тази роля
+                            }
+                            else
+                            {
+                                <p>
+                                    @string.Join(", ", role.Users)
+                                </p>
+                            }
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Delete", "Roles", new { id = role.Id }))
+                            {
+                                @Html.AntiForgeryToken()
+                            <a href="@Url.Action("Edit", "Roles", new { id = role.Id })" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> @LayoutLocalizer.GetLocalizedHtmlString("EDIT")</a>
+
+                            <button type="submit" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span> @LayoutLocalizer.GetLocalizedHtmlString("DELETE")</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+@Html.ActionLink(@LayoutLocalizer.GetLocalizedHtmlString("CREATE"), "Create","Roles", null, new { @class = "btn btn-primary" })

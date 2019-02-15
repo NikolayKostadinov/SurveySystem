@@ -1,0 +1,234 @@
+﻿using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace BmsSurvey.WebApp
+{
+    using System.Linq;
+    using System.Reflection;
+    using Application.Customers.Commands.CreateCustomer;
+    using Application.Infrastructure;
+    using Application.Infrastructure.AutoMapper;
+    using Application.Interfaces;
+    using Application.Products.Queries.GetProduct;
+    using Application.Resources;
+    using Application.Services;
+    using Application.Surveys.Models;
+    using Application.Users.Commands.CreateUser;
+    using Application.Users.Queries.GetAllUsers;
+    using Application.Users.Queries.GetAllUsersWithDeleted;
+    using AutoMapper;
+    using BmsSurvey.Infrastructure;
+    using Common.Constants;
+    using Common.Interfaces;
+    using Domain.Entities.Identity;
+    using FluentValidation.AspNetCore;
+    using Infrastructure;
+    using Infrastructure.Automapper;
+    using Infrastructure.Interfaces;
+    using Infrastructure.Services;
+    using MediatR;
+    using MediatR.Pipeline;
+    using Microsoft.AspNetCore.Identity.UI.Services;
+    using Microsoft.AspNetCore.Localization;
+    using Microsoft.AspNetCore.Routing;
+    using Models;
+    using Newtonsoft.Json.Serialization;
+    using Persistence;
+    using Persistence.Infrastructure;
+    using Persistence.Interfaces;
+    using Resources;
+    using Serilog;
+    using Services;
+    using RouteDataRequestCultureProvider = Infrastructure.RouteDataRequestCultureProvider;
+
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            //Serilog
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(Configuration)
+                .Enrich.FromLogContext()
+                .CreateLogger();
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            // Add AutoMapper
+            //ToDo: remove second Automapper Profile
+            services.AddAutoMapper(new Assembly[] { typeof(AutoMapperProfile).GetTypeInfo().Assembly,
+                typeof(AutomapperProfilerWeb).GetTypeInfo().Assembly });
+
+            //Services Registration
+            services.AddSingleton<IEmailSender, MailSender>();
+            services.AddSingleton<IPersister, AuditablePersister>();
+
+            // Add Application services.
+            services.AddTransient<INotificationService, NotificationService>();
+            services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
+            services.AddScoped<IStatusFactory, StatusFactory>();
+            services.AddSingleton<ISupportedCulturesService>(new SupportedCulturesService(GlobalConstants.DefaultCultureId));
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICurrentPrincipalProvider, CurrentPrincipalProvider>();
+            services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
+            services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();
+            services.AddScoped<ISurveyDto>(sp=> SessionSurveyDto.GetSurveyDto(sp));
+
+            // Add MediatR
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
+
+            services.AddDbContext<BmsSurveyDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("BmsSurveyDatabase"))
+            );
+
+
+            services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<BmsSurveyDbContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
+
+            // custome settings
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password = new PasswordOptions()
+                {
+                    RequiredLength = 6,
+                };
+                options.SignIn.RequireConfirmedEmail = true;
+            });
+
+            services.Configure<SecurityStampValidatorOptions>(options =>
+            {
+                // enables immediate logout, after updating the user's stat.
+                options.ValidationInterval = TimeSpan.Zero;
+            });
+
+            /**** Localization configuration ****/
+            services.AddSingleton<ILocalizationService<LayoutResource>, LayoutLocalizationService>();
+            services.AddSingleton<ILocalizationService<MessageResource>, MessageLocalizationService>();
+
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.Configure<RequestLocalizationOptions>(
+                options =>
+                {
+                    var supportedCultures = GlobalConstants.SupportedCultures.Select(x => x.Value).ToList();
+
+                    options.DefaultRequestCulture = new RequestCulture(culture: "bg", uiCulture: "bg");
+                    options.SupportedCultures = supportedCultures;
+                    options.SupportedUICultures = supportedCultures;
+                    options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider()
+                    {
+                        IndexOfCulture = 1,
+                        IndexofUICulture = 1
+                    });
+                    options.RequestCultureProviders.Insert(1, new QueryStringRequestCultureProvider());
+                    options.RequestCultureProviders.Insert(2, new CookieRequestCultureProvider());
+
+                });
+
+            services.Configure<RouteOptions>(options =>
+            {
+                options.ConstraintMap.Add("culture", typeof(LanguageRouteConstraint));
+            });
+
+            services.AddDistributedMemoryCache();
+            int.TryParse(Configuration["SessionTimeout"], out int sessionTimeout);
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(sessionTimeout);
+                options.Cookie.HttpOnly = true;
+            });
+
+            services.AddMvc(options =>
+             {
+                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+             })
+                 .AddDataAnnotationsLocalization(options =>
+                 {
+                     options.DataAnnotationLocalizerProvider = (type, factory) =>
+                     {
+                         var assemblyName = new AssemblyName(typeof(LayoutResource).GetTypeInfo().Assembly.FullName);
+                         return factory.Create("LayoutResource", assemblyName.Name);
+                     };
+                 })
+                 .AddRazorPagesOptions(options => options.Conventions.Add(new LanguagePageRouteModelConvention()))
+                 .AddJsonOptions(options =>
+                     options.SerializerSettings.ContractResolver = new DefaultContractResolver())
+                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
+
+            //Serilog ILogger registation
+            services.AddLogging(builder =>
+            {
+                builder.AddSerilog();
+            });
+
+            // Add Kendo UI services to the services container
+            services.AddKendo();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime appLifetime)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            // Serilog - Ensure any buffered events are sent at shutdown
+            appLifetime.ApplicationStopped.Register(Log.CloseAndFlush);
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+
+            app.UseAuthentication();
+            app.UseRequestLocalization();
+
+            app.UseSession();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                   name: "areas",
+                   template: "{culture=bg}/{area:exists}/{controller=Home}/{action=Index}/{id?}"
+               );
+
+                routes.MapRoute(
+                    name: "LacalizedDefault",
+                    template: "{culture=bg}/{controller=Home}/{action=Index}/{id?}");
+            });
+        }
+    }
+}

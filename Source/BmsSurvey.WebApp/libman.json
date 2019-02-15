@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [{
+  "provider": "cdnjs",
+  "library": "jquery-bar-rating@1.2.2",
+  "destination": "wwwroot/lib/jquery-bar-rating/",
+  "files": [
+    "jquery.barrating.min.js",
+    "themes/bars-1to10.css",
+    "themes/bars-1to10.min.css",
+    "themes/bars-1to10.min.css.map",
+    "themes/bars-horizontal.css",
+    "themes/bars-horizontal.min.css",
+    "themes/bars-horizontal.min.css.map",
+    "themes/bars-movie.css",
+    "themes/bars-movie.min.css",
+    "themes/bars-movie.min.css.map",
+    "themes/bars-pill.css",
+    "themes/bars-pill.min.css",
+    "themes/bars-pill.min.css.map",
+    "themes/bars-reversed.css",
+    "themes/bars-reversed.min.css",
+    "themes/bars-reversed.min.css.map",
+    "themes/bars-square.css",
+    "themes/bars-square.min.css",
+    "themes/bars-square.min.css.map",
+    "themes/bootstrap-stars.css",
+    "themes/bootstrap-stars.min.css",
+    "themes/bootstrap-stars.min.css.map",
+    "themes/css-stars.css",
+    "themes/css-stars.min.css",
+    "themes/css-stars.min.css.map",
+    "themes/fontawesome-stars-o.css",
+    "themes/fontawesome-stars-o.min.css",
+    "themes/fontawesome-stars-o.min.css.map",
+    "themes/fontawesome-stars.css",
+    "themes/fontawesome-stars.min.css",
+    "themes/fontawesome-stars.min.css.map"
+  ]
+}
+]
+}

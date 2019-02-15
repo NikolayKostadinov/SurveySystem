@@ -1,0 +1,10 @@
+﻿@using Kendo.Mvc.UI
+@using BmsSurvey.Application.Users.Models
+@model IEnumerable<RoleSimpleViewModel>
+@(Html.Kendo()
+      .MultiSelectFor(m => m)
+      .BindTo((IEnumerable<RoleSimpleViewModel>) ViewData["roles"])
+      .DataTextField("Name")
+      .DataValueField("Id")
+)
+

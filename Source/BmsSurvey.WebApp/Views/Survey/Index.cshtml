@@ -1,0 +1,49 @@
+﻿@using BmsSurvey.Application.Surveys.Models
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+@model SurveyViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "_BarRatingStyles";
+}
+<div class="container">
+    <h2 class="display-4">@ViewData["Title"]</h2>
+    <hr />
+
+    @foreach (var question in Model.Questions)
+    {
+        <vc:question model=@question></vc:question>
+    }
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination ">
+            <li class="page-item @if (Model.PageNumber == 1)
+                                 {
+                                     @:disabled
+                                 }">
+                <a class="page-link"
+                   asp-action="Previous"
+                   asp-route-id="@Model.Id"
+                   asp-route-current="@Model.PageNumber"
+                   aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                    @LayoutLocalizer.GetLocalizedHtmlString("PREVIOUSPAGE")
+                </a>
+            </li>
+            <li class="page-item @if (Model.IsLastPage)
+                                 {
+                                     @:disabled
+                                 }">
+                <a class="page-link"
+                   asp-action="Next"
+                   asp-route-id="@Model.Id"
+                   asp-route-current="@Model.PageNumber"
+                   aria-label="Next">
+                    @LayoutLocalizer.GetLocalizedHtmlString("NEXTPAGE")
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,12 @@
+﻿@page
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Resources
+@model BmsSurvey.WebApp.Areas.Identity.Pages.Account.LockoutModel
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("LOCKED_OUT");
+}
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+<header>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">@LayoutLocalizer.GetLocalizedHtmlString("LOCKED_OUT_TEXT")</p>
+</header>

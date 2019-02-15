@@ -1,0 +1,104 @@
+﻿@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Resources
+@model BmsSurvey.WebApp.Areas.Administration.Models.ViewModels.RoleEditViewModel
+@{
+    ViewBag.Title = "Редактиране на роля";
+}
+@Html.ValidationSummary(false)
+
+@using (Html.BeginForm("Edit", "Roles", new { area = "Administration" }, FormMethod.Post, true, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="RoleName" value="@Model.Role.Name" />
+    <div class="row ">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Добавяне към ролята "@Model.Role.Name"</div>
+                @(Html.Kendo()
+                                .Grid(Model.NonMembers)
+                                .Name("IdsToAdd")
+                                .Columns(col =>
+                                {
+                                    col.Bound(c => c.UserName);
+                                    col.Bound(c => c.FullName);
+                                    col.Bound(c => c.Id).ClientTemplate("<input type='checkbox' name='IdsToAdd' value='#:Id #' />").Title(LayoutLocalizer.GetLocalizedHtmlString("FOR_INCLUDING"));
+                                })
+                        .Pageable(pageable => pageable
+                                    .Refresh(true)
+                                    .PageSizes(new[] { 15, 20, 50, 100 })
+                                    .ButtonCount(5)
+                                )
+                        .Scrollable(scr => scr.Height(420))
+                        .Filterable()
+                        .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .PageSize(15)
+                                .ServerOperation(false)
+                                                    .Model(model =>
+                                                    {
+                                                        model.Id(p => p.Id);
+                                                        model.Field(p => p.UserName);
+                                                        model.Field(p => p.FullName);
+                                                        model.Field(p => p.Id);
+                                                    })
+                            ))
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Премахване от ролята "@Model.Role.Name"</div>
+                @(Html.Kendo()
+                                                .Grid(Model.Members)
+                                                .Name("IdsToDelete")
+                                                .Columns(col =>
+                                                {
+                                                    col.Bound(c => c.UserName);
+                                                    col.Bound(c => c.FullName);
+                                                    col.Bound(c => c.Id).ClientTemplate("<input type='checkbox' name='IdsToDelete' value='#:Id #' />").Title(LayoutLocalizer.GetLocalizedHtmlString("FOR_EXCLUDING"));
+                                                })
+                        .Pageable(pageable => pageable
+                                    .Refresh(true)
+                                    .PageSizes(new[] { 15, 20, 50, 100 })
+                                    .ButtonCount(5)
+                                  )
+                        .Scrollable(scr => scr.Height(420))
+                        .Filterable()
+                        .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .PageSize(15)
+                                    .ServerOperation(false)
+                                ))
+            </div>
+        </div>
+    </div>
+
+    <div class="well well-sm clearfix well-roles">
+        <div class="row row-roles-well">
+            <div class="col-lg-4 col-sm-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-3 col-sm-3" })
+                    <div class="col-md-9 col-sm-9 ">
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control " } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Description, new { @class = "control-label col-md-3 col-sm-3 " })
+                    <div class="col-md-9 col-sm-9 all-space-width">
+                        @Html.EditorFor(m => m.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-0 col-md-offset-3 col-sm-offset-0 col-sm-offset-1 col-sm-5 col-xs-offset-1 col-xs-5">
+                <div class="form-group">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("SAVE")</button>
+                        @Html.ActionLink(LayoutLocalizer.GetLocalizedHtmlString("CANCEL"), "Index","Roles", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

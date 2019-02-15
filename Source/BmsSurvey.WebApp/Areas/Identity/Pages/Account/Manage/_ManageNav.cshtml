@@ -1,0 +1,22 @@
+﻿@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.Domain.Entities.Identity
+@using BmsSurvey.WebApp.Resources
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<div class="list-group">
+    <a class="list-group-item @ManageNavPages.IndexNavClass(ViewContext)" asp-page="./Index">@LayoutLocalizer.GetLocalizedHtmlString("PROFILE")</a>
+    <a class="list-group-item @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">@LayoutLocalizer.GetLocalizedHtmlString("PASSWORD")</a>
+    @if (hasExternalLogins)
+    {
+        <a class="list-group-item @ManageNavPages.ExternalLoginsNavClass(ViewContext)" id="external-login" asp-page="./ExternalLogins">@LayoutLocalizer.GetLocalizedHtmlString("EXTERNAL_LOGINS")</a>
+    }
+    <a class="list-group-item @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" asp-page="./TwoFactorAuthentication">@LayoutLocalizer.GetLocalizedHtmlString("2FA")</a>
+    <a class="list-group-item @ManageNavPages.PersonalDataNavClass(ViewContext) " asp-page="./PersonalData">@LayoutLocalizer.GetLocalizedHtmlString("PERSONAL_DATA")</a>
+</div>
+
+
+

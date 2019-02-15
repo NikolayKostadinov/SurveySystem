@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="2FA" xml:space="preserve">
+    <value>Двуфакторна автентикация</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_AUTHENTICATOR_APP" xml:space="preserve">
+    <value>Добавяне на приложение за автентикация</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_RESET_APP" xml:space="preserve">
+    <value>Премахване на приложение за автентикация</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_SETUP_APP" xml:space="preserve">
+    <value>Настроика на приложението за автентикация</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_TITLE" xml:space="preserve">
+    <value>Двуфакторна автентикация</value>
+  </data>
+  <data name="2FA_NO_CODES_LEFT" xml:space="preserve">
+    <value>Кодовете за възстановяване са изчерпани</value>
+  </data>
+  <data name="2FA_NO_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Трябва да генерирате нови кодове за възстановяване преди да можете да влезете с код за възстановяване.</value>
+  </data>
+  <data name="2FA_N_CODES_LEFT" xml:space="preserve">
+    <value>Имате {0} оставащи кода за възстановяване.</value>
+  </data>
+  <data name="2FA_N_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Трябва да генерирате нови кодове за възстановяване.</value>
+  </data>
+  <data name="2FA_ONE_CODES_LEFT" xml:space="preserve">
+    <value>Имате 1 оставащ код за възстановяване.</value>
+  </data>
+  <data name="2FA_ONE_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Можете да генерирате нови кодове за възстановяване.</value>
+  </data>
+  <data name="2FA_STATUS_BROWSER_FORGET" xml:space="preserve">
+    <value>The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code.</value>
+  </data>
+  <data name="ACCESS_DENIED" xml:space="preserve">
+    <value>Достъпът е отказан</value>
+  </data>
+  <data name="ACCESS_DENIED_TEXT" xml:space="preserve">
+    <value>Нямате достъп до този ресурс</value>
+  </data>
+  <data name="ACCOUNT_LOGIN" xml:space="preserve">
+    <value>Вход в системата</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA" xml:space="preserve">
+    <value>Двуфакторна автентикация</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_NO_AUTHENTICATOR_DEVICE" xml:space="preserve">
+    <value>Don't have access to your authenticator device? You can</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_RECOVERY_CODE_TEXT" xml:space="preserve">
+    <value>log in with a recovery code</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_REMEMBER_MC" xml:space="preserve">
+    <value>Remember this machine</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_TEXT" xml:space="preserve">
+    <value>Your login is protected with an authenticator app. Enter your authenticator code below.</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_AUTHENTICATOR_CODE" xml:space="preserve">
+    <value>Authenticator code</value>
+  </data>
+  <data name="ACCOUNT_NO_EXTERNAL_LOGINS" xml:space="preserve">
+    <value>There are no external authentication services configured. See this article https://go.microsoft.com/fwlink/?LinkID=532715 for details on setting up this ASP.NET application to support logging in via external services.</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE" xml:space="preserve">
+    <value>Recovery code</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_REQUIRED" xml:space="preserve">
+    <value>Recovery code required</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION" xml:space="preserve">
+    <value>Recovery code verification</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION_TEXT" xml:space="preserve">
+    <value>You have requested to log in with a recovery code. This login will not be remembered until you provide an authenticator app code at log in or disable 2FA and log in again.</value>
+  </data>
+  <data name="ACCOUNT_USE_ANOTHER_SERVICE_LOG_IN" xml:space="preserve">
+    <value>Use another service to log in.</value>
+  </data>
+  <data name="ACCOUNT_USE_LOCAL_ACCOUNT_TO_LOG_IN" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
+  <data name="AND" xml:space="preserve">
+    <value>и</value>
+  </data>
+  <data name="AUTHENTICATOR_APP" xml:space="preserve">
+    <value>Authenticator app</value>
+  </data>
+  <data name="CHANGE_PASSWORD" xml:space="preserve">
+    <value>Смяна на парола</value>
+  </data>
+  <data name="CHANGE_PASSWORD_STATUS" xml:space="preserve">
+    <value>Паролата ви беше сменена</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP" xml:space="preserve">
+    <value>Конфигуриране на приложение за автентикация</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_DOWNLOAD_TEXT" xml:space="preserve">
+    <value>Download a two-factor authenticator app like Microsoft Authenticator for</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_GOOGLE_TEXT" xml:space="preserve">
+    <value>Google Authenticator for</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN1" xml:space="preserve">
+    <value>Сканирайте QR кода или въведете този ключ</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN2" xml:space="preserve">
+    <value>into your two factor authenticator app. Spaces and casing do not matter.</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT" xml:space="preserve">
+    <value>To enable QR code generation please read our</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_DETAILS" xml:space="preserve">
+    <value>Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below.</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK" xml:space="preserve">
+    <value>документация</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_STEPS" xml:space="preserve">
+    <value>To use an authenticator app go through the following steps:</value>
+  </data>
+  <data name="CONFIRM_EMAIL" xml:space="preserve">
+    <value>Потвърждение на email.</value>
+  </data>
+  <data name="CONFIRM_EMAIL_TEXT" xml:space="preserve">
+    <value>Благодарим Ви за потвърждението на email-a.</value>
+  </data>
+  <data name="CONFIRM_PASSWORD" xml:space="preserve">
+    <value>Потвърждение на паролата</value>
+  </data>
+  <data name="CONFIRM_PASSWORD_NOT_MATCHING" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="CONFIRM_YOUR_EMAIL" xml:space="preserve">
+    <value>Confirm your email</value>
+  </data>
+  <data name="CONFIRM_YOUR_EMAIL_TEXT" xml:space="preserve">
+    <value>Моля потвърдете вашия акаунт &lt;a href='{0}'&gt;тук&lt;/a&gt;.</value>
+  </data>
+  <data name="CREATE_A_NEW_ACCOUNT" xml:space="preserve">
+    <value>Създаване на нов акаунт</value>
+  </data>
+  <data name="CURRENT_PASSWORD" xml:space="preserve">
+    <value>Текуща парола</value>
+  </data>
+  <data name="CURRENT_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Текущата парола е задължителна</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>Изтриване</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA" xml:space="preserve">
+    <value>Изтриване на персоналните данни</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA_AND_CLOSE" xml:space="preserve">
+    <value>Изтрий данните и затвори моя акаунт</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA_TEXT" xml:space="preserve">
+    <value>Изтриването на тези данни ще доведе до перманентно изтриване на акаунта ви и той няма да може да бъде възстановен.</value>
+  </data>
+  <data name="DISABLE_2FA" xml:space="preserve">
+    <value>Disable two-factor authentication (2FA)</value>
+  </data>
+  <data name="DISABLE_2FA_BUTTON" xml:space="preserve">
+    <value>Disable 2FA</value>
+  </data>
+  <data name="DISABLE_2FA_STATUS" xml:space="preserve">
+    <value>2fa has been disabled. You can reenable 2fa when you setup an authenticator app</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_DETAILS" xml:space="preserve">
+    <value>Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_DETAILS_LINK" xml:space="preserve">
+    <value>reset your authenticator keys.</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_HEADER" xml:space="preserve">
+    <value>This action only disables 2FA.</value>
+  </data>
+  <data name="DOWNLOAD" xml:space="preserve">
+    <value>Изтегляне</value>
+  </data>
+  <data name="DOWNLOAD_YOUR_DATA" xml:space="preserve">
+    <value>Изтегляне на вашите данни</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>Невалиден Email</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email е задължително поле</value>
+  </data>
+  <data name="EXTERNAL_LOGINS" xml:space="preserve">
+    <value>External logins</value>
+  </data>
+  <data name="EXTERNAL_LOGINS_REGISTERED_LOGIN" xml:space="preserve">
+    <value>Registered Logins</value>
+  </data>
+  <data name="EXTERNAL_LOGINS_TITLE" xml:space="preserve">
+    <value>Manage your external logins</value>
+  </data>
+  <data name="EXTERNAL_LOGIN_ASSOCIATE_ACCOUNT" xml:space="preserve">
+    <value>Associate your {0} account</value>
+  </data>
+  <data name="EXTERNAL_LOGIN_TEXT" xml:space="preserve">
+    <value>You've successfully authenticated with {0}. Please enter an email address for this site below and click the Register button to finish logging in.</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR" xml:space="preserve">
+    <value>Error from external provider: {0}</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR_CONFIRMATION" xml:space="preserve">
+    <value>Error loading external login information during confirmation.</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR_INFO" xml:space="preserve">
+    <value>Error loading external login information.</value>
+  </data>
+  <data name="FIRSTNAME" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="FIRSTNAME_REQUIRED" xml:space="preserve">
+    <value>Името е задължително</value>
+  </data>
+  <data name="FORGET_THIS_BROWSER" xml:space="preserve">
+    <value>Forget this browser</value>
+  </data>
+  <data name="FORGOT_PASSWORD_CONFIRMATION" xml:space="preserve">
+    <value>Forgot password confirmation</value>
+  </data>
+  <data name="FORGOT_PASSWORD_CONFIRMATION_TEXT" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="FORGOT_YOUR_PASSWORD" xml:space="preserve">
+    <value>Forgot your password</value>
+  </data>
+  <data name="FORGOT_YOUR_PASSWORD_ENTER_EMAIL" xml:space="preserve">
+    <value>Въведете вашият email.</value>
+  </data>
+  <data name="GENERATE" xml:space="preserve">
+    <value>Генерирай</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES" xml:space="preserve">
+    <value>Generate two-factor authentication (2FA) recovery codes</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_INFO_LOSE" xml:space="preserve">
+    <value>If you lose your device and don't have the recovery codes you will lose access to your account.</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_SAFE_PLACE" xml:space="preserve">
+    <value>Put these codes in a safe place.</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_TEXT" xml:space="preserve">
+    <value>Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_TEXT_LINK" xml:space="preserve">
+    <value>reset your authenticator keys.</value>
+  </data>
+  <data name="GENERATE_RECOVERY_CODES" xml:space="preserve">
+    <value>Generate Recovery Codes</value>
+  </data>
+  <data name="INCORRECT_PASSWORD" xml:space="preserve">
+    <value>Password is not correct</value>
+  </data>
+  <data name="INVALID_AUTHENTICATOR_CODE" xml:space="preserve">
+    <value>Invalid authenticator code.</value>
+  </data>
+  <data name="INVALID_LOGIN_ATTEMPT" xml:space="preserve">
+    <value>Невалиден опит за достъп</value>
+  </data>
+  <data name="INVALID_RECOVERY_CODE" xml:space="preserve">
+    <value>Invalid recovery code entered.</value>
+  </data>
+  <data name="INVALID_VERFICATION_CODE" xml:space="preserve">
+    <value>Кода за потвърждение е невалиден.</value>
+  </data>
+  <data name="LASTNAME" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="LASTNAME_REQUIRED" xml:space="preserve">
+    <value>Фамилията е задължителна</value>
+  </data>
+  <data name="LOCKED_OUT" xml:space="preserve">
+    <value>Заключен</value>
+  </data>
+  <data name="LOCKED_OUT_TEXT" xml:space="preserve">
+    <value>Този потребител е заключен, моля опитайте по-късно.</value>
+  </data>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="LOGOUT_TEXT" xml:space="preserve">
+    <value>Успешно излязахте от приложението.</value>
+  </data>
+  <data name="MANAGE_CAHNGE_ACCOUNT_SETTINGS" xml:space="preserve">
+    <value>Промяна на настройките на вашия акаунт</value>
+  </data>
+  <data name="MANAGE_YOUR_ACCOUNT" xml:space="preserve">
+    <value>Управление на акаунта</value>
+  </data>
+  <data name="NEW_PASSWORD" xml:space="preserve">
+    <value>Нова парола</value>
+  </data>
+  <data name="NEW_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Новата парола е задължителна</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Паролата е задължителна</value>
+  </data>
+  <data name="PERSONAL_DATA" xml:space="preserve">
+    <value>Лични данни</value>
+  </data>
+  <data name="PERSONAL_DATA_DELETEINFO" xml:space="preserve">
+    <value>Изтриването на тези данни ще доведе до перманентно изтриване на акаунта ви и той няма да може да бъде възстановен.</value>
+  </data>
+  <data name="PERSONAL_DATA_INFO" xml:space="preserve">
+    <value>Вашият акаунт съдържа лични данни, които сте ни предоставили. Тази страница Ви позволява на свалите и изтриете тези данни.</value>
+  </data>
+  <data name="PHONE_NUMBER" xml:space="preserve">
+    <value>телефон</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Профил</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="REGISTER_AS_NEW_USER" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="REMEMBER_ME" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_INFO" xml:space="preserve">
+    <value>If you reset your authenticator key your authenticator app will not work until you reconfigure it.</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_KEY" xml:space="preserve">
+    <value>Reset authenticator key</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_STATUS" xml:space="preserve">
+    <value>Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_TEXT" xml:space="preserve">
+    <value>This process disables 2FA until you verify your authenticator app. If you do not complete your authenticator app configuration you may lose access to your account.</value>
+  </data>
+  <data name="RESET_PASSWORD" xml:space="preserve">
+    <value>Нулиране на паролата</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION" xml:space="preserve">
+    <value>Потвърждение за нулиране на паролата</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION_CLICK_HERE" xml:space="preserve">
+    <value>натиснете тук за вход</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION_TEXT1" xml:space="preserve">
+    <value>Паролата ви беше нулирана.</value>
+  </data>
+  <data name="RESET_PASSWORD_EMAIL_TEXT" xml:space="preserve">
+    <value>Моля нулирайте паролата си натискайки &lt;a href='{0}'&gt;тук&lt;/a&gt;.</value>
+  </data>
+  <data name="RESET_RECOVERY_CODES" xml:space="preserve">
+    <value>Reset recovery codes</value>
+  </data>
+  <data name="RESET_YOUR_PASSWORD" xml:space="preserve">
+    <value>Reset your password</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Запис</value>
+  </data>
+  <data name="SEND_VERIFICATION_EMAIL" xml:space="preserve">
+    <value>Изплащане на email за потвърждение</value>
+  </data>
+  <data name="SET_PASSWORD" xml:space="preserve">
+    <value>Установяване на парола</value>
+  </data>
+  <data name="SET_PASSWORD_STATUS" xml:space="preserve">
+    <value>Вашата парола беше установена</value>
+  </data>
+  <data name="SET_PASSWORD_TEXT" xml:space="preserve">
+    <value>You do not have a local username/password for this site. Add a local account so you can log in without an external login.</value>
+  </data>
+  <data name="SET_YOUR_PASSWORD" xml:space="preserve">
+    <value>Установяване на вашата парола</value>
+  </data>
+  <data name="SIRNAME" xml:space="preserve">
+    <value>Презиме</value>
+  </data>
+  <data name="SIRNAME_REQUIRED" xml:space="preserve">
+    <value>Презимето е задължително</value>
+  </data>
+  <data name="STATUS_EXTERNAL_LOGIN_ADDED" xml:space="preserve">
+    <value>The external login was added.</value>
+  </data>
+  <data name="STATUS_EXTERNAL_LOGIN_REMOVED" xml:space="preserve">
+    <value>The external login was removed.</value>
+  </data>
+  <data name="STATUS_GENERATE_CODES" xml:space="preserve">
+    <value>You have generated new recovery codes.</value>
+  </data>
+  <data name="STATUS_PROFILE_UPDATED" xml:space="preserve">
+    <value>Your profile has been updated</value>
+  </data>
+  <data name="STATUS_UPDATE_PROFILE_EMAIL_SEND" xml:space="preserve">
+    <value>Verification email sent. Please check your email.</value>
+  </data>
+  <data name="SUBMIT" xml:space="preserve">
+    <value>Изпращане</value>
+  </data>
+  <data name="TWOFACTORCODE_REQUIRED" xml:space="preserve">
+    <value>Two-factor code is required</value>
+  </data>
+  <data name="UPDATE_PASSWORD" xml:space="preserve">
+    <value>Update password</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Потребителско име</value>
+  </data>
+  <data name="USER_NOTFOUND" xml:space="preserve">
+    <value>Unable to load user with ID '{0}'.</value>
+  </data>
+  <data name="VERIFICATION_CODE" xml:space="preserve">
+    <value>Verification code</value>
+  </data>
+  <data name="VERIFICATION_CODE_REQUIRED" xml:space="preserve">
+    <value>Verification code is required</value>
+  </data>
+  <data name="VERIFY" xml:space="preserve">
+    <value>Провери</value>
+  </data>
+  <data name="ABOUT" xml:space="preserve">
+    <value>За нас</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="CULTURE" xml:space="preserve">
+    <value>Език</value>
+  </data>
+  <data name="HELLO" xml:space="preserve">
+    <value>Здравейте</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Език</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
+    <value>Полето {0} трябва да бъде с дължина поне {2} символа и не повече от {1} символа.</value>
+  </data>
+  <data name="ADMINISTRATION_USERS_ADMINISTRATION" xml:space="preserve">
+    <value>Администриране на потребители</value>
+  </data>
+  <data name="FULLNAME" xml:space="preserve">
+    <value>Име, Презиме, Фамилия</value>
+  </data>
+  <data name="LOCK" xml:space="preserve">
+    <value>Заключи</value>
+  </data>
+  <data name="USERINROLE" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="FAILED_OPERATION" xml:space="preserve">
+    <value>Неуспешна операция</value>
+  </data>
+  <data name="UNLOCK" xml:space="preserve">
+    <value>Отключи</value>
+  </data>
+  <data name="CANNOT_ERASE_YOUR_SELF" xml:space="preserve">
+    <value>Не можете да изтриете собствения си акаунт!</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Грешка</value>
+  </data>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>Успешна операция</value>
+  </data>
+  <data name="DEPARTMENT_MANAGEMENT" xml:space="preserve">
+    <value>Управление на номентклатурата на управленията</value>
+  </data>
+  <data name="DIVISIONS" xml:space="preserve">
+    <value>Отдели</value>
+  </data>
+  <data name="DIVISION_MANAGEMENT" xml:space="preserve">
+    <value>Управление на номентклатурата на отделите</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="SHORTNAME" xml:space="preserve">
+    <value>Съкратено име</value>
+  </data>
+  <data name="DEPARTMENT" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="DEPARTMENTID_REQUIRED" xml:space="preserve">
+    <value>Полето управление е задължително</value>
+  </data>
+  <data name="DIVISION" xml:space="preserve">
+    <value>Отдел</value>
+  </data>
+  <data name="NAME_REQUIRED" xml:space="preserve">
+    <value>Полето "Име" е задължително</value>
+  </data>
+  <data name="SELECT_DEPARTMENT" xml:space="preserve">
+    <value>Изберете управление...</value>
+  </data>
+  <data name="SELECT_DIVISION" xml:space="preserve">
+    <value>Избeрете отдел...</value>
+  </data>
+  <data name="SHORTNAME_REQUIRED" xml:space="preserve">
+    <value>Плето "Съкратено име" е задължително</value>
+  </data>
+  <data name="ADMINISTRATION" xml:space="preserve">
+    <value>Администриране</value>
+  </data>
+  <data name="ADMINISTRATION_ROLES_ADMINISTRATION" xml:space="preserve">
+    <value>Администриране на роли</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Отказ</value>
+  </data>
+  <data name="CREATE" xml:space="preserve">
+    <value>Създай</value>
+  </data>
+  <data name="EDIT" xml:space="preserve">
+    <value>Редакция</value>
+  </data>
+  <data name="FOR_EXCLUDING" xml:space="preserve">
+    <value>За изключване</value>
+  </data>
+  <data name="FOR_INCLUDING" xml:space="preserve">
+    <value>За включване</value>
+  </data>
+  <data name="NOM_MANAGEMENT" xml:space="preserve">
+    <value>Управлиние на номенклатурите</value>
+  </data>
+  <data name="ROLES" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="TABNUMBER" xml:space="preserve">
+    <value>Табелен №</value>
+  </data>
+  <data name="CREATE_STATEMENT" xml:space="preserve">
+    <value>Създаване на запис за извънреден труд</value>
+  </data>
+  <data name="DESCTIPTION" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="INCIDENT" xml:space="preserve">
+    <value>Инцидент</value>
+  </data>
+  <data name="MONTH" xml:space="preserve">
+    <value>Месец</value>
+  </data>
+  <data name="OVERTIME_SRATEMENTS_REPORT" xml:space="preserve">
+    <value>Отчет за извънреден труд на </value>
+  </data>
+  <data name="PROJECT" xml:space="preserve">
+    <value>Проект</value>
+  </data>
+  <data name="REQUEST" xml:space="preserve">
+    <value>Заявка</value>
+  </data>
+  <data name="REQUIRED_StatementDate" xml:space="preserve">
+    <value>Полето "Дата" е задължително!</value>
+  </data>
+  <data name="REQUIRED_StatementHours" xml:space="preserve">
+    <value>Полето "Часове" е задължително!</value>
+  </data>
+  <data name="REQUIRED_TicketNumber" xml:space="preserve">
+    <value>Полето "Номер на документ" е задължително!</value>
+  </data>
+  <data name="REQUIRED_TicketType" xml:space="preserve">
+    <value>Полето "Тип на документа" е задължително!</value>
+  </data>
+  <data name="SELECT_TICKET_TYPE" xml:space="preserve">
+    <value>Изберете тип на документа...</value>
+  </data>
+  <data name="STATEMENT_DATE" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="STATEMENT_HOURS" xml:space="preserve">
+    <value>Отработени часове</value>
+  </data>
+  <data name="STATEMENT_HOURS1" xml:space="preserve">
+    <value>Часове</value>
+  </data>
+  <data name="TABNUMBER_REQUIRED" xml:space="preserve">
+    <value>Полето табелен номер задължително!</value>
+  </data>
+  <data name="The value of property &quot;{0}&quot;  must be between {1} and {2}" xml:space="preserve">
+    <value>Стойността на полето "{0}" трябва да бъде между {1} и {2}!</value>
+  </data>
+  <data name="TICKETNUMBER" xml:space="preserve">
+    <value>Номер на документа</value>
+  </data>
+  <data name="TICKETTYPE" xml:space="preserve">
+    <value>Тип на документа</value>
+  </data>
+  <data name="REFRESH" xml:space="preserve">
+    <value>Обнови</value>
+  </data>
+  <data name="OVERTIME_SRATEMENTS" xml:space="preserve">
+    <value>Отчитане на извънреден труд</value>
+  </data>
+  <data name="MONTHLY_OVERTIME_REPORT" xml:space="preserve">
+    <value>Месечен отчет за извънреден труд</value>
+  </data>
+  <data name="OVERTIME_REPORTS" xml:space="preserve">
+    <value>Отчети за извънреден труд</value>
+  </data>
+  <data name="SUM" xml:space="preserve">
+    <value>Общо</value>
+  </data>
+  <data name="NEXTPAGE" xml:space="preserve">
+    <value>Следваща</value>
+  </data>
+  <data name="PREVIOUSPAGE" xml:space="preserve">
+    <value>Предишна</value>
+  </data>
+</root>

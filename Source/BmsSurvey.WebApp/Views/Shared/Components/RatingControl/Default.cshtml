@@ -1,0 +1,54 @@
+﻿@using BmsSurvey.Domain.Entities
+@model BmsSurvey.WebApp.Infrastructure.Components.Models.RatingControlModel
+@{
+    var uniqueId = Guid.NewGuid().ToString("N");
+}
+<select id="@uniqueId"
+        asp-for="RatingControlValue"
+        asp-items="@Model.SelectedListItems"
+        name="@Model.Name"></select>
+
+<script defer>
+    $(document).ready(function() {
+        $('#@uniqueId').barrating('show',
+            {
+                theme: '@Model.RatingControlType',
+                name: '@Model.Name',
+                @if (Model.QuestionType == QuestionType.YesOrNo)
+                {
+                    @:showValues: true,
+                    @:showSelectedRating: false,
+                }
+                onSelect: function(value) {
+                    let frm = $(event.target).closest('form');
+                    if (frm.length) {
+                        let form = $(frm[0]);
+                        let url = form.attr("action");
+                        let type = form.attr("method");
+                        let data = form.serialize();
+                        $.ajax({
+                            type: type,
+                            url: url,
+                            data: data
+                        }).done(function (data) {
+                            let message='';
+                            data.forEach(function (value) {
+                                message += `Question ${value.Id} -> ${value.Value}\n`;
+                            });
+
+                            alert(message);
+
+                            //alert('Selected rating: "' +
+                            //    data.Value +
+                            //    '" on selector name "' +
+                            //    data.QuestionId +
+                            //    '"');
+                        });
+                    }
+                }
+            });
+    });
+</script>
+
+
+

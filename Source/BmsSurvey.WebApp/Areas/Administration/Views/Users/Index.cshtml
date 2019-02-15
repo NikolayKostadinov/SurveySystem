@@ -1,0 +1,139 @@
+﻿@using BmsSurvey.Application.Users.Models
+@using BmsSurvey.Common.Interfaces
+@using Microsoft.AspNetCore.Antiforgery
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@inject IAntiforgery AntiForgery
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("ADMINISTRATION_USERS_ADMINISTRATION");
+}
+
+<div class="row">
+    <div class="col-sm-10 offset-sm-1">
+        <h2>@ViewData["Title"]</h2>
+
+        @(Html.Kendo()
+                                  .Grid<UserListViewModel>()
+                                  .Name("users-grid")
+                                  .ToolBar(tb => { tb.Create(); })
+                                  .Columns(col =>
+                                  {
+                                      col.Bound(m => m.IsLocked).Width(50)
+                                          .ClientTemplate("<div><span class=' #:IsLocked ? 'locked fas fa-ban':'unlocked far fa-check-circle'#'></span></div>");
+                                      col.Bound(m => m.Id).Width(50);
+                                      col.Bound(m => m.TabNumber);
+                                      col.Bound(m => m.UserName);
+                                      col.Bound(m => m.FirstName);
+                                      col.Bound(m => m.SirName);
+                                      col.Bound(m => m.LastName);
+                                      col.Bound(m => m.FullName);
+                                      col.Bound(m => m.Roles).Width(300).ClientTemplate("#=rolesTemplate(Roles)#").EditorTemplateName("UserRoleEditor");
+                                      col.Command(c =>
+                                      {
+                                          c.Edit();
+                                          c.Custom("lock").IconClass("k-icon k-i-lock").Text(LayoutLocalizer.GetLocalizedHtmlString("LOCK")).Click("lockUser");
+                                          c.Custom("unlock").IconClass("k-icon k-i-unlock").Text(LayoutLocalizer.GetLocalizedHtmlString("UNLOCK")).Click("unlockUser");
+                                          c.Destroy();
+                                      });
+                                  })
+            .Scrollable()
+            .Sortable()
+            .Filterable()
+            .Editable(ed => ed.Mode(GridEditMode.InLine))
+            .Pageable(pageable => pageable
+                .Refresh(true)
+                .PageSizes(true)
+                .ButtonCount(5))
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .Model(u =>
+                {
+                    u.Id(m => m.Id);
+                    u.Field(m => m.Id).Editable(false);
+                    u.Field(m => m.IsLocked).Editable(false);
+                    //u.Field(m => m.UserName).Editable(false);
+                    u.Field(m => m.FullName).Editable(false);
+                    u.Field(p => p.Roles).DefaultValue(new HashSet<RoleSimpleViewModel>()).Editable(true);
+                })
+                .PageSize(20)
+                .Read(read => read.Action("GetAll", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                .Destroy(delete => delete.Action("Delete", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                .Create(create => create.Action("Create", "Users", new { area = "Administration" }).Data("getAntiforgeryTokenAndPass"))
+                .Update(update => update.Action("Update", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                .Events(ev =>
+                {
+                    ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
+                })
+            )
+            .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+        )
+    </div>
+</div>
+
+<script type="text/kendo" id="rolesTemplate">
+    #if(data){#
+    #for(var i = 0; i< data.length; i++){#
+    #if(data[i].Name != null){#
+    <span class="label label-info">#:data[i].Name#</span>
+    #}#
+    #}#
+    #}#
+</script>
+
+<script>
+    var rolesTemplate = kendo.template($("#rolesTemplate").html(), { useWithBlock: false });
+</script>
+
+@section Scripts
+    {
+    <script>
+        function lockUser(ev) {
+            ev.preventDefault();
+            let user = this.dataItem($(ev.currentTarget).closest("tr"));
+
+            $.ajax({
+                    method: "POST",
+                    headers: { "RequestVerificationToken": "@AntiForgery.GetTokens(Context).RequestToken" },
+                    url: "@Url.Action("Lock", "Users", new {area = "Administration"})",
+                    data: { id: user.Id }
+                })
+                .done(function(response) {
+                    let grid = $(ev.delegateTarget).data("kendoGrid");
+                    grid.dataSource.read();
+                    grid.refresh();
+                })
+                .fail(function(ev) {
+                    alert(ev);
+                });
+        }
+
+        function unlockUser(ev) {
+            ev.preventDefault();
+            let user = this.dataItem($(ev.currentTarget).closest("tr"));
+
+            $.ajax({
+                    method: "POST",
+                    headers: { "RequestVerificationToken": "@AntiForgery.GetTokens(Context).RequestToken" },
+                    url: "@Url.Action("Unlock", "Users", new {area = "Administration"})",
+                    data: { id: user.Id }
+                })
+                .done(function(response) {
+                    let grid = $(ev.delegateTarget).data("kendoGrid");
+                    grid.dataSource.read();
+                    grid.refresh();
+                })
+                .fail(function(ev) {
+                    alert(ev);
+                });
+        }
+
+
+        function refreshAfterChange() {
+            let grid = $('#users-grid').data('kendoGrid');
+            if (grid) {
+                grid.dataSource.data([]);
+                grid.dataSource.read();
+            }
+        }
+    </script>
+}
+

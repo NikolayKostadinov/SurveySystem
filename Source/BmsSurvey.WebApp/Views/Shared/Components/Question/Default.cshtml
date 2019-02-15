@@ -1,0 +1,10 @@
+﻿@model BmsSurvey.Application.Questions.Models.QuestionViewModel
+<div class="container box-shadow mb-4 pb-2">
+    <form asp-controller="Answer" asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" value="@Model.Id" name="QuestionId"/>
+        <p><span class="display-number">@($"{Model.DisplayNumber}. ")</span>@Model.Text</p>
+        <vc:rating-control rating-control-type=@Model.QuestionType name="Value" value=@Model.Value>
+        </vc:rating-control>
+    </form>
+</div>

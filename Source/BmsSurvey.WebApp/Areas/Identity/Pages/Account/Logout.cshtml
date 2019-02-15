@@ -1,0 +1,13 @@
+﻿@page
+@using BmsSurvey.Common.Interfaces
+@using BmsSurvey.WebApp.Resources
+@model BmsSurvey.WebApp.Areas.Identity.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("LOGOUT");
+}
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+<header>
+    <h1>@ViewData["Title"]</h1>
+    <p>@LayoutLocalizer.GetLocalizedHtmlString("LOGOUT_TEXT")</p>
+</header>

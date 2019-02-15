@@ -1,0 +1,918 @@
+2019-02-11 08:26:20.463 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:20.471 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:20.477 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:20.482 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:20.563 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:20.573 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:20.650 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:20.658 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:20.703 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:20.712 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:20.718 +02:00 [INF] Request finished in 255.8643ms 404 
+2019-02-11 08:26:20.722 +02:00 [INF] Request finished in 255.8643ms 404 
+2019-02-11 08:26:49.008 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:49.059 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:49.061 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:49.067 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:49.143 +02:00 [INF] Executed DbCommand (71ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:49.154 +02:00 [INF] Executed DbCommand (71ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:49.205 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:49.213 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:49.259 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:49.267 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:49.273 +02:00 [INF] Request finished in 264.8309ms 404 
+2019-02-11 08:26:49.278 +02:00 [INF] Request finished in 264.8309ms 404 
+2019-02-11 08:26:56.544 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:56.548 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:26:56.550 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:56.557 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:26:56.591 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:56.602 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:26:56.653 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:56.660 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:26:56.701 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:56.709 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:26:56.715 +02:00 [INF] Request finished in 171.176ms 404 
+2019-02-11 08:26:56.719 +02:00 [INF] Request finished in 171.176ms 404 
+2019-02-11 08:28:21.398 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:28:21.424 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:28:21.426 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:21.432 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:21.485 +02:00 [INF] Executed DbCommand (47ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:28:21.496 +02:00 [INF] Executed DbCommand (47ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFr2019-02-11 08:28:45.893 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:46.025 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:46.376 +02:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:28:46.390 +02:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:28:46.411 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:28:46.416 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:28:46.443 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-11 08:28:46.449 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-11 08:28:46.471 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-02-11 08:28:46.474 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-02-11 08:28:46.518 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-02-11 08:28:46.523 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-02-11 08:28:46.924 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-11 08:28:46.930 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-11 08:28:47.144 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-11 08:28:47.149 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-11 08:28:48.882 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-02-11 08:28:48.889 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-02-11 08:28:48.998 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:49.004 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:49.357 +02:00 [INF] Executed DbCommand (109ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:28:49.368 +02:00 [INF] Executed DbCommand (109ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:28:49.754 +02:00 [INF] Executed DbCommand (106ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:28:49.762 +02:00 [INF] Executed DbCommand (106ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:28:49.880 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:28:49.888 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:28:50.584 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:28:50.590 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:28:50.710 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:28:50.716 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:28:50.724 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9523ms.
+2019-02-11 08:28:50.730 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9523ms.
+2019-02-11 08:28:50.757 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:28:50.761 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:28:51.044 +02:00 [INF] Executed ViewResult - view Index executed in 299.8878ms.
+2019-02-11 08:28:51.049 +02:00 [INF] Executed ViewResult - view Index executed in 299.8878ms.
+2019-02-11 08:28:51.052 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 459.4128ms
+2019-02-11 08:28:51.057 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 459.4128ms
+2019-02-11 08:28:51.117 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/fontawesome-free-5.7.1-web/css/all.min.css  
+2019-02-11 08:28:51.141 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.min.js  
+2019-02-11 08:28:51.142 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/custom/kendoAdditional.js?v=Nwn5wgbOMGhTUuVw0xQWgZe_jObiCZcnyIEQE73zHFo  
+2019-02-11 08:28:51.142 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/fontawesome-free-5.7.1-web/css/all.min.css  
+2019-02-11 08:28:51.144 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css?v=ZDqLvmC0lC3mjRdPNmeW-QJCjMRcpBuPhp2BcoeB0mw  
+2019-02-11 08:28:51.144 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css  
+2019-02-11 08:28:51.146 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.min.js  
+2019-02-11 08:28:51.150 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/custom/kendoAdditional.js?v=Nwn5wgbOMGhTUuVw0xQWgZe_jObiCZcnyIEQE73zHFo  
+2019-02-11 08:28:51.177 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css?v=ZDqLvmC0lC3mjRdPNmeW-QJCjMRcpBuPhp2BcoeB0mw  
+2019-02-11 08:28:51.184 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css  
+2019-02-11 08:28:51.185 +02:00 [INF] Request finished in 2304.1066ms 200 text/html; charset=utf-8
+2019-02-11 08:28:51.190 +02:00 [INF] The file /lib/fontawesome-free-5.7.1-web/css/all.min.css was not modified
+2019-02-11 08:28:51.190 +02:00 [INF] The file /css/site.css was not modified
+2019-02-11 08:28:51.190 +02:00 [INF] The file /js/custom/kendoAdditional.js was not modified
+2019-02-11 08:28:51.190 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2019-02-11 08:28:51.191 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2019-02-11 08:28:51.195 +02:00 [INF] Request finished in 2304.1066ms 200 text/html; charset=utf-8
+2019-02-11 08:28:51.199 +02:00 [INF] The file /lib/fontawesome-free-5.7.1-web/css/all.min.css was not modified
+2019-02-11 08:28:51.203 +02:00 [INF] The file /js/custom/kendoAdditional.js was not modified
+2019-02-11 08:28:51.207 +02:00 [INF] The file /css/site.css was not modified
+2019-02-11 08:28:51.215 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2019-02-11 08:28:51.216 +02:00 [INF] Request finished in 75.4522ms 304 application/javascript
+2019-02-11 08:28:51.217 +02:00 [INF] Request finished in 100.138ms 304 text/css
+2019-02-11 08:28:51.219 +02:00 [INF] Request finished in 75.0292ms 304 text/css
+2019-02-11 08:28:51.224 +02:00 [INF] Request finished in 75.4522ms 304 application/javascript
+2019-02-11 08:28:51.228 +02:00 [INF] Request finished in 75.0292ms 304 text/css
+2019-02-11 08:28:51.229 +02:00 [INF] Request finished in 85.5106ms 304 text/css
+2019-02-11 08:28:51.235 +02:00 [INF] Request finished in 100.138ms 304 text/css
+2019-02-11 08:28:51.236 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2019-02-11 08:28:51.240 +02:00 [INF] Request finished in 85.5106ms 304 text/css
+2019-02-11 08:28:51.244 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2019-02-11 08:28:51.247 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2019-02-11 08:28:51.251 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=SXMf4pL0YpZZVeDz_4MoaxNGPSinxIijasfOR3cAESk  
+2019-02-11 08:28:51.253 +02:00 [INF] Request finished in 112.0136ms 304 application/javascript
+2019-02-11 08:28:51.255 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2019-02-11 08:28:51.260 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=SXMf4pL0YpZZVeDz_4MoaxNGPSinxIijasfOR3cAESk  
+2019-02-11 08:28:51.265 +02:00 [INF] Request finished in 112.0136ms 304 application/javascript
+2019-02-11 08:28:51.269 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2019-02-11 08:28:51.271 +02:00 [INF] The file /js/site.js was not modified
+2019-02-11 08:28:51.275 +02:00 [INF] Request finished in 38.8365ms 304 application/javascript
+2019-02-11 08:28:51.279 +02:00 [INF] The file /js/site.js was not modified
+2019-02-11 08:28:51.283 +02:00 [INF] Request finished in 38.8365ms 304 application/javascript
+2019-02-11 08:28:51.285 +02:00 [INF] Request finished in 34.0951ms 304 application/javascript
+2019-02-11 08:28:51.292 +02:00 [INF] Request finished in 34.0951ms 304 application/javascript
+2019-02-11 08:28:51.695 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js  
+2019-02-11 08:28:51.699 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js  
+2019-02-11 08:28:51.700 +02:00 [INF] The file /lib/popper.js/dist/umd/popper.min.js was not modified
+2019-02-11 08:28:51.705 +02:00 [INF] The file /lib/popper.js/dist/umd/popper.min.js was not modified
+2019-02-11 08:28:51.707 +02:00 [INF] Request finished in 11.9187ms 304 application/javascript
+2019-02-11 08:28:51.711 +02:00 [INF] Request finished in 11.9187ms 304 application/javascript
+2019-02-11 08:28:58.939 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:28:58.943 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:28:58.954 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:58.960 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:28:59.001 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:28:59.012 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:28:59.105 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:28:59.114 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:28:59.155 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:28:59.163 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:28:59.169 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:28:59.175 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:28:59.222 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:28:59.227 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:28:59.229 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0718ms.
+2019-02-11 08:28:59.235 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0718ms.
+2019-02-11 08:28:59.239 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:28:59.244 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:28:59.249 +02:00 [INF] Executed ViewResult - view Index executed in 9.2959ms.
+2019-02-11 08:28:59.253 +02:00 [INF] Executed ViewResult - view Index executed in 9.2959ms.
+2019-02-11 08:28:59.255 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 78.23790000000001ms
+2019-02-11 08:28:59.261 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 78.23790000000001ms
+2019-02-11 08:28:59.263 +02:00 [INF] Request finished in 324.6763ms 200 text/html; charset=utf-8
+2019-02-11 08:28:59.268 +02:00 [INF] Request finished in 324.6763ms 200 text/html; charset=utf-8
+2019-02-11 08:29:04.274 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:29:04.279 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:29:04.281 +02:00 [INF] Request finished in 6.948ms 404 
+2019-02-11 08:29:04.286 +02:00 [INF] Request finished in 6.948ms 404 
+2019-02-11 08:29:04.287 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map  
+2019-02-11 08:29:04.287 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js.map  
+2019-02-11 08:29:04.308 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:29:04.309 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:29:04.309 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:29:04.314 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:29:04.317 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js.map  
+2019-02-11 08:29:04.321 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:29:04.322 +02:00 [INF] Request finished in 35.8788ms 404 
+2019-02-11 08:29:04.326 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:29:04.327 +02:00 [INF] The file /lib/popper.js/dist/umd/popper.min.js.map was not modified
+2019-02-11 08:29:04.329 +02:00 [INF] Request finished in 20.2754ms 404 
+2019-02-11 08:29:04.333 +02:00 [INF] Request finished in 35.8788ms 404 
+2019-02-11 08:29:04.337 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map  
+2019-02-11 08:29:04.340 +02:00 [INF] Request finished in 20.2754ms 404 
+2019-02-11 08:29:04.343 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css.map  
+2019-02-11 08:29:04.345 +02:00 [INF] Request finished in 35.8865ms 404 
+2019-02-11 08:29:04.350 +02:00 [INF] The file /lib/popper.js/dist/umd/popper.min.js.map was not modified
+2019-02-11 08:29:04.351 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js.map was not modified
+2019-02-11 08:29:04.355 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css.map  
+2019-02-11 08:29:04.358 +02:00 [INF] Request finished in 35.8865ms 404 
+2019-02-11 08:29:04.360 +02:00 [INF] Request finished in 73.1826ms 304 text/plain
+2019-02-11 08:29:04.362 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css.map was not modified
+2019-02-11 08:29:04.366 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js.map was not modified
+2019-02-11 08:29:04.372 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css.map was not modified
+2019-02-11 08:29:04.375 +02:00 [INF] Request finished in 73.1826ms 304 text/plain
+2019-02-11 08:29:04.376 +02:00 [INF] Request finished in 89.8615ms 304 text/plain
+2019-02-11 08:29:04.378 +02:00 [INF] Request finished in 35.1933ms 304 text/plain
+2019-02-11 08:29:04.384 +02:00 [INF] Request finished in 89.8615ms 304 text/plain
+2019-02-11 08:29:04.388 +02:00 [INF] Request finished in 35.1933ms 304 text/plain
+2019-02-11 08:29:08.449 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:29:08.452 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:29:08.455 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:29:08.460 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:29:08.495 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:29:08.506 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:29:08.556 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:29:08.563 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:29:08.603 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:29:08.611 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:29:08.617 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:29:08.622 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:29:08.669 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:29:08.674 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:29:08.676 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.014100000000000001ms.
+2019-02-11 08:29:08.682 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.014100000000000001ms.
+2019-02-11 08:29:08.685 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:29:08.690 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:29:08.693 +02:00 [INF] Executed ViewResult - view Index executed in 7.9992ms.
+2019-02-11 08:29:08.698 +02:00 [INF] Executed ViewResult - view Index executed in 7.9992ms.
+2019-02-11 08:29:08.700 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 75.447ms
+2019-02-11 08:29:08.705 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 75.447ms
+2019-02-11 08:29:08.707 +02:00 [INF] Request finished in 258.5332ms 200 text/html; charset=utf-8
+2019-02-11 08:29:08.712 +02:00 [INF] Request finished in 258.5332ms 200 text/html; charset=utf-8
+2019-02-11 08:29:09.129 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:29:09.133 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:29:09.135 +02:00 [INF] Request finished in 6.1188ms 404 
+2019-02-11 08:29:09.139 +02:00 [INF] Request finished in 6.1188ms 404 
+2019-02-11 08:29:09.257 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:29:09.258 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:29:09.258 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:29:09.262 +02:00 [INF] Reques2019-02-11 08:37:38.304 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:38.434 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:38.801 +02:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:37:38.815 +02:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:37:38.833 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:37:38.838 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-11 08:37:38.872 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-11 08:37:38.877 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-11 08:37:38.899 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-02-11 08:37:38.903 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-02-11 08:37:38.936 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-02-11 08:37:38.941 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-02-11 08:37:39.357 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-11 08:37:39.364 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-11 08:37:39.587 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-11 08:37:39.592 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-11 08:37:41.216 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-02-11 08:37:41.223 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-02-11 08:37:41.333 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:41.339 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:41.687 +02:00 [INF] Executed DbCommand (110ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:37:41.699 +02:00 [INF] Executed DbCommand (110ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:37:42.055 +02:00 [INF] Executed DbCommand (82ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:37:42.063 +02:00 [INF] Executed DbCommand (82ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:37:42.178 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:37:42.186 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:37:42.887 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:37:42.893 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:37:43.032 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:37:43.039 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:37:43.048 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1974ms.
+2019-02-11 08:37:43.056 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1974ms.
+2019-02-11 08:37:43.087 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:37:43.091 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:37:43.374 +02:00 [INF] Executed ViewResult - view Index executed in 301.7776ms.
+2019-02-11 08:37:43.379 +02:00 [INF] Executed ViewResult - view Index executed in 301.7776ms.
+2019-02-11 08:37:43.382 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 485.06350000000003ms
+2019-02-11 08:37:43.386 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 485.06350000000003ms
+2019-02-11 08:37:43.403 +02:00 [INF] Request finished in 2188.0546ms 200 text/html; charset=utf-8
+2019-02-11 08:37:43.408 +02:00 [INF] Request finished in 2188.0546ms 200 text/html; charset=utf-8
+2019-02-11 08:37:51.894 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:37:51.898 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests  
+2019-02-11 08:37:52.037 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:52.043 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:37:52.104 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:37:52.115 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:37:52.164 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:37:52.173 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:37:52.213 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:37:52.222 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:37:52.228 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:37:52.233 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-02-11 08:37:52.280 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:37:52.285 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:37:52.288 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0688ms.
+2019-02-11 08:37:52.294 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0688ms.
+2019-02-11 08:37:52.297 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:37:52.301 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:37:52.307 +02:00 [INF] Executed ViewResult - view Index executed in 10.0408ms.
+2019-02-11 08:37:52.312 +02:00 [INF] Executed ViewResult - view Index executed in 10.0408ms.
+2019-02-11 08:37:52.314 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 78.6104ms
+2019-02-11 08:37:52.320 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 78.6104ms
+2019-02-11 08:37:52.322 +02:00 [INF] Request finished in 428.1248ms 200 text/html; charset=utf-8
+2019-02-11 08:37:52.327 +02:00 [INF] Request finished in 428.1248ms 200 text/html; charset=utf-8
+2019-02-11 08:37:56.954 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:37:56.958 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:37:56.962 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:37:56.967 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:37:56.968 +02:00 [INF] Request finished in 14.1224ms 404 
+2019-02-11 08:37:56.969 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:37:56.970 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:37:56.970 +02:00 [INF] Request finished in 7.7332ms 404 
+2019-02-11 08:37:56.974 +02:00 [INF] Request finished in 14.1224ms 404 
+2019-02-11 08:37:56.979 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:37:56.982 +02:00 [INF] Request finished in 7.7332ms 404 
+2019-02-11 08:37:56.988 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:37:56.989 +02:00 [INF] Request finished in 20.3935ms 404 
+2019-02-11 08:37:56.993 +02:00 [INF] Request finished in 23.2284ms 404 
+2019-02-11 08:37:56.997 +02:00 [INF] Request finished in 20.3935ms 404 
+2019-02-11 08:37:57.001 +02:00 [INF] Request finished in 23.2284ms 404 
+2019-02-11 08:39:49.543 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:39:49.546 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/tests/index  
+2019-02-11 08:39:49.549 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:39:49.554 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:39:49.588 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:39:49.600 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:39:49.649 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:39:49.656 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:39:49.719 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:39:49.727 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:39:49.733 +02:00 [INF] Request finished in 212.9492ms 404 
+2019-02-11 08:39:49.737 +02:00 [INF] Request finished in 212.9492ms 404 
+2019-02-11 08:40:04.389 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/bg/tests/index  
+2019-02-11 08:40:04.393 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/bg/tests/index  
+2019-02-11 08:40:04.395 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:40:04.400 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:40:04.434 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:40:04.446 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:40:04.495 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:40:04.502 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:40:04.541 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:40:04.549 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:40:04.556 +02:00 [INF] Route matched with {action = "Index", controller = "Tests", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp)
+2019-02-11 08:40:04.561 +02:00 [INF] Route matched with {action = "Index", controller = "Tests", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp)
+2019-02-11 08:40:04.608 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:40:04.613 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:40:04.616 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3921ms.
+2019-02-11 08:40:04.622 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3921ms.
+2019-02-11 08:40:08.723 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:40:08.728 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:40:08.770 +02:00 [INF] Executed ViewResult - view Index executed in 4144.9472000000005ms.
+2019-02-11 08:40:08.775 +02:00 [INF] Executed ViewResult - view Index executed in 4144.9472000000005ms.
+2019-02-11 08:40:08.777 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) in 4213.4325ms
+2019-02-11 08:40:08.782 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) in 4213.4325ms
+2019-02-11 08:40:08.784 +02:00 [INF] Request finished in 4395.2314ms 200 text/html; charset=utf-8
+2019-02-11 08:40:08.788 +02:00 [INF] Request finished in 4395.2314ms 200 text/html; charset=utf-8
+2019-02-11 08:40:08.870 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-movie.css  
+2019-02-11 08:40:08.870 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-horizontal.css  
+2019-02-11 08:40:08.870 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-1to10.css  
+2019-02-11 08:40:08.876 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-pill.css  
+2019-02-11 08:40:09.012 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-movie.css  
+2019-02-11 08:40:09.038 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-1to10.css  
+2019-02-11 08:40:09.039 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-square.css  
+2019-02-11 08:40:09.039 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-reversed.css  
+2019-02-11 08:40:09.046 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-pill.css  
+2019-02-11 08:40:09.049 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-horizontal.css  
+2019-02-11 08:40:09.053 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-square.css  
+2019-02-11 08:40:09.061 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-reversed.css  
+2019-02-11 08:40:09.091 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-movie.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-movie.css'
+2019-02-11 08:40:09.111 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-1to10.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-1to10.css'
+2019-02-11 08:40:09.136 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-movie.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-movie.css'
+2019-02-11 08:40:09.243 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-1to10.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-1to10.css'
+2019-02-11 08:40:09.246 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-pill.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-pill.css'
+2019-02-11 08:40:09.266 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-horizontal.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-horizontal.css'
+2019-02-11 08:40:09.267 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-square.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-square.css'
+2019-02-11 08:40:09.267 +02:00 [INF] Request finished in 396.7453ms 200 text/css
+2019-02-11 08:40:09.267 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-reversed.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-reversed.css'
+2019-02-11 08:40:09.274 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-horizontal.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-horizontal.css'
+2019-02-11 08:40:09.279 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-reversed.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-reversed.css'
+2019-02-11 08:40:09.282 +02:00 [INF] Request finished in 411.8146ms 200 text/css
+2019-02-11 08:40:09.288 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-square.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-square.css'
+2019-02-11 08:40:09.291 +02:00 [INF] Request finished in 396.7453ms 200 text/css
+2019-02-11 08:40:09.294 +02:00 [INF] Request finished in 254.8623ms 200 text/css
+2019-02-11 08:40:09.298 +02:00 [INF] Request finished in 411.8146ms 200 text/css
+2019-02-11 08:40:09.301 +02:00 [INF] Request finished in 261.6628ms 200 text/css
+2019-02-11 08:40:09.305 +02:00 [INF] Request finished in 254.8623ms 200 text/css
+2019-02-11 08:40:09.306 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bootstrap-stars.css  
+2019-02-11 08:40:09.308 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/css-stars.css  
+2019-02-11 08:40:09.312 +02:00 [INF] Request finished in 261.6628ms 200 text/css
+2019-02-11 08:40:09.314 +02:00 [INF] Request finished in 444.3859ms 200 text/css
+2019-02-11 08:40:09.316 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars-o.css  
+2019-02-11 08:40:09.321 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/css-stars.css  
+2019-02-11 08:40:09.325 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bootstrap-stars.css  
+2019-02-11 08:40:09.329 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars-o.css  
+2019-02-11 08:40:09.332 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/css-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\css-stars.css'
+2019-02-11 08:40:09.332 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:40:09.337 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars-o.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars-o.css'
+2019-02-11 08:40:09.339 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bootstrap-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bootstrap-stars.css'
+2019-02-11 08:40:09.343 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:40:09.348 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bootstrap-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bootstrap-stars.css'
+2019-02-11 08:40:09.353 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars-o.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars-o.css'
+2019-02-11 08:40:09.354 +02:00 [INF] Request finished in 21.9352ms 404 
+2019-02-11 08:40:09.357 +02:00 [INF] Request finished in 51.01ms 200 text/css
+2019-02-11 08:40:09.363 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/css-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\css-stars.css'
+2019-02-11 08:40:09.367 +02:00 [INF] Request finished in 444.3859ms 200 text/css
+2019-02-11 08:40:09.371 +02:00 [INF] Request finished in 51.01ms 200 text/css
+2019-02-11 08:40:09.374 +02:00 [INF] Request finished in 57.607ms 200 text/css
+2019-02-11 08:40:09.378 +02:00 [INF] Request finished in 21.9352ms 404 
+2019-02-11 08:40:09.381 +02:00 [INF] Request finished in 72.7986ms 200 text/css
+2019-02-11 08:40:09.382 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:40:09.387 +02:00 [INF] Request finished in 57.607ms 200 text/css
+2019-02-11 08:40:09.388 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js  
+2019-02-11 08:40:09.392 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js.map  
+2019-02-11 08:40:09.395 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:40:09.399 +02:00 [INF] Request finished in 72.7986ms 200 text/css
+2019-02-11 08:40:09.403 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js  
+2019-02-11 08:40:09.404 +02:00 [INF] Request finished in 22.125ms 404 
+2019-02-11 08:40:09.409 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:40:09.410 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:40:09.414 +02:00 [INF] Request finished in 22.125ms 404 
+2019-02-11 08:40:09.417 +02:00 [INF] Request finished in 21.9433ms 404 
+2019-02-11 08:40:09.417 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/jquery.barrating.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\jquery.barrating.min.js'
+2019-02-11 08:40:09.421 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js.map  
+2019-02-11 08:40:09.427 +02:00 [INF] Request finished in 21.9433ms 404 
+2019-02-11 08:40:09.432 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/jquery.barrating.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\jquery.barrating.min.js'
+2019-02-11 08:40:09.434 +02:00 [INF] Request finished in 23.9935ms 404 
+2019-02-11 08:40:09.442 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-pill.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-pill.css'
+2019-02-11 08:40:09.444 +02:00 [INF] Request finished in 56.6055ms 200 application/javascript
+2019-02-11 08:40:09.448 +02:00 [INF] Request finished in 23.9935ms 404 
+2019-02-11 08:40:09.451 +02:00 [INF] Request finished in 575.9848ms 200 text/css
+2019-02-11 08:40:09.455 +02:00 [INF] Request finished in 56.6055ms 200 application/javascript
+2019-02-11 08:40:09.460 +02:00 [INF] Request finished in 575.9848ms 200 text/css
+2019-02-11 08:40:09.463 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars.css  
+2019-02-11 08:40:09.468 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars.css  
+2019-02-11 08:40:09.472 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars.css'
+2019-02-11 08:40:09.477 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars.css'
+2019-02-11 08:40:09.480 +02:00 [INF] Request finished in 17.4841ms 200 text/css
+2019-02-11 08:40:09.485 +02:00 [INF] Request finished in 17.4841ms 200 text/css
+2019-02-11 08:40:09.542 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js.map  
+2019-02-11 08:40:09.547 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js.map  
+2019-02-11 08:40:09.548 +02:00 [INF] Request finished in 6.2813ms 404 
+2019-02-11 08:40:09.552 +02:00 [INF] Request finished in 6.2813ms 404 
+2019-02-11 08:40:33.582 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:40:33.586 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js.map  
+2019-02-11 08:40:33.587 +02:00 [INF] Request finished in 5.3546ms 404 
+2019-02-11 08:40:33.591 +02:00 [INF] Request finished in 5.3546ms 404 
+2019-02-11 08:40:33.652 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:40:33.677 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js.map  
+2019-02-11 08:40:33.698 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js.map  
+2019-02-11 08:40:33.699 +02:00 [INF] Request finished in 47.029ms 404 
+2019-02-11 08:40:33.703 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js.map  
+2019-02-11 08:40:33.707 +02:00 [INF] Request finished in 47.029ms 404 
+2019-02-11 08:40:33.708 +02:00 [INF] Request finished in 9.8835ms 404 
+2019-02-11 08:40:33.713 +02:00 [INF] Request finished in 9.8835ms 404 
+2019-02-11 08:42:01.270 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/bg/tests/index  
+2019-02-11 08:42:01.274 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/bg/tests/index  
+2019-02-11 08:42:01.276 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:42:01.282 +02:00 [INF] Entity Framework Core 2.2.1-servicing-10028 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-11 08:42:01.319 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:42:01.330 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-02-11 08:42:01.393 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:42:01.401 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-02-11 08:42:01.442 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:42:01.450 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-02-11 08:42:01.456 +02:00 [INF] Route matched with {action = "Index", controller = "Tests", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp)
+2019-02-11 08:42:01.461 +02:00 [INF] Route matched with {action = "Index", controller = "Tests", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp)
+2019-02-11 08:42:01.512 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:42:01.517 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-02-11 08:42:01.520 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.026000000000000002ms.
+2019-02-11 08:42:01.526 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.026000000000000002ms.
+2019-02-11 08:42:04.253 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:42:04.279 +02:00 [INF] Executing ViewResult, running view Index.
+2019-02-11 08:42:04.294 +02:00 [INF] Executed ViewResult - view Index executed in 2764.7002ms.
+2019-02-11 08:42:04.298 +02:00 [INF] Executed ViewResult - view Index executed in 2764.7002ms.
+2019-02-11 08:42:04.300 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) in 2836.4289000000003ms
+2019-02-11 08:42:04.305 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.TestsController.Index (BmsSurvey.WebApp) in 2836.4289000000003ms
+2019-02-11 08:42:04.307 +02:00 [INF] Request finished in 3037.8281ms 200 text/html; charset=utf-8
+2019-02-11 08:42:04.312 +02:00 [INF] Request finished in 3037.8281ms 200 text/html; charset=utf-8
+2019-02-11 08:42:04.314 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css  
+2019-02-11 08:42:04.319 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.min.css  
+2019-02-11 08:42:04.319 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css?v=ZDqLvmC0lC3mjRdPNmeW-QJCjMRcpBuPhp2BcoeB0mw  
+2019-02-11 08:42:04.417 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.bootstrap.min.css  
+2019-02-11 08:42:04.437 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.common-bootstrap.min.css  
+2019-02-11 08:42:04.460 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.dataviz.min.css  
+2019-02-11 08:42:04.483 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/fontawesome-free-5.7.1-web/css/all.min.css  
+2019-02-11 08:42:04.616 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.common-bootstrap.min.css  
+2019-02-11 08:42:04.619 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.bootstrap.min.css  
+2019-02-11 08:42:04.624 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css?v=ZDqLvmC0lC3mjRdPNmeW-QJCjMRcpBuPhp2BcoeB0mw  
+2019-02-11 08:42:04.631 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\site.css'
+2019-02-11 08:42:04.631 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2019-02-11 08:42:04.636 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.dataviz.min.css  
+2019-02-11 08:42:04.662 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/fontawesome-free-5.7.1-web/css/all.min.css  
+2019-02-11 08:42:04.662 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.bootstrap.min.css'
+2019-02-11 08:42:04.668 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2019-02-11 08:42:04.675 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\site.css'
+2019-02-11 08:42:04.675 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.dataviz.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.dataviz.min.css'
+2019-02-11 08:42:04.677 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.common-bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.common-bootstrap.min.css'
+2019-02-11 08:42:04.680 +02:00 [INF] Request finished in 366.018ms 200 text/css
+2019-02-11 08:42:04.683 +02:00 [INF] Sending file. Request path: '/lib/fontawesome-free-5.7.1-web/css/all.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\fontawesome-free-5.7.1-web\css\all.min.css'
+2019-02-11 08:42:04.686 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.dataviz.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.dataviz.min.css'
+2019-02-11 08:42:04.689 +02:00 [INF] Request finished in 366.018ms 200 text/css
+2019-02-11 08:42:04.692 +02:00 [INF] Request finished in 231.674ms 200 text/css
+2019-02-11 08:42:04.698 +02:00 [INF] Sending file. Request path: '/lib/fontawesome-free-5.7.1-web/css/all.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\fontawesome-free-5.7.1-web\css\all.min.css'
+2019-02-11 08:42:04.700 +02:00 [INF] Request finished in 381.0398ms 200 text/css
+2019-02-11 08:42:04.705 +02:00 [INF] Request finished in 231.674ms 200 text/css
+2019-02-11 08:42:04.706 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.dataviz.bootstrap.min.css  
+2019-02-11 08:42:04.709 +02:00 [INF] Request finished in 226.165ms 200 text/css
+2019-02-11 08:42:04.713 +02:00 [INF] Request finished in 381.0398ms 200 text/css
+2019-02-11 08:42:04.718 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.common-bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.common-bootstrap.min.css'
+2019-02-11 08:42:04.719 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-movie.css  
+2019-02-11 08:42:04.723 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/kendo/kendo.dataviz.bootstrap.min.css  
+2019-02-11 08:42:04.727 +02:00 [INF] Request finished in 226.165ms 200 text/css
+2019-02-11 08:42:04.731 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-movie.css  
+2019-02-11 08:42:04.734 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.dataviz.bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.dataviz.bootstrap.min.css'
+2019-02-11 08:42:04.734 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-reversed.css  
+2019-02-11 08:42:04.736 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-movie.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-movie.css'
+2019-02-11 08:42:04.740 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-reversed.css  
+2019-02-11 08:42:04.745 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.dataviz.bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.dataviz.bootstrap.min.css'
+2019-02-11 08:42:04.750 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-movie.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-movie.css'
+2019-02-11 08:42:04.752 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-reversed.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-reversed.css'
+2019-02-11 08:42:04.755 +02:00 [INF] Request finished in 49.1797ms 200 text/css
+2019-02-11 08:42:04.765 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-reversed.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-reversed.css'
+2019-02-11 08:42:04.767 +02:00 [INF] Request finished in 48.5108ms 200 text/css
+2019-02-11 08:42:04.772 +02:00 [INF] Request finished in 49.1797ms 200 text/css
+2019-02-11 08:42:04.773 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-1to10.css  
+2019-02-11 08:42:04.776 +02:00 [INF] Request finished in 42.2239ms 200 text/css
+2019-02-11 08:42:04.780 +02:00 [INF] Request finished in 48.5108ms 200 text/css
+2019-02-11 08:42:04.782 +02:00 [INF] Request finished in 366.9357ms 200 text/css
+2019-02-11 08:42:04.787 +02:00 [INF] Request finished in 42.2239ms 200 text/css
+2019-02-11 08:42:04.788 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-square.css  
+2019-02-11 08:42:04.789 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bootstrap-stars.css  
+2019-02-11 08:42:04.794 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-1to10.css  
+2019-02-11 08:42:04.797 +02:00 [INF] Request finished in 366.9357ms 200 text/css
+2019-02-11 08:42:04.798 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/css-stars.css  
+2019-02-11 08:42:04.803 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bootstrap-stars.css  
+2019-02-11 08:42:04.806 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-square.css  
+2019-02-11 08:42:04.810 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/css-stars.css  
+2019-02-11 08:42:04.812 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bootstrap-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bootstrap-stars.css'
+2019-02-11 08:42:04.814 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-square.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-square.css'
+2019-02-11 08:42:04.816 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/css-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\css-stars.css'
+2019-02-11 08:42:04.821 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bootstrap-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bootstrap-stars.css'
+2019-02-11 08:42:04.826 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-square.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-square.css'
+2019-02-11 08:42:04.832 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/css-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\css-stars.css'
+2019-02-11 08:42:04.834 +02:00 [INF] Request finished in 44.9801ms 200 text/css
+2019-02-11 08:42:04.838 +02:00 [INF] Request finished in 49.8541ms 200 text/css
+2019-02-11 08:42:04.842 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-1to10.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-1to10.css'
+2019-02-11 08:42:04.843 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-pill.css  
+2019-02-11 08:42:04.848 +02:00 [INF] Request finished in 44.9801ms 200 text/css
+2019-02-11 08:42:04.853 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-1to10.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-1to10.css'
+2019-02-11 08:42:04.857 +02:00 [INF] Request finished in 49.8541ms 200 text/css
+2019-02-11 08:42:04.858 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars-o.css  
+2019-02-11 08:42:04.862 +02:00 [INF] Request finished in 89.1597ms 200 text/css
+2019-02-11 08:42:04.865 +02:00 [INF] Request finished in 66.6605ms 200 text/css
+2019-02-11 08:42:04.869 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-pill.css  
+2019-02-11 08:42:04.874 +02:00 [INF] Sending file. Request path: '/css/kendo/kendo.bootstrap.min.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\css\kendo\kendo.bootstrap.min.css'
+2019-02-11 08:42:04.878 +02:00 [INF] Request finished in 89.1597ms 200 text/css
+2019-02-11 08:42:04.882 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars-o.css  
+2019-02-11 08:42:04.883 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars.css  
+2019-02-11 08:42:04.885 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/jszip.min.js  
+2019-02-11 08:42:04.889 +02:00 [INF] Request finished in 66.6605ms 200 text/css
+2019-02-11 08:42:04.891 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-pill.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-pill.css'
+2019-02-11 08:42:04.895 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/jszip.min.js  
+2019-02-11 08:42:04.897 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars-o.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars-o.css'
+2019-02-11 08:42:04.904 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars-o.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars-o.css'
+2019-02-11 08:42:04.908 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/fontawesome-stars.css  
+2019-02-11 08:42:04.910 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.min.js  
+2019-02-11 08:42:04.911 +02:00 [INF] Sending file. Request path: '/js/kendo/jszip.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\jszip.min.js'
+2019-02-11 08:42:04.913 +02:00 [INF] Request finished in 55.2062ms 200 text/css
+2019-02-11 08:42:04.916 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars.css'
+2019-02-11 08:42:04.920 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.min.js  
+2019-02-11 08:42:04.924 +02:00 [INF] Request finished in 55.2062ms 200 text/css
+2019-02-11 08:42:04.929 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/fontawesome-stars.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\fontawesome-stars.css'
+2019-02-11 08:42:04.931 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js  
+2019-02-11 08:42:04.937 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-pill.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-pill.css'
+2019-02-11 08:42:04.943 +02:00 [INF] Sending file. Request path: '/js/kendo/jszip.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\jszip.min.js'
+2019-02-11 08:42:04.947 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.aspnetmvc.min.js  
+2019-02-11 08:42:04.947 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery\dist\jquery.min.js'
+2019-02-11 08:42:04.949 +02:00 [INF] Request finished in 65.9561ms 200 text/css
+2019-02-11 08:42:04.955 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery\dist\jquery.min.js'
+2019-02-11 08:42:04.961 +02:00 [INF] Request finished in 65.9561ms 200 text/css
+2019-02-11 08:42:04.963 +02:00 [INF] Request finished in 119.6844ms 200 text/css
+2019-02-11 08:42:04.966 +02:00 [INF] Request finished in 56.3587ms 200 application/javascript
+2019-02-11 08:42:04.969 +02:00 [INF] Request finished in 84.0839ms 200 application/javascript
+2019-02-11 08:42:04.971 +02:00 [INF] Sending file. Request path: '/js/kendo/kendo.aspnetmvc.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\kendo.aspnetmvc.min.js'
+2019-02-11 08:42:04.973 +02:00 [INF] Request finished in 557.0663ms 200 text/css
+2019-02-11 08:42:04.977 +02:00 [INF] Request finished in 56.3587ms 200 application/javascript
+2019-02-11 08:42:04.979 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js  
+2019-02-11 08:42:04.984 +02:00 [INF] Request finished in 119.6844ms 200 text/css
+2019-02-11 08:42:04.989 +02:00 [INF] Request finished in 84.0839ms 200 application/javascript
+2019-02-11 08:42:04.990 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/custom/kendoAdditional.js?v=Nwn5wgbOMGhTUuVw0xQWgZe_jObiCZcnyIEQE73zHFo  
+2019-02-11 08:42:04.994 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/messages/kendo.messages.bg-BG.min.js  
+2019-02-11 08:42:04.995 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js  
+2019-02-11 08:42:05.001 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/custom/kendoAdditional.js?v=Nwn5wgbOMGhTUuVw0xQWgZe_jObiCZcnyIEQE73zHFo  
+2019-02-11 08:42:05.002 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js  
+2019-02-11 08:42:05.008 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/kendo.all.min.js  
+2019-02-11 08:42:05.014 +02:00 [INF] Sending file. Request path: '/js/kendo/kendo.aspnetmvc.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\kendo.aspnetmvc.min.js'
+2019-02-11 08:42:05.014 +02:00 [INF] Sending file. Request path: '/js/kendo/messages/kendo.messages.bg-BG.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\messages\kendo.messages.bg-BG.min.js'
+2019-02-11 08:42:05.017 +02:00 [INF] Sending file. Request path: '/js/custom/kendoAdditional.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\custom\kendoAdditional.js'
+2019-02-11 08:42:05.024 +02:00 [INF] Sending file. Request path: '/js/kendo/messages/kendo.messages.bg-BG.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\messages\kendo.messages.bg-BG.min.js'
+2019-02-11 08:42:05.030 +02:00 [INF] Sending file. Request path: '/js/custom/kendoAdditional.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\custom\kendoAdditional.js'
+2019-02-11 08:42:05.033 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/kendo/cultures/kendo.culture.bg.min.js  
+2019-02-11 08:42:05.036 +02:00 [INF] Request finished in 57.3102ms 200 application/javascript
+2019-02-11 08:42:05.039 +02:00 [INF] Request finished in 49.6882ms 200 application/javascript
+2019-02-11 08:42:05.042 +02:00 [INF] Request finished in 111.0928ms 200 application/javascript
+2019-02-11 08:42:05.047 +02:00 [INF] Request finished in 557.0663ms 200 text/css
+2019-02-11 08:42:05.053 +02:00 [INF] Request finished in 57.3102ms 200 application/javascript
+2019-02-11 08:42:05.056 +02:00 [INF] Request finished in 49.6882ms 200 application/javascript
+2019-02-11 08:42:05.060 +02:00 [INF] Request finished in 111.0928ms 200 application/javascript
+2019-02-11 08:42:05.061 +02:00 [INF] Sending file. Request path: '/js/kendo/cultures/kendo.culture.bg.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\cultures\kendo.culture.bg.min.js'
+2019-02-11 08:42:05.062 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/flags/bg.png  
+2019-02-11 08:42:05.065 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/Logo.png?v=jD4mRyqS-D8GSzMUQw6DffZhTuSsNLF9Be3VLEVavQo  
+2019-02-11 08:42:05.067 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-horizontal.css  
+2019-02-11 08:42:05.073 +02:00 [INF] Sending file. Request path: '/js/kendo/cultures/kendo.culture.bg.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\kendo\cultures\kendo.culture.bg.min.js'
+2019-02-11 08:42:05.078 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/flags/bg.png  
+2019-02-11 08:42:05.083 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/Logo.png?v=jD4mRyqS-D8GSzMUQw6DffZhTuSsNLF9Be3VLEVavQo  
+2019-02-11 08:42:05.085 +02:00 [INF] Request finished in 83.4044ms 200 application/javascript
+2019-02-11 08:42:05.088 +02:00 [INF] Sending file. Request path: '/images/flags/bg.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\flags\bg.png'
+2019-02-11 08:42:05.092 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/themes/bars-horizontal.css  
+2019-02-11 08:42:05.095 +02:00 [INF] Request finished in 83.4044ms 200 application/javascript
+2019-02-11 08:42:05.101 +02:00 [INF] Sending file. Request path: '/images/flags/bg.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\flags\bg.png'
+2019-02-11 08:42:05.103 +02:00 [INF] Sending file. Request path: '/images/Logo.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\Logo.png'
+2019-02-11 08:42:05.107 +02:00 [INF] Request finished in 45.7644ms 200 image/png
+2019-02-11 08:42:05.114 +02:00 [INF] Sending file. Request path: '/images/Logo.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\Logo.png'
+2019-02-11 08:42:05.116 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-horizontal.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-horizontal.css'
+2019-02-11 08:42:05.119 +02:00 [INF] Request finished in 45.7644ms 200 image/png
+2019-02-11 08:42:05.122 +02:00 [INF] Request finished in 56.2338ms 200 image/png
+2019-02-11 08:42:05.129 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/themes/bars-horizontal.css'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\themes\bars-horizontal.css'
+2019-02-11 08:42:05.130 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=SXMf4pL0YpZZVeDz_4MoaxNGPSinxIijasfOR3cAESk  
+2019-02-11 08:42:05.134 +02:00 [INF] Request finished in 56.2338ms 200 image/png
+2019-02-11 08:42:05.137 +02:00 [INF] Request finished in 69.7669ms 200 text/css
+2019-02-11 08:42:05.145 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=SXMf4pL0YpZZVeDz_4MoaxNGPSinxIijasfOR3cAESk  
+2019-02-11 08:42:05.146 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2019-02-11 08:42:05.150 +02:00 [INF] Request finished in 69.7669ms 200 text/css
+2019-02-11 08:42:05.153 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\site.js'
+2019-02-11 08:42:05.156 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2019-02-11 08:42:05.165 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\js\site.js'
+2019-02-11 08:42:05.168 +02:00 [INF] Request finished in 37.7639ms 200 application/javascript
+2019-02-11 08:42:05.172 +02:00 [INF] Request finished in 37.7639ms 200 application/javascript
+2019-02-11 08:42:05.173 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js  
+2019-02-11 08:42:05.178 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/dist/umd/popper.min.js  
+2019-02-11 08:42:05.179 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2019-02-11 08:42:05.186 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2019-02-11 08:42:05.189 +02:00 [INF] Sending file. Request path: '/lib/popper.js/dist/umd/popper.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\popper.js\dist\umd\popper.min.js'
+2019-02-11 08:42:05.189 +02:00 [INF] Request finished in 43.6121ms 200 application/javascript
+2019-02-11 08:42:05.196 +02:00 [INF] Sending file. Request path: '/lib/popper.js/dist/umd/popper.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\popper.js\dist\umd\popper.min.js'
+2019-02-11 08:42:05.200 +02:00 [INF] Request finished in 43.6121ms 200 application/javascript
+2019-02-11 08:42:05.202 +02:00 [INF] Request finished in 28.5971ms 200 application/javascript
+2019-02-11 08:42:05.204 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js  
+2019-02-11 08:42:05.208 +02:00 [INF] Request finished in 28.5971ms 200 application/javascript
+2019-02-11 08:42:05.212 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-bar-rating/jquery.barrating.min.js  
+2019-02-11 08:42:05.213 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/flags/en.png  
+2019-02-11 08:42:05.215 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/jquery.barrating.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\jquery.barrating.min.js'
+2019-02-11 08:42:05.219 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/flags/en.png  
+2019-02-11 08:42:05.224 +02:00 [INF] Sending file. Request path: '/lib/jquery-bar-rating/jquery.barrating.min.js'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\lib\jquery-bar-rating\jquery.barrating.min.js'
+2019-02-11 08:42:05.228 +02:00 [INF] Request finished in 24.5511ms 200 application/javascript
+2019-02-11 08:42:05.231 +02:00 [INF] Sending file. Request path: '/images/flags/en.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\flags\en.png'
+2019-02-11 08:42:05.233 +02:00 [INF] Request finished in 24.5511ms 200 application/javascript
+2019-02-11 08:42:05.238 +02:00 [INF] Sending file. Request path: '/images/flags/en.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\flags\en.png'
+2019-02-11 08:42:05.240 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/danger.png  
+2019-02-11 08:42:05.243 +02:00 [INF] Request finished in 30.3527ms 200 image/png
+2019-02-11 08:42:05.247 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/danger.png  
+2019-02-11 08:42:05.251 +02:00 [INF] Request finished in 30.3527ms 200 image/png
+2019-02-11 08:42:05.254 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/ok.png  
+2019-02-11 08:42:05.258 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/ok.png  
+2019-02-11 08:42:05.261 +02:00 [INF] Sending file. Request path: '/images/danger.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\danger.png'
+2019-02-11 08:42:05.266 +02:00 [INF] Sending file. Request path: '/images/danger.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\danger.png'
+2019-02-11 08:42:05.267 +02:00 [INF] Sending file. Request path: '/images/ok.png'. Physical path: 'D:\Systems\BmsSurvey\BmsSurvey.WebApp\wwwroot\images\ok.png'
+2019-02-11 08:42:05.269 +02:00 [INF] Request finished
