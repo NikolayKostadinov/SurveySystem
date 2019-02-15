@@ -89,16 +89,17 @@
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            //Todo: Fix deleted login
             returnUrl = returnUrl ?? Url.Content("/");
 
             if (ModelState.IsValid)
             {
+                var user = await this.userManager.FindByNameAsync(Input.UserName);
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: true);
-                if (result.Succeeded)
+                if (result.Succeeded && !user.IsDeleted)
                 {
-                    var user = await this.userManager.Users.FirstOrDefaultAsync(x => x.UserName == Input.UserName);
                     var userCulture = user?.CultureId ?? this.supportedCulturesProvider.SystemDefaultCulture;
                     this.supportedCulturesProvider.SetApplicationCulture(userCulture);
                     returnUrl = localizationUrlService.GetLocalizedUri(new Uri($"{Request.Scheme}://{Request.Host}{returnUrl}"), userCulture).AbsoluteUri;
