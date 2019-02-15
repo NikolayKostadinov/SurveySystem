@@ -1,7 +1,5 @@
-@using BmsSurvey.Common.Interfaces
-@using BmsSurvey.Domain.Entities.Identity
+﻿@using BmsSurvey.Domain.Entities.Identity
 @using Microsoft.AspNetCore.Identity
-
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
@@ -13,7 +11,7 @@
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@LayoutLocalizer.GetLocalizedHtmlString("HELLO") @UserManager.GetUserAsync(User).Result.FullName!</a>
         </li>
         <li class="nav-item">
-            <form class="form-inline navbar-right" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
+            <form class="form-inline navbar-right" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" method="post" id="logoutForm">
                 <button type="submit" class="nav-link btn btn-link text-dark">@LayoutLocalizer.GetLocalizedHtmlString("LOGOUT")</button>
             </form>
         </li>

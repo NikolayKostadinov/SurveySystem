@@ -8,14 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Administration\Data\**" />
+    <Content Remove="Areas\Administration\Data\**" />
+    <EmbeddedResource Remove="Areas\Administration\Data\**" />
+    <None Remove="Areas\Administration\Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="logs\log20190207.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Shared\Error.cshtml" />
     <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
@@ -48,7 +53,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\Administration\Data\" />
     <Folder Include="logs\" />
     <Folder Include="Views\Tests\" />
   </ItemGroup>

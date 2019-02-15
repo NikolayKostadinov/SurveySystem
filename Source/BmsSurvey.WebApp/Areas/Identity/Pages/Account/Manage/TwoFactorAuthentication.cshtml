@@ -1,23 +1,22 @@
 ﻿@page
-@using BmsSurvey.Common.Interfaces
-@using BmsSurvey.WebApp.Resources
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@using Microsoft.AspNetCore.Mvc.Razor.Internal
 @model BmsSurvey.WebApp.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel
 @{
     ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_TITLE");
 }
-@inject ILocalizationService<LayoutResource> LayoutLocalizer
-
-@Html.Partial("_StatusMessage", Model.StatusMessage)
+@inject ILocalizationService<LayoutResource> LayoutLocalize
+<partial name="_StatusMessage" model="Model.StatusMessage" />
 <h4>@ViewData["Title"]</h4>
 @if (Model.Is2FaEnabled)
 {
     if (Model.RecoveryCodesLeft == 0)
     {
-<div class="alert alert-danger">
-    <strong>@LayoutLocalizer.GetLocalizedHtmlString("2FA_NO_CODES_LEFT")</strong>
-    
-    <p>@LayoutLocalizer.GetLocalizedHtmlString("2FA_NO_CODES_LEFT_TEXT") <a asp-page="./GenerateRecoveryCodes">@LayoutLocalizer.GetLocalizedHtmlString("GENERATE")</a></p>
-</div>
+        <div class="alert alert-danger">
+            <strong>@LayoutLocalizer.GetLocalizedHtmlString("2FA_NO_CODES_LEFT")</strong>
+
+            <p>@LayoutLocalizer.GetLocalizedHtmlString("2FA_NO_CODES_LEFT_TEXT") <a asp-page="./GenerateRecoveryCodes">@LayoutLocalizer.GetLocalizedHtmlString("GENERATE")</a></p>
+        </div>
     }
     else if (Model.RecoveryCodesLeft == 1)
     {
@@ -40,19 +39,19 @@
             <button type="submit" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("FORGET_THIS_BROWSER")</button>
         </form>
     }
-        <a asp-page="./Disable2fa" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("DISABLE_2FA_BUTTON")</a>
-        <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("RESET_RECOVERY_CODES")</a>
+    <a asp-page="./Disable2fa" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("DISABLE_2FA_BUTTON")</a>
+    <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("RESET_RECOVERY_CODES")</a>
 }
 
-    <h5>@LayoutLocalizer.GetLocalizedHtmlString("AUTHENTICATOR_APP")</h5>
+<h5>@LayoutLocalizer.GetLocalizedHtmlString("AUTHENTICATOR_APP")</h5>
 @if (!Model.HasAuthenticator)
 {
-<a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_AUTHENTICATOR_APP")</a>
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_AUTHENTICATOR_APP")</a>
 }
 else
 {
-<a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_SETUP_APP")</a>
-<a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_RESET_APP")</a>
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_SETUP_APP")</a>
+    <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary">@LayoutLocalizer.GetLocalizedHtmlString("2FA_AUTHENTICATION_ADD_RESET_APP")</a>
 }
 
 @section Scripts {
