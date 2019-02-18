@@ -14,7 +14,7 @@ namespace BmsSurvey.WebApp.Controllers
     [Route("survey")]
     public class SurveyController : BaseController
     {
-        [HttpGet("{id}/{pagenum?}")]
+        [HttpGet("{id}/page/{pagenum?}")]
         public async Task<IActionResult> Index(int id, int pagenum = 1)
         {
             try
@@ -26,18 +26,6 @@ namespace BmsSurvey.WebApp.Controllers
             {
                 return View("SurveyNotFound", nfe.Key.ToString());
             }
-        }
-
-        [HttpGet("{id}/previouse/{current}")]
-        public async Task<IActionResult> Previous(int id, int current)
-        {
-            return RedirectToAction("Index", new { id = id, pagenum = current - 1 });
-        }
-
-        [HttpGet("{id}/next/{current}")]
-        public async Task<IActionResult> Next(int id, int current)
-        {
-            return RedirectToAction("Index", new { id = id, pagenum = current + 1 });
         }
     }
 }
