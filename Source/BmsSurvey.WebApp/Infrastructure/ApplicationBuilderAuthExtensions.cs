@@ -8,7 +8,8 @@
 
     public static class ApplicationBuilderAuthExtensions
     {
-        private static Role[] roles = {
+        //ToDo: fix roles!!!
+        private static readonly Role[] Roles = {
             new Role("Administrator","Administration of the system"),
             new Role("Employee", "Person who can register register his overtime!"),
             new Role("OvertimeReporter", "Person who can run all the reports!")
@@ -21,7 +22,7 @@
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
 
-                foreach (var role in roles)
+                foreach (var role in Roles)
                 {
                     if (!await roleManager.RoleExistsAsync(role.Name))
                     {
