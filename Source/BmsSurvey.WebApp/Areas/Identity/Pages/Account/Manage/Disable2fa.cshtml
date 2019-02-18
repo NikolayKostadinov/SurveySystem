@@ -1,6 +1,4 @@
 ﻿@page
-@using BmsSurvey.Common.Interfaces
-@using BmsSurvey.WebApp.Resources
 @model BmsSurvey.WebApp.Areas.Identity.Pages.Account.Manage.Disable2FaModel
 @{
     ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("DISABLE_2FA");
@@ -8,7 +6,8 @@
 }
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
 
-@await Html.PartialAsync("_StatusMessage", Model.StatusMessage).ConfigureAwait(false)
+<partial name="_StatusMessage" model="@Model.StatusMessage" />
+
 <h2>@ViewData["Title"]</h2>
 
 <div class="alert alert-warning" role="alert">

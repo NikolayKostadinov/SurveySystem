@@ -7,10 +7,11 @@
 }
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
 
-@Html.Partial("_StatusMessage", Model.StatusMessage)
+<partial name="_StatusMessage" model="@Model.StatusMessage" />
+
 @if (Model.CurrentLogins?.Count > 0)
 {
-<h4>@LayoutLocalizer.GetLocalizedHtmlString("EXTERNAL_LOGINS_REGISTERED_LOGIN")</h4>
+    <h4>@LayoutLocalizer.GetLocalizedHtmlString("EXTERNAL_LOGINS_REGISTERED_LOGIN")</h4>
     <table class="table">
         <tbody>
             @foreach (var login in Model.CurrentLogins)
