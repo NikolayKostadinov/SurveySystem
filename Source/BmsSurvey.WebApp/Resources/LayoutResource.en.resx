@@ -750,4 +750,75 @@
   <data name="PREVIOUSPAGE" xml:space="preserve">
     <value>Previous</value>
   </data>
+  <data name="EMAIL_PLEASE" xml:space="preserve">
+    <value>YOU WANT TO GIVE US A PROPOSAL?
+Leave us a valid email and our employee
+will contact you</value>
+  </data>
+  <data name="ENTER_EMAIL" xml:space="preserve">
+    <value>Please enter a valid email!</value>
+  </data>
+  <data name="THANK_YOU" xml:space="preserve">
+    <value>Thank You!</value>
+  </data>
+  <data name="YOUR_OPINION_MATTERS" xml:space="preserve">
+    <value>Your oppinion matters!</value>
+  </data>
+  <data name="ACTIVE_FROM" xml:space="preserve">
+    <value>Active From</value>
+  </data>
+  <data name="ACTIVE_TO" xml:space="preserve">
+    <value>Active To</value>
+  </data>
+  <data name="CREATE_FROM" xml:space="preserve">
+    <value>Created from</value>
+  </data>
+  <data name="CREATE_SURVEY" xml:space="preserve">
+    <value>Create survey</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DISPLAY_NUMBER" xml:space="preserve">
+    <value>Display Number</value>
+  </data>
+  <data name="FOR_THE_SURVEY" xml:space="preserve">
+    <value>for the survey</value>
+  </data>
+  <data name="IS_ACTIVE" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="LAST_MODIFIED_FROM" xml:space="preserve">
+    <value>Last modified from</value>
+  </data>
+  <data name="LAST_MODIFIED_ON" xml:space="preserve">
+    <value>Last modified on</value>
+  </data>
+  <data name="PAGE_SIZE" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="QUESTIONS" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="QUESTION_TYPE" xml:space="preserve">
+    <value>Question Type</value>
+  </data>
+  <data name="SURVEYS" xml:space="preserve">
+    <value>Surveys</value>
+  </data>
+  <data name="SURVEY_MANAGEMENT" xml:space="preserve">
+    <value>Survay management</value>
+  </data>
+  <data name="SURVEY_QUESTION_MANAGEMENT" xml:space="preserve">
+    <value>Questuions management</value>
+  </data>
+  <data name="TEXT" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="CONFIRM_COOKIES" xml:space="preserve">
+    <value>Please confirm using of cookies!</value>
+  </data>
 </root>

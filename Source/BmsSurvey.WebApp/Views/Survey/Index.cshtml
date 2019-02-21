@@ -1,6 +1,5 @@
 ﻿@using BmsSurvey.Application.Surveys.Models
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
-
 @model SurveyViewModel
 
 @{
@@ -16,30 +15,24 @@
         <vc:question model=@question></vc:question>
     }
 
-    <nav aria-label="Page navigation">
-        <ul class="pagination ">
-            <li class="page-item @if (Model.PageNumber == 1)
-                                 {
-                                     @:disabled
-                                 }">
-                <a class="page-link" asp-action="Index" asp-route-id="@Model.Id"
-                   asp-route-pagenum="@(Model.PageNumber - 1)"
-                   aria-label="Previous">
-                    <i class="fas fa-chevron-left"></i>
-                    @LayoutLocalizer.GetLocalizedHtmlString("PREVIOUSPAGE")
-                </a>
-            </li>
-            <li class="page-item @if (Model.IsLastPage)
-                                 {
-                                     @:disabled
-                                 }">
-                <a class="page-link" asp-action="Index" asp-route-id="@Model.Id"
-                   asp-route-pagenum="@(Model.PageNumber + 1)"
-                   aria-label="Next">
-                    @LayoutLocalizer.GetLocalizedHtmlString("NEXTPAGE")
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    @if (!Model.IsLastPage)
+    {
+        <partial name="_SurveyNavigation" model="Model"/>
+    }
+    else
+    {
+        <form asp-action="Save" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group text-center">
+                <label class="align-self-center" for="Email"><pre class="text-center lead">@LayoutLocalizer.GetLocalizedHtmlString("EMAIL_PLEASE")</pre></label>
+                <input type="email" class="form-control" name="Email" id="Email" placeholder="@LayoutLocalizer.GetLocalizedHtmlString("ENTER_EMAIL")">
+            </div>
+            <div class="row">
+                <div class="col-sm-6 d-flex align-items-center"><partial name="_SurveyNavigation" model="Model" /></div>
+                <div class="col-sm-6"><button type="submit" class="btn btn-primary float-right bounce-top">@LayoutLocalizer.GetLocalizedHtmlString("SAVE")</button></div>
+            </div>
+        </form>
+    }
+
 </div>

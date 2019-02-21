@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace BmsSurvey.WebApp.Models
 {
     using System.Reflection.Metadata;
+    using Application.Answers.Models;
     using Application.Questions.Models;
     using Application.Surveys.Models;
     using Infrastructure.Extensions;
@@ -29,9 +30,9 @@ namespace BmsSurvey.WebApp.Models
         [JsonIgnore]
         public ISession Session { get; set; }
 
-        public override void AddQuestion(QuestionSimpleViewModel question)
+        public override void AddAnswer(AnswerViewModel answer)
         {
-            base.AddQuestion(question);
+            base.AddAnswer(answer);
             Session.SetJson(SessionKey, this);
         }
 
@@ -39,6 +40,12 @@ namespace BmsSurvey.WebApp.Models
         {
             base.SetAnswer(questionId, value);
             Session.SetJson(SessionKey, this);
+        }
+
+        public override void ClearAnswers()
+        {
+            base.ClearAnswers();
+            Session.Remove(SessionKey);
         }
     }
 }

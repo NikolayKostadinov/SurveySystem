@@ -3,50 +3,62 @@
 @{
     var uniqueId = Guid.NewGuid().ToString("N");
 }
-<select id="@uniqueId"
-        asp-for="RatingControlValue"
-        asp-items="@Model.SelectedListItems"
-        name="@Model.Name"></select>
-
+@if (Model.QuestionType == QuestionType.FreeText)
+{
+    <textarea id="@uniqueId"
+              asp-for="RatingControlValue"
+              name="@Model.Name"></textarea>
+}
+else
+{
+    <select id="@uniqueId"
+            asp-for="RatingControlValue"
+            asp-items="@Model.SelectedListItems"
+            name="@Model.Name"></select>
+}
 <script defer>
     $(document).ready(function() {
-        $('#@uniqueId').barrating('show',
-            {
-                theme: '@Model.RatingControlType',
-                name: '@Model.Name',
-                @if (Model.QuestionType == QuestionType.YesOrNo)
+
+        let freeAnswer = $('textarea#@uniqueId');
+        if (freeAnswer.length) {
+            $(freeAnswer[0]).blur(sendData);
+        } else {
+
+            $('#@uniqueId').barrating('show',
                 {
-                    @:showValues: true,
-                    @:showSelectedRating: false,
-                }
-                onSelect: function(value) {
-                    let frm = $(event.target).closest('form');
-                    if (frm.length) {
-                        let form = $(frm[0]);
-                        let url = form.attr("action");
-                        let type = form.attr("method");
-                        let data = form.serialize();
-                        $.ajax({
-                            type: type,
-                            url: url,
-                            data: data
-                        }).done(function (data) {
-                            let message='';
-                            data.forEach(function (value) {
-                                message += `Question ${value.Id} -> ${value.Value}\n`;
-                            });
-
-                            alert(message);
-
-                            //alert('Selected rating: "' +
-                            //    data.Value +
-                            //    '" on selector name "' +
-                            //    data.QuestionId +
-                            //    '"');
-                        });
+                    theme: '@Model.RatingControlType',
+                    name: '@Model.Name',
+                    @if (Model.QuestionType == QuestionType.YesOrNo)
+                    {
+                        @:showValues: true,
+                        @:showSelectedRating: false,
                     }
-                }
-            });
+                    onSelect: sendData
+                });
+        }
+
+        function sendData() {
+            let frm = $(event.target).closest('form');
+            if (frm.length) {
+                let form = $(frm[0]);
+                let url = form.attr("action");
+                let type = form.attr("method");
+                let data = form.serialize();
+                $.ajax({
+                    type: type,
+                    url: url,
+                    data: data
+                }).done(function(data) {
+                    form.find('.answer-checked').removeAttr('hidden');
+                    let message = '';
+                    data.forEach(function(value) {
+                        message += `Question ${value.QuestionId} -> ${value.Value}\n`;
+                    });
+
+                    console.log(message);
+                });
+            }
+        }
     });
 </script>
 

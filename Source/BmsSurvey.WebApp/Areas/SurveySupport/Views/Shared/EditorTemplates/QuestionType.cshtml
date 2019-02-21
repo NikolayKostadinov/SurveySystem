@@ -1,0 +1,36 @@
+﻿@using BmsSurvey.Domain.Entities
+@{
+    var values = new List<SelectListItem>()
+    {
+        new SelectListItem()
+        {
+            Text = QuestionType.Rate1to5Stars.ToString(),
+            Value = ((int) QuestionType.Rate1to5Stars).ToString()
+        },
+        new SelectListItem()
+        {
+            Text = QuestionType.LowMidHigh.ToString(),
+            Value = ((int) QuestionType.LowMidHigh).ToString()
+        },
+        new SelectListItem()
+        {
+            Text = QuestionType.YesOrNo.ToString(),
+            Value = ((int) QuestionType.YesOrNo).ToString()
+        },
+        new SelectListItem()
+        {
+            Text = QuestionType.FreeText.ToString(),
+            Value = ((int) QuestionType.FreeText).ToString()
+        }
+    };
+}
+@model BmsSurvey.Domain.Entities.QuestionType
+@(Html.Kendo().DropDownListFor(m=>m)
+      .DataTextField("Text")
+      .DataValueField("Value")
+      .BindTo(values)
+      .Value("0")
+      .HtmlAttributes(new {style = "width: 100%"})
+      .Template("<div style=\"background: url('" + Url.Content("~/images/question_types/") + "#:data.Text#.png') no-repeat center; background-size: contain; height: 35px; width: 100%; display: inline-block\" ></div>")
+      .ValueTemplate("<div style=\"background: url('"+ Url.Content("~/images/question_types/") + "#:data.Text#.png') no-repeat center; background-size: contain; height: 30px; width: 100%;display: inline-block\" ></div>")
+)

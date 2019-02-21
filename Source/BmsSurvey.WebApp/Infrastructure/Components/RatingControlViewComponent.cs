@@ -13,6 +13,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Components
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using Common.Extensions;
     using Domain.Entities;
     using Interfaces;
     using Microsoft.AspNetCore.Mvc;
@@ -33,45 +34,45 @@ namespace BmsSurvey.WebApp.Infrastructure.Components
 
             ratingControlOptions = new RatingControlOptions
             {
-                RatingControlInitialValueRate1to5Stars = config["RatingControlInitialValues:Rate1to5Stars"],
-                RatingControlInitialValueYesOrNo = config["RatingControlInitialValues:YesOrNo"],
-                RatingControlValueLowMidHigh = config["RatingControlInitialValues:LowMidHigh"]
+                RatingControlInitialValueRate1To5Stars = config.GetValue<int>("RatingControlInitialValues:Rate1to5Stars"),
+                RatingControlInitialValueYesOrNo = config.GetValue<bool>("RatingControlInitialValues:YesOrNo"),
+                RatingControlValueLowMidHigh = config.GetValue<int>("RatingControlInitialValues:LowMidHigh")
             };
         }
 
         public IViewComponentResult Invoke(QuestionType ratingControlType, string name, string value = null)
         {
-            var ratingControlValues = new List<string>();
-            var ratingControlInitialValue = "";
+            var ratingControlValues = new Dictionary<string, object>();
+            object ratingControlInitialValue = "";
 
             if (ratingControlType == QuestionType.LowMidHigh)
             //if (ratingControlType == "bars-pill")
             {
-                ratingControlOptions.RatingControlValuesLowMidHigh.ForEach(a => ratingControlValues.Add(a));
+                ratingControlOptions.RatingControlTagsLowMidHigh.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
                 ratingControlInitialValue = ratingControlOptions.RatingControlValueLowMidHigh;
             }
             else if (ratingControlType == QuestionType.YesOrNo)
             //else if (ratingControlType == "bars-1to10")
             {
-                ratingControlOptions.RatingControlValuesYesOrNo.ForEach(a => ratingControlValues.Add(a));
+                ratingControlOptions.RatingControlTagsYesOrNo.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
                 ratingControlInitialValue = ratingControlOptions.RatingControlInitialValueYesOrNo;
             }
             else if (ratingControlType == QuestionType.Rate1to5Stars)
             //else if (ratingControlType == "css-stars")
             {
-                ratingControlOptions.RatingControlValuesRate1to5Stars.ForEach(a => ratingControlValues.Add(a));
+                ratingControlOptions.RatingControlTagsRate1To5Stars.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
 
-                ratingControlInitialValue = ratingControlOptions.RatingControlInitialValueRate1to5Stars;
+                ratingControlInitialValue = ratingControlOptions.RatingControlInitialValueRate1To5Stars;
             }
 
             ratingControlInitialValue = string.IsNullOrEmpty(value) ? ratingControlInitialValue : value;
 
             var ratings = ratingControlValues
-                .Select(myValue => new SelectListItem
+                .Select(position => new SelectListItem
                 {
-                    Value = myValue,
-                    Text = myValue,
-                    Selected = myValue.Equals(ratingControlInitialValue)
+                    Value = position.Value.ToString(),
+                    Text = position.Key,
+                    Selected = position.Value.ToString().Equals(ratingControlInitialValue)
                 }).ToList();
 
 
@@ -79,7 +80,8 @@ namespace BmsSurvey.WebApp.Infrastructure.Components
             {
                 SelectedListItems = ratings,
                 QuestionType = ratingControlType,
-                Name = name
+                Name = name,
+                RatingControlValue = value
             };
 
             return View(ratingControlModel);

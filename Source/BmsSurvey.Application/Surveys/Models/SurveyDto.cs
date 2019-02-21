@@ -6,6 +6,7 @@ namespace BmsSurvey.Application.Surveys.Models
 {
     using System.Data;
     using System.Linq;
+    using Answers.Models;
     using Exceptions;
     using Microsoft.AspNetCore.Http;
     using Newtonsoft.Json;
@@ -14,33 +15,37 @@ namespace BmsSurvey.Application.Surveys.Models
 
     public class SurveyDto : ISurveyDto
     {
-        private readonly IDictionary<int, QuestionSimpleViewModel> questions;
+        private readonly IDictionary<int, AnswerViewModel> answers;
 
         public SurveyDto()
         {
-            this.questions = new Dictionary<int, QuestionSimpleViewModel>();
+            this.answers = new Dictionary<int, AnswerViewModel>();
         }
 
-        internal SurveyDto(IEnumerable<QuestionSimpleViewModel> questions)
+        internal SurveyDto(IEnumerable<AnswerViewModel> answers)
         {
-            this.questions = questions.ToDictionary(q => q.Id);
+            this.answers = answers.ToDictionary(q => q.QuestionId);
         }
 
-        public virtual void AddQuestion(QuestionSimpleViewModel question)
+        public virtual void AddAnswer(AnswerViewModel answer)
         {
-            this.questions[question.Id] = question;
+            this.answers[answer.QuestionId] = answer;
         }
 
         public virtual void SetAnswer(int questionId, string value)
         {
-            if (!this.questions.ContainsKey(questionId))
+            if (!this.answers.ContainsKey(questionId))
             {
                 throw new KeyNotFoundException("Question with the key \"{questionId}\" Not found!");
             }
 
-            this.questions[questionId].Value = value;
+            this.answers[questionId].Value = value;
         }
 
-        public virtual IDictionary<int, QuestionSimpleViewModel> Questions => this.questions;
+        public virtual IDictionary<int, AnswerViewModel> Answers => this.answers;
+        public virtual void ClearAnswers()
+        {
+            this.Answers.Clear();
+        }
     }
 }

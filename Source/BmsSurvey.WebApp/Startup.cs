@@ -32,6 +32,7 @@ namespace BmsSurvey.WebApp
     using Infrastructure;
     using Infrastructure.Automapper;
     using Infrastructure.Interfaces;
+    using Infrastructure.Middleware;
     using Infrastructure.Services;
     using MediatR;
     using MediatR.Pipeline;
@@ -84,7 +85,9 @@ namespace BmsSurvey.WebApp
             // Add Application services.
             services.AddTransient<INotificationService, NotificationService>();
             services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
-            services.AddScoped<IStatusFactory, StatusFactory>();
+            services.AddSingleton<IStatusFactory, StatusFactory>();
+            services.AddSingleton<IAnswerFactory, AnswerFactory>();
+            services.AddSingleton<IIpProvider, IpProvider>();
             services.AddSingleton<ISupportedCulturesService>(new SupportedCulturesService(GlobalConstants.DefaultCultureId));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICurrentPrincipalProvider, CurrentPrincipalProvider>();
@@ -218,15 +221,16 @@ namespace BmsSurvey.WebApp
             app.UseRequestLocalization();
 
             app.UseSession();
+            //app.UseMiddleware<ClientAddressMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                    name: "areas",
-                   template: "{culture=bg}/{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                   template: "{culture=bg}/{area:exists}/{controller=Home}/{action}/{id?}"
                );
 
                 routes.MapRoute(
-                    name: "LacalizedDefault",
+                    name: "LocalizedDefault",
                     template: "{culture=bg}/{controller=Home}/{action=Index}/{id?}");
             });
         }

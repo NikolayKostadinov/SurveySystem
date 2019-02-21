@@ -13,10 +13,12 @@
     <link href="~/lib/jquery-bar-rating/themes/css-stars.css" rel="stylesheet" />
     <link href="~/lib/jquery-bar-rating/themes/fontawesome-stars-o.css" rel="stylesheet" />
     <link href="~/lib/jquery-bar-rating/themes/fontawesome-stars.css" rel="stylesheet" />
+    @await RenderSectionAsync("Styles", false).ConfigureAwait(false)
 }
 
 @RenderBody()
 
 @section Scripts{
     <script src="~/lib/jquery-bar-rating/jquery.barrating.min.js"></script>
+    @await RenderSectionAsync("Scripts", false).ConfigureAwait(false)
 }

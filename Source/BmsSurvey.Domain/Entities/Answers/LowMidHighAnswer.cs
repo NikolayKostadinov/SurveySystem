@@ -14,7 +14,7 @@ namespace BmsSurvey.Domain.Entities.Answers
             get => this.value;
             set
             {
-                if (0 >= value || value > 3)
+                if (0 > value || value > 3)
                 {
                     throw new ArgumentOutOfRangeException(nameof(Value)
                         , $"The argument \"{nameof(Value)}\" must be between 0 and 2 but is {Value}");

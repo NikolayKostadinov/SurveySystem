@@ -15,7 +15,7 @@ namespace BmsSurvey.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
+                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -72,6 +72,41 @@ namespace BmsSurvey.Persistence.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("BmsSurvey.Domain.Entities.CompletedSurvey", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedFrom");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("DeletedFrom");
+
+                    b.Property<DateTime?>("DeletedOn");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("IpAddress")
+                        .IsRequired();
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("ModifiedFrom");
+
+                    b.Property<DateTime?>("ModifiedOn");
+
+                    b.Property<int>("SurveyId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SurveyId", "IpAddress")
+                        .IsUnique();
+
+                    b.ToTable("CompletedSurveys");
                 });
 
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Customer", b =>
@@ -709,6 +744,16 @@ namespace BmsSurvey.Persistence.Migrations
                     b.ToTable("UserTokens");
                 });
 
+            modelBuilder.Entity("BmsSurvey.Domain.Entities.Answers.FreeTextAnswer", b =>
+                {
+                    b.HasBaseType("BmsSurvey.Domain.Abstract.Answer");
+
+                    b.Property<string>("Value")
+                        .HasColumnName("FreeTextAnswerAnswer_Value");
+
+                    b.HasDiscriminator().HasValue(3);
+                });
+
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Answers.LowMidHighAnswer", b =>
                 {
                     b.HasBaseType("BmsSurvey.Domain.Abstract.Answer");
@@ -719,7 +764,7 @@ namespace BmsSurvey.Persistence.Migrations
                     b.HasDiscriminator().HasValue(2);
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Answers.Rate1to5StarsAnswer", b =>
+            modelBuilder.Entity("BmsSurvey.Domain.Entities.Answers.Rate1To5StarsAnswer", b =>
                 {
                     b.HasBaseType("BmsSurvey.Domain.Abstract.Answer");
 
@@ -746,6 +791,14 @@ namespace BmsSurvey.Persistence.Migrations
                         .HasForeignKey("QuestionId")
                         .HasConstraintName("FK_Question_Answer")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("BmsSurvey.Domain.Entities.CompletedSurvey", b =>
+                {
+                    b.HasOne("BmsSurvey.Domain.Entities.Survey", "Survey")
+                        .WithMany("CompletedSurveys")
+                        .HasForeignKey("SurveyId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Employee", b =>

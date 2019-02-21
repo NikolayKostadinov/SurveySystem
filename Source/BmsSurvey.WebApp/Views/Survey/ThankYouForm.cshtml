@@ -1,0 +1,18 @@
+﻿@model object
+@inject ILocalizationService<LayoutResource> LocalizationService
+
+@{
+    ViewData["Title"] = LocalizationService.GetLocalizedHtmlString("THANK_YOU");
+}
+
+@section Styles {
+    <link href="~/css/widthest.css" rel="stylesheet" />
+}
+
+<div class="row banner align-items-center">
+    <div class="container">
+        <h1 class="display-2 text-center text-light">@ViewData["Title"]</h1>
+        <h2 class="display-4 text-center text-light">@LocalizationService.GetLocalizedHtmlString("YOUR_OPINION_MATTERS")</h2>
+    </div>
+</div>
+

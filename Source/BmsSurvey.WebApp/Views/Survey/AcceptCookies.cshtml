@@ -1,0 +1,22 @@
+﻿@inject ILocalizationService<LayoutResource> LocalizationService;
+@model string
+@{
+    Layout = "_Layout";
+}
+<div class="row align-items-center text-center w-100 justify-content-center" style="height: 600px;">
+    <div class="alert alert-danger" role="alert">
+        <h3 class="display-3 text-danger">@LocalizationService.GetLocalizedHtmlString("CONFIRM_COOKIES")</h3>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(function() {
+            $("#cookieConsent button[data-cookie-string]").click(function() {
+                    window.location.href = "@Model";
+                }
+            );
+        })
+    </script>
+}

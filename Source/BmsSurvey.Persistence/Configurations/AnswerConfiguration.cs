@@ -18,9 +18,10 @@ namespace BmsSurvey.Persistence.Configurations
 
             builder.ToTable("Answers")
                 .HasDiscriminator<int>("AnswerType")
-                .HasValue<Rate1to5StarsAnswer>(0)
+                .HasValue<Rate1To5StarsAnswer>(0)
                 .HasValue<YesOrNoAnswer>(1)
-                .HasValue<LowMidHighAnswer>(2);
+                .HasValue<LowMidHighAnswer>(2)
+                .HasValue<FreeTextAnswer>(3);
         }
     }
 
@@ -40,11 +41,19 @@ namespace BmsSurvey.Persistence.Configurations
         }
     }
 
-    public class Rate1to5StarsAnswerConfiguration : IEntityTypeConfiguration<Rate1to5StarsAnswer>
+    public class Rate1Тo5StarsAnswerConfiguration : IEntityTypeConfiguration<Rate1To5StarsAnswer>
     {
-        public void Configure(EntityTypeBuilder<Rate1to5StarsAnswer> builder)
+        public void Configure(EntityTypeBuilder<Rate1To5StarsAnswer> builder)
         {
             builder.Property(a => a.Value).HasColumnName("Rate1to5StarsAnswer_Value");
+        }
+    }
+
+    public class FreeTextAnswerConfiguration : IEntityTypeConfiguration<FreeTextAnswer>
+    {
+        public void Configure(EntityTypeBuilder<FreeTextAnswer> builder)
+        {
+            builder.Property(a => a.Value).HasColumnName("FreeTextAnswerAnswer_Value");
         }
     }
 }

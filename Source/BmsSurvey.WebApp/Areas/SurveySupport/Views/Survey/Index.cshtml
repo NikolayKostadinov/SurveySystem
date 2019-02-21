@@ -1,0 +1,97 @@
+﻿@using BmsSurvey.Application.Surveys.Models
+@using Microsoft.AspNetCore.Antiforgery
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@inject IAntiforgery AntiForgery
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("SURVEY_MANAGEMENT");
+}
+
+<h1 class="display-3">@ViewData["Title"]</h1>
+
+@(Html.Kendo()
+              .Grid<SurveyListRowViewModel>()
+              .Name("surveys-grid")
+              .ToolBar(tb => { tb.ClientTemplateId("GridToolbarTemplate"); })
+              .Columns(col =>
+              {
+                  col.Bound(m => m.IsActive).Width(50)
+                      .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
+                  col.Bound(m => m.Id).Width(50);
+                  col.Bound(m => m.Title).EditorTemplateName("String");
+                  col.Bound(m => m.Description);
+                  col.Bound(m => m.PageSize);
+                  col.Bound(m => m.ActiveFrom).Format("{0:dd.MM.yyyy}");
+                  col.Bound(m => m.ActiveTo).Format("{0:dd.MM.yyyy}");
+                  col.Bound(m => m.CreatedFrom);
+                  col.Bound(m => m.ModifiedFrom);
+                  col.Bound(m => m.ModifiedOn).Format("{0:dd.MM.yyyy}");
+                  col.Command(c =>
+                  {
+                      c.Edit().Text(LayoutLocalizer.GetLocalizedHtmlString("EDIT"));
+                      c.Destroy().Text(LayoutLocalizer.GetLocalizedHtmlString("DELETE"));
+                      c.Custom("questions").IconClass("k-icon k-i-grid-layout").Text(LayoutLocalizer.GetLocalizedHtmlString("QUESTIONS")).Click("questions");
+                  }).Width(120);
+              })
+                    .Scrollable()
+                    .Sortable()
+                    .Filterable()
+                    .Editable(ed => ed.Mode(GridEditMode.InLine))
+                    .Pageable(pageable => pageable
+                        .Refresh(true)
+                        .PageSizes(true)
+                        .ButtonCount(5))
+                        .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .Model(u =>
+                        {
+                            u.Id(m => m.Id);
+                            u.Field(m => m.Title);
+                            u.Field(m => m.Id).Editable(false);
+                            u.Field(m => m.IsActive).Editable(false);
+                            u.Field(m => m.CreatedFrom).Editable(false);
+                            u.Field(m => m.ModifiedFrom).Editable(false);
+                            u.Field(m => m.ModifiedOn).Editable(false);
+
+                        })
+                        .PageSize(20)
+                        .Read(read => read.Action("GetAll", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                        .Destroy(delete => delete.Action("Delete", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                        .Update(update => update.Action("Update", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                        .Events(ev =>
+                        {
+                            ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
+                        })
+                    )
+                    .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+)
+
+<script id="GridToolbarTemplate" type="text/x-kendo-template">
+    <div class="refreshBtnContainer">
+        <a href='@Url.Action("Create")' class="btn btn-secondary">
+            @Html.Raw(LayoutLocalizer.GetLocalizedHtmlString("CREATE_SURVEY"))
+        </a>
+    </div>
+</script>
+
+@section Scripts
+{
+    <script>
+
+        function refreshAfterChange() {
+            let grid = $('[data-role=grid]').data('kendoGrid');
+            if (grid) {
+                grid.dataSource.data([]);
+                grid.dataSource.read();
+            }
+        }
+
+        function questions(e) {
+            e.preventDefault();
+            let row = this.dataItem($(e.currentTarget).closest("tr"));
+            if (row) {
+                window.location.href = '@Url.Action("Index", "Questions",new{area="SurveySupport"})' + `/${row.Id}`;
+            }
+        }
+    </script>
+}
+

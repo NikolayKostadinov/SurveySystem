@@ -18,6 +18,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Services
                 {QuestionType.Rate1to5Stars, "css-stars"},
                 {QuestionType.LowMidHigh, "bars-movie"},
                 {QuestionType.YesOrNo, "bars-yes-no"},
+                {QuestionType.FreeText, null},
             };
 
         private IDictionary<QuestionType, string> ratingTypes;

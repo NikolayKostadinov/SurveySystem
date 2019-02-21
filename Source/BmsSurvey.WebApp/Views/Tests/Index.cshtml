@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpAccessor;
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>@($"Local IP: {HttpAccessor.HttpContext.Connection.LocalIpAddress.MapToIPv4()}")</h2>
+<h2>@($"Remote IP: {HttpAccessor.HttpContext.Connection.RemoteIpAddress.MapToIPv4()}")</h2>

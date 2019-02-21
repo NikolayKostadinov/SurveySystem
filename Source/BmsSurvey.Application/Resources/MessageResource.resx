@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ACTIVE_TO_GREATER_THAN_ACTIVE_FROM" xml:space="preserve">
+    <value>Active to must be after active from!</value>
+  </data>
   <data name="CANNOT_ERASE_YOUR_SELF" xml:space="preserve">
     <value>You can't delete your account!</value>
   </data>
@@ -129,8 +132,14 @@
   <data name="FAILED_CREATE_STATEMENT" xml:space="preserve">
     <value>Failed operation!</value>
   </data>
+  <data name="GREATER_THAN" xml:space="preserve">
+    <value>Value must be greater than {0}!</value>
+  </data>
   <data name="RECORD_NOT_FOUND" xml:space="preserve">
     <value>The record not found!</value>
+  </data>
+  <data name="REQUIRED" xml:space="preserve">
+    <value>Required field!</value>
   </data>
   <data name="TABNUMBER_INVALID_FORMAT" xml:space="preserve">
     <value>The Employer Id must be 5 digit long!</value>

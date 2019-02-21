@@ -6,26 +6,26 @@
     {
         public RatingControlOptions()
         {
-            RatingControlValuesRate1to5Stars = new List<string> { "1", "2", "3", "4", "5" };
-            RatingControlInitialValueRate1to5Stars = "1";
+            RatingControlTagsRate1To5Stars = new Dictionary<string, int> { { "1", 1 }, { "2", 2 }, { "3", 3 }, { "4", 4 }, { "5", 5 } };
+            RatingControlInitialValueRate1To5Stars = 1;
 
-            RatingControlValuesYesOrNo = new List<string> { "Да", "Не" };
-            RatingControlInitialValueYesOrNo = "Да";
-            
-            RatingControlValuesLowMidHigh = new List<string> { "Ниско", "Средно", "Високо"};
-            RatingControlValueLowMidHigh = "Високо";
+            RatingControlTagsYesOrNo = new Dictionary<string, bool> { { "Да", true }, { "Не", false } };
+            RatingControlInitialValueYesOrNo = true;
+
+            RatingControlTagsLowMidHigh = new Dictionary<string, int> { { "Ниско", 0 }, { "Средно", 1 }, { "Високо", 2 } };
+            RatingControlValueLowMidHigh = 2;
 
         }
 
         //Rate1to5Stars, YesOrNo, LowMidHigh
-        public List<string> RatingControlValuesRate1to5Stars { get; set; }
-        public string RatingControlInitialValueRate1to5Stars { get; set; }
+        public Dictionary<string, int> RatingControlTagsRate1To5Stars { get; set; }
+        public int RatingControlInitialValueRate1To5Stars { get; set; }
 
-        public List<string> RatingControlValuesYesOrNo { get; set; }
-        public string RatingControlInitialValueYesOrNo { get; set; }
+        public Dictionary<string, bool> RatingControlTagsYesOrNo { get; set; }
+        public bool RatingControlInitialValueYesOrNo { get; set; }
 
-        public List<string> RatingControlValuesLowMidHigh { get; set; }
-        public string RatingControlValueLowMidHigh { get; set; }
+        public Dictionary<string, int> RatingControlTagsLowMidHigh { get; set; }
+        public int RatingControlValueLowMidHigh { get; set; }
 
     }
 }

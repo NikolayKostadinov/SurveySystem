@@ -36,7 +36,9 @@ namespace BmsSurvey.Persistence
     {
 
         private readonly IPersister persister;
+        private string userName;
         private readonly ICurrentPrincipalProvider principalProvider;
+
         public BmsSurveyDbContext(DbContextOptions<BmsSurveyDbContext> options, IPersister persister, ICurrentPrincipalProvider principalProviderParam)
             : base(options)
         {
@@ -49,6 +51,7 @@ namespace BmsSurvey.Persistence
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<CompletedSurvey> CompletedSurveys { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 
@@ -89,12 +92,26 @@ namespace BmsSurvey.Persistence
         }
 
         public DbContext DbContext => this;
+
+        public int SaveChanges(string userName)
+        {
+            this.userName = userName;
+            return this.SaveChanges();
+        }
+
         public override int SaveChanges()
         {
-            var currentPrincipal = this.principalProvider.GetCurrentPrincipal();
-            var userName = currentPrincipal?.Identity.Name??"System Change";
+            if (string.IsNullOrEmpty(this.userName))
+            {
+                this.GetCurrentUser();
+            }
             persister.PrepareSaveChanges(this, userName);
             return base.SaveChanges();
+        }
+
+        public Task<int> SaveChangesAsync(string userName, CancellationToken cancellationToken = new CancellationToken())
+        {
+            return Task.Factory.StartNew(() => this.SaveChanges(userName));
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -143,6 +160,12 @@ namespace BmsSurvey.Persistence
                 });
 
             this.BulkInsert(entities);
+        }
+
+        private void GetCurrentUser()
+        {
+            var currentPrincipal = this.principalProvider.GetCurrentPrincipal();
+            this.userName = currentPrincipal?.Identity.Name ?? "System Change";
         }
 
     }

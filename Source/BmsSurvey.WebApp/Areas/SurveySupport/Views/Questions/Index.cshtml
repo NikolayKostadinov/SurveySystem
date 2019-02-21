@@ -1,0 +1,87 @@
+﻿@using BmsSurvey.Application.Questions.Models
+@using Microsoft.AspNetCore.Antiforgery
+@model BmsSurvey.Application.Surveys.Models.SurveySimpleViewModel;
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@inject IAntiforgery AntiForgery
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("SURVEY_QUESTION_MANAGEMENT");
+}
+
+<blockquote class="blockquote">
+    <h2 class="display-3">@ViewData["Title"]</h2>
+    <h3 class="blockquote-footer">@LayoutLocalizer.GetLocalizedHtmlString("FOR_THE_SURVEY") "<cite title="Source Title">@Model.Title</cite>"</h3>
+</blockquote>
+
+<input type="hidden" id="surveyId" value="@Model.Id" />
+
+@(Html.Kendo()
+              .Grid<QuestionListViewModel>()
+              .Name("questions-grid")
+              .ToolBar(tb => { tb.Create(); })
+              .Columns(col =>
+              {
+              //col.Bound(m => m.IsActive).Width(50)
+              //    .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
+              col.Bound(m => m.Id).Width(50);
+              col.Bound(m => m.DisplayNumber).Width(50);
+              col.Bound(m => m.Text).Width(600);
+              col.Bound(m => m.QuestionType).EditorTemplateName("QuestionType")
+                  .ClientTemplate("<div style=\"background: url('/images/question_types/#:QuestionTypeStr#.png') no-repeat center; background-size: contain; height: 35px; width: 100%;\" ></div>");
+                col.Bound(m => m.CreatedFrom);
+                col.Bound(m => m.ModifiedFrom);
+                col.Bound(m => m.ModifiedOn).Format("{0:dd.MM.yyyy}");
+                col.Command(c =>
+                {
+                    c.Edit();
+                    c.Destroy();
+                });
+            })
+              .Scrollable()
+              .Sortable()
+              .Filterable()
+              .Editable(ed => ed.Mode(GridEditMode.InLine))
+              .Resizable(rs=>rs.Columns(true))
+              .Pageable(pageable => pageable
+                  .Refresh(true)
+                  .PageSizes(true)
+                  .ButtonCount(5))
+              .DataSource(dataSource => dataSource
+                  .Ajax()
+                  .Model(u =>
+                  {
+                u.Id(m => m.Id);
+                u.Field(m => m.Id).Editable(false);
+                u.Field(m => m.CreatedFrom).Editable(false);
+                u.Field(m => m.ModifiedFrom).Editable(false);
+                u.Field(m => m.ModifiedOn).Editable(false);
+            })
+                  .PageSize(20)
+                  .Read(read => read.Action("GetAll", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+                  .Create(create => create.Action("Create", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+                  .Destroy(delete => delete.Action("Delete", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+                  .Update(update => update.Action("Update", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+                  .Events(ev => { ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange"); })
+              )
+              .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+)
+
+@section Scripts
+    {
+    <script>
+
+        function refreshAfterChange() {
+            const grid = $('[data-role=grid]').data('kendoGrid');
+            if (grid) {
+                grid.dataSource.data([]);
+                grid.dataSource.read();
+            }
+        }
+
+        function getQuestionData() {
+            let result = getAntiforgeryToken();
+            result.SurveyId = $('#surveyId').val();
+            return result;
+        }
+
+    </script>
+}

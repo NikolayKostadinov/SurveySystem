@@ -9,7 +9,7 @@ namespace BmsSurvey.Application.Surveys.Models
     using Interfaces.Mapping;
     using Questions.Models;
 
-    public class SurveyViewModel:IMapFrom<Survey>,IHaveCustomMapping
+    public class SurveyViewModel : IMapFrom<Survey>, IHaveCustomMapping
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -17,6 +17,10 @@ namespace BmsSurvey.Application.Surveys.Models
         public int PageNumber { get; set; }
         public bool IsLastPage { get; set; }
         public IEnumerable<QuestionViewModel> Questions { get; set; }
+        public bool IsActive { get; set; }
+        public string CreatedFrom { get; set; }
+        public string ModifiedFrom { get; set; }
+
         public void CreateMappings(Profile configuration)
         {
             configuration.CreateMap<Survey, SurveyViewModel>()

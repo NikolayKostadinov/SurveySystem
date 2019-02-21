@@ -23,6 +23,7 @@ namespace BmsSurvey.Domain.Entities
         public int PageSize { get; set; }
 
         public ICollection<Question> Questions { get; set; }
+        public ICollection<CompletedSurvey> CompletedSurveys{ get; set; }
 
         public DateTime ActiveFrom { get; set; }
         public DateTime ActiveTo { get; set; }

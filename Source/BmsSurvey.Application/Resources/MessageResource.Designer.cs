@@ -61,6 +61,15 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active to must be after active from!.
+        /// </summary>
+        public static string ACTIVE_TO_GREATER_THAN_ACTIVE_FROM {
+            get {
+                return ResourceManager.GetString("ACTIVE_TO_GREATER_THAN_ACTIVE_FROM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can&apos;t delete your account!.
         /// </summary>
         public static string CANNOT_ERASE_YOUR_SELF {
@@ -97,11 +106,29 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value must be greater than {0}!.
+        /// </summary>
+        public static string GREATER_THAN {
+            get {
+                return ResourceManager.GetString("GREATER_THAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The record not found!.
         /// </summary>
         public static string RECORD_NOT_FOUND {
             get {
                 return ResourceManager.GetString("RECORD_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field!.
+        /// </summary>
+        public static string REQUIRED {
+            get {
+                return ResourceManager.GetString("REQUIRED", resourceCulture);
             }
         }
         

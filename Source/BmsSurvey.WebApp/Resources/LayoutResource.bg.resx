@@ -753,4 +753,75 @@
   <data name="PREVIOUSPAGE" xml:space="preserve">
     <value>Предишна</value>
   </data>
+  <data name="EMAIL_PLEASE" xml:space="preserve">
+    <value>ИСКАТЕ ЛИ ДА НИ ДАДЕТЕ ПРЕДЛОЖЕНИЕ?
+Оставете ни валиден email и наш служител 
+ще се свърже с Вас</value>
+  </data>
+  <data name="ENTER_EMAIL" xml:space="preserve">
+    <value>Моля въведете електронна поща!</value>
+  </data>
+  <data name="THANK_YOU" xml:space="preserve">
+    <value>Благодарим Ви!</value>
+  </data>
+  <data name="YOUR_OPINION_MATTERS" xml:space="preserve">
+    <value>Вашето мнение има значение за нас!</value>
+  </data>
+  <data name="ACTIVE_FROM" xml:space="preserve">
+    <value>Активна от</value>
+  </data>
+  <data name="ACTIVE_TO" xml:space="preserve">
+    <value>Активна до</value>
+  </data>
+  <data name="CREATE_FROM" xml:space="preserve">
+    <value>Създаден от</value>
+  </data>
+  <data name="CREATE_SURVEY" xml:space="preserve">
+    <value>Създаване на анкета</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="DISPLAY_NUMBER" xml:space="preserve">
+    <value>Номер по ред</value>
+  </data>
+  <data name="FOR_THE_SURVEY" xml:space="preserve">
+    <value>от анкетата</value>
+  </data>
+  <data name="IS_ACTIVE" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="LAST_MODIFIED_FROM" xml:space="preserve">
+    <value>Последно променен от</value>
+  </data>
+  <data name="LAST_MODIFIED_ON" xml:space="preserve">
+    <value>Последно променен на</value>
+  </data>
+  <data name="PAGE_SIZE" xml:space="preserve">
+    <value>Размер на страницата</value>
+  </data>
+  <data name="QUESTIONS" xml:space="preserve">
+    <value>Въпроси</value>
+  </data>
+  <data name="QUESTION_TYPE" xml:space="preserve">
+    <value>Тип на въпроса</value>
+  </data>
+  <data name="SURVEYS" xml:space="preserve">
+    <value>Анкети</value>
+  </data>
+  <data name="SURVEY_MANAGEMENT" xml:space="preserve">
+    <value>Управление на анкети</value>
+  </data>
+  <data name="SURVEY_QUESTION_MANAGEMENT" xml:space="preserve">
+    <value>Управление на въпросите</value>
+  </data>
+  <data name="TEXT" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="CONFIRM_COOKIES" xml:space="preserve">
+    <value>Моля потвърдете използването на "бисквитки" за тази страница!</value>
+  </data>
 </root>

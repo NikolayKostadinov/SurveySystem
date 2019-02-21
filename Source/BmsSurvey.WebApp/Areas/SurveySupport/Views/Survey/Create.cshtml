@@ -1,0 +1,45 @@
+﻿@using BmsSurvey.Common.Abstract
+@model BmsSurvey.Application.Surveys.Commands.CreateSurvey.CreateSurveyCommand
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+
+@{
+    ViewData["Title"] = LayoutLocalizer.GetLocalizedHtmlString("CREATE_SURVEY");
+}
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="Create" method="post">
+        <input type="text" class="form-control" asp-for="Title" form-input />
+        <input type="text" class="form-control" asp-for="Description" form-input />
+        <input type="text" class="form-control" asp-for="PageSize" form-input />
+        <div class="form-group row">
+            <label asp-for="ActiveFrom" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                @(Html.Kendo()
+                      .DatePickerFor(m => m.ActiveFrom)
+                      .HtmlAttributes(new { @class = "form-control", onkeydown = "javascript:return false;" })
+                      .Min(TimeProvider.Current.UtcNow.Date)
+                )
+                <span asp-validation-for="ActiveFrom" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ActiveTo" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                @(Html.Kendo()
+                      .DatePickerFor(m => m.ActiveTo)
+                      .HtmlAttributes(new { @class = "form-control", onkeydown = "javascript:return false;" })
+                      .Min(TimeProvider.Current.UtcNow.Date)
+                )
+
+                @*@Html.EditorFor(m => m.StatementDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                <span asp-validation-for="ActiveTo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary float-right">@LayoutLocalizer.GetLocalizedHtmlString("SAVE")</button>
+    </form>
+</div>
+
+@*<textarea class="form-control" asp-for="Description" form-input placeholder="Description" rows="4"></textarea>*@
+

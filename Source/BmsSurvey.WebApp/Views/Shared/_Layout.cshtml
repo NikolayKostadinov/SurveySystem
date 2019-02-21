@@ -27,21 +27,15 @@
     <script src="~/js/kendo/kendo.aspnetmvc.min.js"></script>
     <script src="~/js/kendo/cultures/kendo.culture.@(culture).min.js"></script>
     <script src="~/js/kendo/messages/kendo.messages.bg-BG.min.js"></script>
-    <environment include="Development">
-        <script src="~/js/custom/kendoAdditional.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/custom/kendoAdditional.min.js" asp-append-version="true"></script>
-    </environment>
-
+    <script src="~/js/custom/kendoAdditional.min.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Styles", false)
 </head>
 <body>
     <script>
-    kendo.culture("@culture");
+        kendo.culture("@culture");
     </script>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top mb-3">
             <div class="container-fluid">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/Logo.png" asp-append-version="true" height="45px" style="margin-top: -12px;" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -54,6 +48,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                                 @LayoutLocalizer.GetLocalizedHtmlString("HOME")
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="SurveySupport" asp-controller="Survey" asp-action="Index">
+                                @LayoutLocalizer.GetLocalizedHtmlString("SURVEYS")
                             </a>
                         </li>
                         <li class="nav-item">
@@ -78,11 +77,14 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - Business Management Systems Ltd. - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+
+
+    <footer class="footer fixed-bottom">
+        <p>
+            &copy; @DateTime.Now.Year - Бизнес Мениджмънт Системс ЕООД
+        </p>
     </footer>
+
 
     <environment include="Development">
         <script src="~/js/site.js" asp-append-version="true"></script>

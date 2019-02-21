@@ -6,7 +6,7 @@ namespace BmsSurvey.Domain.Entities.Answers
 {
     using Abstract;
 
-    public class Rate1to5StarsAnswer : Answer
+    public class Rate1To5StarsAnswer : Answer
     {
         private int value;
         public int Value

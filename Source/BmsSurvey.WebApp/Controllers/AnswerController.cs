@@ -1,15 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="AnswerController.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
 
 namespace BmsSurvey.WebApp.Controllers
 {
-    using Application.Questions.Models;
+    #region Using
+
+    using Application.Answers.Models;
     using Application.Surveys.Models;
-    using Domain.Entities;
-    using Newtonsoft.Json;
+    using Microsoft.AspNetCore.Mvc;
+
+    #endregion
 
     public class AnswerController : BaseController
     {
@@ -20,17 +25,10 @@ namespace BmsSurvey.WebApp.Controllers
             this.surveyDto = surveyDto;
         }
 
-        public IActionResult Create(AnswerBindModel model)
+        public IActionResult Create(AnswerViewModel model)
         {
-            this.surveyDto.AddQuestion(new QuestionSimpleViewModel(){Id = model.QuestionId, Value = model.Value});
-            return Json(this.surveyDto.Questions.Values);
+            surveyDto.AddAnswer(model);
+            return Json(surveyDto.Answers.Values);
         }
-    }
-
-    public class AnswerBindModel
-    {
-        public int QuestionId  { get; set; }
-        public string Value { get; set; }
-
     }
 }

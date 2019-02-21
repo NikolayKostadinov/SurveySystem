@@ -8,12 +8,14 @@
 namespace BmsSurvey.Application.Surveys.Models
 {
     using System.Collections.Generic;
+    using Answers.Models;
     using Questions.Models;
 
     public interface ISurveyDto
     {
-        void AddQuestion(QuestionSimpleViewModel question);
+        void AddAnswer(AnswerViewModel answer);
         void SetAnswer(int questionId, string value);
-        IDictionary<int, QuestionSimpleViewModel> Questions { get; }
+        IDictionary<int, AnswerViewModel> Answers { get; }
+        void ClearAnswers();
     }
 }

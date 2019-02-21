@@ -8,14 +8,15 @@ namespace BmsSurvey.WebApp.Controllers
 {
     using Application.Questions.Models;
     using Application.Surveys.Models;
-    using Application.Surveys.Queries.GetSurveyQuestions;
     using Domain.Entities;
+    using Microsoft.AspNetCore.Http;
 
     public class TestsController : BaseController
     {
- 
 
-
-      
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
  }

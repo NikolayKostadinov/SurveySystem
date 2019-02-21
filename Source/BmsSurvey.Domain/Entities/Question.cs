@@ -17,7 +17,7 @@ namespace BmsSurvey.Domain.Entities
 
     public enum QuestionType
     {
-        Rate1to5Stars,YesOrNo,LowMidHigh
+        Rate1to5Stars, YesOrNo, LowMidHigh, FreeText
 
         
     }
