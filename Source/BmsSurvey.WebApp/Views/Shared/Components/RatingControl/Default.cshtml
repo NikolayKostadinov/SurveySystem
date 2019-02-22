@@ -37,8 +37,9 @@ else
                 });
         }
 
-        function sendData() {
-            let frm = $(event.target).closest('form');
+        function sendData(event) {
+            let target = event.target || this.$elem;
+            let frm = $(target).closest('form');
             if (frm.length) {
                 let form = $(frm[0]);
                 let url = form.attr("action");

@@ -174,6 +174,7 @@ namespace BmsSurvey.WebApp
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(sessionTimeout);
+                options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;
                 options.Cookie.HttpOnly = true;
             });
 
