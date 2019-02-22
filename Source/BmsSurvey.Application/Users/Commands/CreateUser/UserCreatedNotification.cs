@@ -1,29 +1,28 @@
-﻿namespace BmsSurvey.Application.Users.Commands.CreateUser
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="UserCreatedNotification.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
+
+namespace BmsSurvey.Application.Users.Commands.CreateUser
 {
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Castle.Core.Logging;
-    using Interfaces;
+    #region Using
+
+    using Domain.Entities.Identity;
     using MediatR;
-    using Notifications.Models;
+    using Microsoft.Extensions.Logging;
+
+    #endregion
 
     public class UserCreatedNotification : INotification
     {
-        public int UserId { get; set; }
-
-        public class CustomerCreatedHandler : INotificationHandler<UserCreatedNotification>
+        public UserCreatedNotification(User user)
         {
-            private readonly INotificationService _notification;
-
-            public CustomerCreatedHandler(INotificationService notification)
-            {
-                _notification = notification;
-            }
-
-            public async Task Handle(UserCreatedNotification notification, CancellationToken cancellationToken)
-            {
-                await _notification.SendAsync(new Message());
-            }
+            User = user;
         }
+
+        public User User { get; }
     }
 }

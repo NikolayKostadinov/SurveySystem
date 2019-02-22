@@ -13,16 +13,17 @@
 
         public class CustomerCreatedHandler : INotificationHandler<UserCreatedNotification>
         {
-            private readonly INotificationService _notification;
+            //private readonly INotificationService _notification;
 
-            public CustomerCreatedHandler(INotificationService notification)
-            {
-                _notification = notification;
-            }
+            //public CustomerCreatedHandler(INotificationService notification)
+            //{
+            //    _notification = notification;
+            //}
 
-            public async Task Handle(UserCreatedNotification notification, CancellationToken cancellationToken)
+            public Task Handle(UserCreatedNotification notification, CancellationToken cancellationToken)
             {
-                await _notification.SendAsync(new Message());
+                //await _notification.SendAsync(new Message());
+                return Task.CompletedTask;
             }
         }
     }

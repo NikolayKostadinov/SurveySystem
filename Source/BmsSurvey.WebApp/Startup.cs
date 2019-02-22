@@ -1,18 +1,18 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="Startup.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
 
 namespace BmsSurvey.WebApp
 {
+    #region Using
+
+    using System;
     using System.Linq;
     using System.Reflection;
-    using Application.Customers.Commands.CreateCustomer;
     using Application.Infrastructure;
     using Application.Infrastructure.AutoMapper;
     using Application.Interfaces;
@@ -22,7 +22,6 @@ namespace BmsSurvey.WebApp
     using Application.Surveys.Models;
     using Application.Users.Commands.CreateUser;
     using Application.Users.Queries.GetAllUsers;
-    using Application.Users.Queries.GetAllUsersWithDeleted;
     using AutoMapper;
     using BmsSurvey.Infrastructure;
     using Common.Constants;
@@ -32,13 +31,22 @@ namespace BmsSurvey.WebApp
     using Infrastructure;
     using Infrastructure.Automapper;
     using Infrastructure.Interfaces;
-    using Infrastructure.Middleware;
     using Infrastructure.Services;
     using MediatR;
     using MediatR.Pipeline;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Localization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Infrastructure;
+    using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.AspNetCore.Routing;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
     using Models;
     using Newtonsoft.Json.Serialization;
     using Persistence;
@@ -47,7 +55,8 @@ namespace BmsSurvey.WebApp
     using Resources;
     using Serilog;
     using Services;
-    using RouteDataRequestCultureProvider = Infrastructure.RouteDataRequestCultureProvider;
+
+    #endregion
 
     public class Startup
     {
@@ -75,31 +84,34 @@ namespace BmsSurvey.WebApp
 
             // Add AutoMapper
             //ToDo: remove second Automapper Profile
-            services.AddAutoMapper(new Assembly[] { typeof(AutoMapperProfile).GetTypeInfo().Assembly,
-                typeof(AutomapperProfilerWeb).GetTypeInfo().Assembly });
+            services.AddAutoMapper(typeof(AutoMapperProfile).GetTypeInfo().Assembly,
+                typeof(AutomapperProfilerWeb).GetTypeInfo().Assembly);
 
             //Services Registration
             services.AddSingleton<IEmailSender, MailSender>();
+            services.AddSingleton<IMailNotificationService, MailSender>();
             services.AddSingleton<IPersister, AuditablePersister>();
 
             // Add Application services.
-            services.AddTransient<INotificationService, NotificationService>();
-            services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
             services.AddSingleton<IStatusFactory, StatusFactory>();
             services.AddSingleton<IAnswerFactory, AnswerFactory>();
             services.AddSingleton<IIpProvider, IpProvider>();
-            services.AddSingleton<ISupportedCulturesService>(new SupportedCulturesService(GlobalConstants.DefaultCultureId));
+            services.AddSingleton<ISupportedCulturesService>(
+                new SupportedCulturesService(GlobalConstants.DefaultCultureId));
+
+            services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
+            services.AddScoped<IUserCreationMessageService, UserCreationMessageService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICurrentPrincipalProvider, CurrentPrincipalProvider>();
             services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
             services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();
-            services.AddScoped<ISurveyDto>(sp=> SessionSurveyDto.GetSurveyDto(sp));
-
+            services.AddScoped<ISurveyDto>(sp => SessionSurveyDto.GetSurveyDto(sp));
+            
             // Add MediatR
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(GetAllUsersQuery).GetTypeInfo().Assembly);
 
             services.AddDbContext<BmsSurveyDbContext>(options =>
                 options.UseSqlServer(
@@ -115,9 +127,9 @@ namespace BmsSurvey.WebApp
             // custome settings
             services.Configure<IdentityOptions>(options =>
             {
-                options.Password = new PasswordOptions()
+                options.Password = new PasswordOptions
                 {
-                    RequiredLength = 6,
+                    RequiredLength = 6
                 };
                 options.SignIn.RequireConfirmedEmail = true;
             });
@@ -140,17 +152,16 @@ namespace BmsSurvey.WebApp
                 {
                     var supportedCultures = GlobalConstants.SupportedCultures.Select(x => x.Value).ToList();
 
-                    options.DefaultRequestCulture = new RequestCulture(culture: "bg", uiCulture: "bg");
+                    options.DefaultRequestCulture = new RequestCulture("bg", "bg");
                     options.SupportedCultures = supportedCultures;
                     options.SupportedUICultures = supportedCultures;
-                    options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider()
+                    options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider
                     {
                         IndexOfCulture = 1,
                         IndexofUICulture = 1
                     });
                     options.RequestCultureProviders.Insert(1, new QueryStringRequestCultureProvider());
                     options.RequestCultureProviders.Insert(2, new CookieRequestCultureProvider());
-
                 });
 
             services.Configure<RouteOptions>(options =>
@@ -159,36 +170,30 @@ namespace BmsSurvey.WebApp
             });
 
             services.AddDistributedMemoryCache();
-            int.TryParse(Configuration["SessionTimeout"], out int sessionTimeout);
+            int.TryParse(Configuration["SessionTimeout"], out var sessionTimeout);
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(sessionTimeout);
                 options.Cookie.HttpOnly = true;
             });
 
-            services.AddMvc(options =>
-             {
-                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
-             })
-                 .AddDataAnnotationsLocalization(options =>
-                 {
-                     options.DataAnnotationLocalizerProvider = (type, factory) =>
-                     {
-                         var assemblyName = new AssemblyName(typeof(LayoutResource).GetTypeInfo().Assembly.FullName);
-                         return factory.Create("LayoutResource", assemblyName.Name);
-                     };
-                 })
-                 .AddRazorPagesOptions(options => options.Conventions.Add(new LanguagePageRouteModelConvention()))
-                 .AddJsonOptions(options =>
-                     options.SerializerSettings.ContractResolver = new DefaultContractResolver())
-                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
+            services.AddMvc(options => { options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()); })
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                    {
+                        var assemblyName = new AssemblyName(typeof(LayoutResource).GetTypeInfo().Assembly.FullName);
+                        return factory.Create("LayoutResource", assemblyName.Name);
+                    };
+                })
+                .AddRazorPagesOptions(options => options.Conventions.Add(new LanguagePageRouteModelConvention()))
+                .AddJsonOptions(options =>
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
             //Serilog ILogger registation
-            services.AddLogging(builder =>
-            {
-                builder.AddSerilog();
-            });
+            services.AddLogging(builder => { builder.AddSerilog(); });
 
             // Add Kendo UI services to the services container
             services.AddKendo();
@@ -225,13 +230,13 @@ namespace BmsSurvey.WebApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                   name: "areas",
-                   template: "{culture=bg}/{area:exists}/{controller=Home}/{action}/{id?}"
-               );
+                    "areas",
+                    "{culture=bg}/{area:exists}/{controller=Home}/{action}/{id?}"
+                );
 
                 routes.MapRoute(
-                    name: "LocalizedDefault",
-                    template: "{culture=bg}/{controller=Home}/{action=Index}/{id?}");
+                    "LocalizedDefault",
+                    "{culture=bg}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

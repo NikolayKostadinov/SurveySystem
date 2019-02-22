@@ -11,6 +11,7 @@ namespace BmsSurvey.WebApp.Controllers
     using Application.Surveys.Commands.SaveSurvey;
     using Application.Surveys.Queries.GetAllSurveys;
     using Application.Surveys.Queries.GetSurveyQuestionsWithAnswers;
+    using Infrastructure.Filters;
     using Infrastructure.Interfaces;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -23,40 +24,26 @@ namespace BmsSurvey.WebApp.Controllers
     public class SurveyController : BaseController
     {
         private readonly ILogger<SurveyController> logger;
-        private readonly ITrackingConsentFeature consentFeature;
 
-        public SurveyController(ILogger<SurveyController> logger, IHttpContextAccessor accessor)
+        public SurveyController(ILogger<SurveyController> logger)
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            this.consentFeature = accessor.HttpContext.Features.Get<ITrackingConsentFeature>();
         }
 
         [HttpGet("{id}/{pagenum=1}")]
-        public async Task<IActionResult> Index(int id, [FromServices]IIpProvider ipAddressProvider, int pagenum = 1)
+        [CompletedSurveyFilter]
+        [CookieAcceptFilter]
+        public async Task<IActionResult> Index(int id, int pagenum = 1)
         {
             try
             {
-                var userAgreesCookies = consentFeature?.CanTrack ?? true;
-                if (userAgreesCookies)
-                {
-                    var model = await this.Mediator.Send(new SurveyQuestionsQuery(id, pagenum, ipAddressProvider.GetIp()));
-                    return View(model);
-                }
-                else
-                {
-                    return RedirectToAction("AcceptCookies", new {retunUrl = Url.Action("Index")});
-                }
-
+                var model = await this.Mediator.Send(new SurveyQuestionsQuery(id, pagenum));
+                return View(model);
             }
             catch (NotFoundException nfe)
             {
                 this.logger.LogError(nfe.Message);
                 return View("SurveyNotFound", nfe.Key.ToString());
-            }
-            catch (SurveyCompletedException sce)
-            {
-                this.logger.LogError(sce.Message);
-                return View("ThankYouForm");
             }
         }
 
@@ -69,12 +56,12 @@ namespace BmsSurvey.WebApp.Controllers
                 userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Anonymous";
             }
             var model = await this.Mediator.Send(new SaveSurveyCommand(id, userName, email, ipAddressProvider.GetIp()));
-            return View("ThankYouForm", model);
+            return RedirectToAction("ThankYou");
         }
 
-        public IActionResult AcceptCookies(string retunUrl)
+        public IActionResult ThankYou()
         {
-            return View((object)retunUrl);
+            return View("ThankYouForm");
         }
     }
 }

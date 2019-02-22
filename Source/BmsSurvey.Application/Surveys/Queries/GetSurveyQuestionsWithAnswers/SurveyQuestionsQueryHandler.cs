@@ -35,11 +35,6 @@
                 throw new NotFoundException(nameof(survey), request.Id);
             }
 
-            if (survey.CompletedSurveys.Any(x => x.IpAddress == request.IpAddress))
-            {
-                throw new SurveyCompletedException(survey.Id, request.IpAddress);
-            }
-
             var questions = survey.Questions
                 .Where(x => !x.IsDeleted)
                 .OrderBy(x => x.DisplayNumber)

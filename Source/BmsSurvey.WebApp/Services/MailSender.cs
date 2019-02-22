@@ -13,12 +13,14 @@ namespace BmsSurvey.WebApp.Services
     using System;
     using System.Net.Mail;
     using System.Threading.Tasks;
+    using Application.Interfaces;
+    using Application.Notifications.Models;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.Extensions.Configuration;
 
     #endregion
 
-    public class MailSender : IEmailSender
+    public class MailSender : IEmailSender, IMailNotificationService
     {
         private readonly IConfiguration configuration;
 
@@ -36,13 +38,21 @@ namespace BmsSurvey.WebApp.Services
         {
             var client = new SmtpClient(configuration.GetSection("EmailSender:SnmpServer").Value);
 
-            var mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(configuration.GetSection("EmailSender:From").Value);
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(configuration.GetSection("EmailSender:From").Value),
+                Body = htmlMessage,
+                IsBodyHtml = true,
+                Subject = subject
+            };
+
             mailMessage.To.Add(email);
-            mailMessage.Body = htmlMessage;
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Subject = subject;
             client.Send(mailMessage);
+        }
+
+        public Task SendAsync(Message message)
+        {
+            return this.SendEmailAsync(message.To, message.Subject, message.Body);
         }
     }
 }

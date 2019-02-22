@@ -10,6 +10,7 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
 {
     #region Using
 
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Threading;
@@ -48,6 +49,7 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
             {
                 TabNumber = request.TabNumber,
                 UserName = request.UserName,
+                Email = request.Email,
                 FirstName = request.FirstName,
                 SirName = request.SirName,
                 LastName = request.LastName,
@@ -62,13 +64,17 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
             }
 
             var user = await this.userManager.FindByNameAsync(request.UserName);
-            var roles = request.Roles.Select(x => x.Name).ToList();
+            var roles = request?.Roles?.Select(x => x.Name)?.ToList() ?? new List<string>();
             if (roles.Any() && user != null)
             {
                 identityResult = await this.userManager.AddToRolesAsync(user, roles);
                 result.SetErrors(
                     identityResult.Errors.Select(x => new ValidationResult(x.Description)));
-                return result;
+            }
+
+            if (result.IsValid)
+            {
+                await this.mediator.Publish(new UserCreatedNotification(user), cancellationToken);
             }
 
             return result;

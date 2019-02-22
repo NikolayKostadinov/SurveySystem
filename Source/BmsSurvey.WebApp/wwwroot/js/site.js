@@ -9,6 +9,6 @@ function getAntiforgeryToken() {
 
 function getAntiforgeryTokenAndPass() {
     var result = getAntiforgeryToken();
-    result["Password"] = "111111";
+    result["Password"] = "P@ssw0rd";
     return result;
 }

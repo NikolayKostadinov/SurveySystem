@@ -11,6 +11,11 @@ namespace BmsSurvey.WebApp.Controllers
             return View();
         }
 
+        public IActionResult AcceptCookies(string returnUrl)
+        {
+            return View((object)returnUrl);
+        }
+
         public IActionResult Privacy()
         {
             return View();

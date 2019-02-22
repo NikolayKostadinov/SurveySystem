@@ -9,7 +9,7 @@ namespace BmsSurvey.Domain.Entities.Answers
     public class LowMidHighAnswer : Answer
     {
         private int value;
-        public new int Value
+        public int Value
         {
             get => this.value;
             set

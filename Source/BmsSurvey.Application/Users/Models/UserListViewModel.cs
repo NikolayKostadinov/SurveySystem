@@ -22,19 +22,27 @@ namespace BmsSurvey.Application.Users.Models
     public class UserListViewModel : IMapFrom<User>, IHaveCustomMapping
     {
         public int Id { get; set; }
-
         [Display(Name = "IsLocked")] public bool IsLocked { get; set; }
 
+        [Required]
         [Display(Name = "TABNUMBER")] public string TabNumber { get; set; }
 
+        [Required]
         [Display(Name = "USERNAME")] public string UserName { get; set; }
 
+        [Required]
+        [Display(Name = "EMAIL")] public string Email { get; set; }
+
+        [Required]
         [Display(Name = "FIRSTNAME")] public string FirstName { get; set; }
 
+        [Required]
         [Display(Name = "SIRNAME")] public string SirName { get; set; }
 
+        [Required]
         [Display(Name = "LASTNAME")] public string LastName { get; set; }
 
+        [Required]
         [Display(Name = "FULLNAME")] public string FullName { get; set; }
 
         [UIHint("UserRoleEditor")]
