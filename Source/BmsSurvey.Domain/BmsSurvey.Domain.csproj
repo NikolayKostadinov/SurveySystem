@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <Folder Include="Entities\Utility\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="ValueObjects\" />
   </ItemGroup>
 
   <ItemGroup>

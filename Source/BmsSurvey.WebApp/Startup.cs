@@ -3,7 +3,7 @@
 //       Copyright "2019" (c), Business Management System Ltd. 
 //       All rights reserved.
 //   </copyright>
-//   <author>Nikolay.Kostadinov</author>
+//   <author>Nikolay Kostadinov</author>
 //  ------------------------------------------------------------------------------------------------
 
 namespace BmsSurvey.WebApp
@@ -16,14 +16,12 @@ namespace BmsSurvey.WebApp
     using Application.Infrastructure;
     using Application.Infrastructure.AutoMapper;
     using Application.Interfaces;
-    using Application.Products.Queries.GetProduct;
     using Application.Resources;
     using Application.Services;
     using Application.Surveys.Models;
     using Application.Users.Commands.CreateUser;
     using Application.Users.Queries.GetAllUsers;
     using AutoMapper;
-    using BmsSurvey.Infrastructure;
     using Common.Constants;
     using Common.Interfaces;
     using Domain.Entities.Identity;
@@ -41,8 +39,6 @@ namespace BmsSurvey.WebApp
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Mvc.Infrastructure;
-    using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.AspNetCore.Routing;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -106,7 +102,10 @@ namespace BmsSurvey.WebApp
             services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
             services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();
             services.AddScoped<ISurveyDto>(sp => SessionSurveyDto.GetSurveyDto(sp));
-            
+
+            services.AddTransient<BmsSurveyInitializer>();
+
+
             // Add MediatR
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
@@ -174,7 +173,7 @@ namespace BmsSurvey.WebApp
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(sessionTimeout);
-                options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;
+                options.Cookie.SameSite = SameSiteMode.None;
                 options.Cookie.HttpOnly = true;
             });
 

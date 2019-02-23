@@ -23,7 +23,7 @@
               //col.Bound(m => m.IsActive).Width(50)
               //    .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
               col.Bound(m => m.Id).Width(50);
-              col.Bound(m => m.DisplayNumber).Width(50);
+              col.Bound(m => m.DisplayNumber).Width(65);
               col.Bound(m => m.Text).Width(600);
               col.Bound(m => m.QuestionType).EditorTemplateName("QuestionType")
                   .ClientTemplate("<div style=\"background: url('/images/question_types/#:QuestionTypeStr#.png') no-repeat center; background-size: contain; height: 35px; width: 100%;\" ></div>");

@@ -9,9 +9,17 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Administration\Data\**" />
+    <Compile Remove="Areas\SurveySupport\Data\**" />
+    <Compile Remove="Areas\SurveySupport\Models\**" />
     <Content Remove="Areas\Administration\Data\**" />
+    <Content Remove="Areas\SurveySupport\Data\**" />
+    <Content Remove="Areas\SurveySupport\Models\**" />
     <EmbeddedResource Remove="Areas\Administration\Data\**" />
+    <EmbeddedResource Remove="Areas\SurveySupport\Data\**" />
+    <EmbeddedResource Remove="Areas\SurveySupport\Models\**" />
     <None Remove="Areas\Administration\Data\**" />
+    <None Remove="Areas\SurveySupport\Data\**" />
+    <None Remove="Areas\SurveySupport\Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,8 +72,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\SurveySupport\Data\" />
-    <Folder Include="Areas\SurveySupport\Models\" />
     <Folder Include="logs\" />
   </ItemGroup>
 

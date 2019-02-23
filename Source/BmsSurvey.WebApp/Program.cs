@@ -22,10 +22,11 @@ namespace BmsSurvey.WebApp
             {
                 try
                 {
-                    var context = scope.ServiceProvider.GetService<BmsSurveyDbContext>();
+                    var serviceProvider = scope.ServiceProvider;
+                    var context = serviceProvider.GetService<BmsSurveyDbContext>();
                     context.Database.Migrate();
 
-                    BmsSurveyInitializer.Initialize(context);
+                    serviceProvider.GetService<BmsSurveyInitializer>().SeedEverythingAsync().Wait();
                 }
                 catch (Exception ex)
                 {
