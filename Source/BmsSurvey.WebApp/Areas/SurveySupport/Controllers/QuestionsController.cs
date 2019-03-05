@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using Application.Exceptions;
     using Application.Questions.Commands.CreateQuestion;
+    using Application.Questions.Commands.DeleteQuestion;
     using Application.Questions.Commands.EditQuestion;
     using Application.Questions.Models;
     using Application.Questions.Queries.GetAllQuestionsForSurvey;
@@ -51,9 +52,15 @@
         }
 
         [HttpPost]
-        public IActionResult Delete()
+        public async Task<IActionResult> Delete([DataSourceRequest] DataSourceRequest request, DeleteQuestionCommand model)
         {
-            throw new System.NotImplementedException();
+            if (this.ModelState.IsValid)
+            {
+                await this.Mediator.Send(model);
+            }
+
+            return Json(await new List<object>()
+                .ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
         }
 
         [HttpPost]
@@ -66,17 +73,12 @@
                     var result = await this.Mediator.Send(model);
                     return Json(await new List<QuestionListViewModel> { result }.ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
                 }
-                return Json(await new List<CreateQuestionCommand> { model }.ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
+                return Json(await new List<EditQuestionCommand> { model }.ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
             }
             catch (NotFoundException nfe)
             {
                 return View("SurveyNotFound", nfe.Key.ToString());
             }
-        }
-
-        public IActionResult Create()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -18,8 +18,8 @@ namespace BmsSurvey.WebApp.Controllers
 
     public class BaseController : Controller
     {
-        private IMediator _mediator;
+        private IMediator mediator;
 
-        protected IMediator Mediator => _mediator ?? (_mediator = HttpContext.RequestServices.GetService<IMediator>());
+        protected IMediator Mediator => mediator ?? (mediator = HttpContext.RequestServices.GetService<IMediator>());
     }
 }

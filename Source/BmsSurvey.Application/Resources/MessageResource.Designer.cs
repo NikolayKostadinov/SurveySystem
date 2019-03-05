@@ -79,7 +79,7 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The daily limit of overtime hours exceeded!\r\nMaximal available hours is {0}!.
+        ///   Looks up a localized string similar to The daily limit of overtime hours exceeded!\r\nMaximal available hours is {ComparisonValue}!.
         /// </summary>
         public static string DAILY_LIMIT_ЕXCEEDED {
             get {
@@ -106,11 +106,20 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value must be greater than {0}!.
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be greater than {0}!.
         /// </summary>
         public static string GREATER_THAN {
             get {
                 return ResourceManager.GetString("GREATER_THAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid email format &apos;{PropertyValue}&apos;!.
+        /// </summary>
+        public static string INVALID_EMAIL {
+            get {
+                return ResourceManager.GetString("INVALID_EMAIL", resourceCulture);
             }
         }
         
@@ -124,7 +133,7 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field!.
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; is required field!.
         /// </summary>
         public static string REQUIRED {
             get {

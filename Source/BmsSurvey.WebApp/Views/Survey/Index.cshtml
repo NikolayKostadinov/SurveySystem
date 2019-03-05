@@ -1,9 +1,10 @@
 ﻿@using BmsSurvey.Application.Surveys.Models
+@using BmsSurvey.WebApp.Resources
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
 @model SurveyViewModel
 
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = Model.SurveyTitle;
     Layout = "_BarRatingStyles";
 }
 <div class="container">

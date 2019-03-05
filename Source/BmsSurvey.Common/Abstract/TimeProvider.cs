@@ -28,16 +28,8 @@ namespace BmsSurvey.Common.Abstract
 
         public static TimeProvider Current
         {
-            get { return TimeProvider.current; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException(nameof(value));
-                }
-
-                TimeProvider.current = value;
-            }
+            get => current;
+            set => current = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         public abstract DateTime UtcNow { get; }

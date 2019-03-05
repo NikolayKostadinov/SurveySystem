@@ -38,34 +38,5 @@ namespace BmsSurvey.Application.Surveys.Commands.EditSurvey
                 .ForMember(p => p.CreatedFrom, opt => opt.Ignore())
                 .ForMember(p => p.ModifiedFrom, opt => opt.Ignore());
         }
-        //[Display(Name = "TITLE")]
-        //public string Title { get; set; }
-
-        //[Display(Name = "DESCRIPTION")]
-        //public string Description { get; set; }
-
-        //[Display(Name = "PAGE_SIZE")]
-        //public int PageSize { get; set; }
-
-        //[Display(Name = "ACTIVE_FROM")]
-        //public DateTime ActiveFrom { get; set; }
-
-        //[Display(Name = "ACTIVE_TO")]
-        //public DateTime ActiveTo { get; set; }
-
-        //public void CreateMappings(Profile configuration)
-        //{
-        //    configuration.CreateMap<EditSurveyCommand, Survey>()
-        //        .ForMember(p => p.Id, opt => opt.Ignore())
-        //        .ForMember(p => p.Questions, opt => opt.Ignore())
-        //        .ForMember(p => p.IsDeleted, opt => opt.Ignore())
-        //        .ForMember(p => p.DeletedOn, opt => opt.Ignore())
-        //        .ForMember(p => p.DeletedFrom, opt => opt.Ignore())
-        //        .ForMember(p => p.CreatedOn, opt => opt.Ignore())
-        //        .ForMember(p => p.PreserveCreatedOn, opt => opt.Ignore())
-        //        .ForMember(p => p.ModifiedOn, opt => opt.Ignore())
-        //        .ForMember(p => p.CreatedFrom, opt => opt.Ignore())
-        //        .ForMember(p => p.ModifiedFrom, opt => opt.Ignore());
-        //}
     }
 }

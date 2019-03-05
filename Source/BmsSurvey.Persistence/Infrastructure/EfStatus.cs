@@ -12,7 +12,7 @@ namespace BmsSurvey.Persistence.Infrastructure
 
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
+    using Common.Concrete;
     using Common.Interfaces;
 
     #endregion
@@ -39,35 +39,5 @@ namespace BmsSurvey.Persistence.Infrastructure
             SetErrors(errors);
             return this;
         }
-    }
-
-    public class ExecutionStatus : IStatus
-    {
-        private List<ValidationResult> errors;
-
-        public ExecutionStatus()
-        {
-            errors = new List<ValidationResult>();
-        }
-
-        /// <summary>
-        ///     If there are no errors then it is valid
-        /// </summary>
-        public bool IsValid => !errors.Any();
-
-        public IReadOnlyList<ValidationResult> Errors => errors ?? new List<ValidationResult>();
-
-        public IStatus SetErrors(IEnumerable<ValidationResult> errorsParam)
-        {
-            errors = errorsParam.ToList();
-            return this;
-        }
-
-        public void AppendError(ValidationResult error)
-        {
-            if (error != null) errors.Add(error);
-        }
-
-        public object Result { get; set; }
     }
 }

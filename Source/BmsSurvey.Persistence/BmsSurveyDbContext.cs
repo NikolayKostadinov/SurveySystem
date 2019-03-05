@@ -111,12 +111,12 @@ namespace BmsSurvey.Persistence
             catch (DbUpdateException ex)
             {
                 //this.logger.Error(ex.Message, this, ex);
-                var sqlException = ex.InnerException?.InnerException as SqlException;
 
-                if (sqlException != null && (sqlException.Number == 2601 || sqlException.Number == 2627))
+                if (ex.InnerException?.InnerException is SqlException sqlException 
+                    && (sqlException.Number == 2601 || sqlException.Number == 2627))
                     return result.SetEfErrors(new List<ValidationResult>
                     {
-                        new ValidationResult("UnicConstraintViolation")
+                        new ValidationResult("UniqueConstraintViolation")
                     });
                 return result.SetEfErrors(new List<ValidationResult> { new ValidationResult("SavingDataError") });
             }

@@ -128,7 +128,7 @@ namespace BmsSurvey.Persistence
             var survey = new Survey
             {
                 //Id=1,
-                Title = "Проучване за Пътеводителя",
+                SurveyTitle = "Проучване за Пътеводителя",
                 ActiveFrom = TimeProvider.Current.UtcNow,
                 ActiveTo = TimeProvider.Current.UtcNow.AddDays(30),
                 Questions = questions

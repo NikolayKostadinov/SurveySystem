@@ -29,7 +29,10 @@ namespace BmsSurvey.Application.Questions.Queries.GetAllQuestionsForSurvey
         {
             var survey = await this.context.Surveys
                 .Include(s => s.Questions)
-                .FirstOrDefaultAsync(s => s.Id == request.SurveyId, cancellationToken);
+                .FirstOrDefaultAsync(
+                    s => s.Id == request.SurveyId
+                    && s.IsActive == true
+                    && s.IsDeleted==false, cancellationToken);
             if (survey is null)
             {
                 throw new NotFoundException(nameof(survey), request.SurveyId);

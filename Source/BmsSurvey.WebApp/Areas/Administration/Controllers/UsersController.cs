@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using Application.Interfaces;
     using Application.Users.Commands.CreateUser;
+    using Application.Users.Commands.UpdateUser;
     using Application.Users.Models;
     using Application.Users.Queries.GetAllUsersWithDeleted;
     using AutoMapper;
@@ -17,9 +18,13 @@
     using Kendo.Mvc.UI;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Localization;
     using Microsoft.Extensions.Logging;
     using Persistence;
+    using Resources;
+
     //using LayoutResource = Resources.LayoutResource;
     //using RoleSimpleViewModel = Application.Users.Models.RoleSimpleViewModel;
 
@@ -27,9 +32,9 @@
     {
         private readonly IMapper mapper;
         private readonly UserManager<User> userManager;
-        private RoleManager<Role> roleManager;
+        private readonly RoleManager<Role> roleManager;
         private readonly ILogger<UsersController> logger;
-        private readonly IStringLocalizer<Resources.LayoutResource> stringLocalizer;
+        private readonly ILocalizationService<LayoutResource> localizationService;
         private readonly IUserService userService;
 
         public UsersController(BmsSurveyDbContext contextParam,
@@ -37,14 +42,14 @@
             UserManager<User> userManager,
             RoleManager<Role> roleManager,
             ILogger<UsersController> logger,
-            IStringLocalizer<Resources.LayoutResource> stringLocalizer,
+            ILocalizationService<LayoutResource> localizationService,
             IUserService userService)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             this.roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            this.stringLocalizer = stringLocalizer ?? throw new ArgumentNullException(nameof(stringLocalizer));
+            this.localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
             this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
@@ -81,7 +86,7 @@
             {
                 var errors = ModelState.Values.SelectMany(x => x.Errors.Select(y => $"{y.ErrorMessage} - {y.Exception?.StackTrace}")).ToList();
                 this.logger.LogError(string.Join("\n", errors));
-                return Json(new { success = false, errorMessage = this.stringLocalizer["FAILED_OPERATION"] });
+                return Json(new { success = false, errorMessage = this.localizationService.GetLocalizedHtmlString("FAILED_OPERATION") });
             }
 
             return Json(await this.userService.LockAsync(id));
@@ -94,7 +99,7 @@
             {
                 var errors = ModelState.Values.SelectMany(x => x.Errors.Select(y => $"{y.ErrorMessage} - {y.Exception?.StackTrace}")).ToList();
                 this.logger.LogError(string.Join("\n", errors));
-                return Json(new { success = false, errorMessage = this.stringLocalizer["FAILED_OPERATION"] });
+                return Json(new { success = false, errorMessage = this.localizationService.GetLocalizedHtmlString("FAILED_OPERATION") });
             }
 
             return Json(await this.userService.UnLockAsync(id));
@@ -119,19 +124,26 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update([DataSourceRequest] DataSourceRequest request, UserListViewModel model)
+        public async Task<IActionResult> Update([DataSourceRequest] DataSourceRequest request, UpdateUserCommand command)
         {
             if (ModelState.IsValid)
             {
-                var user = this.mapper.Map<User>(model);
-                IStatus result = await this.userService.UpdateUser(user, User.Identity.Name);
-                if (!result.IsValid)
+                try
                 {
-                    result.ToModelStateErrors(this.ModelState);
+                    var result = await this.Mediator.Send(command);
+                    return Json(new List<UserListViewModel> { result }.ToDataSourceResult(request, ModelState));
                 }
+                catch (Exception ex)
+                {
+                    this.ModelState.AddModelError("", this.localizationService.GetLocalizedHtmlString("FAILED_OPERATION"));
+                    this.logger.LogError(ex, this.localizationService.GetLocalizedHtmlString("FAILED_OPERATION"));
+                    return Json(new List<UpdateUserCommand> { command }.ToDataSourceResult(request, ModelState));
+                }
+
             }
 
-            return Json(new List<UserListViewModel> { model }.ToDataSourceResult(request, ModelState));
+            return Json(new List<UpdateUserCommand> { command }.ToDataSourceResult(request, ModelState));
+
         }
     }
 }

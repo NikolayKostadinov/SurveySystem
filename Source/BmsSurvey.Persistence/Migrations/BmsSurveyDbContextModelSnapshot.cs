@@ -52,28 +52,6 @@ namespace BmsSurvey.Persistence.Migrations
                     b.HasDiscriminator<int>("AnswerType");
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Category", b =>
-                {
-                    b.Property<int>("CategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("CategoryID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasMaxLength(15);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("ntext");
-
-                    b.Property<byte[]>("Picture")
-                        .HasColumnType("image");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("BmsSurvey.Domain.Entities.CompletedSurvey", b =>
                 {
                     b.Property<int>("Id")
@@ -107,131 +85,6 @@ namespace BmsSurvey.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("CompletedSurveys");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Customer", b =>
-                {
-                    b.Property<string>("CustomerId")
-                        .HasColumnName("CustomerID")
-                        .HasMaxLength(5);
-
-                    b.Property<string>("Address")
-                        .HasMaxLength(60);
-
-                    b.Property<string>("City")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasMaxLength(40);
-
-                    b.Property<string>("ContactName")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("ContactTitle")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Country")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("Fax")
-                        .HasMaxLength(24);
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(24);
-
-                    b.Property<string>("PostalCode")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Region")
-                        .HasMaxLength(15);
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Employee", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("EmployeeID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .HasMaxLength(60);
-
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("City")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("Country")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("Extension")
-                        .HasMaxLength(4);
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(10);
-
-                    b.Property<DateTime?>("HireDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("HomePhone")
-                        .HasMaxLength(24);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("ntext");
-
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("image");
-
-                    b.Property<string>("PhotoPath")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("PostalCode")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Region")
-                        .HasMaxLength(15);
-
-                    b.Property<int?>("ReportsTo");
-
-                    b.Property<string>("Title")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("TitleOfCourtesy")
-                        .HasMaxLength(25);
-
-                    b.HasKey("EmployeeId");
-
-                    b.HasIndex("ReportsTo");
-
-                    b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.EmployeeTerritory", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .HasColumnName("EmployeeID");
-
-                    b.Property<string>("TerritoryId")
-                        .HasColumnName("TerritoryID")
-                        .HasMaxLength(20);
-
-                    b.HasKey("EmployeeId", "TerritoryId")
-                        .HasAnnotation("SqlServer:Clustered", false);
-
-                    b.HasIndex("TerritoryId");
-
-                    b.ToTable("EmployeeTerritories");
                 });
 
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Identity.Role", b =>
@@ -347,137 +200,6 @@ namespace BmsSurvey.Persistence.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("OrderID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnName("CustomerID")
-                        .HasMaxLength(5);
-
-                    b.Property<int?>("EmployeeId")
-                        .HasColumnName("EmployeeID");
-
-                    b.Property<decimal?>("Freight")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("money")
-                        .HasDefaultValueSql("((0))");
-
-                    b.Property<DateTime?>("OrderDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("RequiredDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("ShipAddress")
-                        .HasMaxLength(60);
-
-                    b.Property<string>("ShipCity")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("ShipCountry")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("ShipName")
-                        .HasMaxLength(40);
-
-                    b.Property<string>("ShipPostalCode")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("ShipRegion")
-                        .HasMaxLength(15);
-
-                    b.Property<int?>("ShipVia");
-
-                    b.Property<DateTime?>("ShippedDate")
-                        .HasColumnType("datetime");
-
-                    b.HasKey("OrderId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.HasIndex("ShipVia");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.OrderDetail", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .HasColumnName("OrderID");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductID");
-
-                    b.Property<float>("Discount");
-
-                    b.Property<short>("Quantity")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("((1))");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("money");
-
-                    b.HasKey("OrderId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Order Details");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Product", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("ProductID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CategoryId")
-                        .HasColumnName("CategoryID");
-
-                    b.Property<bool>("Discontinued");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasMaxLength(40);
-
-                    b.Property<string>("QuantityPerUnit")
-                        .HasMaxLength(20);
-
-                    b.Property<short?>("ReorderLevel")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("((0))");
-
-                    b.Property<int?>("SupplierId")
-                        .HasColumnName("SupplierID");
-
-                    b.Property<decimal?>("UnitPrice")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("money")
-                        .HasDefaultValueSql("((0))");
-
-                    b.Property<short?>("UnitsInStock")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("((0))");
-
-                    b.Property<short?>("UnitsOnOrder")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("((0))");
-
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("SupplierId");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Question", b =>
                 {
                     b.Property<int>("Id")
@@ -514,86 +236,6 @@ namespace BmsSurvey.Persistence.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Region", b =>
-                {
-                    b.Property<int>("RegionId")
-                        .HasColumnName("RegionID");
-
-                    b.Property<string>("RegionDescription")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("RegionId")
-                        .HasAnnotation("SqlServer:Clustered", false);
-
-                    b.ToTable("Region");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Shipper", b =>
-                {
-                    b.Property<int>("ShipperId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("ShipperID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasMaxLength(40);
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(24);
-
-                    b.HasKey("ShipperId");
-
-                    b.ToTable("Shippers");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Supplier", b =>
-                {
-                    b.Property<int>("SupplierId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("SupplierID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .HasMaxLength(60);
-
-                    b.Property<string>("City")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasMaxLength(40);
-
-                    b.Property<string>("ContactName")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("ContactTitle")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Country")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("Fax")
-                        .HasMaxLength(24);
-
-                    b.Property<string>("HomePage")
-                        .HasColumnType("ntext");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(24);
-
-                    b.Property<string>("PostalCode")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Region")
-                        .HasMaxLength(15);
-
-                    b.HasKey("SupplierId");
-
-                    b.ToTable("Suppliers");
-                });
-
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Survey", b =>
                 {
                     b.Property<int>("Id")
@@ -624,33 +266,12 @@ namespace BmsSurvey.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(3);
 
-                    b.Property<string>("Title")
+                    b.Property<string>("SurveyTitle")
                         .IsRequired();
 
                     b.HasKey("Id");
 
                     b.ToTable("Surveys");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Territory", b =>
-                {
-                    b.Property<string>("TerritoryId")
-                        .HasColumnName("TerritoryID")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("RegionId")
-                        .HasColumnName("RegionID");
-
-                    b.Property<string>("TerritoryDescription")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("TerritoryId")
-                        .HasAnnotation("SqlServer:Clustered", false);
-
-                    b.HasIndex("RegionId");
-
-                    b.ToTable("Territories");
                 });
 
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Utility.AuditLogRecord", b =>
@@ -801,27 +422,6 @@ namespace BmsSurvey.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Employee", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Employee", "Manager")
-                        .WithMany("DirectReports")
-                        .HasForeignKey("ReportsTo")
-                        .HasConstraintName("FK_Employees_Employees");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.EmployeeTerritory", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Employee", "Employee")
-                        .WithMany("EmployeeTerritories")
-                        .HasForeignKey("EmployeeId")
-                        .HasConstraintName("FK_EmployeeTerritories_Employees");
-
-                    b.HasOne("BmsSurvey.Domain.Entities.Territory", "Territory")
-                        .WithMany("EmployeeTerritories")
-                        .HasForeignKey("TerritoryId")
-                        .HasConstraintName("FK_EmployeeTerritories_Territories");
-                });
-
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Identity.UserRole", b =>
                 {
                     b.HasOne("BmsSurvey.Domain.Entities.Identity.Role", "Role")
@@ -835,64 +435,12 @@ namespace BmsSurvey.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Order", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
-                        .HasConstraintName("FK_Orders_Customers");
-
-                    b.HasOne("BmsSurvey.Domain.Entities.Employee", "Employee")
-                        .WithMany("Orders")
-                        .HasForeignKey("EmployeeId")
-                        .HasConstraintName("FK_Orders_Employees");
-
-                    b.HasOne("BmsSurvey.Domain.Entities.Shipper", "Shipper")
-                        .WithMany("Orders")
-                        .HasForeignKey("ShipVia")
-                        .HasConstraintName("FK_Orders_Shippers");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.OrderDetail", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .HasConstraintName("FK_Order_Details_Orders");
-
-                    b.HasOne("BmsSurvey.Domain.Entities.Product", "Product")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("ProductId")
-                        .HasConstraintName("FK_Order_Details_Products");
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Product", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .HasConstraintName("FK_Products_Categories");
-
-                    b.HasOne("BmsSurvey.Domain.Entities.Supplier", "Supplier")
-                        .WithMany("Products")
-                        .HasForeignKey("SupplierId")
-                        .HasConstraintName("FK_Products_Suppliers");
-                });
-
             modelBuilder.Entity("BmsSurvey.Domain.Entities.Question", b =>
                 {
                     b.HasOne("BmsSurvey.Domain.Entities.Survey", "Survey")
                         .WithMany("Questions")
                         .HasForeignKey("SurveyId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BmsSurvey.Domain.Entities.Territory", b =>
-                {
-                    b.HasOne("BmsSurvey.Domain.Entities.Region", "Region")
-                        .WithMany("Territories")
-                        .HasForeignKey("RegionId")
-                        .HasConstraintName("FK_Territories_Region");
                 });
 #pragma warning restore 612, 618
         }

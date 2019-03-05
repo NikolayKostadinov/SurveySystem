@@ -12,7 +12,6 @@ namespace BmsSurvey.Application.Surveys.Models
 
     using System;
     using System.ComponentModel.DataAnnotations;
-    using AutoMapper;
     using Domain.Entities;
     using Interfaces.Mapping;
 
@@ -22,18 +21,22 @@ namespace BmsSurvey.Application.Surveys.Models
     {
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "TITLE")]
-        public string Title { get; set; }
-
+        public string SurveyTitle { get; set; }
+        
         [Display(Name = "DESCRIPTION")]
         public string Description { get; set; }
 
+        [Required]
         [Display(Name = "PAGE_SIZE")]
         public int PageSize { get; set; }
 
+        [Required]
         [Display(Name = "ACTIVE_FROM")]
         public DateTime ActiveFrom { get; set; }
 
+        [Required]
         [Display(Name = "ACTIVE_TO")]
         public DateTime ActiveTo { get; set; }
 
@@ -48,6 +51,5 @@ namespace BmsSurvey.Application.Surveys.Models
 
         [Display(Name = "LAST_MODIFIED_ON")]
         public DateTime? ModifiedOn { get; set; }
-
     }
 }

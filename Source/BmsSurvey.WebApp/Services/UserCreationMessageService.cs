@@ -7,6 +7,7 @@ namespace BmsSurvey.WebApp.Services
 {
     using System.Reflection;
     using System.Text.Encodings.Web;
+    using System.Web;
     using Application.Interfaces;
     using Application.Notifications.Models;
     using Domain.Entities.Identity;
@@ -15,6 +16,7 @@ namespace BmsSurvey.WebApp.Services
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Infrastructure;
     using Microsoft.AspNetCore.Routing;
+    using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure;
     using Microsoft.Extensions.Localization;
     using Resources;
 
@@ -41,13 +43,15 @@ namespace BmsSurvey.WebApp.Services
         public async Task<Message> GetMessageAsync(User user)
         {
             var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
+            var result = await userManager.ConfirmEmailAsync(user, code);
             var httpContext = this.httpContextAccessor.HttpContext;
             var callbackUrlPath = this.linkGenerator.GetPathByPage(
                 httpContext: httpContext, 
                 page: "/Account/ConfirmEmail", 
                 handler: null, 
                 values: new {userId = user.Id, code = code, area = "Identity"});
-            var callbackUrl = $"{httpContext.Request.Scheme}://{httpContext.Request.Host}{httpContext.Request.PathBase}{callbackUrlPath}";
+            var callbackUrl =
+                $"{httpContext.Request.Scheme}://{httpContext.Request.Host}{httpContext.Request.PathBase}{callbackUrlPath}";
 
             var message = new Message()
             {

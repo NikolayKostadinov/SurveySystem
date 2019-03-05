@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BmsSurvey.Common\BmsSurvey.Common.csproj" />
+    <ProjectReference Include="..\BmsSurvey.Domain\BmsSurvey.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

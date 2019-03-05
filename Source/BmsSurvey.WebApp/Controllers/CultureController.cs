@@ -11,36 +11,32 @@ namespace BmsSurvey.WebApp.Controllers
     #region Using
 
     using System;
+    using System.Threading.Tasks;
     using Application.Interfaces;
+    using Application.Users.Commands.ChangeUserCulture;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     #endregion
 
-    public class CultureController : Controller
+    public class CultureController : BaseController
     {
         private readonly ILocalizationUrlService localizationUrlService;
-        private readonly ISupportedCulturesService supportedCulturesProvider;
-        private readonly IUserService userService;
 
-        public CultureController(ILocalizationUrlService localizationUrlService,
-            IUserService userService,
-            ISupportedCulturesService supportedCulturesServiceParam)
+        public CultureController(ILocalizationUrlService localizationUrlService)
         {
             this.localizationUrlService = localizationUrlService ?? throw new ArgumentNullException(nameof(localizationUrlService));
-            this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
-
-            supportedCulturesProvider = supportedCulturesServiceParam ?? throw new ArgumentNullException(nameof(supportedCulturesServiceParam));
         }
 
         // GET: Culture
-        public ActionResult Change(string returnUrl, string uICulture)
+        public async Task<ActionResult> Change(string returnUrl, string uICulture)
         {
             if (ModelState.IsValid)
             {
-                if (supportedCulturesProvider.IsCultureSupported(uICulture)
-                    && User.Identity.IsAuthenticated)
+                if (User.Identity.IsAuthenticated)
                 {
-                    userService.UpdateUserCulture(int.Parse(userService.GetUserId(User)), uICulture);
+                    var command = new ChangeUserCultureCommand(User, uICulture);
+                    await this.Mediator.Send(command);
                 }
 
                 returnUrl = localizationUrlService.GetLocalizedUri(new Uri(returnUrl), uICulture).OriginalString;
@@ -49,6 +45,4 @@ namespace BmsSurvey.WebApp.Controllers
             return Redirect(returnUrl);
         }
     }
-
-
 }

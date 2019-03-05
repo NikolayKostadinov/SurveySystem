@@ -4,6 +4,8 @@ using BmsSurvey.WebApp.Models;
 
 namespace BmsSurvey.WebApp.Controllers
 {
+    using Castle.Core.Logging;
+
     public class HomeController : Controller
     {
         public IActionResult Index()

@@ -13,19 +13,28 @@ namespace BmsSurvey.Application.Questions.Commands.EditQuestion
     using AutoMapper;
     using CreateQuestion;
     using Domain.Entities;
+    using Interfaces.Mapping;
     using MediatR;
+    using Models;
     using Surveys.Commands.CreateSurvey;
 
     #endregion
 
-    public class EditQuestionCommand : CreateQuestionCommand
-    {
+    public class EditQuestionCommand:IRequest<QuestionListViewModel>, IMapFrom<Question>, IHaveCustomMapping
+    { 
         public int Id { get; set; }
 
-        public override void CreateMappings(Profile configuration)
+        public int DisplayNumber { get; set; }
+
+        public string Text { get; set; }
+
+        public QuestionType QuestionType { get; set; }
+
+        public void CreateMappings(Profile configuration)
         {
-            configuration.CreateMap<EditQuestionCommand, Survey>()
-               .ForMember(p => p.Questions, opt => opt.Ignore())
+            configuration.CreateMap<EditQuestionCommand, Question>()
+                .ForMember(p => p.SurveyId, opt => opt.Ignore())
+                .ForMember(p => p.Answers, opt => opt.Ignore())
                 .ForMember(p => p.IsDeleted, opt => opt.Ignore())
                 .ForMember(p => p.DeletedOn, opt => opt.Ignore())
                 .ForMember(p => p.DeletedFrom, opt => opt.Ignore())

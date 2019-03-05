@@ -11,8 +11,7 @@
         {
             if (bindingContext.HttpContext.Request.Query.ContainsKey(bindingContext.ModelName))
             {
-                DateTime result;
-                if (DateTime.TryParse(bindingContext.HttpContext.Request.Query[bindingContext.ModelName], out result))
+                if (DateTime.TryParse(bindingContext.HttpContext.Request.Query[bindingContext.ModelName], out var result))
                 {
                     bindingContext.Model = result;
                     bindingContext.Result = ModelBindingResult.Success(bindingContext.Model);

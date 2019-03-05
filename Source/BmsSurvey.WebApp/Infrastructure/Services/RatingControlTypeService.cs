@@ -12,7 +12,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Services
 
     public class RatingControlTypeService : IRatingControlTypeService
     {
-        public static readonly IDictionary<QuestionType, string> DedefaultRatinTypes =
+        public static readonly IDictionary<QuestionType, string> DefaultRatingTypes =
             new Dictionary<QuestionType, string>()
             {
                 {QuestionType.Rate1to5Stars, "css-stars"},
@@ -21,7 +21,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Services
                 {QuestionType.FreeText, null},
             };
 
-        private IDictionary<QuestionType, string> ratingTypes;
+        private readonly IDictionary<QuestionType, string> ratingTypes;
 
         public RatingControlTypeService(IConfiguration config)
         {
@@ -30,7 +30,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Services
             foreach (QuestionType questionType in questionTypes)
             {
                 this.ratingTypes[questionType] = config[$"RatingTypes:{questionType.ToString()}"]
-                                                 ?? DedefaultRatinTypes[questionType] ?? string.Empty;
+                                                 ?? DefaultRatingTypes[questionType] ?? string.Empty;
             }
         }
 

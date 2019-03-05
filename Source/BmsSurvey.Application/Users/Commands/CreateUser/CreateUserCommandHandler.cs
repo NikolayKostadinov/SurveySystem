@@ -21,6 +21,7 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
     using Interfaces;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
+    using Notifications.UserConfirmEmail;
 
     #endregion
 
@@ -74,7 +75,7 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
 
             if (result.IsValid)
             {
-                await this.mediator.Publish(new UserCreatedNotification(user), cancellationToken);
+                await this.mediator.Publish(new UserConfirmEmailNotification(user), cancellationToken);
             }
 
             return result;

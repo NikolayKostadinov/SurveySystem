@@ -1,4 +1,5 @@
 ﻿@using BmsSurvey.Application.Surveys.Models
+@using BmsSurvey.WebApp.Resources
 @using Microsoft.AspNetCore.Antiforgery
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
 @inject IAntiforgery AntiForgery
@@ -17,14 +18,14 @@
                   col.Bound(m => m.IsActive).Width(50)
                       .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
                   col.Bound(m => m.Id).Width(50);
-                  col.Bound(m => m.Title).EditorTemplateName("String");
+                  col.Bound(m => m.SurveyTitle);
                   col.Bound(m => m.Description);
                   col.Bound(m => m.PageSize);
-                  col.Bound(m => m.ActiveFrom).Format("{0:dd.MM.yyyy}");
-                  col.Bound(m => m.ActiveTo).Format("{0:dd.MM.yyyy}");
+                  col.Bound(m => m.ActiveFrom).Format("{0:d}");
+                  col.Bound(m => m.ActiveTo).Format("{0:d}");
                   col.Bound(m => m.CreatedFrom);
                   col.Bound(m => m.ModifiedFrom);
-                  col.Bound(m => m.ModifiedOn).Format("{0:dd.MM.yyyy}");
+                  col.Bound(m => m.ModifiedOn).Format("{0:d}");
                   col.Command(c =>
                   {
                       c.Edit().Text(LayoutLocalizer.GetLocalizedHtmlString("EDIT"));
@@ -40,12 +41,12 @@
                         .Refresh(true)
                         .PageSizes(true)
                         .ButtonCount(5))
-                        .DataSource(dataSource => dataSource
+                   .DataSource(dataSource => dataSource
                         .Ajax()
                         .Model(u =>
                         {
                             u.Id(m => m.Id);
-                            u.Field(m => m.Title);
+                            u.Field(m => m.SurveyTitle);
                             u.Field(m => m.Id).Editable(false);
                             u.Field(m => m.IsActive).Editable(false);
                             u.Field(m => m.CreatedFrom).Editable(false);

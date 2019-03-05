@@ -59,7 +59,7 @@
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
-    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2019.1.115" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2019.1.220" />
   </ItemGroup>
 
 
@@ -73,6 +73,26 @@
 
   <ItemGroup>
     <Folder Include="logs\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Resources\LayoutResource.Designer.cs">
+      <DependentUpon>LayoutResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\LayoutResource.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LayoutResource.resx">
+      <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

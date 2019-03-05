@@ -1,6 +1,7 @@
 ﻿namespace BmsSurvey.WebApp.Areas.Identity.Pages.Account
 {
     using System;
+    using System.Text.Encodings.Web;
     using System.Threading.Tasks;
     using Domain.Entities.Identity;
     using Microsoft.AspNetCore.Authorization;
@@ -25,6 +26,7 @@
                 return RedirectToPage("/Index");
             }
 
+            
             var user = await userManager.FindByIdAsync(userId);
             if (user == null)
             {

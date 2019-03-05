@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BmsSurvey.WebApp.Controllers
 {
+    using Application.Exceptions;
     using Application.Questions.Models;
     using Application.Surveys.Models;
     using Domain.Entities;
@@ -14,9 +15,10 @@ namespace BmsSurvey.WebApp.Controllers
     public class TestsController : BaseController
     {
 
+        [IgnoreAntiforgeryToken]
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
     }
  }

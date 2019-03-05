@@ -18,6 +18,6 @@ namespace BmsSurvey.Application.Surveys.Models
     public class SurveySimpleViewModel : IMapFrom<Survey>
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string SurveyTitle { get; set; }
     }
 }

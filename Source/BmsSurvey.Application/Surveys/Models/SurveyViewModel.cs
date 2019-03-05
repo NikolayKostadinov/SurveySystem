@@ -12,14 +12,10 @@ namespace BmsSurvey.Application.Surveys.Models
     public class SurveyViewModel : IMapFrom<Survey>, IHaveCustomMapping
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string SurveyTitle { get; set; }
         public int PageNumber { get; set; }
         public bool IsLastPage { get; set; }
         public IEnumerable<QuestionViewModel> Questions { get; set; }
-        public bool IsActive { get; set; }
-        public string CreatedFrom { get; set; }
-        public string ModifiedFrom { get; set; }
 
         public void CreateMappings(Profile configuration)
         {

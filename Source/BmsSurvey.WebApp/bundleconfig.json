@@ -16,5 +16,11 @@
     "inputFiles": [
       "wwwroot/css/widthest.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/kendo-shim.min.js",
+    "inputFiles": [
+      "wwwroot/js/kendo-shim.js"
+    ]
   }
 ]

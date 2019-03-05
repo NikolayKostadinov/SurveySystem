@@ -133,13 +133,16 @@
     <value>Неуспашно съсзаване на запис за извънреден труд!</value>
   </data>
   <data name="GREATER_THAN" xml:space="preserve">
-    <value>Стойността в полето трябва да бъде по-голема от {0}!</value>
+    <value>Стойността в полето '{PropertyName}' трябва да бъде по-голяма от {ComparisonValue}!</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Невалиден формат на електронна поща '{PropertyValue}'!</value>
   </data>
   <data name="RECORD_NOT_FOUND" xml:space="preserve">
     <value>Записът не е открит!</value>
   </data>
   <data name="REQUIRED" xml:space="preserve">
-    <value>Полето е задължително!</value>
+    <value>Полето '{PropertyName}' е задължително!</value>
   </data>
   <data name="TABNUMBER_INVALID_FORMAT" xml:space="preserve">
     <value>Полето табелен номер трябва да бъде дълго 5 символa!</value>

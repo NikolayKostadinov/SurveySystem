@@ -5,17 +5,22 @@
     using System.Reflection;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
+    using Application.Exceptions;
     using Application.Interfaces;
+    using Application.Users.Commands.UpdateUser;
+    using Application.Users.Queries.GetUser;
     using AutoMapper;
     using Domain.Entities.Identity;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.AspNetCore.Mvc.TagHelpers;
     using Microsoft.Extensions.Localization;
+    using WebApp.Pages;
     using LayoutResource = Resources.LayoutResource;
 
-    public partial class IndexModel : PageModel
+    public partial class IndexModel : PageModelBase
     {
         private readonly UserManager<User> userManager;
         private readonly IUserService userService;
@@ -51,63 +56,34 @@
         public string StatusMessage { get; set; }
 
         [BindProperty]
-        public InputModel Input { get; set; }
-
-        public class InputModel
-        {
-            [Required(ErrorMessage = "EMAIL_REQUIRED")]
-            [EmailAddress(ErrorMessage = "EMAIL_INVALID")]
-            public string Email { get; set; }
-
-            [Phone]
-            [Display(Name = "Phone number")]
-            public string PhoneNumber { get; set; }
-
-            [Required(ErrorMessage = "TABNUMBER_REQUIRED")]
-            [StringLength(5, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 5)]
-            [Display(Name = "TABNUMBER")]
-            public string TabNumber { get; set; }
-
-            [Required(ErrorMessage = "FIRSTNAME_REQUIRED")]
-            [MinLength(2)]
-            [Display(Name = "FIRSTNAME")]
-            public string FirstName { get; set; }
-
-            [Required(ErrorMessage = "SIRNAME_REQUIRED")]
-            [MinLength(2)]
-            [Display(Name = "SIRNAME")]
-            public string SirName { get; set; }
-
-            [Required(ErrorMessage = "LASTNAME_REQUIRED")]
-            [MinLength(2)]
-            [Display(Name = "LASTNAME")]
-            public string LastName { get; set; }
-
-        }
+        public UpdateUserCommand Input { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var user = await userManager.GetUserAsync(User);
-            if (user == null)
+            try
+            {
+                var user = await this.Mediator.Send(new GetUserQuery(User));
+                Username = user.UserName;
+
+                Input = new UpdateUserCommand
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    TabNumber = user.TabNumber,
+                    FirstName = user.FirstName,
+                    SirName = user.SirName,
+                    LastName = user.LastName,
+                };
+
+                IsEmailConfirmed = await userManager.IsEmailConfirmedAsync(user);
+
+                return Page();
+            }
+            catch (NotFoundException nfe)
             {
                 return NotFound(layoutLocalizer["USER_NOTFOUND", userManager.GetUserId(User)]);
             }
-
-            Username = user.UserName;
-
-            Input = new InputModel
-            {
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                TabNumber = user.TabNumber,
-                FirstName = user.FirstName,
-                SirName = user.SirName,
-                LastName = user.LastName,
-            };
-
-            IsEmailConfirmed = await userManager.IsEmailConfirmedAsync(user);
-
-            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -117,51 +93,8 @@
                 return Page();
             }
 
-            var user = await userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return NotFound(layoutLocalizer["USER_NOTFOUND", userManager.GetUserId(User)]);
-            }
+            var result = await this.Mediator.Send(Input);
 
-            var email = await userManager.GetEmailAsync(user);
-            if (Input.Email != email)
-            {
-                var setEmailResult = await userManager.SetEmailAsync(user, Input.Email);
-                if (!setEmailResult.Succeeded)
-                {
-                    var userId = await userManager.GetUserIdAsync(user);
-                    throw new InvalidOperationException($"Unexpected error occurred setting email for user with ID '{userId}'.");
-                }
-            }
-
-            var phoneNumber = await userManager.GetPhoneNumberAsync(user);
-            if (Input.PhoneNumber != phoneNumber)
-            {
-                var setPhoneResult = await userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
-                {
-                    var userId = await userManager.GetUserIdAsync(user);
-                    throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
-                }
-            }
-
-            var updateUser = new User()
-            {
-                Id = user.Id,
-                TabNumber = Input.TabNumber,
-                FirstName = Input.FirstName,
-                SirName = Input.SirName,
-                LastName = Input.LastName
-            };
-
-            var updateUserResult = await this.userService.UpdateUser(updateUser, User.Identity.Name);
-            if (!updateUserResult.IsValid)
-            {
-                var userId = await userManager.GetUserIdAsync(user);
-                throw new InvalidOperationException($"Unexpected error occurred updating user with ID '{userId}'.");
-            }
-
-            await signInManager.RefreshSignInAsync(user);
             StatusMessage = layoutLocalizer["STATUS_PROFILE_UPDATED", userManager.GetUserId(User)];
             return RedirectToPage();
         }
@@ -186,7 +119,7 @@
             var callbackUrl = Url.Page(
                 "/Account/ConfirmEmail",
                 pageHandler: null,
-                values: new { userId = userId, code = code },
+                values: new { userId, code },
                 protocol: Request.Scheme);
             await emailSender.SendEmailAsync(
                 email,

@@ -22,7 +22,7 @@ namespace BmsSurvey.Application.Surveys.Commands.CreateSurvey
     public class CreateSurveyCommand : IRequest<int>, IMapFrom<Survey>, IHaveCustomMapping
     {
         [Display(Name = "TITLE")]
-        public string Title { get; set; }
+        public string SurveyTitle { get; set; }
 
         [Display(Name = "DESCRIPTION")]
         public string Description { get; set; }

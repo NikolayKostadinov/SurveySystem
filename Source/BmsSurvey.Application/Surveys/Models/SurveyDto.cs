@@ -22,11 +22,6 @@ namespace BmsSurvey.Application.Surveys.Models
             this.answers = new Dictionary<int, AnswerViewModel>();
         }
 
-        internal SurveyDto(IEnumerable<AnswerViewModel> answers)
-        {
-            this.answers = answers.ToDictionary(q => q.QuestionId);
-        }
-
         public virtual void AddAnswer(AnswerViewModel answer)
         {
             this.answers[answer.QuestionId] = answer;
@@ -36,7 +31,7 @@ namespace BmsSurvey.Application.Surveys.Models
         {
             if (!this.answers.ContainsKey(questionId))
             {
-                throw new KeyNotFoundException("Question with the key \"{questionId}\" Not found!");
+                throw new KeyNotFoundException($"Question with the key \"{questionId}\" Not found!");
             }
 
             this.answers[questionId].Value = value;

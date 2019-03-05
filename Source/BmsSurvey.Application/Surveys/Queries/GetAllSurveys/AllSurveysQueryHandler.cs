@@ -13,7 +13,7 @@ namespace BmsSurvey.Application.Surveys.Queries.GetAllSurveys
     using Models;
     using Persistence;
 
-    class AllSurveysQueryHandler : IRequestHandler<AllSurveysQuery, IEnumerable<SurveyListRowViewModel>>
+    public class AllSurveysQueryHandler : IRequestHandler<AllSurveysQuery, IEnumerable<SurveyListRowViewModel>>
     {
         private readonly BmsSurveyDbContext context;
         private readonly IMapper mapper;

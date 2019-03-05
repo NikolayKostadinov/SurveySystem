@@ -1,5 +1,6 @@
 ﻿namespace BmsSurvey.Application.Surveys.Queries.GetSurveyQuestionsWithAnswers
 {
+    using System;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
@@ -20,16 +21,18 @@
 
         public SurveyQuestionsQueryHandler(BmsSurveyDbContext context, ISurveyDto surveyDto, IMapper mapper)
         {
-            this.context = context;
-            this.surveyDto = surveyDto;
-            this.mapper = mapper;
+            this.context = context ?? throw new ArgumentNullException(nameof(context));
+            this.surveyDto = surveyDto ?? throw new ArgumentNullException(nameof(surveyDto));
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<SurveyViewModel> Handle(SurveyQuestionsQuery request, CancellationToken cancellationToken)
         {
             var survey = await this.context.Surveys.Include(s => s.Questions)
                 .Include(x => x.CompletedSurveys)
-                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(x => x.Id == request.Id
+                                          && x.IsDeleted == false
+                    , cancellationToken);
             if (survey is null || !survey.IsActive)
             {
                 throw new NotFoundException(nameof(survey), request.Id);
@@ -50,15 +53,17 @@
                 .ToArray();
 
             var answers = surveyDto.Answers;
-
-            questions.ForEach(q =>
+            if (answers?.Any() ?? false)
             {
-                if (answers.TryGetValue(q.Id, out var answer))
+                questions.ForEach(q =>
                 {
-                    q.Value = answer.Value;
-                    q.IsChecked = true;
-                }
-            });
+                    if (answers.TryGetValue(q.Id, out var answer))
+                    {
+                        q.Value = answer.Value;
+                        q.IsChecked = true;
+                    }
+                });
+            }
 
             var result = this.mapper.Map<SurveyViewModel>(survey);
 

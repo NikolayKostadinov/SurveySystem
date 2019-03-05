@@ -25,10 +25,12 @@ namespace BmsSurvey.WebApp
     using Common.Constants;
     using Common.Interfaces;
     using Domain.Entities.Identity;
+    using FluentValidation;
     using FluentValidation.AspNetCore;
     using Infrastructure;
     using Infrastructure.Automapper;
     using Infrastructure.Interfaces;
+    using Infrastructure.Middlewares;
     using Infrastructure.Services;
     using MediatR;
     using MediatR.Pipeline;
@@ -190,7 +192,21 @@ namespace BmsSurvey.WebApp
                 .AddJsonOptions(options =>
                     options.SerializerSettings.ContractResolver = new DefaultContractResolver())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
+                .AddSessionStateTempDataProvider()
+                .AddFluentValidation(fv =>
+                {
+                    fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
+                    ValidatorOptions.DisplayNameResolver = (type, memberInfo, expression) =>
+                    {
+                        var sp = services.BuildServiceProvider();
+                        var localizationService = sp.GetService<ILocalizationService<LayoutResource>>();
+                        var displayName = memberInfo.CustomAttributes.FirstOrDefault(attr => attr.AttributeType.Name == "DisplayAttribute")?
+                                              .NamedArguments.FirstOrDefault(na => na.MemberName == "Name").TypedValue.Value.ToString() ?? memberInfo.Name;
+                        return localizationService.GetLocalizedHtmlString(displayName);
+                    };
+                });
+
+
 
             //Serilog ILogger registation
             services.AddLogging(builder => { builder.AddSerilog(); });
@@ -226,7 +242,7 @@ namespace BmsSurvey.WebApp
             app.UseRequestLocalization();
 
             app.UseSession();
-            //app.UseMiddleware<ClientAddressMiddleware>();
+            app.UseMiddleware<ApplicationErrorMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

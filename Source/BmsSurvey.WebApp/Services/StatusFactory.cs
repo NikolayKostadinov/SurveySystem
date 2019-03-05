@@ -12,6 +12,7 @@ namespace BmsSurvey.WebApp.Services
 
     using System;
     using Application.Interfaces;
+    using Common.Concrete;
     using Common.Interfaces;
     using Persistence.Infrastructure;
 

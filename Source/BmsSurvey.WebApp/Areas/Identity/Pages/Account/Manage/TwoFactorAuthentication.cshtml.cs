@@ -8,7 +8,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Localization;
     using Microsoft.Extensions.Logging;
-    using LayoutResource = Resources.LayoutResource;
+    using LayoutResource =Resources.LayoutResource;
 
     public class TwoFactorAuthenticationModel : PageModel
     {

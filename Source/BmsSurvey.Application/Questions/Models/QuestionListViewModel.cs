@@ -1,14 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="QuestionListViewModel.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
 
 namespace BmsSurvey.Application.Questions.Models
 {
+    #region Using
+
+    using System;
     using System.ComponentModel.DataAnnotations;
     using Domain.Entities;
     using Interfaces.Mapping;
 
-    public class QuestionListViewModel:IMapFrom<Question>
+    #endregion
+
+    public class QuestionListViewModel : IMapFrom<Question>
     {
         public int Id { get; set; }
 
@@ -24,7 +33,7 @@ namespace BmsSurvey.Application.Questions.Models
         [Display(Name = "QUESTION_TYPE")]
         public QuestionType QuestionType { get; set; }
 
-        public string QuestionTypeStr => this.QuestionType.ToString();
+        public string QuestionTypeStr => QuestionType.ToString();
 
         [Display(Name = "CREATE_FROM")]
         public string CreatedFrom { get; set; }

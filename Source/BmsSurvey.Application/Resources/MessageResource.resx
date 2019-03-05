@@ -124,7 +124,7 @@
     <value>You can't delete your account!</value>
   </data>
   <data name="DAILY_LIMIT_ЕXCEEDED" xml:space="preserve">
-    <value>The daily limit of overtime hours exceeded!\r\nMaximal available hours is {0}!</value>
+    <value>The daily limit of overtime hours exceeded!\r\nMaximal available hours is {ComparisonValue}!</value>
   </data>
   <data name="DEPARTMENT_NOT_FOUND" xml:space="preserve">
     <value>Department not found!</value>
@@ -133,13 +133,16 @@
     <value>Failed operation!</value>
   </data>
   <data name="GREATER_THAN" xml:space="preserve">
-    <value>Value must be greater than {0}!</value>
+    <value>'{PropertyName}' must be greater than {0}!</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Invalid email format '{PropertyValue}'!</value>
   </data>
   <data name="RECORD_NOT_FOUND" xml:space="preserve">
     <value>The record not found!</value>
   </data>
   <data name="REQUIRED" xml:space="preserve">
-    <value>Required field!</value>
+    <value>'{PropertyName}' is required field!</value>
   </data>
   <data name="TABNUMBER_INVALID_FORMAT" xml:space="preserve">
     <value>The Employer Id must be 5 digit long!</value>

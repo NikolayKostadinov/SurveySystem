@@ -24,6 +24,7 @@ namespace BmsSurvey.Application.Services
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Localization;
+    using Models;
     using Persistence;
     using Resources;
 
@@ -39,38 +40,21 @@ namespace BmsSurvey.Application.Services
         public UserService(UserManager<User> userManager, BmsSurveyDbContext data,
             IStatusFactory statusFactory, ILocalizationService<MessageResource> messageLocalization)
         {
-            this.userManager = userManager;
-            this.data = data;
-            this.statusFactory = statusFactory;
-            this.messageLocalization = messageLocalization;
+            this.data = data ?? throw new ArgumentNullException(nameof(data));
+            this.statusFactory = statusFactory ?? throw new ArgumentNullException(nameof(statusFactory));
+            this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+            this.messageLocalization =
+                messageLocalization ?? throw new ArgumentNullException(nameof(messageLocalization));
         }
 
-        public string GetUserId(ClaimsPrincipal user)
-        {
-            return userManager.GetUserId(user);
-        }
-
-        public IQueryable<User> GetAllUsers()
-        {
-            return data.Users
-                .Include(x => x.UserRoles)
-                .ThenInclude(ur => ur.Role);
-        }
-
-        public IQueryable<User> GetAllUsersWithDeleted()
-        {
-            return data.Users
-                .Include(x => x.UserRoles)
-                .ThenInclude(ur => ur.Role);
-        }
-
-        public async Task<object> LockAsync(int id)
+       
+        public async Task<LockStatusDto> LockAsync(int id)
         {
             var user = await userManager.FindByIdAsync(id.ToString());
             return await UserLock(user, DateTimeOffset.MaxValue);
         }
 
-        public async Task<object> UnLockAsync(int id)
+        public async Task<LockStatusDto> UnLockAsync(int id)
         {
             var user = await userManager.FindByIdAsync(id.ToString());
             return await UserLock(user, null);
@@ -102,119 +86,75 @@ namespace BmsSurvey.Application.Services
 
         }
 
-        public async Task<IStatus> UpdateUser(User user, string userName)
-        {
-            var status = this.statusFactory.GetInstance(typeof(IStatus));
-            var identityErrors = new List<IdentityError>();
-            var dbUser = userManager.Users
-                              .Include(u => u.UserRoles)
-                              .ThenInclude(ur => ur.Role)
-                              .FirstOrDefault(x => x.Id == user.Id);
+        //public async Task<IStatus> UpdateUser(User user, string userName)
+        //{
+        //    var status = this.statusFactory.GetInstance(typeof(IStatus));
+        //    var identityErrors = new List<IdentityError>();
+        //    var dbUser = userManager.Users
+        //                      .Include(u => u.UserRoles)
+        //                      .ThenInclude(ur => ur.Role)
+        //                      .FirstOrDefault(x => x.Id == user.Id);
 
-            if (dbUser == null)
-            {
+        //    if (dbUser == null)
+        //    {
 
-                var errors = new List<ValidationResult>
-                        {
-                            new ValidationResult(this.messageLocalization.GetLocalizedHtmlString("USER_NOT_FOUND"))
-                        };
-                status.SetErrors(errors);
-                return status;
-            }
+        //        var errors = new List<ValidationResult>
+        //                {
+        //                    new ValidationResult(this.messageLocalization.GetLocalizedHtmlString("USER_NOT_FOUND"))
+        //                };
+        //        status.SetErrors(errors);
+        //        return status;
+        //    }
 
-            dbUser.TabNumber = user.TabNumber;
-            dbUser.FirstName = user.FirstName;
-            dbUser.SirName = user.SirName;
-            dbUser.LastName = user.LastName;
+        //    dbUser.TabNumber = user.TabNumber;
+        //    dbUser.FirstName = user.FirstName;
+        //    dbUser.SirName = user.SirName;
+        //    dbUser.LastName = user.LastName;
 
-            var rolesToRemove = dbUser.UserRoles.Select(x => x.Role.Name).ToList();
-            if (rolesToRemove.Count > 0)
-            {
-                identityErrors.AddRange((await this.userManager.RemoveFromRolesAsync(dbUser, rolesToRemove)).Errors);
-            }
+        //    var rolesToRemove = dbUser.UserRoles.Select(x => x.Role.Name).ToList();
+        //    if (rolesToRemove.Count > 0)
+        //    {
+        //        identityErrors.AddRange((await this.userManager.RemoveFromRolesAsync(dbUser, rolesToRemove)).Errors);
+        //    }
 
-            var roleList = user.UserRoles.Select(ur => ur.RoleId).ToList();
-            var newRoles = this.data.Roles.Where(x => roleList.Contains(x.Id)).Select(x => x.Name)
-                .ToList();
+        //    var roleList = user.UserRoles.Select(ur => ur.RoleId).ToList();
+        //    var newRoles = this.data.Roles.Where(x => roleList.Contains(x.Id)).Select(x => x.Name)
+        //        .ToList();
 
-            var operationResult = await this.userManager.AddToRolesAsync(dbUser, newRoles);
-            identityErrors.AddRange(operationResult.Errors);
+        //    var operationResult = await this.userManager.AddToRolesAsync(dbUser, newRoles);
+        //    identityErrors.AddRange(operationResult.Errors);
 
-            operationResult = await userManager.UpdateAsync(dbUser);
-            identityErrors.AddRange(operationResult.Errors);
+        //    operationResult = await userManager.UpdateAsync(dbUser);
+        //    identityErrors.AddRange(operationResult.Errors);
 
-            operationResult = await userManager.UpdateSecurityStampAsync(dbUser);
-            identityErrors.AddRange(operationResult.Errors);
-
-
-            if (identityErrors.Any())
-            {
-                var errors = identityErrors.Select(x => new ValidationResult(x.Description));
-                status.SetErrors(errors);
-            }
-            else
-            {
-                status.Result = dbUser;
-            }
-
-            //SetHistoricChanges(dbUser, user);
-            //var result = this.data.SaveChanges(userName);
-
-            //if (!result.IsValid)
-            //{
-            //    foreach (var error in result.Errors)
-            //    {
-            //        status.AppendError(error);
-            //    }
-            //}
-
-            return status;
-        }
-
-        public async Task<IStatus> CreateAsync(User user, string password)
-        {
-            var identityResult = await this.userManager.CreateAsync(user, password).ConfigureAwait(false);
-            var result = this.statusFactory.GetInstance(typeof(IStatus));
-            if (identityResult.Succeeded)
-            {
-                return result;
-            }
-
-            result.SetErrors(
-                identityResult.Errors.Select(x => new ValidationResult(x.Description)));
-
-            return result;
-        }
+        //    operationResult = await userManager.UpdateSecurityStampAsync(dbUser);
+        //    identityErrors.AddRange(operationResult.Errors);
 
 
-        public User GetUser(ClaimsPrincipal user)
-        {
-            return this.userManager.Users
-                .FirstOrDefault(x => x.UserName == user.Identity.Name);
-        }
+        //    if (identityErrors.Any())
+        //    {
+        //        var errors = identityErrors.Select(x => new ValidationResult(x.Description));
+        //        status.SetErrors(errors);
+        //    }
+        //    else
+        //    {
+        //        status.Result = dbUser;
+        //    }
 
+        //   return status;
+        //}
 
-        public IStatus UpdateUserCulture(int userId, string uICulture)
-        {
-            var dbUser = userManager.Users.FirstOrDefault(x => x.Id == userId);
-            dbUser.CultureId = uICulture;
-            data.Users.Update(dbUser);
-            data.SaveChanges();
-            return this.statusFactory.GetInstance(typeof(IStatus));
-
-        }
-
-        private async Task<object> UserLock(User user, DateTimeOffset? lockOutEnd)
+        private async Task<LockStatusDto> UserLock(User user, DateTimeOffset? lockOutEnd)
         {
             var result = await userManager.SetLockoutEnabledAsync(user, true);
             var result1 = await userManager.SetLockoutEndDateAsync(user, lockOutEnd);
 
             if (result.Succeeded && result1.Succeeded)
-                return new { success = true };
-            return new
+                return new LockStatusDto { Success = true };
+            return new LockStatusDto
             {
-                success = false,
-                errors = result.Errors.Select(x => x.Description)
+                Success = false,
+                Errors = result.Errors.Select(x => x.Description)
                     .Union(result1.Errors.Select(x => x.Description)).ToArray()
             };
         }

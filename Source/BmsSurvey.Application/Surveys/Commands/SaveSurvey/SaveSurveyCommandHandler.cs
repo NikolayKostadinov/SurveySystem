@@ -40,7 +40,7 @@ namespace BmsSurvey.Application.Surveys.Commands.SaveSurvey
             {
                 var survey = await this.context.Surveys
                     .Include(s => s.Questions)
-                    .FirstOrDefaultAsync(s => s.Id == request.Id, cancellationToken);
+                    .FirstOrDefaultAsync(s => s.Id == request.Id && s.IsDeleted == false, cancellationToken);
                 if (survey is null || !survey.IsActive)
                 {
                     throw new NotFoundException(nameof(survey), request.Id);

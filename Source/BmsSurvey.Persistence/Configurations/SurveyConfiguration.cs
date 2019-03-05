@@ -16,7 +16,7 @@ namespace BmsSurvey.Persistence.Configurations
 
             builder.Property(s => s.Id).UseSqlServerIdentityColumn();
 
-            builder.Property(s => s.Title)
+            builder.Property(s => s.SurveyTitle)
                 .IsRequired();
 
             builder.Property(s => s.PageSize)
