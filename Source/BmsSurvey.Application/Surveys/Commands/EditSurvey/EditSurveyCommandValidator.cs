@@ -11,7 +11,7 @@
         {
             RuleFor(x => x.Id).NotEmpty().WithMessage(MessageResource.REQUIRED);
             RuleFor(x => x.SurveyTitle).NotEmpty().WithMessage(MessageResource.REQUIRED);
-            RuleFor(x => x.PageSize).GreaterThan(0).WithMessage(string.Format(MessageResource.GREATER_THAN, 0));
+            RuleFor(x => x.PageSize).GreaterThan(0).WithMessage(MessageResource.GREATER_THAN);
             RuleFor(x => x.ActiveFrom).NotEmpty().WithMessage(MessageResource.REQUIRED);
             RuleFor(x => x.ActiveTo).NotEmpty().WithMessage(MessageResource.REQUIRED);
             RuleFor(x => x.ActiveTo).Must((x, activeTo) => x.ActiveFrom < activeTo)

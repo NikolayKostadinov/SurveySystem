@@ -133,7 +133,7 @@
     <value>Failed operation!</value>
   </data>
   <data name="GREATER_THAN" xml:space="preserve">
-    <value>'{PropertyName}' must be greater than {0}!</value>
+    <value>'{PropertyName}' must be greater than {ComparisonValue}!</value>
   </data>
   <data name="INVALID_EMAIL" xml:space="preserve">
     <value>Invalid email format '{PropertyValue}'!</value>

@@ -99,7 +99,6 @@ namespace BmsSurvey.WebApp
 
             services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
             services.AddScoped<IUserCreationMessageService, UserCreationMessageService>();
-            services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICurrentPrincipalProvider, CurrentPrincipalProvider>();
             services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
             services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();

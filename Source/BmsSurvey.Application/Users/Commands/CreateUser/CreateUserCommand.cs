@@ -9,8 +9,9 @@
     using Interfaces.Mapping;
     using MediatR;
     using Models;
+    using Roles.Models;
 
-    public class CreateUserCommand : IRequest<IStatus>, IHavePassword
+    public class CreateUserCommand : IRequest, IHavePassword
     {
         [Required]
         public string TabNumber { get; set; }

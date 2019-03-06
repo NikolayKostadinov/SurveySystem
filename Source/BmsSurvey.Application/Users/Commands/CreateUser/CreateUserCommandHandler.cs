@@ -10,6 +10,7 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
 {
     #region Using
 
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
@@ -18,6 +19,8 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
     using AutoMapper;
     using Common.Interfaces;
     using Domain.Entities.Identity;
+    using Exceptions;
+    using Infrastructure.Extensions;
     using Interfaces;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
@@ -25,26 +28,18 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
 
     #endregion
 
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, IStatus>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand>
     {
         private readonly UserManager<User> userManager;
-        private readonly IMapper mapper;
         private readonly IMediator mediator;
-        private readonly IStatusFactory statusFactory;
 
-        public CreateUserCommandHandler(
-            UserManager<User> userManager,
-            IMapper mapper,
-            IStatusFactory statusFactory,
-            IMediator mediator)
+        public CreateUserCommandHandler(UserManager<User> userManager, IMediator mediator)
         {
-            this.userManager = userManager;
-            this.mapper = mapper;
-            this.statusFactory = statusFactory;
-            this.mediator = mediator;
+            this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public async Task<IStatus> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var dbUser = new User()
             {
@@ -55,30 +50,29 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
                 SirName = request.SirName,
                 LastName = request.LastName,
             };
-            var identityResult = await this.userManager.CreateAsync(dbUser, request.Password);
-            var result = this.statusFactory.GetInstance(typeof(IStatus));
-            if (!identityResult.Succeeded)
-            {
-                result.SetErrors(
-                    identityResult.Errors.Select(x => new ValidationResult(x.Description)));
-                return result;
-            }
+
+            var result = await this.userManager.CreateAsync(dbUser, request.Password);
+
+            result.Check(nameof(CreateUserCommand));
 
             var user = await this.userManager.FindByNameAsync(request.UserName);
-            var roles = request?.Roles?.Select(x => x.Name)?.ToList() ?? new List<string>();
-            if (roles.Any() && user != null)
+
+            if (user == null)
             {
-                identityResult = await this.userManager.AddToRolesAsync(user, roles);
-                result.SetErrors(
-                    identityResult.Errors.Select(x => new ValidationResult(x.Description)));
+                throw new NotFoundException(nameof(user), request.UserName);
             }
 
-            if (result.IsValid)
+            var roles = request.Roles?.Select(x => x.Name).ToList() ?? new List<string>();
+
+            if (roles.Any())
             {
-                await this.mediator.Publish(new UserConfirmEmailNotification(user), cancellationToken);
+                result = await this.userManager.AddToRolesAsync(user, roles);
+                result.Check(nameof(CreateUserCommand));
             }
 
-            return result;
+            await this.mediator.Publish(new UserConfirmEmailNotification(user), cancellationToken);
+
+            return await Unit.Task;
         }
     }
 }

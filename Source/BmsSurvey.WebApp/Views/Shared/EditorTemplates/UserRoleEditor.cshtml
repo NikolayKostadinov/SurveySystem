@@ -1,6 +1,7 @@
-﻿@using Kendo.Mvc.UI
+﻿@using BmsSurvey.Application.Roles.Models
+@using Kendo.Mvc.UI
 @using BmsSurvey.Application.Users.Models
-@model IEnumerable<RoleSimpleViewModel>
+@model IEnumerable<BmsSurvey.Application.Roles.Models.RoleSimpleViewModel>
 @(Html.Kendo()
       .MultiSelectFor(m => m)
       .BindTo((IEnumerable<RoleSimpleViewModel>) ViewData["roles"])

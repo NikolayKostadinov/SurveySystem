@@ -1,0 +1,1415 @@
+2019-03-06 09:43:55.834 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:43:55.943 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:43:56.222 +02:00 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-03-06 09:43:56.231 +02:00 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-03-06 09:43:56.244 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-03-06 09:43:56.245 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-03-06 09:43:56.262 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-03-06 09:43:56.264 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-03-06 09:43:56.270 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-03-06 09:43:56.271 +02:00 [INF] No migrations were applied. The database is already up to date.
+2019-03-06 09:43:56.357 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-06 09:43:56.359 +02:00 [INF] User profile is available. Using 'C:\Users\Nikolay.Kostadinov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-06 09:43:56.408 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-03-06 09:43:56.409 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+2019-03-06 09:43:56.599 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Surveys] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-03-06 09:43:56.601 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Surveys] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-03-06 09:43:57.144 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-03-06 09:43:57.148 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-03-06 09:43:57.308 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:43:57.310 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:43:57.459 +02:00 [INF] Executed DbCommand (72ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:43:57.461 +02:00 [INF] Executed DbCommand (72ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:00.306 +02:00 [INF] Executed DbCommand (2,702ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:00.308 +02:00 [INF] Executed DbCommand (2,702ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:00.396 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:00.398 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:00.450 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:00.452 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:00.512 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:00.514 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:01.167 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-03-06 09:44:01.169 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-03-06 09:44:01.289 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:44:01.292 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:44:01.296 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8608ms.
+2019-03-06 09:44:01.299 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8608ms.
+2019-03-06 09:44:01.327 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:44:01.329 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:44:01.552 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:01.554 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:01.586 +02:00 [INF] Executed ViewResult - view Index executed in 276.0664ms.
+2019-03-06 09:44:01.591 +02:00 [INF] Executed ViewResult - view Index executed in 276.0664ms.
+2019-03-06 09:44:01.591 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 422.21250000000003ms
+2019-03-06 09:44:01.597 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 422.21250000000003ms
+2019-03-06 09:44:01.611 +02:00 [INF] Request finished in 4468.4299ms 200 text/html; charset=utf-8
+2019-03-06 09:44:01.614 +02:00 [INF] Request finished in 4468.4299ms 200 text/html; charset=utf-8
+2019-03-06 09:44:01.681 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/js/custom/kendoAdditional.min.js?v=FBka0px339HJn_n3NwoEDm10Ro-1AwrjjEzQi7NHb5c  
+2019-03-06 09:44:01.681 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/js/kendo-shim.min.js?v=znwwSKCYm6E37K-SbJCcmrPSGEjoBe2Sicn241EZDtA  
+2019-03-06 09:44:01.683 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/js/custom/kendoAdditional.min.js?v=FBka0px339HJn_n3NwoEDm10Ro-1AwrjjEzQi7NHb5c  
+2019-03-06 09:44:01.685 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/js/kendo-shim.min.js?v=znwwSKCYm6E37K-SbJCcmrPSGEjoBe2Sicn241EZDtA  
+2019-03-06 09:44:01.694 +02:00 [INF] The file /js/custom/kendoAdditional.min.js was not modified
+2019-03-06 09:44:01.694 +02:00 [INF] The file /js/kendo-shim.min.js was not modified
+2019-03-06 09:44:01.696 +02:00 [INF] The file /js/custom/kendoAdditional.min.js was not modified
+2019-03-06 09:44:01.701 +02:00 [INF] The file /js/kendo-shim.min.js was not modified
+2019-03-06 09:44:01.703 +02:00 [INF] Request finished in 22.1704ms 304 application/javascript
+2019-03-06 09:44:01.703 +02:00 [INF] Request finished in 22.1704ms 304 application/javascript
+2019-03-06 09:44:01.705 +02:00 [INF] Request finished in 22.1704ms 304 application/javascript
+2019-03-06 09:44:01.729 +02:00 [INF] Request finished in 22.1704ms 304 application/javascript
+2019-03-06 09:44:12.652 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Administration  
+2019-03-06 09:44:12.653 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Administration  
+2019-03-06 09:44:12.655 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:12.657 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:12.684 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:12.687 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:12.726 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:12.728 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:12.760 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:12.761 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:12.794 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:12.795 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:12.829 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:12.830 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:12.847 +02:00 [INF] Route matched with {page = "/Administration", area = "Administration", action = "", controller = ""}. Executing page /Administration
+2019-03-06 09:44:12.849 +02:00 [INF] Route matched with {page = "/Administration", area = "Administration", action = "", controller = ""}. Executing page /Administration
+2019-03-06 09:44:12.859 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Administration.Pages.AdministrationModel.OnGet with arguments (null) - ModelState is "Valid"
+2019-03-06 09:44:12.862 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Administration.Pages.AdministrationModel.OnGet with arguments (null) - ModelState is "Valid"
+2019-03-06 09:44:12.862 +02:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:44:12.864 +02:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:44:12.886 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:12.888 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:12.890 +02:00 [INF] Executed page /Administration in 41.665400000000005ms
+2019-03-06 09:44:12.892 +02:00 [INF] Executed page /Administration in 41.665400000000005ms
+2019-03-06 09:44:12.892 +02:00 [INF] Request finished in 240.8726ms 200 text/html; charset=utf-8
+2019-03-06 09:44:12.894 +02:00 [INF] Request finished in 240.8726ms 200 text/html; charset=utf-8
+2019-03-06 09:44:15.136 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Index  
+2019-03-06 09:44:15.138 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Index  
+2019-03-06 09:44:15.140 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:15.142 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:15.175 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:15.177 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:15.230 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:15.232 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:15.283 +02:00 [INF] Executed DbCommand (50ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:15.284 +02:00 [INF] Executed DbCommand (50ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:15.326 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:15.328 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:15.372 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:15.374 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:15.382 +02:00 [INF] Route matched with {area = "Administration", action = "Index", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp)
+2019-03-06 09:44:15.384 +02:00 [INF] Route matched with {area = "Administration", action = "Index", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp)
+2019-03-06 09:44:15.394 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:15.396 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:15.439 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:44:15.441 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:44:15.462 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:15.466 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:15.471 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:15.473 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:16.097 +02:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[ConcurrencyStamp], [x].[CreatedFrom], [x].[CreatedOn], [x].[DeletedFrom], [x].[DeletedOn], [x].[Description], [x].[IsDeleted], [x].[ModifiedFrom], [x].[ModifiedOn], [x].[Name], [x].[NormalizedName], [x].[PreserveCreatedOn]
+FROM [Roles] AS [x]
+WHERE [x].[IsDeleted] = 0
+2019-03-06 09:44:16.098 +02:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[ConcurrencyStamp], [x].[CreatedFrom], [x].[CreatedOn], [x].[DeletedFrom], [x].[DeletedOn], [x].[Description], [x].[IsDeleted], [x].[ModifiedFrom], [x].[ModifiedOn], [x].[Name], [x].[NormalizedName], [x].[PreserveCreatedOn]
+FROM [Roles] AS [x]
+WHERE [x].[IsDeleted] = 0
+2019-03-06 09:44:16.119 +02:00 [WRN] Bmsys Survey Long Running Request: GetAllRolesDropdownDataQuery (650 milliseconds) {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:16.121 +02:00 [WRN] Bmsys Survey Long Running Request: GetAllRolesDropdownDataQuery (650 milliseconds) {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:44:16.121 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 680.09ms.
+2019-03-06 09:44:16.122 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 680.09ms.
+2019-03-06 09:44:16.127 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:44:16.129 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:44:16.233 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:16.234 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:44:16.525 +02:00 [INF] Executed ViewResult - view Index executed in 402.82390000000004ms.
+2019-03-06 09:44:16.527 +02:00 [INF] Executed ViewResult - view Index executed in 402.82390000000004ms.
+2019-03-06 09:44:16.527 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) in 1143.2615ms
+2019-03-06 09:44:16.529 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) in 1143.2615ms
+2019-03-06 09:44:16.529 +02:00 [INF] Request finished in 1393.4711ms 200 text/html; charset=utf-8
+2019-03-06 09:44:16.531 +02:00 [INF] Request finished in 1393.4711ms 200 text/html; charset=utf-8
+2019-03-06 09:44:16.544 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/unlockout.png  
+2019-03-06 09:44:16.547 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/unlockout.png  
+2019-03-06 09:44:16.558 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/no_email.png  
+2019-03-06 09:44:16.560 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/no_email.png  
+2019-03-06 09:44:16.574 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/no_email.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\no_email.png'
+2019-03-06 09:44:16.574 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/unlockout.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\unlockout.png'
+2019-03-06 09:44:16.575 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/no_email.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\no_email.png'
+2019-03-06 09:44:16.576 +02:00 [INF] Request finished in 18.0619ms 200 image/png
+2019-03-06 09:44:16.577 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/unlockout.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\unlockout.png'
+2019-03-06 09:44:16.578 +02:00 [INF] Request finished in 33.2133ms 200 image/png
+2019-03-06 09:44:16.578 +02:00 [INF] Request finished in 18.0619ms 200 image/png
+2019-03-06 09:44:16.580 +02:00 [INF] Request finished in 33.2133ms 200 image/png
+2019-03-06 09:44:16.736 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/ErrorCircle.png  
+2019-03-06 09:44:16.748 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/edit.png  
+2019-03-06 09:44:16.749 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/ErrorCircle.png  
+2019-03-06 09:44:16.751 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/Images/PNG/32x32/edit.png  
+2019-03-06 09:44:16.752 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/ErrorCircle.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\ErrorCircle.png'
+2019-03-06 09:44:16.752 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/edit.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\edit.png'
+2019-03-06 09:44:16.755 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/ErrorCircle.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\ErrorCircle.png'
+2019-03-06 09:44:16.756 +02:00 [INF] Request finished in 19.7494ms 200 image/png
+2019-03-06 09:44:16.757 +02:00 [INF] Sending file. Request path: '/Images/PNG/32x32/edit.png'. Physical path: 'D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\wwwroot\Images\PNG\32x32\edit.png'
+2019-03-06 09:44:16.757 +02:00 [INF] Request finished in 9.5388ms 200 image/png
+2019-03-06 09:44:16.758 +02:00 [INF] Request finished in 19.7494ms 200 image/png
+2019-03-06 09:44:16.760 +02:00 [INF] Request finished in 9.5388ms 200 image/png
+2019-03-06 09:44:16.863 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:44:16.864 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:44:16.865 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:16.867 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:16.898 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:16.900 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:16.939 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:16.941 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:16.975 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:16.977 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:17.010 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:17.012 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:17.045 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:17.046 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:17.064 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:44:17.066 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:44:17.067 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:17.069 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:17.177 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:44:17.184 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:44:17.187 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:17.189 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:17.189 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:17.191 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:17.319 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:44:17.321 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:44:17.366 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:44:17.368 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:44:17.441 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 257.05760000000004ms.
+2019-03-06 09:44:17.443 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 257.05760000000004ms.
+2019-03-06 09:44:17.450 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:17.452 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:17.466 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 399.2774ms
+2019-03-06 09:44:17.468 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 399.2774ms
+2019-03-06 09:44:17.471 +02:00 [INF] Request finished in 608.5918ms 200 application/json; charset=utf-8
+2019-03-06 09:44:17.473 +02:00 [INF] Request finished in 608.5918ms 200 application/json; charset=utf-8
+2019-03-06 09:44:53.284 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 474
+2019-03-06 09:44:53.286 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 474
+2019-03-06 09:44:53.287 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:53.288 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:53.358 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:53.394 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:44:53.444 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:53.446 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:44:53.478 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:53.480 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:44:53.512 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:53.514 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:44:53.547 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:53.549 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:44:53.561 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:44:53.562 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:44:53.562 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:53.564 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:53.686 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Invalid"
+2019-03-06 09:44:53.688 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Invalid"
+2019-03-06 09:44:53.697 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 9.0170000000000012ms.
+2019-03-06 09:44:53.699 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 9.0170000000000012ms.
+2019-03-06 09:44:53.699 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:53.700 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:53.706 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 144.0188ms
+2019-03-06 09:44:53.708 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 144.0188ms
+2019-03-06 09:44:53.708 +02:00 [INF] Request finished in 424.2216ms 200 application/json; charset=utf-8
+2019-03-06 09:44:53.710 +02:00 [INF] Request finished in 424.2216ms 200 application/json; charset=utf-8
+2019-03-06 09:44:53.796 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:44:53.797 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:44:53.798 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:44:53.800 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:44:53.800 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:53.801 +02:00 [INF] Authorization was successful.
+2019-03-06 09:44:53.823 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:44:53.824 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:44:53.824 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:53.826 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:53.826 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:53.828 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:44:53.829 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:53.830 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:44:53.864 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:44:53.867 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:44:53.892 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:44:53.893 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:44:53.897 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 72.25ms.
+2019-03-06 09:44:53.898 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 72.25ms.
+2019-03-06 09:44:53.898 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:53.900 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:44:53.900 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 100.6372ms
+2019-03-06 09:44:53.902 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 100.6372ms
+2019-03-06 09:44:53.902 +02:00 [INF] Request finished in 106.573ms 200 application/json; charset=utf-8
+2019-03-06 09:44:53.904 +02:00 [INF] Request finished in 106.573ms 200 application/json; charset=utf-8
+2019-03-06 09:46:04.112 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 529
+2019-03-06 09:46:04.126 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 529
+2019-03-06 09:46:04.127 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:46:04.129 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:46:04.209 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:46:04.211 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:46:04.249 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:46:04.251 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:46:04.284 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:46:04.286 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:46:04.318 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:46:04.320 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:46:04.354 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:46:04.356 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:46:04.356 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:46:04.358 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:46:04.358 +02:00 [INF] Authorization was successful.
+2019-03-06 09:46:04.359 +02:00 [INF] Authorization was successful.
+2019-03-06 09:46:04.422 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Valid"
+2019-03-06 09:46:04.424 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Valid"
+2019-03-06 09:46:04.433 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"User Name","Email":"kostadinov.nikolay.d@gmail.com","FirstName":"Test1","SirName":"Probov1","LastName":"test","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:46:04.435 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"User Name","Email":"kostadinov.nikolay.d@gmail.com","FirstName":"Test1","SirName":"Probov1","LastName":"test","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:46:04.450 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"User Name","Email":"kostadinov.nikolay.d@gmail.com","FirstName":"Test1","SirName":"Probov1","LastName":"test","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:46:04.452 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"User Name","Email":"kostadinov.nikolay.d@gmail.com","FirstName":"Test1","SirName":"Probov1","LastName":"test","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:46:04.505 +02:00 [WRN] User null validation failed: InvalidUserName.
+2019-03-06 09:46:04.506 +02:00 [WRN] User (null) validation failed: InvalidUserName.
+2019-03-06 09:47:24.308 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 79950.7124ms
+2019-03-06 09:47:24.310 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 79950.7124ms
+2019-03-06 09:47:24.482 +02:00 [ERR] User: niki
+Host IP: 0.0.0.1
+Method: "POST"
+Url: https://localhost:44392/bg/Administration/Users/Create
+Body: 
+
+Exception: 
+
+Operation: CreateUserCommand
+Error1
+   at BmsSurvey.Application.Infrastructure.Extensions.IdentityResultExtensions.Check(IdentityResult result, String operationName) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Infrastructure\Extensions\IdentityResultExtensions.cs:line 26
+   at BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Users\Commands\CreateUser\CreateUserCommandHandler.cs:line 60
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at BmsSurvey.Application.Infrastructure.RequestPerformanceBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Infrastructure\RequestPerformanceBehaviour.cs:line 25
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create(DataSourceRequest request, CreateUserCommand model) in D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\Areas\Administration\Controllers\UsersController.cs:line 66
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at BmsSurvey.WebApp.Infrastructure.Middlewares.ApplicationErrorMiddleware.Invoke(HttpContext context) in D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\Infrastructure\Middlewares\ApplicationErrorMiddleware.cs:line 56
+
+2019-03-06 09:47:24.484 +02:00 [ERR] User: niki
+Host IP: 0.0.0.1
+Method: "POST"
+Url: https://localhost:44392/bg/Administration/Users/Create
+Body: 
+
+Exception: 
+
+Operation: CreateUserCommand
+Error1
+   at BmsSurvey.Application.Infrastructure.Extensions.IdentityResultExtensions.Check(IdentityResult result, String operationName) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Infrastructure\Extensions\IdentityResultExtensions.cs:line 26
+   at BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Users\Commands\CreateUser\CreateUserCommandHandler.cs:line 60
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at BmsSurvey.Application.Infrastructure.RequestPerformanceBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in D:\Systems\SurveySystem\Source\BmsSurvey.Application\Infrastructure\RequestPerformanceBehaviour.cs:line 25
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create(DataSourceRequest request, CreateUserCommand model) in D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\Areas\Administration\Controllers\UsersController.cs:line 66
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at BmsSurvey.WebApp.Infrastructure.Middlewares.ApplicationErrorMiddleware.Invoke(HttpContext context) in D:\Systems\SurveySystem\Source\BmsSurvey.WebApp\Infrastructure\Middlewares\ApplicationErrorMiddleware.cs:line 56
+
+2019-03-06 09:47:24.648 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:47:24.651 +02:00 [INF] Accessing expired session, Key:c79100c3-c527-410d-b493-737f15be2edb
+2019-03-06 09:47:24.664 +02:00 [INF] Executing RedirectResult, redirecting to https://localhost:44392/bg/Administration/Users/Create.
+2019-03-06 09:47:24.666 +02:00 [INF] Executing RedirectResult, redirecting to https://localhost:44392/bg/Administration/Users/Create.
+2019-03-06 09:47:24.667 +02:00 [INF] Session started; Key:c79100c3-c527-410d-b493-737f15be2edb, Id:d23c6b79-a32e-6e8a-6ff2-3d0f9a186733
+2019-03-06 09:47:24.669 +02:00 [INF] Session started; Key:c79100c3-c527-410d-b493-737f15be2edb, Id:d23c6b79-a32e-6e8a-6ff2-3d0f9a186733
+2019-03-06 09:47:24.671 +02:00 [INF] Request finished in 80558.6392ms 302 
+2019-03-06 09:47:24.673 +02:00 [INF] Request finished in 80558.6392ms 302 
+2019-03-06 09:47:24.673 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Create  
+2019-03-06 09:47:24.675 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Create  
+2019-03-06 09:47:24.676 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:24.678 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:24.707 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:24.709 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:24.750 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:47:24.752 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:47:24.786 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:47:24.788 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:47:24.822 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:47:24.824 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:47:24.859 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:47:24.861 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:47:24.863 +02:00 [INF] Request finished in 189.7346ms 404 
+2019-03-06 09:47:24.865 +02:00 [INF] Request finished in 189.7346ms 404 
+2019-03-06 09:47:24.902 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Index  
+2019-03-06 09:47:24.904 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Administration/Users/Index  
+2019-03-06 09:47:24.904 +02:00 [INF] Route matched with {area = "Administration", action = "Index", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp)
+2019-03-06 09:47:24.906 +02:00 [INF] Route matched with {area = "Administration", action = "Index", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp)
+2019-03-06 09:47:24.906 +02:00 [INF] Authorization was successful.
+2019-03-06 09:47:24.909 +02:00 [INF] Authorization was successful.
+2019-03-06 09:47:24.932 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:47:24.933 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:47:24.934 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:47:24.935 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:47:24.936 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:47:24.937 +02:00 [INF] BmsSurvey Request: GetAllRolesDropdownDataQuery {"$type":"GetAllRolesDropdownDataQuery"}
+2019-03-06 09:47:24.938 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:24.940 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:24.970 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[ConcurrencyStamp], [x].[CreatedFrom], [x].[CreatedOn], [x].[DeletedFrom], [x].[DeletedOn], [x].[Description], [x].[IsDeleted], [x].[ModifiedFrom], [x].[ModifiedOn], [x].[Name], [x].[NormalizedName], [x].[PreserveCreatedOn]
+FROM [Roles] AS [x]
+WHERE [x].[IsDeleted] = 0
+2019-03-06 09:47:24.972 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[ConcurrencyStamp], [x].[CreatedFrom], [x].[CreatedOn], [x].[DeletedFrom], [x].[DeletedOn], [x].[Description], [x].[IsDeleted], [x].[ModifiedFrom], [x].[ModifiedOn], [x].[Name], [x].[NormalizedName], [x].[PreserveCreatedOn]
+FROM [Roles] AS [x]
+WHERE [x].[IsDeleted] = 0
+2019-03-06 09:47:24.973 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 38.983200000000004ms.
+2019-03-06 09:47:24.974 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 38.983200000000004ms.
+2019-03-06 09:47:24.974 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:47:24.976 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:47:25.072 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:25.074 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:25.079 +02:00 [INF] Executed ViewResult - view Index executed in 104.2094ms.
+2019-03-06 09:47:25.081 +02:00 [INF] Executed ViewResult - view Index executed in 104.2094ms.
+2019-03-06 09:47:25.081 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) in 174.2664ms
+2019-03-06 09:47:25.082 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Index (BmsSurvey.WebApp) in 174.2664ms
+2019-03-06 09:47:25.083 +02:00 [INF] Request finished in 181.3873ms 200 text/html; charset=utf-8
+2019-03-06 09:47:25.085 +02:00 [INF] Request finished in 181.3873ms 200 text/html; charset=utf-8
+2019-03-06 09:47:25.496 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:47:25.497 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:47:25.498 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:25.500 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:47:25.528 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:25.530 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:47:25.570 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:47:25.572 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:47:25.607 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:47:25.609 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:47:25.642 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:47:25.645 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:47:25.679 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:47:25.681 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:47:25.681 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:47:25.683 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:47:25.683 +02:00 [INF] Authorization was successful.
+2019-03-06 09:47:25.685 +02:00 [INF] Authorization was successful.
+2019-03-06 09:47:25.728 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:47:25.730 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:47:25.730 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:47:25.732 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:47:25.732 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:47:25.734 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:47:25.790 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:47:25.792 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:47:25.819 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:47:25.821 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:47:25.823 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 93.295200000000008ms.
+2019-03-06 09:47:25.825 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 93.295200000000008ms.
+2019-03-06 09:47:25.825 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:47:25.827 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:47:25.828 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 144.9652ms
+2019-03-06 09:47:25.830 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 144.9652ms
+2019-03-06 09:47:25.830 +02:00 [INF] Request finished in 334.5943ms 200 application/json; charset=utf-8
+2019-03-06 09:47:25.832 +02:00 [INF] Request finished in 334.5943ms 200 application/json; charset=utf-8
+2019-03-06 09:48:31.510 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 521
+2019-03-06 09:48:31.525 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/Create application/x-www-form-urlencoded; charset=UTF-8 521
+2019-03-06 09:48:31.526 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:31.528 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:31.581 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:31.595 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:31.635 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:31.637 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:31.671 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:31.672 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:31.706 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:31.707 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:31.741 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:31.743 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:31.743 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:48:31.745 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp)
+2019-03-06 09:48:31.745 +02:00 [INF] Authorization was successful.
+2019-03-06 09:48:31.747 +02:00 [INF] Authorization was successful.
+2019-03-06 09:48:31.802 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Valid"
+2019-03-06 09:48:31.804 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest","BmsSurvey.Application.Users.Commands.CreateUser.CreateUserCommand"]) - Validation state: "Valid"
+2019-03-06 09:48:31.804 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:31.806 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:31.818 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:31.819 +02:00 [INF] BmsSurvey Request: CreateUserCommand {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:31.911 +02:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:31.913 +02:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:32.051 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AccessFailedCount], [ConcurrencyStamp], [CreatedFrom], [CreatedOn], [CultureId], [DeletedFrom], [DeletedOn], [Email], [EmailConfirmed], [FirstName], [IsDeleted], [LastName], [LockoutEnabled], [LockoutEnd], [ModifiedFrom], [ModifiedOn], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [PreserveCreatedOn], [SecurityStamp], [SirName], [TabNumber], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2019-03-06 09:48:32.053 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AccessFailedCount], [ConcurrencyStamp], [CreatedFrom], [CreatedOn], [CultureId], [DeletedFrom], [DeletedOn], [Email], [EmailConfirmed], [FirstName], [IsDeleted], [LastName], [LockoutEnabled], [LockoutEnd], [ModifiedFrom], [ModifiedOn], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [PreserveCreatedOn], [SecurityStamp], [SirName], [TabNumber], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2019-03-06 09:48:35.989 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:35.991 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:36.056 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2019-03-06 09:48:36.057 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2019-03-06 09:48:36.091 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (DbType = Int32), @__get_Item_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [UserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+2019-03-06 09:48:36.092 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (DbType = Int32), @__get_Item_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [UserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+2019-03-06 09:48:36.139 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2019-03-06 09:48:36.141 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2019-03-06 09:48:36.170 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:36.172 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:36.246 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:36.247 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:36.329 +02:00 [INF] Executed DbCommand (47ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Int32), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2), @p39='?' (Size = 4000), @p40='?' (DbType = Int32), @p41='?' (Size = 4000), @p42='?' (Size = 4000), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (Size = 4000), @p50='?' (Size = 4000), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (DbType = Int32), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = DateTime2), @p63='?' (Size = 4000), @p64='?' (DbType = Int32), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (DbType = Int32), @p70='?' (DbType = DateTime2), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (Size = 4000), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (DbType = DateTime2), @p79='?' (Size = 4000), @p80='?' (DbType = Int32), @p81='?' (Size = 4000), @p82='?' (Size = 4000), @p83='?' (Size = 4000), @p84='?' (Size = 4000), @p85='?' (DbType = Int32), @p86='?' (DbType = DateTime2), @p87='?' (Size = 4000), @p88='?' (DbType = Int32), @p89='?' (Size = 4000), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (Size = 4000), @p93='?' (DbType = Int32), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (DbType = Int32), @p97='?' (Size = 4000), @p98='?' (Size = 4000), @p99='?' (Size = 4000), @p100='?' (Size = 4000), @p101='?' (DbType = Int32), @p102='?' (DbType = DateTime2), @p103='?' (Size = 4000), @p104='?' (DbType = Int32), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (Size = 4000), @p108='?' (Size = 4000), @p109='?' (DbType = Int32), @p110='?' (DbType = DateTime2), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (Size = 4000), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (DbType = DateTime2), @p119='?' (Size = 4000), @p120='?' (DbType = Int32), @p121='?' (Size = 4000), @p122='?' (Size = 4000), @p123='?' (Size = 4000), @p124='?' (Size = 4000), @p125='?' (DbType = Int32), @p126='?' (DbType = DateTime2), @p127='?' (Size = 4000), @p128='?' (DbType = Int32), @p129='?' (Size = 4000), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (Size = 4000), @p133='?' (DbType = Int32), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (DbType = Int32), @p137='?' (Size = 4000), @p138='?' (Size = 4000), @p139='?' (Size = 4000), @p140='?' (Size = 4000), @p141='?' (DbType = Int32), @p142='?' (DbType = DateTime2), @p143='?' (Size = 4000), @p144='?' (DbType = Int32), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (Size = 4000), @p148='?' (Size = 4000), @p149='?' (DbType = Int32), @p150='?' (DbType = DateTime2), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (Size = 4000), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (DbType = DateTime2), @p159='?' (Size = 4000), @p160='?' (DbType = Int32), @p161='?' (Size = 4000), @p162='?' (Size = 4000), @p163='?' (Size = 4000), @p164='?' (Size = 4000), @p165='?' (DbType = Int32), @p166='?' (DbType = DateTime2), @p167='?' (Size = 4000), @p168='?' (DbType = Int32), @p169='?' (DbType = Int32), @p197='?' (DbType = Int32), @p170='?' (DbType = Int32), @p171='?' (Size = 4000), @p172='?' (Size = 4000), @p173='?' (DbType = DateTime2), @p174='?' (Size = 4000), @p175='?' (Size = 4000), @p176='?' (DbType = DateTime2), @p177='?' (Size = 4000), @p178='?' (DbType = Boolean), @p179='?' (Size = 4000), @p180='?' (DbType = Boolean), @p181='?' (Size = 4000), @p182='?' (DbType = Boolean), @p183='?' (DbType = DateTimeOffset), @p184='?' (Size = 4000), @p185='?' (DbType = DateTime2), @p186='?' (Size = 4000), @p187='?' (Size = 4000), @p188='?' (Size = 4000), @p189='?' (Size = 4000), @p190='?' (DbType = Boolean), @p191='?' (DbType = Boolean), @p192='?' (Size = 4000), @p193='?' (Size = 4000), @p194='?' (Size = 4000), @p195='?' (DbType = Boolean), @p196='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AuditLogRecords] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3),
+(@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, 4),
+(@p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 5),
+(@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 6),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, 7),
+(@p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 8),
+(@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, 9),
+(@p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, 10),
+(@p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, 11),
+(@p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 12),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, 13),
+(@p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, 14),
+(@p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, 15),
+(@p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, @p141, @p142, @p143, 17),
+(@p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, 18),
+(@p152, @p153, @p154, @p155, @p156, @p157, @p158, @p159, 19),
+(@p160, @p161, @p162, @p163, @p164, @p165, @p166, @p167, 20)) AS i ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName])
+VALUES (i.[EntityId], i.[EntityName], i.[FieldName], i.[NewValue], i.[OldValue], i.[OperationType], i.[TimeStamp], i.[UserName])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AuditLogRecords] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+INSERT INTO [UserRoles] ([UserId], [RoleId])
+VALUES (@p168, @p169);
+UPDATE [Users] SET [AccessFailedCount] = @p170, [ConcurrencyStamp] = @p171, [CreatedFrom] = @p172, [CreatedOn] = @p173, [CultureId] = @p174, [DeletedFrom] = @p175, [DeletedOn] = @p176, [Email] = @p177, [EmailConfirmed] = @p178, [FirstName] = @p179, [IsDeleted] = @p180, [LastName] = @p181, [LockoutEnabled] = @p182, [LockoutEnd] = @p183, [ModifiedFrom] = @p184, [ModifiedOn] = @p185, [NormalizedEmail] = @p186, [NormalizedUserName] = @p187, [PasswordHash] = @p188, [PhoneNumber] = @p189, [PhoneNumberConfirmed] = @p190, [PreserveCreatedOn] = @p191, [SecurityStamp] = @p192, [SirName] = @p193, [TabNumber] = @p194, [TwoFactorEnabled] = @p195, [UserName] = @p196
+WHERE [Id] = @p197;
+SELECT @@ROWCOUNT;
+2019-03-06 09:48:36.333 +02:00 [INF] Executed DbCommand (47ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Int32), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2), @p39='?' (Size = 4000), @p40='?' (DbType = Int32), @p41='?' (Size = 4000), @p42='?' (Size = 4000), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (Size = 4000), @p50='?' (Size = 4000), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (DbType = Int32), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = DateTime2), @p63='?' (Size = 4000), @p64='?' (DbType = Int32), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (DbType = Int32), @p70='?' (DbType = DateTime2), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (Size = 4000), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (DbType = DateTime2), @p79='?' (Size = 4000), @p80='?' (DbType = Int32), @p81='?' (Size = 4000), @p82='?' (Size = 4000), @p83='?' (Size = 4000), @p84='?' (Size = 4000), @p85='?' (DbType = Int32), @p86='?' (DbType = DateTime2), @p87='?' (Size = 4000), @p88='?' (DbType = Int32), @p89='?' (Size = 4000), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (Size = 4000), @p93='?' (DbType = Int32), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (DbType = Int32), @p97='?' (Size = 4000), @p98='?' (Size = 4000), @p99='?' (Size = 4000), @p100='?' (Size = 4000), @p101='?' (DbType = Int32), @p102='?' (DbType = DateTime2), @p103='?' (Size = 4000), @p104='?' (DbType = Int32), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (Size = 4000), @p108='?' (Size = 4000), @p109='?' (DbType = Int32), @p110='?' (DbType = DateTime2), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (Size = 4000), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (DbType = DateTime2), @p119='?' (Size = 4000), @p120='?' (DbType = Int32), @p121='?' (Size = 4000), @p122='?' (Size = 4000), @p123='?' (Size = 4000), @p124='?' (Size = 4000), @p125='?' (DbType = Int32), @p126='?' (DbType = DateTime2), @p127='?' (Size = 4000), @p128='?' (DbType = Int32), @p129='?' (Size = 4000), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (Size = 4000), @p133='?' (DbType = Int32), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (DbType = Int32), @p137='?' (Size = 4000), @p138='?' (Size = 4000), @p139='?' (Size = 4000), @p140='?' (Size = 4000), @p141='?' (DbType = Int32), @p142='?' (DbType = DateTime2), @p143='?' (Size = 4000), @p144='?' (DbType = Int32), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (Size = 4000), @p148='?' (Size = 4000), @p149='?' (DbType = Int32), @p150='?' (DbType = DateTime2), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (Size = 4000), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (DbType = DateTime2), @p159='?' (Size = 4000), @p160='?' (DbType = Int32), @p161='?' (Size = 4000), @p162='?' (Size = 4000), @p163='?' (Size = 4000), @p164='?' (Size = 4000), @p165='?' (DbType = Int32), @p166='?' (DbType = DateTime2), @p167='?' (Size = 4000), @p168='?' (DbType = Int32), @p169='?' (DbType = Int32), @p197='?' (DbType = Int32), @p170='?' (DbType = Int32), @p171='?' (Size = 4000), @p172='?' (Size = 4000), @p173='?' (DbType = DateTime2), @p174='?' (Size = 4000), @p175='?' (Size = 4000), @p176='?' (DbType = DateTime2), @p177='?' (Size = 4000), @p178='?' (DbType = Boolean), @p179='?' (Size = 4000), @p180='?' (DbType = Boolean), @p181='?' (Size = 4000), @p182='?' (DbType = Boolean), @p183='?' (DbType = DateTimeOffset), @p184='?' (Size = 4000), @p185='?' (DbType = DateTime2), @p186='?' (Size = 4000), @p187='?' (Size = 4000), @p188='?' (Size = 4000), @p189='?' (Size = 4000), @p190='?' (DbType = Boolean), @p191='?' (DbType = Boolean), @p192='?' (Size = 4000), @p193='?' (Size = 4000), @p194='?' (Size = 4000), @p195='?' (DbType = Boolean), @p196='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AuditLogRecords] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3),
+(@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, 4),
+(@p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 5),
+(@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 6),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, 7),
+(@p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 8),
+(@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, 9),
+(@p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, 10),
+(@p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, 11),
+(@p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 12),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, 13),
+(@p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, 14),
+(@p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, 15),
+(@p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, @p141, @p142, @p143, 17),
+(@p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, 18),
+(@p152, @p153, @p154, @p155, @p156, @p157, @p158, @p159, 19),
+(@p160, @p161, @p162, @p163, @p164, @p165, @p166, @p167, 20)) AS i ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName])
+VALUES (i.[EntityId], i.[EntityName], i.[FieldName], i.[NewValue], i.[OldValue], i.[OperationType], i.[TimeStamp], i.[UserName])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AuditLogRecords] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+INSERT INTO [UserRoles] ([UserId], [RoleId])
+VALUES (@p168, @p169);
+UPDATE [Users] SET [AccessFailedCount] = @p170, [ConcurrencyStamp] = @p171, [CreatedFrom] = @p172, [CreatedOn] = @p173, [CultureId] = @p174, [DeletedFrom] = @p175, [DeletedOn] = @p176, [Email] = @p177, [EmailConfirmed] = @p178, [FirstName] = @p179, [IsDeleted] = @p180, [LastName] = @p181, [LockoutEnabled] = @p182, [LockoutEnd] = @p183, [ModifiedFrom] = @p184, [ModifiedOn] = @p185, [NormalizedEmail] = @p186, [NormalizedUserName] = @p187, [PasswordHash] = @p188, [PhoneNumber] = @p189, [PhoneNumberConfirmed] = @p190, [PreserveCreatedOn] = @p191, [SecurityStamp] = @p192, [SirName] = @p193, [TabNumber] = @p194, [TwoFactorEnabled] = @p195, [UserName] = @p196
+WHERE [Id] = @p197;
+SELECT @@ROWCOUNT;
+2019-03-06 09:48:36.451 +02:00 [WRN] Bmsys Survey Long Running Request: CreateUserCommand (4644 milliseconds) {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:36.452 +02:00 [WRN] Bmsys Survey Long Running Request: CreateUserCommand (4644 milliseconds) {"TabNumber":"16637","UserName":"prob","Email":"nikolay.kostadinov@bmsys.eu","FirstName":"Test","SirName":"Probov","LastName":"Opitov","Password":"P@ssw0rd","Roles":[{"Id":3,"Name":"Administrator","$type":"RoleSimpleViewModel"}],"$type":"CreateUserCommand"}
+2019-03-06 09:48:36.454 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 4649.685ms.
+2019-03-06 09:48:36.455 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 4649.685ms.
+2019-03-06 09:48:36.455 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:48:36.457 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:48:36.457 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 4712.4347ms
+2019-03-06 09:48:36.459 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.Create (BmsSurvey.WebApp) in 4712.4347ms
+2019-03-06 09:48:36.459 +02:00 [INF] Request finished in 4948.853ms 200 application/json; charset=utf-8
+2019-03-06 09:48:36.461 +02:00 [INF] Request finished in 4948.853ms 200 application/json; charset=utf-8
+2019-03-06 09:48:36.528 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:48:36.529 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Administration/Users/GetAll application/x-www-form-urlencoded; charset=UTF-8 265
+2019-03-06 09:48:36.530 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:36.532 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:36.559 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:36.561 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:36.600 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:36.602 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:36.635 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:36.637 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:36.669 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:36.671 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:36.704 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:36.706 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:36.707 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:48:36.708 +02:00 [INF] Route matched with {area = "Administration", action = "GetAll", controller = "Users", page = ""}. Executing action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp)
+2019-03-06 09:48:36.708 +02:00 [INF] Authorization was successful.
+2019-03-06 09:48:36.710 +02:00 [INF] Authorization was successful.
+2019-03-06 09:48:36.753 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:48:36.754 +02:00 [INF] Executing action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) with arguments (["Kendo.Mvc.UI.DataSourceRequest"]) - Validation state: "Valid"
+2019-03-06 09:48:36.754 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:48:36.756 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:48:36.756 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:48:36.758 +02:00 [INF] BmsSurvey Request: GetAllUsersWithDeletedQuery {"$type":"GetAllUsersWithDeletedQuery"}
+2019-03-06 09:48:36.812 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:48:36.814 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr].[Id], [usr].[AccessFailedCount], [usr].[ConcurrencyStamp], [usr].[CreatedFrom], [usr].[CreatedOn], [usr].[CultureId], [usr].[DeletedFrom], [usr].[DeletedOn], [usr].[Email], [usr].[EmailConfirmed], [usr].[FirstName], [usr].[IsDeleted], [usr].[LastName], [usr].[LockoutEnabled], [usr].[LockoutEnd], [usr].[ModifiedFrom], [usr].[ModifiedOn], [usr].[NormalizedEmail], [usr].[NormalizedUserName], [usr].[PasswordHash], [usr].[PhoneNumber], [usr].[PhoneNumberConfirmed], [usr].[PreserveCreatedOn], [usr].[SecurityStamp], [usr].[SirName], [usr].[TabNumber], [usr].[TwoFactorEnabled], [usr].[UserName]
+FROM [Users] AS [usr]
+ORDER BY [usr].[Id]
+2019-03-06 09:48:36.841 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:48:36.843 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [usr.UserRoles].[UserId], [usr.UserRoles].[RoleId], [u.Role].[Id], [u.Role].[ConcurrencyStamp], [u.Role].[CreatedFrom], [u.Role].[CreatedOn], [u.Role].[DeletedFrom], [u.Role].[DeletedOn], [u.Role].[Description], [u.Role].[IsDeleted], [u.Role].[ModifiedFrom], [u.Role].[ModifiedOn], [u.Role].[Name], [u.Role].[NormalizedName], [u.Role].[PreserveCreatedOn]
+FROM [UserRoles] AS [usr.UserRoles]
+INNER JOIN [Roles] AS [u.Role] ON [usr.UserRoles].[RoleId] = [u.Role].[Id]
+INNER JOIN (
+    SELECT [usr0].[Id]
+    FROM [Users] AS [usr0]
+) AS [t] ON [usr.UserRoles].[UserId] = [t].[Id]
+ORDER BY [t].[Id]
+2019-03-06 09:48:36.845 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 90.4903ms.
+2019-03-06 09:48:36.846 +02:00 [INF] Executed action method BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.JsonResult in 90.4903ms.
+2019-03-06 09:48:36.847 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:48:36.848 +02:00 [INF] Executing JsonResult, writing value of type 'Kendo.Mvc.UI.DataSourceResult'.
+2019-03-06 09:48:36.849 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 140.5223ms
+2019-03-06 09:48:36.850 +02:00 [INF] Executed action BmsSurvey.WebApp.Areas.Administration.Controllers.UsersController.GetAll (BmsSurvey.WebApp) in 140.5223ms
+2019-03-06 09:48:36.851 +02:00 [INF] Request finished in 322.794ms 200 application/json; charset=utf-8
+2019-03-06 09:48:36.852 +02:00 [INF] Request finished in 322.794ms 200 application/json; charset=utf-8
+2019-03-06 09:48:54.789 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Identity/Account/ConfirmEmail?userId=47&code=CfDJ8OtOSeF3jyFOmgB2VE9tYmEgxX9LkIceYeJKwZHH8RVPhpYxKq%2BVM86pZDffHIpbpjehJpe6Rr0XjZy1JZnbF6nGNWMSXtwUYINvSR%2FzBvZe5RN2mlHQ97mUtSypAZLjntq5exbP2ZAJ%2FaSS0f%2Bu4ZFlOHmHcatrLVIm3F%2FSIiJiHvfE%2FUcGVpEiM5cBE86%2FJw%3D%3D  
+2019-03-06 09:48:54.791 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Identity/Account/ConfirmEmail?userId=47&code=CfDJ8OtOSeF3jyFOmgB2VE9tYmEgxX9LkIceYeJKwZHH8RVPhpYxKq%2BVM86pZDffHIpbpjehJpe6Rr0XjZy1JZnbF6nGNWMSXtwUYINvSR%2FzBvZe5RN2mlHQ97mUtSypAZLjntq5exbP2ZAJ%2FaSS0f%2Bu4ZFlOHmHcatrLVIm3F%2FSIiJiHvfE%2FUcGVpEiM5cBE86%2FJw%3D%3D  
+2019-03-06 09:48:54.792 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:54.794 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:48:54.824 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:54.826 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:54.865 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:54.867 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:48:54.910 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:54.911 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:48:54.959 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:54.960 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:48:54.999 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:55.001 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:48:55.040 +02:00 [INF] Route matched with {page = "/Account/ConfirmEmail", area = "Identity", action = "", controller = ""}. Executing page /Account/ConfirmEmail
+2019-03-06 09:48:55.042 +02:00 [INF] Route matched with {page = "/Account/ConfirmEmail", area = "Identity", action = "", controller = ""}. Executing page /Account/ConfirmEmail
+2019-03-06 09:48:55.045 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.ConfirmEmailModel.OnGetAsync with arguments (["47","CfDJ8OtOSeF3jyFOmgB2VE9tYmEgxX9LkIceYeJKwZHH8RVPhpYxKq+VM86pZDffHIpbpjehJpe6Rr0XjZy1JZnbF6nGNWMSXtwUYINvSR/zBvZe5RN2mlHQ97mUtSypAZLjntq5exbP2ZAJ/aSS0f+u4ZFlOHmHcatrLVIm3F/SIiJiHvfE/UcGVpEiM5cBE86/Jw=="]) - ModelState is "Valid"
+2019-03-06 09:48:55.046 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.ConfirmEmailModel.OnGetAsync with arguments (["47","CfDJ8OtOSeF3jyFOmgB2VE9tYmEgxX9LkIceYeJKwZHH8RVPhpYxKq+VM86pZDffHIpbpjehJpe6Rr0XjZy1JZnbF6nGNWMSXtwUYINvSR/zBvZe5RN2mlHQ97mUtSypAZLjntq5exbP2ZAJ/aSS0f+u4ZFlOHmHcatrLVIm3F/SIiJiHvfE/UcGVpEiM5cBE86/Jw=="]) - ModelState is "Valid"
+2019-03-06 09:48:55.120 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:55.121 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:55.173 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:55.175 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:48:55.191 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:55.192 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:48:55.234 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Int32), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2), @p39='?' (Size = 4000), @p40='?' (DbType = Int32), @p41='?' (Size = 4000), @p42='?' (Size = 4000), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (Size = 4000), @p50='?' (Size = 4000), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (DbType = Int32), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = DateTime2), @p63='?' (Size = 4000), @p64='?' (DbType = Int32), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (DbType = Int32), @p70='?' (DbType = DateTime2), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (Size = 4000), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (DbType = DateTime2), @p79='?' (Size = 4000), @p80='?' (DbType = Int32), @p81='?' (Size = 4000), @p82='?' (Size = 4000), @p83='?' (Size = 4000), @p84='?' (Size = 4000), @p85='?' (DbType = Int32), @p86='?' (DbType = DateTime2), @p87='?' (Size = 4000), @p88='?' (DbType = Int32), @p89='?' (Size = 4000), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (Size = 4000), @p93='?' (DbType = Int32), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (DbType = Int32), @p97='?' (Size = 4000), @p98='?' (Size = 4000), @p99='?' (Size = 4000), @p100='?' (Size = 4000), @p101='?' (DbType = Int32), @p102='?' (DbType = DateTime2), @p103='?' (Size = 4000), @p104='?' (DbType = Int32), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (Size = 4000), @p108='?' (Size = 4000), @p109='?' (DbType = Int32), @p110='?' (DbType = DateTime2), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (Size = 4000), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (DbType = DateTime2), @p119='?' (Size = 4000), @p120='?' (DbType = Int32), @p121='?' (Size = 4000), @p122='?' (Size = 4000), @p123='?' (Size = 4000), @p124='?' (Size = 4000), @p125='?' (DbType = Int32), @p126='?' (DbType = DateTime2), @p127='?' (Size = 4000), @p128='?' (DbType = Int32), @p129='?' (Size = 4000), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (Size = 4000), @p133='?' (DbType = Int32), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (DbType = Int32), @p137='?' (Size = 4000), @p138='?' (Size = 4000), @p139='?' (Size = 4000), @p140='?' (Size = 4000), @p141='?' (DbType = Int32), @p142='?' (DbType = DateTime2), @p143='?' (Size = 4000), @p144='?' (DbType = Int32), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (Size = 4000), @p148='?' (Size = 4000), @p149='?' (DbType = Int32), @p150='?' (DbType = DateTime2), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (Size = 4000), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (DbType = DateTime2), @p159='?' (Size = 4000), @p160='?' (DbType = Int32), @p161='?' (Size = 4000), @p162='?' (Size = 4000), @p163='?' (Size = 4000), @p164='?' (Size = 4000), @p165='?' (DbType = Int32), @p166='?' (DbType = DateTime2), @p167='?' (Size = 4000), @p168='?' (DbType = Int32), @p169='?' (Size = 4000), @p170='?' (Size = 4000), @p171='?' (Size = 4000), @p172='?' (Size = 4000), @p173='?' (DbType = Int32), @p174='?' (DbType = DateTime2), @p175='?' (Size = 4000), @p176='?' (DbType = Int32), @p177='?' (Size = 4000), @p178='?' (Size = 4000), @p179='?' (Size = 4000), @p180='?' (Size = 4000), @p181='?' (DbType = Int32), @p182='?' (DbType = DateTime2), @p183='?' (Size = 4000), @p211='?' (DbType = Int32), @p184='?' (DbType = Int32), @p185='?' (Size = 4000), @p186='?' (Size = 4000), @p187='?' (DbType = DateTime2), @p188='?' (Size = 4000), @p189='?' (Size = 4000), @p190='?' (DbType = DateTime2), @p191='?' (Size = 4000), @p192='?' (DbType = Boolean), @p193='?' (Size = 4000), @p194='?' (DbType = Boolean), @p195='?' (Size = 4000), @p196='?' (DbType = Boolean), @p197='?' (DbType = DateTimeOffset), @p198='?' (Size = 4000), @p199='?' (DbType = DateTime2), @p200='?' (Size = 4000), @p201='?' (Size = 4000), @p202='?' (Size = 4000), @p203='?' (Size = 4000), @p204='?' (DbType = Boolean), @p205='?' (DbType = Boolean), @p206='?' (Size = 4000), @p207='?' (Size = 4000), @p208='?' (Size = 4000), @p209='?' (DbType = Boolean), @p210='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AuditLogRecords] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3),
+(@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, 4),
+(@p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 5),
+(@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 6),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, 7),
+(@p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 8),
+(@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, 9),
+(@p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, 10),
+(@p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, 11),
+(@p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 12),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, 13),
+(@p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, 14),
+(@p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, 15),
+(@p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, @p141, @p142, @p143, 17),
+(@p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, 18),
+(@p152, @p153, @p154, @p155, @p156, @p157, @p158, @p159, 19),
+(@p160, @p161, @p162, @p163, @p164, @p165, @p166, @p167, 20),
+(@p168, @p169, @p170, @p171, @p172, @p173, @p174, @p175, 21),
+(@p176, @p177, @p178, @p179, @p180, @p181, @p182, @p183, 22)) AS i ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName])
+VALUES (i.[EntityId], i.[EntityName], i.[FieldName], i.[NewValue], i.[OldValue], i.[OperationType], i.[TimeStamp], i.[UserName])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AuditLogRecords] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+UPDATE [Users] SET [AccessFailedCount] = @p184, [ConcurrencyStamp] = @p185, [CreatedFrom] = @p186, [CreatedOn] = @p187, [CultureId] = @p188, [DeletedFrom] = @p189, [DeletedOn] = @p190, [Email] = @p191, [EmailConfirmed] = @p192, [FirstName] = @p193, [IsDeleted] = @p194, [LastName] = @p195, [LockoutEnabled] = @p196, [LockoutEnd] = @p197, [ModifiedFrom] = @p198, [ModifiedOn] = @p199, [NormalizedEmail] = @p200, [NormalizedUserName] = @p201, [PasswordHash] = @p202, [PhoneNumber] = @p203, [PhoneNumberConfirmed] = @p204, [PreserveCreatedOn] = @p205, [SecurityStamp] = @p206, [SirName] = @p207, [TabNumber] = @p208, [TwoFactorEnabled] = @p209, [UserName] = @p210
+WHERE [Id] = @p211;
+SELECT @@ROWCOUNT;
+2019-03-06 09:48:55.239 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Int32), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2), @p39='?' (Size = 4000), @p40='?' (DbType = Int32), @p41='?' (Size = 4000), @p42='?' (Size = 4000), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (Size = 4000), @p50='?' (Size = 4000), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (DbType = Int32), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = DateTime2), @p63='?' (Size = 4000), @p64='?' (DbType = Int32), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (DbType = Int32), @p70='?' (DbType = DateTime2), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (Size = 4000), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (DbType = DateTime2), @p79='?' (Size = 4000), @p80='?' (DbType = Int32), @p81='?' (Size = 4000), @p82='?' (Size = 4000), @p83='?' (Size = 4000), @p84='?' (Size = 4000), @p85='?' (DbType = Int32), @p86='?' (DbType = DateTime2), @p87='?' (Size = 4000), @p88='?' (DbType = Int32), @p89='?' (Size = 4000), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (Size = 4000), @p93='?' (DbType = Int32), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (DbType = Int32), @p97='?' (Size = 4000), @p98='?' (Size = 4000), @p99='?' (Size = 4000), @p100='?' (Size = 4000), @p101='?' (DbType = Int32), @p102='?' (DbType = DateTime2), @p103='?' (Size = 4000), @p104='?' (DbType = Int32), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (Size = 4000), @p108='?' (Size = 4000), @p109='?' (DbType = Int32), @p110='?' (DbType = DateTime2), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (Size = 4000), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (DbType = DateTime2), @p119='?' (Size = 4000), @p120='?' (DbType = Int32), @p121='?' (Size = 4000), @p122='?' (Size = 4000), @p123='?' (Size = 4000), @p124='?' (Size = 4000), @p125='?' (DbType = Int32), @p126='?' (DbType = DateTime2), @p127='?' (Size = 4000), @p128='?' (DbType = Int32), @p129='?' (Size = 4000), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (Size = 4000), @p133='?' (DbType = Int32), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (DbType = Int32), @p137='?' (Size = 4000), @p138='?' (Size = 4000), @p139='?' (Size = 4000), @p140='?' (Size = 4000), @p141='?' (DbType = Int32), @p142='?' (DbType = DateTime2), @p143='?' (Size = 4000), @p144='?' (DbType = Int32), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (Size = 4000), @p148='?' (Size = 4000), @p149='?' (DbType = Int32), @p150='?' (DbType = DateTime2), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (Size = 4000), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (DbType = DateTime2), @p159='?' (Size = 4000), @p160='?' (DbType = Int32), @p161='?' (Size = 4000), @p162='?' (Size = 4000), @p163='?' (Size = 4000), @p164='?' (Size = 4000), @p165='?' (DbType = Int32), @p166='?' (DbType = DateTime2), @p167='?' (Size = 4000), @p168='?' (DbType = Int32), @p169='?' (Size = 4000), @p170='?' (Size = 4000), @p171='?' (Size = 4000), @p172='?' (Size = 4000), @p173='?' (DbType = Int32), @p174='?' (DbType = DateTime2), @p175='?' (Size = 4000), @p176='?' (DbType = Int32), @p177='?' (Size = 4000), @p178='?' (Size = 4000), @p179='?' (Size = 4000), @p180='?' (Size = 4000), @p181='?' (DbType = Int32), @p182='?' (DbType = DateTime2), @p183='?' (Size = 4000), @p211='?' (DbType = Int32), @p184='?' (DbType = Int32), @p185='?' (Size = 4000), @p186='?' (Size = 4000), @p187='?' (DbType = DateTime2), @p188='?' (Size = 4000), @p189='?' (Size = 4000), @p190='?' (DbType = DateTime2), @p191='?' (Size = 4000), @p192='?' (DbType = Boolean), @p193='?' (Size = 4000), @p194='?' (DbType = Boolean), @p195='?' (Size = 4000), @p196='?' (DbType = Boolean), @p197='?' (DbType = DateTimeOffset), @p198='?' (Size = 4000), @p199='?' (DbType = DateTime2), @p200='?' (Size = 4000), @p201='?' (Size = 4000), @p202='?' (Size = 4000), @p203='?' (Size = 4000), @p204='?' (DbType = Boolean), @p205='?' (DbType = Boolean), @p206='?' (Size = 4000), @p207='?' (Size = 4000), @p208='?' (Size = 4000), @p209='?' (DbType = Boolean), @p210='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AuditLogRecords] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3),
+(@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, 4),
+(@p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 5),
+(@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 6),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, 7),
+(@p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 8),
+(@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, 9),
+(@p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, 10),
+(@p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, 11),
+(@p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 12),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, 13),
+(@p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, 14),
+(@p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, 15),
+(@p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, @p141, @p142, @p143, 17),
+(@p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, 18),
+(@p152, @p153, @p154, @p155, @p156, @p157, @p158, @p159, 19),
+(@p160, @p161, @p162, @p163, @p164, @p165, @p166, @p167, 20),
+(@p168, @p169, @p170, @p171, @p172, @p173, @p174, @p175, 21),
+(@p176, @p177, @p178, @p179, @p180, @p181, @p182, @p183, 22)) AS i ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EntityId], [EntityName], [FieldName], [NewValue], [OldValue], [OperationType], [TimeStamp], [UserName])
+VALUES (i.[EntityId], i.[EntityName], i.[FieldName], i.[NewValue], i.[OldValue], i.[OperationType], i.[TimeStamp], i.[UserName])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AuditLogRecords] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+UPDATE [Users] SET [AccessFailedCount] = @p184, [ConcurrencyStamp] = @p185, [CreatedFrom] = @p186, [CreatedOn] = @p187, [CultureId] = @p188, [DeletedFrom] = @p189, [DeletedOn] = @p190, [Email] = @p191, [EmailConfirmed] = @p192, [FirstName] = @p193, [IsDeleted] = @p194, [LastName] = @p195, [LockoutEnabled] = @p196, [LockoutEnd] = @p197, [ModifiedFrom] = @p198, [ModifiedOn] = @p199, [NormalizedEmail] = @p200, [NormalizedUserName] = @p201, [PasswordHash] = @p202, [PhoneNumber] = @p203, [PhoneNumberConfirmed] = @p204, [PreserveCreatedOn] = @p205, [SecurityStamp] = @p206, [SirName] = @p207, [TabNumber] = @p208, [TwoFactorEnabled] = @p209, [UserName] = @p210
+WHERE [Id] = @p211;
+SELECT @@ROWCOUNT;
+2019-03-06 09:48:55.246 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:48:55.248 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:48:55.265 +02:00 [INF] Executed page /Account/ConfirmEmail in 223.5813ms
+2019-03-06 09:48:55.267 +02:00 [INF] Executed page /Account/ConfirmEmail in 223.5813ms
+2019-03-06 09:48:55.267 +02:00 [INF] Request finished in 478.2582ms 200 text/html; charset=utf-8
+2019-03-06 09:48:55.269 +02:00 [INF] Request finished in 478.2582ms 200 text/html; charset=utf-8
+2019-03-06 09:49:03.182 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Identity/Account/Logout?returnUrl=%2F application/x-www-form-urlencoded 225
+2019-03-06 09:49:03.184 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Identity/Account/Logout?returnUrl=%2F application/x-www-form-urlencoded 225
+2019-03-06 09:49:03.185 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:49:03.187 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:49:03.226 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:49:03.229 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedFrom], [e].[CreatedOn], [e].[CultureId], [e].[DeletedFrom], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[IsDeleted], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedFrom], [e].[ModifiedOn], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreserveCreatedOn], [e].[SecurityStamp], [e].[SirName], [e].[TabNumber], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [Users] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2019-03-06 09:49:03.267 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:49:03.270 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:49:03.302 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:49:03.303 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:49:03.337 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:49:03.339 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:49:03.372 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:49:03.374 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:49:03.396 +02:00 [INF] Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing page /Account/Logout
+2019-03-06 09:49:03.398 +02:00 [INF] Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing page /Account/Logout
+2019-03-06 09:49:03.399 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LogoutModel.OnPost with arguments (["/"]) - ModelState is "Valid"
+2019-03-06 09:49:03.401 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LogoutModel.OnPost with arguments (["/"]) - ModelState is "Valid"
+2019-03-06 09:49:03.407 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-03-06 09:49:03.408 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-03-06 09:49:03.409 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-06 09:49:03.411 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-06 09:49:03.411 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-03-06 09:49:03.413 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-03-06 09:49:03.413 +02:00 [INF] User logged out.
+2019-03-06 09:49:03.415 +02:00 [INF] User logged out.
+2019-03-06 09:49:03.415 +02:00 [INF] Executed handler method OnPost, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2019-03-06 09:49:03.417 +02:00 [INF] Executed handler method OnPost, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2019-03-06 09:49:03.417 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2019-03-06 09:49:03.419 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2019-03-06 09:49:03.419 +02:00 [INF] Executed page /Account/Logout in 20.6869ms
+2019-03-06 09:49:03.421 +02:00 [INF] Executed page /Account/Logout in 20.6869ms
+2019-03-06 09:49:03.422 +02:00 [INF] Request finished in 239.8882ms 302 
+2019-03-06 09:49:03.424 +02:00 [INF] Request finished in 239.8882ms 302 
+2019-03-06 09:49:03.425 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-03-06 09:49:03.427 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-03-06 09:49:03.427 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-03-06 09:49:03.429 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp)
+2019-03-06 09:49:03.450 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:49:03.452 +02:00 [INF] Executing action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) - Validation state: "Valid"
+2019-03-06 09:49:03.452 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0359ms.
+2019-03-06 09:49:03.454 +02:00 [INF] Executed action method BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0359ms.
+2019-03-06 09:49:03.454 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:49:03.456 +02:00 [INF] Executing ViewResult, running view Index.
+2019-03-06 09:49:03.459 +02:00 [INF] Executed ViewResult - view Index executed in 5.0505ms.
+2019-03-06 09:49:03.461 +02:00 [INF] Executed ViewResult - view Index executed in 5.0505ms.
+2019-03-06 09:49:03.461 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 32.0304ms
+2019-03-06 09:49:03.463 +02:00 [INF] Executed action BmsSurvey.WebApp.Controllers.HomeController.Index (BmsSurvey.WebApp) in 32.0304ms
+2019-03-06 09:49:03.463 +02:00 [INF] Request finished in 37.8674ms 200 text/html; charset=utf-8
+2019-03-06 09:49:03.465 +02:00 [INF] Request finished in 37.8674ms 200 text/html; charset=utf-8
+2019-03-06 09:49:05.225 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Identity/Account/Login  
+2019-03-06 09:49:05.227 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/bg/Identity/Account/Login  
+2019-03-06 09:49:05.256 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2019-03-06 09:49:05.259 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2019-03-06 09:49:05.263 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LoginModel.OnGetAsync with arguments ([""]) - ModelState is "Valid"
+2019-03-06 09:49:05.264 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LoginModel.OnGetAsync with arguments ([""]) - ModelState is "Valid"
+2019-03-06 09:49:05.267 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-06 09:49:05.269 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-03-06 09:49:05.271 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2019-03-06 09:49:05.273 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2019-03-06 09:49:05.275 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-03-06 09:49:05.278 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-03-06 09:49:05.278 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:49:05.280 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-03-06 09:49:05.339 +02:00 [INF] Executed page /Account/Login in 79.9486ms
+2019-03-06 09:49:05.341 +02:00 [INF] Executed page /Account/Login in 79.9486ms
+2019-03-06 09:49:05.342 +02:00 [INF] Request finished in 116.572ms 200 text/html; charset=utf-8
+2019-03-06 09:49:05.344 +02:00 [INF] Request finished in 116.572ms 200 text/html; charset=utf-8
+2019-03-06 09:49:13.598 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Identity/Account/Login application/x-www-form-urlencoded 251
+2019-03-06 09:49:13.600 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44392/bg/Identity/Account/Login application/x-www-form-urlencoded 251
+2019-03-06 09:49:13.601 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2019-03-06 09:49:13.602 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2019-03-06 09:49:13.620 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LoginModel.OnPostAsync with arguments ([""]) - ModelState is "Valid"
+2019-03-06 09:49:13.622 +02:00 [INF] Executing handler method BmsSurvey.WebApp.Areas.Identity.Pages.Account.LoginModel.OnPostAsync with arguments ([""]) - ModelState is "Valid"
+2019-03-06 09:49:13.625 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:49:13.627 +02:00 [INF] Entity Framework Core 2.2.2-servicing-10034 initialized 'BmsSurveyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-03-06 09:49:13.688 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:49:13.690 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:49:13.734 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:49:13.736 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedFrom], [u].[CreatedOn], [u].[CultureId], [u].[DeletedFrom], [u].[DeletedOn], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[ModifiedFrom], [u].[ModifiedOn], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreserveCreatedOn], [u].[SecurityStamp], [u].[SirName], [u].[TabNumber], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2019-03-06 09:49:13.798 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:49:13.800 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [UserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2019-03-06 09:49:13.845 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:49:13.847 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [UserRoles] AS [userRole]
+INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2019-03-06 09:49:13.894 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:49:13.896 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedFrom], [r].[CreatedOn], [r].[DeletedFrom], [r].[DeletedOn], [r].[Description], [r].[IsDeleted], [r].[ModifiedFrom], [r].[ModifiedOn], [r].[Name], [r].[NormalizedName], [r].[PreserveCreatedOn]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2019-03-06 09:49:13.930 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:49:13.932 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [RoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2019-03-06 09:49:13.936 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-06 09:49:13.938 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-06 09:49:13.943 +02:00 [INF] User logged in.
+2019-03-06 09:49:13.945 +02:00 [INF] User logged in.
+2019-03-06 09:49:13.945 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectResult.
+2019-03-06 09:49:13.947 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectResult.
+2019-03-06 09:49:13.947 +02:00 [INF] Executing RedirectResult, redirecting to https://localhost:44392/bg.
+2019-03-06 09:49:13.949 +02:00 [INF] Executing RedirectResult, redirecting to https://localhost:44392/bg.
+2019-03-06 09:49:13.949 +02:00 [INF] Execute

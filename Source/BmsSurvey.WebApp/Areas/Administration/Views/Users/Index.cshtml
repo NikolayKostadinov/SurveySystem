@@ -1,4 +1,5 @@
-﻿@using BmsSurvey.Application.Users.Models
+﻿@using BmsSurvey.Application.Roles.Models
+@using BmsSurvey.Application.Users.Models
 @using BmsSurvey.WebApp.Resources
 @using Microsoft.AspNetCore.Antiforgery
 @inject ILocalizationService<LayoutResource> LayoutLocalizer
@@ -12,60 +13,82 @@
         <h2>@ViewData["Title"]</h2>
 
         @(Html.Kendo()
-                                  .Grid<UserListViewModel>()
-                                  .Name("users-grid")
-                                  .ToolBar(tb => { tb.Create(); })
-                                  .Columns(col =>
-                                  {
-                                      col.Bound(m => m.IsLocked).Width(50)
-                                          .ClientTemplate("<div><span class=' #:IsLocked ? 'locked fas fa-ban':'unlocked far fa-check-circle'#'></span></div>");
-                                      col.Bound(m => m.Id).Width(50);
-                                      col.Bound(m => m.TabNumber);
-                                      col.Bound(m => m.UserName);
-                                      col.Bound(m => m.Email);
-                                      col.Bound(m => m.FirstName);
-                                      col.Bound(m => m.SirName);
-                                      col.Bound(m => m.LastName);
-                                      col.Bound(m => m.FullName);
-                                      col.Bound(m => m.Roles).Width(300).ClientTemplate("#=rolesTemplate(Roles)#").EditorTemplateName("UserRoleEditor");
-                                      col.Command(c =>
-                                      {
-                                          c.Edit();
-                                          c.Custom("lock").IconClass("k-icon k-i-lock").Text(LayoutLocalizer.GetLocalizedHtmlString("LOCK")).Click("lockUser");
-                                          c.Custom("unlock").IconClass("k-icon k-i-unlock").Text(LayoutLocalizer.GetLocalizedHtmlString("UNLOCK")).Click("unlockUser");
-                                          c.Destroy();
-                                      });
-                                  })
-            .Scrollable()
-            .Sortable()
-            .Filterable()
-            .Editable(ed => ed.Mode(GridEditMode.InLine))
-            .Pageable(pageable => pageable
-                .Refresh(true)
-                .PageSizes(true)
-                .ButtonCount(5))
-            .DataSource(dataSource => dataSource
-                .Ajax()
-                .Model(u =>
-                {
-                    u.Id(m => m.Id);
-                    u.Field(m => m.Id).Editable(false);
-                    u.Field(m => m.IsLocked).Editable(false);
+                                          .Grid<UserListViewModel>()
+                                          .Name("users-grid")
+                                          .ToolBar(tb => { tb.Create(); })
+                                          .Columns(col =>
+                                          {
+                                              col.Bound(m => m.IsLocked).Width(50)
+                                                  .ClientTemplate("<img src='#: data.IsLocked?'/Images/PNG/32x32/lockout.png':!data.EmailConfirmed?'/Images/PNG/32x32/no_email.png':data.IsDeleted?'/Images/PNG/32x32/ErrorCircle.png':'/Images/PNG/32x32/OKShield.png'#' class='grid-icon'/>");
+                                              col.Bound(m => m.Id).Width(50);
+                                              col.Bound(m => m.TabNumber);
+                                              col.Bound(m => m.UserName);
+                                              col.Bound(m => m.Email);
+                                              col.Bound(m => m.FirstName);
+                                              col.Bound(m => m.SirName);
+                                              col.Bound(m => m.LastName);
+                                              col.Bound(m => m.FullName);
+                                              col.Bound(m => m.Roles).Width(300).ClientTemplate("#=rolesTemplate(Roles)#").EditorTemplateName("UserRoleEditor");
+                                              col.Command(c =>
+                                              {
+                                                  c.Edit();
+                                                  c.Custom("lock").IconClass("k-icon k-i-lock").Text(LayoutLocalizer.GetLocalizedHtmlString("LOCK")).Click("lockUser");
+                                                  c.Custom("unlock").IconClass("k-icon k-i-unlock").Text(LayoutLocalizer.GetLocalizedHtmlString("UNLOCK")).Click("unlockUser");
+                                                  c.Destroy();
+                                              });
+                                          })
+                    .Scrollable()
+                    .Sortable()
+                    .Filterable()
+                    .Editable(ed => ed.Mode(GridEditMode.InLine))
+                    .Pageable(pageable => pageable
+                        .Refresh(true)
+                        .PageSizes(true)
+                        .ButtonCount(5))
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .Model(u =>
+                        {
+                            u.Id(m => m.Id);
+                            u.Field(m => m.Id).Editable(false);
+                            u.Field(m => m.IsLocked).Editable(false);
                     //u.Field(m => m.UserName).Editable(false);
                     u.Field(m => m.FullName).Editable(false);
-                    u.Field(p => p.Roles).DefaultValue(new HashSet<RoleSimpleViewModel>()).Editable(true);
-                })
-                .PageSize(20)
-                .Read(read => read.Action("GetAll", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
-                .Destroy(delete => delete.Action("Delete", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
-                .Create(create => create.Action("Create", "Users", new { area = "Administration" }).Data("getAntiforgeryTokenAndPass"))
-                .Update(update => update.Action("Update", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
-                .Events(ev =>
-                {
-                    ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
-                })
-            )
-            .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+                            u.Field(p => p.Roles).DefaultValue(new HashSet<RoleSimpleViewModel>()).Editable(true);
+                        })
+                        .PageSize(20)
+                        .Read(read => read.Action("GetAll", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                        .Destroy(delete => delete.Action("Delete", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                        .Create(create => create.Action("Create", "Users", new { area = "Administration" }).Data("getAntiforgeryTokenAndPass"))
+                        .Update(update => update.Action("Update", "Users", new { area = "Administration" }).Data("getAntiforgeryToken"))
+                        .Events(ev =>
+                        {
+                            ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
+                        })
+                    )
+                    .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); }))
+
+        @(Html.Kendo().ContextMenu()
+                      .Name("context-menu")
+                      .Target("#users-grid")
+                      .Filter("[role=row]")
+                      .Orientation(ContextMenuOrientation.Vertical)
+                      .Animation(animation =>
+                      {
+                          animation.Open(open =>
+                          {
+                              open.Fade(FadeDirection.In);
+                              open.Duration(500);
+                          });
+                      })
+                      .Items(items =>
+                      {
+                          items.Add().Text("Unlock").ImageUrl(Url.Content("~/Images/PNG/32x32/unlockout.png"));
+                          items.Add().Text("Send Confirmation Email").ImageUrl(Url.Content("~/Images/PNG/32x32/no_email.png"));
+                          items.Add().Text("Edit").ImageUrl(Url.Content("~/Images/PNG/32x32/edit.png"));
+                          items.Add().Text("Delete").ImageUrl(Url.Content("~/Images/PNG/32x32/ErrorCircle.png"));
+                      })
+                      .Events(ev => ev.Select("contextMenuClick"))
         )
     </div>
 </div>
@@ -125,6 +148,52 @@
                 .fail(function(ev) {
                     alert(ev);
                 });
+        }
+
+        function sendConfirmationEmail(user) {
+            let data = {
+                id: user.Id,
+                __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+            };
+            $.ajax({
+                    method: "POST",
+                    url: "@Url.Action("SendConfirmationEmail", "Users", new {area = "Administration"})",
+                    dataType: "json",
+                    data: data
+                })
+                .done(function(response) {
+                    if (response.success) {
+                        let grid = $("[data-role=grid]").data("kendoGrid");
+                        grid.dataSource.read();
+                        grid.refresh();
+                    } else {
+                        alert(response.errorMessage);
+                    }
+
+                })
+                .fail(function(ev) {
+                    alert("Something went wrong!");
+                });
+        }
+
+        function contextMenuClick(e) {
+            var button = $(e.item);
+            var row = $(e.target);
+            var grid = $("[data-role=grid]").data("kendoGrid");
+            switch (button.text().toLowerCase()) {
+            case 'edit':
+                grid.editRow(row);
+                break;
+            case 'delete':
+                grid.removeRow(row);
+                break;
+            case 'unlock':
+                unlockUser(grid.dataItem(row));
+                break;
+            case 'send confirmation email':
+                sendConfirmationEmail(grid.dataItem(row));
+                break;
+            }
         }
 
 

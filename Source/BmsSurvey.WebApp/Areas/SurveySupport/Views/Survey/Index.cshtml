@@ -21,8 +21,8 @@
                   col.Bound(m => m.SurveyTitle);
                   col.Bound(m => m.Description);
                   col.Bound(m => m.PageSize);
-                  col.Bound(m => m.ActiveFrom).Format("{0:d}");
-                  col.Bound(m => m.ActiveTo).Format("{0:d}");
+                  col.Bound(m => m.ActiveFrom).Format("{0:d}").EditorTemplateName("Date");
+                  col.Bound(m => m.ActiveTo).Format("{0:d}").EditorTemplateName("Date");
                   col.Bound(m => m.CreatedFrom);
                   col.Bound(m => m.ModifiedFrom);
                   col.Bound(m => m.ModifiedOn).Format("{0:d}");

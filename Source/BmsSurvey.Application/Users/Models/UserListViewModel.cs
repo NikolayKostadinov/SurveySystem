@@ -16,6 +16,7 @@ namespace BmsSurvey.Application.Users.Models
     using AutoMapper;
     using Domain.Entities.Identity;
     using Interfaces.Mapping;
+    using Roles.Models;
 
     #endregion
 
@@ -50,6 +51,8 @@ namespace BmsSurvey.Application.Users.Models
         public ICollection<RoleSimpleViewModel> Roles { get; set; }
 
         public bool IsDeleted { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public bool UserChangedPassword { get; set; }
 
         public void CreateMappings(Profile configuration)
         {

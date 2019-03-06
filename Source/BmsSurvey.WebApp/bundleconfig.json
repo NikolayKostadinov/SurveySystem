@@ -22,5 +22,11 @@
     "inputFiles": [
       "wwwroot/js/kendo-shim.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/custom/kendoAdditional.min.js",
+    "inputFiles": [
+      "wwwroot/js/custom/kendoAdditional.js"
+    ]
   }
 ]

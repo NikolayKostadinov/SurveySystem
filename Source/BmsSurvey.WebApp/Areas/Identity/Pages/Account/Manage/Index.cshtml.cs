@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using Application.Exceptions;
     using Application.Interfaces;
-    using Application.Users.Commands.UpdateUser;
+    using Application.Users.Commands.EditUser;
     using Application.Users.Queries.GetUser;
     using AutoMapper;
     using Domain.Entities.Identity;
@@ -23,7 +23,6 @@
     public partial class IndexModel : PageModelBase
     {
         private readonly UserManager<User> userManager;
-        private readonly IUserService userService;
         private readonly SignInManager<User> signInManager;
         private readonly IEmailSender emailSender;
         private readonly IStringLocalizer layoutLocalizer;
@@ -34,14 +33,12 @@
             SignInManager<User> signInManager,
             IEmailSender emailSender,
             IStringLocalizerFactory factory,
-            IUserService userServiceParam,
             IMapper mapperParam)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.emailSender = emailSender;
             this.mapper = mapperParam;
-            this.userService = userServiceParam;
 
             var type = typeof(LayoutResource);
             var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
@@ -56,7 +53,7 @@
         public string StatusMessage { get; set; }
 
         [BindProperty]
-        public UpdateUserCommand Input { get; set; }
+        public EditUserCommand Input { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -65,7 +62,7 @@
                 var user = await this.Mediator.Send(new GetUserQuery(User));
                 Username = user.UserName;
 
-                Input = new UpdateUserCommand
+                Input = new EditUserCommand
                 {
                     Id = user.Id,
                     Email = user.Email,

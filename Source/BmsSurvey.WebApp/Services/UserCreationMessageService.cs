@@ -43,7 +43,6 @@ namespace BmsSurvey.WebApp.Services
         public async Task<Message> GetMessageAsync(User user)
         {
             var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
-            var result = await userManager.ConfirmEmailAsync(user, code);
             var httpContext = this.httpContextAccessor.HttpContext;
             var callbackUrlPath = this.linkGenerator.GetPathByPage(
                 httpContext: httpContext, 

@@ -106,7 +106,7 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be greater than {0}!.
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be greater than {ComparisonValue}!.
         /// </summary>
         public static string GREATER_THAN {
             get {

@@ -189,16 +189,20 @@
 
         if (e.errors) {
             var message = "";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        var that = this.replace('\\r\\n', '\r\n');
-                        message += that + "\n";
-                    });
-                }
-            });
+            $.each(e.errors,
+                function(key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors,
+                            function() {
+                                var that = this.replace('\\r\\n', '\r\n');
+                                message += that + "\n";
+                            });
+                    }
+                });
             $('pre#err-message').text(message);
             $('div#err-window').data("kendoWindow").open();
+        } else {
+            location.reload();
         }
 
         grid.cancelChanges();
@@ -247,11 +251,11 @@
     }
 
 
-    var SendHistoryData = function () {
+    var SendHistoryData = function() {
         var result = { 'id': $('input[name=id]').val(), 'entityName': $('input[name=entityName]').val() };
         $.extend(result, sendAntiForgery());
         return result;
-    }
+    };
 
     function DeletableDataBound() {
         var items = this.dataSource.view();
@@ -267,7 +271,8 @@
                 cellsForColloring.find('a').addClass("text-warning");
             }
             if (items[i].IsLocked) {
-                currenRow.addClass('text-warning');
+                currenRow.addClass('text-white');
+                currenRow.addClass('bg-warning');
                 currenRow.find(".k-grid-lock")
                     .attr("disabled", "disabled")
                     .addClass("k-state-disabled").on("click",
