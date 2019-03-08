@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BmsSurvey.Application.Questions.Models.EvaluationModels
 {
-    class Rate1to5StarsQuestionEvaluationModel
+    public class Rate1to5StarsQuestionEvaluationModel:QuestionEvaluationModel
     {
     }
 }

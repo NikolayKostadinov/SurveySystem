@@ -5,9 +5,9 @@
 //   </copyright>
 //   <author>Nikolay.Kostadinov</author>
 //  ------------------------------------------------------------------------------------------------
-namespace BmsSurvey.Application.Answers.Commands
+namespace BmsSurvey.Application.Questions.Models.EvaluationModels
 {
-    internal abstract class QuestionEvaluationModel
+    public abstract class QuestionEvaluationModel
     {
     }
 }
