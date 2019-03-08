@@ -82,6 +82,8 @@ namespace BmsSurvey.Application.Tests.Roles.Queries
             //Act & Assert
 
             Assert.AreEqual(2, result.Count());
+            Assert.IsTrue(result.Select(x=>x.Id).ToArray().Contains(1));
+            Assert.IsTrue(result.Select(x=>x.Id).ToArray().Contains(2));
             Assert.IsFalse(result.Any(r=>r.Name == "DeletedRole"),"Contains deleted records!");
         }
     }

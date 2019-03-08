@@ -821,4 +821,7 @@ will contact you</value>
   <data name="CONFIRM_COOKIES" xml:space="preserve">
     <value>Please confirm using of cookies!</value>
   </data>
+  <data name="LINK_COPIED" xml:space="preserve">
+    <value>Link to the survey:</value>
+  </data>
 </root>

@@ -109,6 +109,7 @@
                 }
                 if (result.RequiresTwoFactor)
                 {
+                    // ReSharper disable once RedundantAnonymousTypePropertyName
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
                 if (result.IsLockedOut)

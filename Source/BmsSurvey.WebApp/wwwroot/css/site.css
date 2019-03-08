@@ -520,3 +520,34 @@ h3.blockquote-footer {
     font-weight: 300;
 }
 
+img.rounded-outlined {
+    border: 3px double #aaaaaa;
+    border-radius: 90px;
+    padding: 2px;
+    background-color: white;
+    box-shadow: 2px 1px #888;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+.btn-container {
+    position: relative;
+    width: 50%;
+}
+
+/* Make the image responsive */
+
+
+/* Style the button and place it in the middle of the container/image */
+.btn-container .btn-a {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 24px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

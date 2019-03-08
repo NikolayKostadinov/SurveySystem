@@ -143,6 +143,7 @@
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
+                        // ReSharper disable once RedundantAnonymousTypePropertyName
                         values: new { userId = user.Id, code = code },
                         protocol: Request.Scheme);
 

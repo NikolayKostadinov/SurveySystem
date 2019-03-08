@@ -109,49 +109,6 @@ namespace BmsSurvey.Application.Tests.Users.Commands
             var errors = validator.Validate(new EditUserCommand(){TabNumber = "test"}).Errors;
 
             Assert.IsTrue(errors.Any(err => err.PropertyName == "TabNumber" && err.ErrorCode.Equals("PredicateValidator")));
-        }
-
-
-        //[Test]
-        //public void Should_have_error_when_PageSize_is_0()
-        //{
-        //    validator.ShouldHaveValidationErrorFor(survey => survey.PageSize, 0);
-        //    var errors = validator.Validate(new EditSurveyCommand()).Errors;
-
-        //    Assert.IsTrue(errors.Any(err => err.ErrorMessage.Contains("greater than 0")));
-        //}
-
-
-        //[Test]
-        //public void Should_have_error_when_ActiveFrom_is_empty()
-        //{
-
-        //    validator.ShouldHaveValidationErrorFor(survey => survey.ActiveFrom, new DateTime());
-        //    var errors = validator.Validate(new EditSurveyCommand()).Errors;
-
-        //    Assert.IsTrue(errors.Any(err => err.PropertyName == "ActiveFrom" && err.ErrorCode.Equals("NotEmptyValidator")));
-        //}
-
-        //[Test]
-        //public void Should_have_error_when_ActiveTo_is_empty()
-        //{
-
-        //    validator.ShouldHaveValidationErrorFor(survey => survey.ActiveTo, new DateTime());
-        //    var errors = validator.Validate(new EditSurveyCommand()).Errors;
-
-        //    Assert.IsTrue(errors.Any(err => err.PropertyName == "ActiveTo" && err.ErrorCode.Equals("NotEmptyValidator")));
-        //}
-
-        //[Test]
-        //public void Should_have_error_when_ActiveTo_is_less_than_ActiveFrom()
-        //{
-        //    var errors = validator.Validate(new EditSurveyCommand()
-        //    {
-        //        ActiveFrom = TimeProvider.Current.UtcNow,
-        //        ActiveTo = TimeProvider.Current.UtcNow.AddDays(-1)
-        //    }).Errors;
-
-        //    Assert.IsTrue(errors.Any(err => err.PropertyName == "ActiveTo" && err.ErrorCode.Equals("PredicateValidator")));
-        //}
+        }    
     }
 }

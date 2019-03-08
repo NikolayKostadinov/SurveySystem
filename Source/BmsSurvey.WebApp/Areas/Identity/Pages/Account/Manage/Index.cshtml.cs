@@ -57,30 +57,24 @@
 
         public async Task<IActionResult> OnGetAsync()
         {
-            try
+            var user = await this.Mediator.Send(new GetUserQuery(User));
+            Username = user.UserName;
+
+            Input = new EditUserCommand
             {
-                var user = await this.Mediator.Send(new GetUserQuery(User));
-                Username = user.UserName;
+                Id = user.Id,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                TabNumber = user.TabNumber,
+                FirstName = user.FirstName,
+                SirName = user.SirName,
+                LastName = user.LastName,
+            };
 
-                Input = new EditUserCommand
-                {
-                    Id = user.Id,
-                    Email = user.Email,
-                    PhoneNumber = user.PhoneNumber,
-                    TabNumber = user.TabNumber,
-                    FirstName = user.FirstName,
-                    SirName = user.SirName,
-                    LastName = user.LastName,
-                };
+            IsEmailConfirmed = await userManager.IsEmailConfirmedAsync(user);
 
-                IsEmailConfirmed = await userManager.IsEmailConfirmedAsync(user);
+            return Page();
 
-                return Page();
-            }
-            catch (NotFoundException nfe)
-            {
-                return NotFound(layoutLocalizer["USER_NOTFOUND", userManager.GetUserId(User)]);
-            }
         }
 
         public async Task<IActionResult> OnPostAsync()

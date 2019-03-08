@@ -82,9 +82,4 @@ namespace BmsSurvey.Application.Tests.Surveys.Commands
                     .With.Property("ParamName").Contains("mapper"));
         }
     }
-
-    public class TestTimeProvider : TimeProvider
-    {
-        public override DateTime UtcNow => new DateTime(2019, 2, 25, 5, 30, 12);
-    }
 }

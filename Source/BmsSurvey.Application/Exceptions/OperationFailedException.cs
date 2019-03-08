@@ -19,6 +19,8 @@ namespace BmsSurvey.Application.Exceptions
             this.Errors = errors;
         }
 
+        public override string Message => this.ToString();
+
         public override string ToString()
         {
             return $"{Environment.NewLine}{string.Join(Environment.NewLine, Errors)}{Environment.NewLine}{this.StackTrace}";

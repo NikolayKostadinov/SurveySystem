@@ -52,7 +52,6 @@ namespace BmsSurvey.Application.Users.Models
 
         public bool IsDeleted { get; set; }
         public bool EmailConfirmed { get; set; }
-        public bool UserChangedPassword { get; set; }
 
         public void CreateMappings(Profile configuration)
         {

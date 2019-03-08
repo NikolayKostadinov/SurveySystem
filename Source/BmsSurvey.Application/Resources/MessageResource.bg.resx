@@ -138,6 +138,12 @@
   <data name="INVALID_EMAIL" xml:space="preserve">
     <value>Невалиден формат на електронна поща '{PropertyValue}'!</value>
   </data>
+  <data name="MAXIMUM_LENGTH" xml:space="preserve">
+    <value>Стойността в полето '{PropertyName}' не трябва да бъде повече от {ComparisonValue} синвола!</value>
+  </data>
+  <data name="MINIMUM_LENGTH" xml:space="preserve">
+    <value>Стойността в полето '{PropertyName}' трябва да бъде най-малко {ComparisonValue} синвола!</value>
+  </data>
   <data name="RECORD_NOT_FOUND" xml:space="preserve">
     <value>Записът не е открит!</value>
   </data>

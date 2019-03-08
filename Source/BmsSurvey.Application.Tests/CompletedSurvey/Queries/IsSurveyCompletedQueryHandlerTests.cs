@@ -24,6 +24,7 @@ namespace BmsSurvey.Application.Tests.CompletedSurvey.Queries
     using Common.Abstract;
     using Domain.Entities;
     using Infrastructure;
+    using Surveys.Commands;
 
     #endregion
 
@@ -36,6 +37,7 @@ namespace BmsSurvey.Application.Tests.CompletedSurvey.Queries
         private readonly IsSurveyCompletedQueryHandler queryHandler;
 
         public IsSurveyCompletedQueryHandlerTests()
+        :base(new TestTimeProvider())
         {
             this.queryHandler = new IsSurveyCompletedQueryHandler(this.Context);
         }

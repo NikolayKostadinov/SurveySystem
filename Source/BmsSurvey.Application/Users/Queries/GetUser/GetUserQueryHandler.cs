@@ -17,23 +17,23 @@ namespace BmsSurvey.Application.Users.Queries.GetUser
     {
         private readonly UserManager<User> userManager;
 
-        public GetUserQueryHandler(UserManager<User> userManger)
+        public GetUserQueryHandler(UserManager<User> userManager)
         {
-            this.userManager = userManger ?? throw new ArgumentNullException(nameof(userManger));
+            this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         }
 
-        public async Task<User> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public Task<User> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var user = await this.userManager.Users
-                .FirstOrDefaultAsync(x => x.UserName == request.User.Identity.Name 
-                                          &&x.IsDeleted == false,cancellationToken);
+            var user = this.userManager.Users
+                .FirstOrDefault(x => x.UserName == request.User.Identity.Name 
+                                          &&x.IsDeleted == false);
 
             if (user == null)
             {
                 throw new NotFoundException(nameof(user), request.User.Identity.Name);
             }
 
-            return user;
+            return Task.FromResult(user);
         }
     }
 }

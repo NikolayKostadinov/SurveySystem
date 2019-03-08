@@ -47,6 +47,7 @@ namespace BmsSurvey.WebApp.Areas.SurveySupport.Controllers
             return Json(await surveys.ToDataSourceResultAsync(request, this.ModelState).ConfigureAwait(false));
         }
 
+        [HttpPost]
         public async Task<IActionResult> Delete([DataSourceRequest] DataSourceRequest request, DeleteSurveyCommand model)
         {
             if (this.ModelState.IsValid)
@@ -58,22 +59,24 @@ namespace BmsSurvey.WebApp.Areas.SurveySupport.Controllers
                 .ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
         }
 
+        [HttpPost]
         public async Task<IActionResult> Update([DataSourceRequest] DataSourceRequest request, EditSurveyCommand model)
         {
-            try
+            if (this.ModelState.IsValid)
             {
-                if (this.ModelState.IsValid)
-                {
-                    var result = await this.Mediator.Send(model);
+                var result = await this.Mediator.Send(model);
 
-                }
-                return Json(await new List<EditSurveyCommand> { model }
-                    .ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
             }
-            catch (NotFoundException nfe)
-            {
-                return View("SurveyNotFound", nfe.Key.ToString());
-            }
+
+            return Json(await new List<EditSurveyCommand> { model }
+                .ToDataSourceResultAsync(request, ModelState).ConfigureAwait(false));
+        }
+
+        [HttpPost]
+        public IActionResult GetSurveyUrl(int id)
+        {
+            var url = Url.Action("Index", "Survey", new { area = "", id = id }, Request.Scheme, Request.Host.Value);
+            return Json(new { url = url });
         }
     }
 }

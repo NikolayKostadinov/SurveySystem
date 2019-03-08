@@ -124,6 +124,24 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be shorter than {ComparisonValue} symbols!.
+        /// </summary>
+        public static string MAXIMUM_LENGTH {
+            get {
+                return ResourceManager.GetString("MAXIMUM_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be longer than {ComparisonValue} symbols!.
+        /// </summary>
+        public static string MINIMUM_LENGTH {
+            get {
+                return ResourceManager.GetString("MINIMUM_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The record not found!.
         /// </summary>
         public static string RECORD_NOT_FOUND {

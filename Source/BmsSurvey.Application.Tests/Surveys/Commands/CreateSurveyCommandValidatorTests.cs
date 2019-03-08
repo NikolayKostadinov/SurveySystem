@@ -21,6 +21,7 @@ namespace BmsSurvey.Application.Tests.Surveys.Commands
     using Application.Surveys.Commands.CreateSurvey;
     using Common.Abstract;
     using FluentValidation.TestHelper;
+    using Infrastructure;
 
     #endregion
 

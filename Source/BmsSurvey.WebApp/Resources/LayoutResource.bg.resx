@@ -824,4 +824,7 @@
   <data name="CONFIRM_COOKIES" xml:space="preserve">
     <value>Моля потвърдете използването на "бисквитки" за тази страница!</value>
   </data>
+  <data name="LINK_COPIED" xml:space="preserve">
+    <value>Връзка към анкетата:</value>
+  </data>
 </root>

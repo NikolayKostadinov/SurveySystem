@@ -138,6 +138,12 @@
   <data name="INVALID_EMAIL" xml:space="preserve">
     <value>Invalid email format '{PropertyValue}'!</value>
   </data>
+  <data name="MAXIMUM_LENGTH" xml:space="preserve">
+    <value>'{PropertyName}' must be shorter than {ComparisonValue} symbols!</value>
+  </data>
+  <data name="MINIMUM_LENGTH" xml:space="preserve">
+    <value>'{PropertyName}' must be longer than {ComparisonValue} symbols!</value>
+  </data>
   <data name="RECORD_NOT_FOUND" xml:space="preserve">
     <value>The record not found!</value>
   </data>

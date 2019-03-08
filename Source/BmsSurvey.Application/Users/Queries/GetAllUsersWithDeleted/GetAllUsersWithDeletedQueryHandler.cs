@@ -8,7 +8,9 @@
 
 namespace BmsSurvey.Application.Users.Queries.GetAllUsersWithDeleted
 {
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using AutoMapper;
@@ -25,20 +27,20 @@ namespace BmsSurvey.Application.Users.Queries.GetAllUsersWithDeleted
 
         public GetAllUsersWithDeletedQueryHandler(UserManager<User> userManager, IMapper mapper)
         {
-            this.userManager = userManager;
-            this.mapper = mapper;
+            this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<IEnumerable<UserListViewModel>> Handle(GetAllUsersWithDeletedQuery request, CancellationToken cancellationToken)
+        public Task<IEnumerable<UserListViewModel>> Handle(GetAllUsersWithDeletedQuery request, CancellationToken cancellationToken)
         {
-            var users = await this.userManager.Users
+            var users = this.userManager.Users
                 .Include(usr => usr.UserRoles)
                 .ThenInclude(usr => usr.Role)
-                .ToListAsync(cancellationToken);
+                .ToList();
 
             var model = this.mapper.Map<IEnumerable<UserListViewModel>>(users);
 
-            return model;
+            return Task.FromResult(model);
 
         }
     }

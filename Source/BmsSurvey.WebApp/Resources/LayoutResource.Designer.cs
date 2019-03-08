@@ -1269,6 +1269,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Link to the survey:.
+        /// </summary>
+        public static string LINK_COPIED {
+            get {
+                return ResourceManager.GetString("LINK_COPIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lock.
         /// </summary>
         public static string LOCK {

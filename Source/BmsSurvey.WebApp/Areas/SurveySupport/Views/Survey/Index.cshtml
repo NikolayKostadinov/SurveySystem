@@ -10,60 +10,61 @@
 <h1 class="display-3">@ViewData["Title"]</h1>
 
 @(Html.Kendo()
-              .Grid<SurveyListRowViewModel>()
-              .Name("surveys-grid")
-              .ToolBar(tb => { tb.ClientTemplateId("GridToolbarTemplate"); })
-              .Columns(col =>
+          .Grid<SurveyListRowViewModel>()
+          .Name("surveys-grid")
+          .ToolBar(tb => { tb.ClientTemplateId("GridToolbarTemplate"); })
+          .Columns(col =>
+          {
+              col.Command(c => c.Custom("get-url").Template($"<div class='btn-container'><img class='img-rounded rounded-outlined' src='/images/PNG/64x64/link.png' width='32'/><a class='btn-a k-grid-get-url' href=\"##\" data-toggle='popover' data-placement='bottom' data-content='{LayoutLocalizer.GetLocalizedHtmlString("LINK_COPIED")}\nplaceholder'></a></div>").Click("getUrl")).Width(64);
+              col.Bound(m => m.IsActive).Width(50)
+                  .ClientTemplate("<img src='#: data.IsActive?'/Images/PNG/32x32/OKShield.png':'/Images/PNG/32x32/ErrorCircle.png'#' class='grid-icon'/>");
+              col.Bound(m => m.Id).Width(50);
+              col.Bound(m => m.SurveyTitle);
+              col.Bound(m => m.Description);
+              col.Bound(m => m.PageSize);
+              col.Bound(m => m.ActiveFrom).Format("{0:d}").EditorTemplateName("Date");
+              col.Bound(m => m.ActiveTo).Format("{0:d}").EditorTemplateName("Date");
+              col.Bound(m => m.CreatedFrom);
+              col.Bound(m => m.ModifiedFrom);
+              col.Bound(m => m.ModifiedOn).Format("{0:d}");
+              col.Command(c =>
               {
-                  col.Bound(m => m.IsActive).Width(50)
-                      .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
-                  col.Bound(m => m.Id).Width(50);
-                  col.Bound(m => m.SurveyTitle);
-                  col.Bound(m => m.Description);
-                  col.Bound(m => m.PageSize);
-                  col.Bound(m => m.ActiveFrom).Format("{0:d}").EditorTemplateName("Date");
-                  col.Bound(m => m.ActiveTo).Format("{0:d}").EditorTemplateName("Date");
-                  col.Bound(m => m.CreatedFrom);
-                  col.Bound(m => m.ModifiedFrom);
-                  col.Bound(m => m.ModifiedOn).Format("{0:d}");
-                  col.Command(c =>
-                  {
-                      c.Edit().Text(LayoutLocalizer.GetLocalizedHtmlString("EDIT"));
-                      c.Destroy().Text(LayoutLocalizer.GetLocalizedHtmlString("DELETE"));
-                      c.Custom("questions").IconClass("k-icon k-i-grid-layout").Text(LayoutLocalizer.GetLocalizedHtmlString("QUESTIONS")).Click("questions");
-                  }).Width(120);
-              })
-                    .Scrollable()
-                    .Sortable()
-                    .Filterable()
-                    .Editable(ed => ed.Mode(GridEditMode.InLine))
-                    .Pageable(pageable => pageable
-                        .Refresh(true)
-                        .PageSizes(true)
-                        .ButtonCount(5))
-                   .DataSource(dataSource => dataSource
-                        .Ajax()
-                        .Model(u =>
-                        {
-                            u.Id(m => m.Id);
-                            u.Field(m => m.SurveyTitle);
-                            u.Field(m => m.Id).Editable(false);
-                            u.Field(m => m.IsActive).Editable(false);
-                            u.Field(m => m.CreatedFrom).Editable(false);
-                            u.Field(m => m.ModifiedFrom).Editable(false);
-                            u.Field(m => m.ModifiedOn).Editable(false);
+                  c.Edit().Text(LayoutLocalizer.GetLocalizedHtmlString("EDIT"));
+                  c.Destroy().Text(LayoutLocalizer.GetLocalizedHtmlString("DELETE"));
+                  c.Custom("questions").IconClass("k-icon k-i-grid-layout").Text(LayoutLocalizer.GetLocalizedHtmlString("QUESTIONS")).Click("questions");
+              }).Width(120);
+          })
+                .Scrollable()
+                .Sortable()
+                .Filterable()
+                .Editable(ed => ed.Mode(GridEditMode.InLine))
+                .Pageable(pageable => pageable
+                    .Refresh(true)
+                    .PageSizes(true)
+                    .ButtonCount(5))
+               .DataSource(dataSource => dataSource
+                    .Ajax()
+                    .Model(u =>
+                    {
+                        u.Id(m => m.Id);
+                        u.Field(m => m.SurveyTitle);
+                        u.Field(m => m.Id).Editable(false);
+                        u.Field(m => m.IsActive).Editable(false);
+                        u.Field(m => m.CreatedFrom).Editable(false);
+                        u.Field(m => m.ModifiedFrom).Editable(false);
+                        u.Field(m => m.ModifiedOn).Editable(false);
 
-                        })
-                        .PageSize(20)
-                        .Read(read => read.Action("GetAll", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
-                        .Destroy(delete => delete.Action("Delete", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
-                        .Update(update => update.Action("Update", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
-                        .Events(ev =>
-                        {
-                            ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
-                        })
-                    )
-                    .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+                    })
+                    .PageSize(20)
+                    .Read(read => read.Action("GetAll", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                    .Destroy(delete => delete.Action("Delete", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                    .Update(update => update.Action("Update", "Survey", new { area = "SurveySupport" }).Data("getAntiforgeryToken"))
+                    .Events(ev =>
+                    {
+                        ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange");
+                    })
+                )
+                .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
 )
 
 <script id="GridToolbarTemplate" type="text/x-kendo-template">
@@ -75,8 +76,38 @@
 </script>
 
 @section Scripts
-{
+    {
     <script>
+        function getUrl(ev) {
+            ev.preventDefault();
+            let survey = this.dataItem($(ev.currentTarget).closest("tr"));
+
+            $.ajax({
+                method: "POST",
+                headers: { "RequestVerificationToken": "@AntiForgery.GetTokens(Context).RequestToken" },
+                url: "@Url.Action("GetSurveyUrl", "Survey", new {area = "SurveySupport"})",
+                data: { id: survey.Id }
+            }).done(function(response) {
+                //alert(response.url);
+                $("<textarea/>").appendTo("body").val(response.url).select().each(function() {
+                    document.execCommand('copy');
+                }).remove();
+                let element = $(ev.currentTarget).first();
+                if (element.length) {
+                    let data = element.data();
+                    if (data) {
+                        let newContent = data.content.replace('placeholder', response.url);
+                        element.attr("data-content", newContent);
+                    }
+                    element.popover('show');
+                    setTimeout(function () {
+                           element.popover('hide');
+                        }, 3000);
+                }
+            }).fail(function(ev) {
+                alert(ev);
+            });
+        }
 
         function refreshAfterChange() {
             let grid = $('[data-role=grid]').data('kendoGrid');
@@ -90,7 +121,7 @@
             e.preventDefault();
             let row = this.dataItem($(e.currentTarget).closest("tr"));
             if (row) {
-                window.location.href = '@Url.Action("Index", "Questions",new{area="SurveySupport"})' + `/${row.Id}`;
+                window.location.href = '@Url.Action("Index", "Questions", new {area = "SurveySupport"})' + `/${row.Id}`;
             }
         }
     </script>

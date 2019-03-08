@@ -1,5 +1,6 @@
 ﻿namespace BmsSurvey.Application.Infrastructure
 {
+    using System;
     using System.Threading;
     using System.Threading.Tasks;
     using MediatR.Pipeline;
@@ -7,11 +8,11 @@
 
     public class RequestLogger<TRequest> : IRequestPreProcessor<TRequest>
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<TRequest> logger;
 
         public RequestLogger(ILogger<TRequest> logger)
         {
-            _logger = logger;
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public Task Process(TRequest request, CancellationToken cancellationToken)
@@ -20,7 +21,7 @@
 
             // TODO: Add User Details
 
-            _logger.LogInformation("BmsSurvey Request: {Name} {@Request}", name, request);
+            logger.LogInformation("BmsSurvey Request: {Name} {@Request}", name, request);
 
             return Task.CompletedTask;
         }

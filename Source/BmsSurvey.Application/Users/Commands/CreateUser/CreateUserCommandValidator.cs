@@ -1,5 +1,6 @@
 ﻿namespace BmsSurvey.Application.Users.Commands.CreateUser
 {
+    using System;
     using System.Text.RegularExpressions;
     using FluentValidation;
     using Resources;
@@ -8,18 +9,24 @@
     {
         public CreateUserCommandValidator()
         {
-            RuleFor(x => x.TabNumber).NotEmpty().WithLocalizedMessage(typeof(MessageResource), "TABNUMBER_REQUIRED"); 
-            RuleFor(x => x.TabNumber).Must(tn =>
+            RuleFor(cuc => cuc.TabNumber).NotEmpty().WithLocalizedMessage(typeof(MessageResource), "TABNUMBER_REQUIRED"); 
+            RuleFor(cuc => cuc.TabNumber).Must(tn =>
             {
                 Regex regex = new Regex(@"^\d{5}$",RegexOptions.Multiline|RegexOptions.Compiled);
-                Match match = regex.Match(tn);
+                Match match = regex.Match(tn??String.Empty);
                 return match.Success;
-            }).WithLocalizedMessage(typeof(MessageResource), "TABNUMBER_INVALID_FORMAT"); 
-            RuleFor(x => x.UserName).MinimumLength(4).MaximumLength(60).NotEmpty();
-            RuleFor(x => x.FirstName).MaximumLength(60).NotEmpty();
-            RuleFor(x => x.SirName).MaximumLength(60).NotEmpty();
-            RuleFor(x => x.LastName).MaximumLength(60).NotEmpty();
-            RuleFor(x => x.Password).MinimumLength(6).NotEmpty();
+            }).WithLocalizedMessage(typeof(MessageResource), "TABNUMBER_INVALID_FORMAT");
+            RuleFor(cuc => cuc.Email).NotEmpty().WithMessage(MessageResource.REQUIRED);
+            RuleFor(cuc => cuc.Email).EmailAddress().WithMessage(MessageResource.INVALID_EMAIL);
+            RuleFor(cuc => cuc.UserName).NotEmpty().WithMessage(MessageResource.REQUIRED);
+            RuleFor(cuc => cuc.UserName).MinimumLength(4).WithMessage(MessageResource.MINIMUM_LENGTH);
+            RuleFor(cuc => cuc.UserName).MaximumLength(60).WithMessage(MessageResource.MAXIMUM_LENGTH);
+            RuleFor(cuc => cuc.FirstName).NotEmpty().WithMessage(MessageResource.REQUIRED);
+            RuleFor(cuc => cuc.FirstName).MaximumLength(60).WithMessage(MessageResource.MAXIMUM_LENGTH);
+            RuleFor(cuc => cuc.SirName).MaximumLength(60).WithMessage(MessageResource.MAXIMUM_LENGTH);
+            RuleFor(cuc => cuc.LastName).NotEmpty().WithMessage(MessageResource.REQUIRED);
+            RuleFor(cuc => cuc.LastName).MaximumLength(60).WithMessage(MessageResource.MAXIMUM_LENGTH);
+            RuleFor(cuc => cuc.Password).NotEmpty().WithMessage(MessageResource.REQUIRED);
         }
     }
 }

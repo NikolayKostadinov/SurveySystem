@@ -48,6 +48,7 @@ namespace BmsSurvey.WebApp.Services
                 httpContext: httpContext, 
                 page: "/Account/ConfirmEmail", 
                 handler: null, 
+                // ReSharper disable once RedundantAnonymousTypePropertyName
                 values: new {userId = user.Id, code = code, area = "Identity"});
             var callbackUrl =
                 $"{httpContext.Request.Scheme}://{httpContext.Request.Host}{httpContext.Request.PathBase}{callbackUrlPath}";

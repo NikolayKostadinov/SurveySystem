@@ -9,11 +9,12 @@ namespace BmsSurvey.Application.Users.Commands.ChangeUserCulture
     using System.Threading.Tasks;
     using Domain.Entities.Identity;
     using Exceptions;
+    using Infrastructure.Extensions;
     using Interfaces;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
 
-    public class ChangeUserCultureCommandHandler:IRequestHandler<ChangeUserCultureCommand,Unit>
+    public class ChangeUserCultureCommandHandler : IRequestHandler<ChangeUserCultureCommand, Unit>
     {
         private readonly UserManager<User> userManager;
         private readonly ISupportedCulturesService supportedCulturesService;
@@ -37,19 +38,16 @@ namespace BmsSurvey.Application.Users.Commands.ChangeUserCulture
 
             if (!supportedCulturesService.IsCultureSupported(request.UiCulture))
             {
-                throw new OperationFailedException(new string[]{ $"Unsupported culture '{request.UiCulture}'" });
+                throw new OperationFailedException(new string[] { $"Unsupported culture '{request.UiCulture}'" });
             }
 
             user.CultureId = request.UiCulture;
 
             var result = await this.userManager.UpdateAsync(user);
 
-            if (result.Succeeded)
-            {
-                return await Unit.Task;
-            }
+            result.Check(nameof(ChangeUserCulture));
+            return await Unit.Task;
 
-            throw new OperationFailedException(result.Errors.Select(x=>x.Description));
         }
     }
 }

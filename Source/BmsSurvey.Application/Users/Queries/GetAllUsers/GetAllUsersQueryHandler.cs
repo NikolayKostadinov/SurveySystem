@@ -8,6 +8,7 @@
 
 namespace BmsSurvey.Application.Users.Queries.GetAllUsers
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
@@ -26,20 +27,20 @@ namespace BmsSurvey.Application.Users.Queries.GetAllUsers
 
         public GetAllUsersQueryHandler(UserManager<User> userManager, IMapper mapper)
         {
-            this.userManager = userManager;
-            this.mapper = mapper;
+            this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<IEnumerable<UserListViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        public Task<IEnumerable<UserListViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            var users = await this.userManager.Users
+            var users = this.userManager.Users
                 .Include(usr=>usr.UserRoles)
                 .ThenInclude(usr=>usr.Role)
-                .Where(x=>x.IsDeleted == false).ToListAsync(cancellationToken);
+                .Where(x=>x.IsDeleted == false).ToList();
 
             var model = this.mapper.Map<IEnumerable<UserListViewModel>>(users);
 
-            return model;
+            return Task.FromResult(model);
 
         }
     }
