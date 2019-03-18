@@ -8,6 +8,7 @@
     using Application.Questions.Commands.EditQuestion;
     using Application.Questions.Models;
     using Application.Questions.Queries.GetAllQuestionsForSurvey;
+    using Application.Questions.Queries.GetNextQuestionDisplayNumber;
     using Application.Surveys.Queries.GetSurveyById;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -79,6 +80,13 @@
             {
                 return View("SurveyNotFound", nfe.Key.ToString());
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NextDisplayNumber(GetNextQuestionDisplayNumberQuery query)
+        {
+            var result = await this.Mediator.Send(query);
+            return Json(new {DisplayNumber = result});
         }
     }
 }

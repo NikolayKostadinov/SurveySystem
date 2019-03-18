@@ -178,6 +178,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string ACCEPT {
+            get {
+                return ResourceManager.GetString("ACCEPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Access denied.
         /// </summary>
         public static string ACCESS_DENIED {
@@ -376,11 +385,47 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anonymous.
+        /// </summary>
+        public static string Anonymous {
+            get {
+                return ResourceManager.GetString("Anonymous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analysis of the answers.
+        /// </summary>
+        public static string ANSWER_ANALYSIS {
+            get {
+                return ResourceManager.GetString("ANSWER_ANALYSIS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answers.
+        /// </summary>
+        public static string ANSWER_COUNT {
+            get {
+                return ResourceManager.GetString("ANSWER_COUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Authenticator app.
         /// </summary>
         public static string AUTHENTICATOR_APP {
             get {
                 return ResourceManager.GetString("AUTHENTICATOR_APP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average rating.
+        /// </summary>
+        public static string AVERAGE_RATING {
+            get {
+                return ResourceManager.GetString("AVERAGE_RATING", resourceCulture);
             }
         }
         
@@ -417,6 +462,15 @@ namespace BmsSurvey.WebApp.Resources {
         public static string CHANGE_PASSWORD_STATUS {
             get {
                 return ResourceManager.GetString("CHANGE_PASSWORD_STATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed surveys count.
+        /// </summary>
+        public static string COMPLETED_SURVEY_COUNT {
+            get {
+                return ResourceManager.GetString("COMPLETED_SURVEY_COUNT", resourceCulture);
             }
         }
         
@@ -502,6 +556,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your authenticator app has been verified..
+        /// </summary>
+        public static string CONFIGURE_AUTHENTICATOR_APP_VERIFIED {
+            get {
+                return ResourceManager.GetString("CONFIGURE_AUTHENTICATOR_APP_VERIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please confirm using of cookies!.
         /// </summary>
         public static string CONFIRM_COOKIES {
@@ -574,6 +637,222 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disabling cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_DISABLING_COOKIES_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_DISABLING_COOKIES_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies..
+        /// </summary>
+        public static string COOKIE_POLICY_DISABLING_COOKIES_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_DISABLING_COOKIES_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cookie Policy for BMS Survey System.
+        /// </summary>
+        public static string COOKIE_POLICY_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How We Use Cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_HOW_WE_USE_COOKIES_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_HOW_WE_USE_COOKIES_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use..
+        /// </summary>
+        public static string COOKIE_POLICY_HOW_WE_USE_COOKIES_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_HOW_WE_USE_COOKIES_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn More.
+        /// </summary>
+        public static string COOKIE_POLICY_LEARN_MORE {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_LEARN_MORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More Information.
+        /// </summary>
+        public static string COOKIE_POLICY_MORE_INFORMATION_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_MORE_INFORMATION_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren&apos;t sure whether you need or not it&apos;s usually safer to leave cookies enabled in case it does interact with one of the features you use on our site..
+        /// </summary>
+        public static string COOKIE_POLICY_MORE_INFORMATION_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_MORE_INFORMATION_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to However if you are still looking for more information then you can contact us through one of our preferred contact methods:.
+        /// </summary>
+        public static string COOKIE_POLICY_MORE_INFORMATION_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_MORE_INFORMATION_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survice Desk Manager.
+        /// </summary>
+        public static string COOKIE_POLICY_MORE_INFORMATION_SURVICE_DESK_MANAGER {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_MORE_INFORMATION_SURVICE_DESK_MANAGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the Cookie Policy for BMS Survey System, accessible from survey.bmsys.eu.
+        /// </summary>
+        public static string COOKIE_POLICY_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This website uses cookies. You have to accept them to continue working..
+        /// </summary>
+        public static string COOKIE_POLICY_SUMMARY {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_SUMMARY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Cookies We Set.
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account related cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you create an account with us then we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out however in some cases they may remain afterwards to remember your site preferences when logged out..
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login related cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We use cookies when you are logged in so that we can remember this fact. This prevents you from having to log in every single time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in..
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surveys related cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From time to time we offer user surveys and questionnaires to provide you with interesting insights, helpful tools, or to understand our user base more accurately. These surveys may use cookies to remember who has already taken part in a survey or to provide you with accurate results after you change pages..
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forms related cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you submit data to through a form such as those found on contact pages or comment forms cookies may be set to remember your user details for future correspondence..
+        /// </summary>
+        public static string COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What Are Cookies.
+        /// </summary>
+        public static string COOKIE_POLICY_WHAT_ARE_COOKIES_HEADING {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_WHAT_ARE_COOKIES_HEADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or &apos;break&apos; certain elements of the sites functionality..
+        /// </summary>
+        public static string COOKIE_POLICY_WHAT_ARE_COOKIES_P1 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_WHAT_ARE_COOKIES_P1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For more general information on cookies see this &lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP_cookie&quot;&gt;article&lt;/a&gt;..
+        /// </summary>
+        public static string COOKIE_POLICY_WHAT_ARE_COOKIES_P2 {
+            get {
+                return ResourceManager.GetString("COOKIE_POLICY_WHAT_ARE_COOKIES_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string CREATE {
@@ -597,6 +876,15 @@ namespace BmsSurvey.WebApp.Resources {
         public static string CREATE_FROM {
             get {
                 return ResourceManager.GetString("CREATE_FROM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Question.
+        /// </summary>
+        public static string CREATE_QUESTION {
+            get {
+                return ResourceManager.GetString("CREATE_QUESTION", resourceCulture);
             }
         }
         
@@ -1071,6 +1359,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string FROM_PAGES {
+            get {
+                return ResourceManager.GetString("FROM_PAGES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full name.
         /// </summary>
         public static string FULLNAME {
@@ -1458,6 +1755,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Page.
+        /// </summary>
+        public static string PAGE {
+            get {
+                return ResourceManager.GetString("PAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Page Size.
         /// </summary>
         public static string PAGE_SIZE {
@@ -1562,6 +1868,15 @@ namespace BmsSurvey.WebApp.Resources {
         public static string QUESTIONS {
             get {
                 return ResourceManager.GetString("QUESTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recovery codes.
+        /// </summary>
+        public static string RECOVERY_CODES {
+            get {
+                return ResourceManager.GetString("RECOVERY_CODES", resourceCulture);
             }
         }
         

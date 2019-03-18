@@ -21,7 +21,7 @@ namespace BmsSurvey.WebApp.Tests
             var result = controller.Index();
 
             //Assert
-            Assert.IsInstanceOf<RedirectToActionResult>(result);
+            Assert.IsInstanceOf<ViewResult>(result);
         }
     }
 }

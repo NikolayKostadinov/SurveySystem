@@ -1,18 +1,19 @@
 ﻿namespace BmsSurvey.WebApp.Infrastructure.Components.Models
 {
     using System.Collections.Generic;
+    using Common.Constants;
 
     public class RatingControlOptions
     {
         public RatingControlOptions()
         {
-            RatingControlTagsRate1To5Stars = new Dictionary<string, int> { { "1", 1 }, { "2", 2 }, { "3", 3 }, { "4", 4 }, { "5", 5 } };
+            RatingControlTagsRate1To5Stars = GlobalConstants.Rate1To5StarsValues;
             RatingControlInitialValueRate1To5Stars = 1;
 
-            RatingControlTagsYesOrNo = new Dictionary<string, bool> { { "Да", true }, { "Не", false } };
+            RatingControlTagsYesOrNo = GlobalConstants.YesOrNoValues;
             RatingControlInitialValueYesOrNo = true;
 
-            RatingControlTagsLowMidHigh = new Dictionary<string, int> { { "Ниско", 0 }, { "Средно", 1 }, { "Високо", 2 } };
+            RatingControlTagsLowMidHigh = GlobalConstants.LowMidHighValues;
             RatingControlValueLowMidHigh = 2;
 
         }

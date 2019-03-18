@@ -1,8 +1,8 @@
-﻿var kendoAdditional = (function () {
+﻿var kendoAdditional = (function (kendo) {
     // ----------------- autorun function on document ready -------------------
     'use strict';
     function sendFactoryId() {
-        return { "factoryId": $('input[name=factories]').val() || $('input[name=factoriesD]').val() }
+        return { "factoryId": $('input[name=factories]').val() || $('input[name=factoriesD]').val() };
     }
 
     String.prototype.replaceAll = function (target, replacement) {
@@ -25,13 +25,13 @@
             message = encodeURI(val);
         }
 
-        return { "reportText": message }
+        return { "reportText": message };
     }
 
     function addAntiForgeryToken(data) {
         data.__RequestVerificationToken = $('input[name=__RequestVerificationToken]').val();
         return data;
-    };
+    }
 
     function onSaveEditorChanges() {
         var datePicker = $('input[name=date]').data('kendoDatePicker');
@@ -53,7 +53,7 @@
             success: function (data) {
                 var confirmed = data.IsConfirmed;
                 if (confirmed === true) {
-                    var message = "Вие променихте описанието на технологичният отчет успешно."
+                    var message = "Вие променихте описанието на технологичният отчет успешно.";
                     $('pre#succ-message').text(message);
                     $('div#success-window').data("kendoWindow").open();
 
@@ -184,28 +184,39 @@
         }
     }
 
-    function ErrorHandler(e) {
-        var grid = e.sender;
-
-        if (e.errors) {
-            var message = "";
-            $.each(e.errors,
-                function(key, value) {
-                    if ('errors' in value) {
-                        $.each(value.errors,
-                            function() {
-                                var that = this.replace('\\r\\n', '\r\n');
-                                message += that + "\n";
-                            });
-                    }
-                });
-            $('pre#err-message').text(message);
-            $('div#err-window').data("kendoWindow").open();
+    function errorHandler(args) {
+        let validationMessageTmpl = kendo.template($("#message").html());
+        if (args.errors) {
+            var grid = $('[data-role=grid]').data("kendoGrid");
+            grid.one("dataBinding", function (ev) {
+                ev.preventDefault(); // cancel grid rebind if error occurs
+                let message = "";
+                $.each(args.errors,
+                    function (key, value) {
+                        let containers = grid.editable.element.find("[data-valmsg-for=" + key + "],[data-val-msg-for=" + key + "]");
+                        if (containers.length) {
+                            containers.replaceWith(validationMessageTmpl({ field: key, message: value.errors.join('\n') }));
+                            let input = grid.editable.element.find('input[name=' + key + ']');
+                            input.removeClass('k-valid');
+                            input.addClass('k-invalid');
+                        } else {
+                            if ('errors' in value) {
+                                $.each(value.errors,
+                                    function () {
+                                        var that = this.replace('\\r\\n', '\r\n');
+                                        message += that + "\n";
+                                    });
+                            }
+                        }
+                    });
+                if (message !== '') {
+                    $('pre#err-message').text(message);
+                    $('div#err-window').data("kendoWindow").open();
+                }
+            });
         } else {
             location.reload();
         }
-
-        grid.cancelChanges();
     }
 
     function CloseWindow(selector) {
@@ -251,7 +262,7 @@
     }
 
 
-    var SendHistoryData = function() {
+    var SendHistoryData = function () {
         var result = { 'id': $('input[name=id]').val(), 'entityName': $('input[name=entityName]').val() };
         $.extend(result, sendAntiForgery());
         return result;
@@ -372,7 +383,7 @@
 
     return {
         DisplayErrors: DisplayErrors,
-        ErrorHandler: ErrorHandler,
+        ErrorHandler: errorHandler,
         CloseWindow: CloseWindow,
         RefreshGrid: RefreshGrid,
         ValueMapper: ValueMapper,
@@ -386,5 +397,5 @@
         OnRequestEnd: оnRequestEnd,
         ReportDetailsPaste: reportDetailsPaste,
         FullyRefreshGrid: FullyRefreshGrid
-    }
-})();
+    };
+})(kendo);

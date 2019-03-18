@@ -38,7 +38,8 @@ namespace BmsSurvey.Application.Tests.Questions.Commands
         [SetUp]
         public void Setup()
         {
-            validator = new EditQuestionCommandValidator();
+            var context = BmsSurveyContextFactory.Create();
+            validator = new EditQuestionCommandValidator(context);
             TimeProvider.Current = new TestTimeProvider();
         }
 

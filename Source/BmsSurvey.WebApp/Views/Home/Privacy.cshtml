@@ -1,6 +1,61 @@
-﻿@{
+﻿@using BmsSurvey.WebApp.Resources
+@inject ILocalizationService<LayoutResource> LocalizationService
+@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<h1 class="display-3 text-center">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_HEADING")</h1>
+<div class="container">
+    <hr/>
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_P1")</p>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <h2 class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_WHAT_ARE_COOKIES_HEADING")</h2>
+
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_WHAT_ARE_COOKIES_P1")</p>
+
+    <p>@Html.Raw(LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_WHAT_ARE_COOKIES_P2"))</p>
+
+
+    <h2 class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_HOW_WE_USE_COOKIES_HEADING")</h2>
+
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_HOW_WE_USE_COOKIES_P1")</p>
+
+    <h2 class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_DISABLING_COOKIES_HEADING")</h2>
+
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_DISABLING_COOKIES_P1")</p>
+
+    <h2 class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_HEADING")</h2>
+
+    <ul>
+
+        <li>
+            <p class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P1")</p>
+            <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P2")</p>
+        </li>
+
+        <li>
+            <p class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P1")</p>
+            <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P2")</p>
+        </li>
+
+        <li>
+            <p class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P1")</p>
+            <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P2")</p>
+        </li>
+
+        <li>
+            <p class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P1")</p>
+            <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P2")</p>
+        </li>
+    </ul>
+
+    <h2 class="display-3 subheading">@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_MORE_INFORMATION_HEADING")</h2>
+
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_MORE_INFORMATION_P1")</p>
+
+    <p>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_MORE_INFORMATION_P2")</p>
+
+    <ul>
+        <li>@LocalizationService.GetLocalizedHtmlString("EMAIL"): support@bmsys.eu</li>
+        <li>@LocalizationService.GetLocalizedHtmlString("COOKIE_POLICY_MORE_INFORMATION_SURVICE_DESK_MANAGER"): <a href="https://sdm.bmsys.eu/CAisd/pdmweb.exe">sdm.bmsys.eu</a></li>
+    </ul>
+</div>

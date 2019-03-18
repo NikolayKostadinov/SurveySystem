@@ -16,6 +16,8 @@ namespace BmsSurvey.WebApp
     using Application.Infrastructure;
     using Application.Infrastructure.AutoMapper;
     using Application.Interfaces;
+    using Application.Questions.Commands.EvaluateQuestion.Handlers;
+    using Application.Questions.Models.EvaluationModels;
     using Application.Resources;
     using Application.Services;
     using Application.Surveys.Models;
@@ -103,6 +105,8 @@ namespace BmsSurvey.WebApp
             services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
             services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();
             services.AddScoped<ISurveyDto>(sp => SessionSurveyDto.GetSurveyDto(sp));
+
+            services.AddQuestionEvaluator();
 
             services.AddTransient<BmsSurveyInitializer>();
 
@@ -204,6 +208,14 @@ namespace BmsSurvey.WebApp
                         return localizationService.GetLocalizedHtmlString(displayName);
                     };
                 });
+
+            //services.AddAuthentication()
+            //    .AddGoogle(googleOptions =>
+            //    {
+            //        googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+            //        googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            //    });
+                //.AddFacebook(facebookOptions => { ... });
 
 
 

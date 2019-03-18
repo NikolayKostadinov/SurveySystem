@@ -43,6 +43,10 @@
     {
       "library": "jQuery-Validation-Engine@2.6.4",
       "destination": "wwwroot/lib/jQuery-Validation-Engine/"
+    },
+    {
+      "library": "es6-shim@0.35.5",
+      "destination": "wwwroot/lib/es6-shim/"
     }
   ]
 }

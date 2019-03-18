@@ -156,6 +156,9 @@
   <data name="TABNUMBER_REQUIRED" xml:space="preserve">
     <value>The Employer Id required!</value>
   </data>
+  <data name="UNICK" xml:space="preserve">
+    <value>'{PropertyName}' must be unick!</value>
+  </data>
   <data name="USER_NOT_FOUND" xml:space="preserve">
     <value>The user not found!</value>
   </data>

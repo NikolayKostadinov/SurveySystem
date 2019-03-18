@@ -39,7 +39,6 @@
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
@@ -72,6 +71,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Areas\SurveySupport\ViewModels\" />
     <Folder Include="logs\" />
   </ItemGroup>
 

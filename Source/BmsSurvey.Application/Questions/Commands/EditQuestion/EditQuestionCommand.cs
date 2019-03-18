@@ -10,6 +10,7 @@ namespace BmsSurvey.Application.Questions.Commands.EditQuestion
 {
     #region Using
 
+    using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using CreateQuestion;
     using Domain.Entities;
@@ -24,10 +25,13 @@ namespace BmsSurvey.Application.Questions.Commands.EditQuestion
     { 
         public int Id { get; set; }
 
+        [Display(Name = "DISPLAY_NUMBER")]
         public int DisplayNumber { get; set; }
 
+        [Display(Name = "Text")]
         public string Text { get; set; }
 
+        [Display(Name = "QUESTION_TYPE")]
         public QuestionType QuestionType { get; set; }
 
         public void CreateMappings(Profile configuration)

@@ -12,6 +12,7 @@ namespace BmsSurvey.WebApp.Infrastructure.Filters
 
     using System;
     using Application.CompletedSurvey.Queries.IsSurveyCompeted;
+    using Domain.Entities.Identity;
     using Interfaces;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
@@ -36,19 +37,24 @@ namespace BmsSurvey.WebApp.Infrastructure.Filters
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            Initialize(context);
-
-            if (int.TryParse(context.ActionArguments["id"].ToString(), out var surveyId))
+            if (!(context.HttpContext.User.IsInRole("Administrator") 
+                || context.HttpContext.User.IsInRole("SurveySupporter")))
             {
-                var isSurveyCompleted = mediator.Send(new IsSurveyCompletedQuery(surveyId, ipProvider.GetIp())).Result;
-                if (isSurveyCompleted)
-                {
-                    context.Result = new RedirectToActionResult("ThankYou", "Survey", new {area = ""});
-                    return;
-                }
-            }
+                Initialize(context);
 
-            base.OnActionExecuting(context);
+                if (int.TryParse(context.ActionArguments["id"].ToString(), out var surveyId))
+                {
+                    var isSurveyCompleted =
+                        mediator.Send(new IsSurveyCompletedQuery(surveyId, ipProvider.GetIp())).Result;
+                    if (isSurveyCompleted)
+                    {
+                        context.Result = new RedirectToActionResult("ThankYou", "Survey", new {area = ""});
+                        return;
+                    }
+                }
+
+                base.OnActionExecuting(context);
+            }
         }
     }
 }

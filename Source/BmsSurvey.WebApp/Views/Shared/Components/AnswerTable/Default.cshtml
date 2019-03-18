@@ -1,0 +1,17 @@
+﻿@model Dictionary<string,int>
+<table class="table table-sm">
+    <tr class="table-primary">
+        <th>Значения</th>
+        @foreach (var key in Model.Keys)
+        {
+            <th>@key</th>
+        }
+        </tr>
+    <tr>
+        <th>Отговорили</th>
+        @foreach (var key in Model.Keys)
+        {
+            <th>@Model[key]</th>
+        }
+    </tr>
+</table>

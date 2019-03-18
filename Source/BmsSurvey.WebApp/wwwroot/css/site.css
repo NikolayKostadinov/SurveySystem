@@ -188,7 +188,7 @@ button.k-button.k-button-icontext {
         background-position: 0 -15px;
     }
 
-    a.k-button.k-button-icontext.k-grid-lock, 
+    a.k-button.k-button-icontext.k-grid-lock,
     a.k-button.k-button-icontext.k-grid-questions {
         color: white !important;
         background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%) !important;
@@ -439,8 +439,8 @@ pre.lead {
         -webkit-animation-timing-function: ease-out;
         animation-timing-function: ease-out;
         opacity: 1;
-    }    
-    
+    }
+
     100% {
         -webkit-transform: translateY(0px);
         transform: translateY(0px);
@@ -504,7 +504,7 @@ pre.lead {
         -webkit-animation-timing-function: ease-out;
         animation-timing-function: ease-out;
         opacity: 1;
-    } 
+    }
 
     100% {
         -webkit-transform: translateY(0px);
@@ -534,20 +534,50 @@ img.rounded-outlined {
     width: 50%;
 }
 
-/* Make the image responsive */
+    /* Make the image responsive */
 
 
-/* Style the button and place it in the middle of the container/image */
-.btn-container .btn-a {
+    /* Style the button and place it in the middle of the container/image */
+    .btn-container .btn-a {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        color: white;
+        font-size: 16px;
+        padding: 24px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+div.question-summary-wrapper {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+span.badge {
+    font-size: 0.85em;
+}
+
+input.k-invalid {
+    border: 2px solid rgb(255,120,100);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+h2.display-3.subheading {
+    font-size: 3em;
+}
+
+p.display-3.subheading {
+    font-size: 1.5em;
+}
+
+.page-template .footer {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    padding: 24px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    font-size: 1.5em
 }

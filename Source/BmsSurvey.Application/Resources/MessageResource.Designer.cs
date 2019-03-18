@@ -178,6 +178,15 @@ namespace BmsSurvey.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; must be unick!.
+        /// </summary>
+        public static string UNICK {
+            get {
+                return ResourceManager.GetString("UNICK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The user not found!.
         /// </summary>
         public static string USER_NOT_FOUND {

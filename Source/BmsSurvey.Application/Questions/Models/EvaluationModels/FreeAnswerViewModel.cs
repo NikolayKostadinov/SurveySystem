@@ -1,13 +1,16 @@
 ﻿//  ------------------------------------------------------------------------------------------------
-//   <copyright file="QuestionEvaluationModel.cs" company="Business Management System Ltd.">
-//       Copyright "" (c), Business Management System Ltd. 
+//   <copyright file="FreeAnswerViewModel.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
 //       All rights reserved.
 //   </copyright>
 //   <author>Nikolay.Kostadinov</author>
 //  ------------------------------------------------------------------------------------------------
+
 namespace BmsSurvey.Application.Questions.Models.EvaluationModels
 {
-    public abstract class QuestionEvaluationModel
+    public class FreeAnswerViewModel
     {
+        public string Email { get; set; }
+        public string Answer { get; set; }
     }
 }

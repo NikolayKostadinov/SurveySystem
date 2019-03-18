@@ -10,6 +10,7 @@ namespace BmsSurvey.WebApp.Areas.SurveySupport.Controllers
     using Application.Surveys.Commands.CreateSurvey;
     using Application.Surveys.Commands.DeleteSurvey;
     using Application.Surveys.Commands.EditSurvey;
+    using Application.Surveys.Commands.EvaluateSurvey;
     using Application.Surveys.Queries.GetAllSurveys;
     using Domain.Entities.Identity;
     using Kendo.Mvc.Extensions;
@@ -77,6 +78,12 @@ namespace BmsSurvey.WebApp.Areas.SurveySupport.Controllers
         {
             var url = Url.Action("Index", "Survey", new { area = "", id = id }, Request.Scheme, Request.Host.Value);
             return Json(new { url = url });
+        }
+
+        public async Task<IActionResult> Evaluate(EvaluateSurveyCommand command)
+        {
+            var model = await this.Mediator.Send(command);
+            return View(model);
         }
     }
 }

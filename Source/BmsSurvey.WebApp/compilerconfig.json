@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/css/needy.css",
     "inputFile": "wwwroot/css/needy.scss"
+  },
+  {
+    "outputFile": "wwwroot/js/custom/kendoAdditional.es5.js",
+    "inputFile": "wwwroot/js/custom/kendoAdditional.js"
   }
 ]

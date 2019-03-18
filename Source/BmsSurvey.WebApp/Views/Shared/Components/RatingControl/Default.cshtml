@@ -53,7 +53,7 @@ else
                     form.find('.answer-checked').removeAttr('hidden');
                     let message = '';
                     data.forEach(function(value) {
-                        message += `Question ${value.QuestionId} -> ${value.Value}\n`;
+                        message += 'Question "+ value.QuestionId -> ' + value.Value + '\n';
                     });
 
                     console.log(message);

@@ -46,19 +46,17 @@ namespace BmsSurvey.WebApp.Infrastructure.Components
             object ratingControlInitialValue = "";
 
             if (ratingControlType == QuestionType.LowMidHigh)
-            //if (ratingControlType == "bars-pill")
+
             {
                 ratingControlOptions.RatingControlTagsLowMidHigh.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
                 ratingControlInitialValue = ratingControlOptions.RatingControlValueLowMidHigh;
             }
             else if (ratingControlType == QuestionType.YesOrNo)
-            //else if (ratingControlType == "bars-1to10")
             {
                 ratingControlOptions.RatingControlTagsYesOrNo.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
                 ratingControlInitialValue = ratingControlOptions.RatingControlInitialValueYesOrNo;
             }
             else if (ratingControlType == QuestionType.Rate1to5Stars)
-            //else if (ratingControlType == "css-stars")
             {
                 ratingControlOptions.RatingControlTagsRate1To5Stars.ForEach(a => ratingControlValues.Add(a.Key, a.Value));
 

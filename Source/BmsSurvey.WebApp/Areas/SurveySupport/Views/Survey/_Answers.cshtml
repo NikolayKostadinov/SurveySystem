@@ -1,0 +1,29 @@
+﻿@using BmsSurvey.Application.Questions.Models.EvaluationModels
+@using BmsSurvey.WebApp.Resources
+@inject ILocalizationService<LayoutResource> LayoutLocalizer
+@model IEnumerable<FreeAnswerViewModel>
+@{
+    var bgColor = new[] {"bg-info", "bg-warning", "bg-success", "bg-danger", "bg-primary", "bg-secondary", "bg-light", "bg-dark"};
+    int ix = 0;
+}
+<div class="my-3 p-3 bg-white rounded box-shadow">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Потрбителски коментари</h6>
+    @foreach (var record in Model)
+    {
+        <div class="media text-muted pt-3">
+            <div class="mr-2 rounded @bgColor[ix++ % bgColor.Length]" style="width: 32px; height: 32px;" 
+                 data-holder-rendered="true"></div>
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                @if (!string.IsNullOrEmpty(record.Email))
+                {
+                <strong class="d-block text-gray-dark">@LayoutLocalizer.GetLocalizedHtmlString(record.Email)</strong>
+                }
+                else
+                {
+                    <strong class="d-block text-gray-dark">@LayoutLocalizer.GetLocalizedHtmlString("ANONYMOUS")</strong>
+                }
+                @record.Answer
+            </p>
+        </div>
+    }
+</div>

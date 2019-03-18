@@ -824,4 +824,109 @@ will contact you</value>
   <data name="LINK_COPIED" xml:space="preserve">
     <value>Link to the survey:</value>
   </data>
+  <data name="Anonymous" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="ANSWER_ANALYSIS" xml:space="preserve">
+    <value>Analysis of the answers</value>
+  </data>
+  <data name="ANSWER_COUNT" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="AVERAGE_RATING" xml:space="preserve">
+    <value>Average rating</value>
+  </data>
+  <data name="COMPLETED_SURVEY_COUNT" xml:space="preserve">
+    <value>Completed surveys count</value>
+  </data>
+  <data name="CREATE_QUESTION" xml:space="preserve">
+    <value>Create Question</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_VERIFIED" xml:space="preserve">
+    <value>Your authenticator app has been verified.</value>
+  </data>
+  <data name="RECOVERY_CODES" xml:space="preserve">
+    <value>Recovery codes</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="COOKIE_POLICY_DISABLING_COOKIES_HEADING" xml:space="preserve">
+    <value>Disabling cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_DISABLING_COOKIES_P1" xml:space="preserve">
+    <value>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies.</value>
+  </data>
+  <data name="COOKIE_POLICY_HEADING" xml:space="preserve">
+    <value>Cookie Policy for BMS Survey System</value>
+  </data>
+  <data name="COOKIE_POLICY_HOW_WE_USE_COOKIES_HEADING" xml:space="preserve">
+    <value>How We Use Cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_HOW_WE_USE_COOKIES_P1" xml:space="preserve">
+    <value>We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.</value>
+  </data>
+  <data name="COOKIE_POLICY_LEARN_MORE" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_HEADING" xml:space="preserve">
+    <value>More Information</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_P1" xml:space="preserve">
+    <value>Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_P2" xml:space="preserve">
+    <value>However if you are still looking for more information then you can contact us through one of our preferred contact methods:</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_SURVICE_DESK_MANAGER" xml:space="preserve">
+    <value>Survice Desk Manager</value>
+  </data>
+  <data name="COOKIE_POLICY_P1" xml:space="preserve">
+    <value>This is the Cookie Policy for BMS Survey System, accessible from survey.bmsys.eu</value>
+  </data>
+  <data name="COOKIE_POLICY_SUMMARY" xml:space="preserve">
+    <value>This website uses cookies. You have to accept them to continue working.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_HEADING" xml:space="preserve">
+    <value>The Cookies We Set</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P1" xml:space="preserve">
+    <value>Account related cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P2" xml:space="preserve">
+    <value>If you create an account with us then we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out however in some cases they may remain afterwards to remember your site preferences when logged out.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P1" xml:space="preserve">
+    <value>Login related cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P2" xml:space="preserve">
+    <value>We use cookies when you are logged in so that we can remember this fact. This prevents you from having to log in every single time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P1" xml:space="preserve">
+    <value>Surveys related cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P2" xml:space="preserve">
+    <value>From time to time we offer user surveys and questionnaires to provide you with interesting insights, helpful tools, or to understand our user base more accurately. These surveys may use cookies to remember who has already taken part in a survey or to provide you with accurate results after you change pages.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P1" xml:space="preserve">
+    <value>Forms related cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P2" xml:space="preserve">
+    <value>When you submit data to through a form such as those found on contact pages or comment forms cookies may be set to remember your user details for future correspondence.</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_HEADING" xml:space="preserve">
+    <value>What Are Cookies</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_P1" xml:space="preserve">
+    <value>As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the sites functionality.</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_P2" xml:space="preserve">
+    <value>For more general information on cookies see this &lt;a href="https://en.wikipedia.org/wiki/HTTP_cookie"&gt;article&lt;/a&gt;.</value>
+  </data>
+  <data name="FROM_PAGES" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>Page</value>
+  </data>
 </root>

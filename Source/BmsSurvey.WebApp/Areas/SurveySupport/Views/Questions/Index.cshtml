@@ -16,60 +16,70 @@
 <input type="hidden" id="surveyId" value="@Model.Id" />
 
 @(Html.Kendo()
-                  .Grid<QuestionListViewModel>()
-                  .Name("questions-grid")
-                  .ToolBar(tb => { tb.Create(); })
-                  .Columns(col =>
-                  {
-          //col.Bound(m => m.IsActive).Width(50)
-          //    .ClientTemplate("<div><span class=' #:IsActive ? 'unlocked far fa-check-circle':'locked fas fa-ban'#'></span></div>");
-          col.Bound(m => m.Id).Width(50);
-                      col.Bound(m => m.DisplayNumber).Width(65);
-                      col.Bound(m => m.Text).Width(600);
-                      col.Bound(m => m.QuestionType).EditorTemplateName("QuestionType")
-              .ClientTemplate("<div style=\"background: url('/images/question_types/#:QuestionTypeStr#.png') no-repeat center; background-size: contain; height: 35px; width: 100%;\" ></div>");
-                      col.Bound(m => m.CreatedFrom);
-                      col.Bound(m => m.ModifiedFrom);
-                      col.Bound(m => m.ModifiedOn).Format("{0:d}");
-                      col.Command(c =>
+          .Grid<QuestionListViewModel>()
+          .Name("questions-grid")
+          .ToolBar(tb => { tb.ClientTemplateId("GridToolbarTemplate"); })
+          .Columns(col =>
           {
-                        c.Edit();
-                        c.Destroy();
-                    });
-                  })
-                  .Scrollable()
-                  .Sortable()
-                  .Filterable()
-                  .Editable(ed => ed.Mode(GridEditMode.InLine))
-                  .Resizable(rs => rs.Columns(true))
-                  .Pageable(pageable => pageable
-                      .Refresh(true)
-                      .PageSizes(true)
-                      .ButtonCount(5))
-                  .DataSource(dataSource => dataSource
-                      .Ajax()
-                      .Model(u =>
-                      {
-                          u.Id(m => m.Id);
-                          u.Field(m => m.Id).Editable(false);
-                          u.Field(m => m.CreatedFrom).Editable(false);
-                          u.Field(m => m.ModifiedFrom).Editable(false);
-                          u.Field(m => m.ModifiedOn).Editable(false);
-                      })
-                      .PageSize(20)
-                      .Read(read => read.Action("GetAll", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
-                      .Create(create => create.Action("Create", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
-                      .Destroy(delete => delete.Action("Delete", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
-                      .Update(update => update.Action("Update", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
-                      .Events(ev => { ev.Error("kendoAdditional.ErrorHandler").Sync("refreshAfterChange"); })
-                  )
-                  .Events(ev => { ev.DataBound("kendoAdditional.DeletableDataBound"); })
+              col.Bound(m => m.Id).Width(50);
+              col.Bound(m => m.DisplayNumber);
+              col.Bound(m => m.Text).Width(600);
+              col.Bound(m => m.QuestionType).EditorTemplateName("QuestionType")
+        .ClientTemplate("<div style=\"background: url('/images/question_types/#:QuestionTypeStr#.png') no-repeat center; background-size: contain; height: 35px; width: 100%;\" ></div>");
+              col.Bound(m => m.CreatedFrom);
+              col.Bound(m => m.ModifiedFrom);
+              col.Bound(m => m.ModifiedOn).Format("{0:d}");
+              col.Command(c =>
+              {
+                  c.Edit();
+                  c.Destroy();
+              });
+          })
+          .Scrollable()
+          .Sortable()
+          .Filterable()
+          .Editable(ed => ed.Mode(GridEditMode.InLine))
+          .Resizable(rs => rs.Columns(true))
+          .Pageable(pageable => pageable
+              .Refresh(true)
+              .PageSizes(true)
+              .ButtonCount(5))
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .Model(u =>
+              {
+                  u.Id(m => m.Id);
+                  u.Field(m => m.Id).Editable(false);
+                  u.Field(m => m.CreatedFrom).Editable(false);
+                  u.Field(m => m.ModifiedFrom).Editable(false);
+                  u.Field(m => m.ModifiedOn).Editable(false);
+              })
+              .PageSize(20)
+              .Read(read => read.Action("GetAll", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+              .Create(create => create.Action("Create", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+              .Destroy(delete => delete.Action("Delete", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+              .Update(update => update.Action("Update", "Questions", new { area = "SurveySupport" }).Data("getQuestionData"))
+              .Events(ev =>
+              {
+                  ev.Error("kendoAdditional.ErrorHandler");
+              })
+          )
+        .Events(ev =>
+        {
+            ev.DataBound("kendoAdditional.DeletableDataBound");
+        })
 )
 
-@section Scripts
-    {
-    <script>
+<script id="GridToolbarTemplate" type="text/x-kendo-template">
+    <div class="refreshBtnContainer">
+        <a id="create" href="##" class="btn btn-secondary">
+            @Html.Raw(LayoutLocalizer.GetLocalizedHtmlString("CREATE_QUESTION"))
+        </a>
+    </div>
+</script>
 
+@section Scripts{
+    <script>
         function refreshAfterChange() {
             const grid = $('[data-role=grid]').data('kendoGrid');
             if (grid) {
@@ -84,5 +94,45 @@
             return result;
         }
 
+        function setDefaultValue() {
+            $.ajax({
+                url: '@Url.Action("NextDisplayNumber", "Questions", new {area = "SurveySupport"})',
+                type: 'POST',
+                data: getQuestionData(),
+                success: function(data) {
+                    const grid = $('[data-role=grid]').data('kendoGrid');
+                    let input = grid.editable.element.find('input[name=' + 'DisplayNumber' + ']');
+                    input.val(data.DisplayNumber);
+                }
+            });
+        }
+
+        $(function() {
+                $('#create').bind("click",
+                    function(ev) {
+                        ev.preventDefault();
+                        let value = 0;
+                        const grid = $('[data-role=grid]').data('kendoGrid');
+                        if (grid) {
+                            $.ajax({
+                                url: '@Url.Action("NextDisplayNumber", "Questions", new {area = "SurveySupport"})',
+                                type: 'POST',
+                                data: getQuestionData(),
+                                timeout: 500,
+                                success: function(data) {
+                                    value = data.DisplayNumber;
+                                },
+                                complete: function() {
+                                    grid.addRow();
+                                    let input = grid.editable.element.find('input[name=DisplayNumber]');
+                                    var dataItem = grid.dataSource.view()[input.closest('tr').index()];
+                                    dataItem.set("DisplayNumber", value);
+                                }
+
+                            });
+                        }
+                    });
+            }
+        );
     </script>
 }

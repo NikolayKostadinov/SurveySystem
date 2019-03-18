@@ -151,7 +151,7 @@
     <value>Можете да генерирате нови кодове за възстановяване.</value>
   </data>
   <data name="2FA_STATUS_BROWSER_FORGET" xml:space="preserve">
-    <value>The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code.</value>
+    <value>При следващо влизане през този браузър ще бъдете попитсани за код за двуфакторна автентикация.</value>
   </data>
   <data name="ACCESS_DENIED" xml:space="preserve">
     <value>Достъпът е отказан</value>
@@ -166,46 +166,46 @@
     <value>Двуфакторна автентикация</value>
   </data>
   <data name="ACCOUNT_LOGIN_2FA_NO_AUTHENTICATOR_DEVICE" xml:space="preserve">
-    <value>Don't have access to your authenticator device? You can</value>
+    <value>Нямате достъп до вашето устройство за автентикация?  Вие можете</value>
   </data>
   <data name="ACCOUNT_LOGIN_2FA_RECOVERY_CODE_TEXT" xml:space="preserve">
-    <value>log in with a recovery code</value>
+    <value>влизане с код за възстановяване</value>
   </data>
   <data name="ACCOUNT_LOGIN_2FA_REMEMBER_MC" xml:space="preserve">
-    <value>Remember this machine</value>
+    <value>Запомни ме на тази машина</value>
   </data>
   <data name="ACCOUNT_LOGIN_2FA_TEXT" xml:space="preserve">
-    <value>Your login is protected with an authenticator app. Enter your authenticator code below.</value>
+    <value>Вашия акаунт е защитен с приложение за автентикация. Въведете кода от приложението тук.</value>
   </data>
   <data name="ACCOUNT_LOGIN_AUTHENTICATOR_CODE" xml:space="preserve">
-    <value>Authenticator code</value>
+    <value>Код за автентикация</value>
   </data>
   <data name="ACCOUNT_NO_EXTERNAL_LOGINS" xml:space="preserve">
-    <value>There are no external authentication services configured. See this article https://go.microsoft.com/fwlink/?LinkID=532715 for details on setting up this ASP.NET application to support logging in via external services.</value>
+    <value>Няма конфигурирани външни услуги за удостоверяване. Вижте тази статия https://go.microsoft.com/fwlink/?LinkID=532715 за подробности относно настройването на това приложение ASP.NET за поддържане на влизане чрез външни услуги.</value>
   </data>
   <data name="ACCOUNT_RECOVERY_CODE" xml:space="preserve">
-    <value>Recovery code</value>
+    <value>Код за възстановеване</value>
   </data>
   <data name="ACCOUNT_RECOVERY_CODE_REQUIRED" xml:space="preserve">
-    <value>Recovery code required</value>
+    <value>Изисква се код за възстановяване</value>
   </data>
   <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION" xml:space="preserve">
-    <value>Recovery code verification</value>
+    <value>Потвърждаване на кода за възстановяване</value>
   </data>
   <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION_TEXT" xml:space="preserve">
-    <value>You have requested to log in with a recovery code. This login will not be remembered until you provide an authenticator app code at log in or disable 2FA and log in again.</value>
+    <value>Поискахте да влезете с код за възстановяване. Това влизане няма да бъде запомнено, докато не предоставите код на приложение за удостоверяване при влизане или деактивиране на 2FA и влезте отново.</value>
   </data>
   <data name="ACCOUNT_USE_ANOTHER_SERVICE_LOG_IN" xml:space="preserve">
-    <value>Use another service to log in.</value>
+    <value>Използвайте друга услуга за влизане.</value>
   </data>
   <data name="ACCOUNT_USE_LOCAL_ACCOUNT_TO_LOG_IN" xml:space="preserve">
-    <value>Use a local account to log in.</value>
+    <value>Използвайте локален акаунт за влизане в системата</value>
   </data>
   <data name="AND" xml:space="preserve">
     <value>и</value>
   </data>
   <data name="AUTHENTICATOR_APP" xml:space="preserve">
-    <value>Authenticator app</value>
+    <value>Приложение за автентикация</value>
   </data>
   <data name="CHANGE_PASSWORD" xml:space="preserve">
     <value>Смяна на парола</value>
@@ -217,28 +217,28 @@
     <value>Конфигуриране на приложение за автентикация</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_DOWNLOAD_TEXT" xml:space="preserve">
-    <value>Download a two-factor authenticator app like Microsoft Authenticator for</value>
+    <value>Свалете приложение за двуфакторна автентикация като Microsoft Authenticator за</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_GOOGLE_TEXT" xml:space="preserve">
-    <value>Google Authenticator for</value>
+    <value>Google Authenticator за</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN1" xml:space="preserve">
     <value>Сканирайте QR кода или въведете този ключ</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN2" xml:space="preserve">
-    <value>into your two factor authenticator app. Spaces and casing do not matter.</value>
+    <value>в приложението за двуфакторна автентикация. Спейсовете и главни или малки букви нямат значение.</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT" xml:space="preserve">
-    <value>To enable QR code generation please read our</value>
+    <value>За да стартирате генерирането на QR код моля прочетете нашата</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_DETAILS" xml:space="preserve">
-    <value>Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below.</value>
+    <value>След като сканирате QR кода или въведете ключа по-горе, приложението за двуфакторна автентикация ще ви предостави уникален код. Въведете кода в полето за потвърждение по-долу.</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK" xml:space="preserve">
-    <value>документация</value>
+    <value> документация.</value>
   </data>
   <data name="CONFIGURE_AUTHENTICATOR_APP_STEPS" xml:space="preserve">
-    <value>To use an authenticator app go through the following steps:</value>
+    <value>За да използвате двуфакторна автентикация трябва да използвате следните стъпки:</value>
   </data>
   <data name="CONFIRM_EMAIL" xml:space="preserve">
     <value>Потвърждение на email.</value>
@@ -250,10 +250,10 @@
     <value>Потвърждение на паролата</value>
   </data>
   <data name="CONFIRM_PASSWORD_NOT_MATCHING" xml:space="preserve">
-    <value>The password and confirmation password do not match.</value>
+    <value>Паролате не си съвпадат.</value>
   </data>
   <data name="CONFIRM_YOUR_EMAIL" xml:space="preserve">
-    <value>Confirm your email</value>
+    <value>Потвърдете вашата електронна поща.</value>
   </data>
   <data name="CONFIRM_YOUR_EMAIL_TEXT" xml:space="preserve">
     <value>Моля потвърдете вашия акаунт &lt;a href='{0}'&gt;тук&lt;/a&gt;.</value>
@@ -280,22 +280,22 @@
     <value>Изтриването на тези данни ще доведе до перманентно изтриване на акаунта ви и той няма да може да бъде възстановен.</value>
   </data>
   <data name="DISABLE_2FA" xml:space="preserve">
-    <value>Disable two-factor authentication (2FA)</value>
+    <value>Изключи двуфакторната автентикация</value>
   </data>
   <data name="DISABLE_2FA_BUTTON" xml:space="preserve">
-    <value>Disable 2FA</value>
+    <value>Изключи двуфакторната автентикация</value>
   </data>
   <data name="DISABLE_2FA_STATUS" xml:space="preserve">
-    <value>2fa has been disabled. You can reenable 2fa when you setup an authenticator app</value>
+    <value>Двуфакторната автентикация беше изключена. Можете да я възстановите чрез настройване на приложението за автентикация.</value>
   </data>
   <data name="DISABLE_2FA_TEXT_DETAILS" xml:space="preserve">
-    <value>Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+    <value>Деактивирането на двуфакторната автентикация не променя ключовете, използвани в приложенията за удостоверяване. Ако искате да промените ключа, използван в приложението за удостоверяване, трябва</value>
   </data>
   <data name="DISABLE_2FA_TEXT_DETAILS_LINK" xml:space="preserve">
-    <value>reset your authenticator keys.</value>
+    <value>да подновите вашите ключове.</value>
   </data>
   <data name="DISABLE_2FA_TEXT_HEADER" xml:space="preserve">
-    <value>This action only disables 2FA.</value>
+    <value>Това действие само деактивира двуфакторната автентикация.</value>
   </data>
   <data name="DOWNLOAD" xml:space="preserve">
     <value>Изтегляне</value>
@@ -313,28 +313,28 @@
     <value>Email е задължително поле</value>
   </data>
   <data name="EXTERNAL_LOGINS" xml:space="preserve">
-    <value>External logins</value>
+    <value>Външни данни за вход</value>
   </data>
   <data name="EXTERNAL_LOGINS_REGISTERED_LOGIN" xml:space="preserve">
-    <value>Registered Logins</value>
+    <value>Регистрирани данни за вход</value>
   </data>
   <data name="EXTERNAL_LOGINS_TITLE" xml:space="preserve">
-    <value>Manage your external logins</value>
+    <value>Управлявайте външните си входни данни</value>
   </data>
   <data name="EXTERNAL_LOGIN_ASSOCIATE_ACCOUNT" xml:space="preserve">
-    <value>Associate your {0} account</value>
+    <value>Асоцииране на вашият акаунт {0} </value>
   </data>
   <data name="EXTERNAL_LOGIN_TEXT" xml:space="preserve">
-    <value>You've successfully authenticated with {0}. Please enter an email address for this site below and click the Register button to finish logging in.</value>
+    <value>Успeшно се автентицирахте с {0}. Моля, въведете имейл адрес за този сайт по-долу и кликнете върху бутона Регистрация, за да завършите влизането.</value>
   </data>
   <data name="EXTERNAL_PROVIDER_ERROR" xml:space="preserve">
-    <value>Error from external provider: {0}</value>
+    <value>Грешка от външен доставчик: {0}</value>
   </data>
   <data name="EXTERNAL_PROVIDER_ERROR_CONFIRMATION" xml:space="preserve">
-    <value>Error loading external login information during confirmation.</value>
+    <value>Грешка при зареждането на външна информация за вход по време на потвърждението.</value>
   </data>
   <data name="EXTERNAL_PROVIDER_ERROR_INFO" xml:space="preserve">
-    <value>Error loading external login information.</value>
+    <value>Грешка при зараждането на външна информация.</value>
   </data>
   <data name="FIRSTNAME" xml:space="preserve">
     <value>Име</value>
@@ -343,16 +343,16 @@
     <value>Името е задължително</value>
   </data>
   <data name="FORGET_THIS_BROWSER" xml:space="preserve">
-    <value>Forget this browser</value>
+    <value>Забрави ме в този браузер</value>
   </data>
   <data name="FORGOT_PASSWORD_CONFIRMATION" xml:space="preserve">
-    <value>Forgot password confirmation</value>
+    <value>Потвърждение на забравена парола</value>
   </data>
   <data name="FORGOT_PASSWORD_CONFIRMATION_TEXT" xml:space="preserve">
-    <value>Please check your email to reset your password.</value>
+    <value>Моля, проверете имейла си, за да зададете нова парола.</value>
   </data>
   <data name="FORGOT_YOUR_PASSWORD" xml:space="preserve">
-    <value>Forgot your password</value>
+    <value>Забравена парола</value>
   </data>
   <data name="FORGOT_YOUR_PASSWORD_ENTER_EMAIL" xml:space="preserve">
     <value>Въведете вашият email.</value>
@@ -361,34 +361,34 @@
     <value>Генерирай</value>
   </data>
   <data name="GENERATE_2FA_RECOVERY_CODES" xml:space="preserve">
-    <value>Generate two-factor authentication (2FA) recovery codes</value>
+    <value>Генериране на кодове за възстановяване на двуфакторната автентикация (2FA)</value>
   </data>
   <data name="GENERATE_2FA_RECOVERY_CODES_INFO_LOSE" xml:space="preserve">
-    <value>If you lose your device and don't have the recovery codes you will lose access to your account.</value>
+    <value>Ако загубите устройството си и нямате кодове за възстановяване, ще загубите достъп до профила си.</value>
   </data>
   <data name="GENERATE_2FA_RECOVERY_CODES_SAFE_PLACE" xml:space="preserve">
-    <value>Put these codes in a safe place.</value>
+    <value>Запазете кодовете на сигурно място</value>
   </data>
   <data name="GENERATE_2FA_RECOVERY_CODES_TEXT" xml:space="preserve">
-    <value>Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+    <value>Генерирането на нови кодове за възстановяване не променя ключовете, използвани в приложенията за удостоверяване. Ако искате да промените ключа, използван в приложението за удостоверяване, трябва</value>
   </data>
   <data name="GENERATE_2FA_RECOVERY_CODES_TEXT_LINK" xml:space="preserve">
-    <value>reset your authenticator keys.</value>
+    <value>обновяване на вашите ключове за автентикация.</value>
   </data>
   <data name="GENERATE_RECOVERY_CODES" xml:space="preserve">
-    <value>Generate Recovery Codes</value>
+    <value>Генериране на кодове за възстановяване</value>
   </data>
   <data name="INCORRECT_PASSWORD" xml:space="preserve">
-    <value>Password is not correct</value>
+    <value>Паролата е грешна</value>
   </data>
   <data name="INVALID_AUTHENTICATOR_CODE" xml:space="preserve">
-    <value>Invalid authenticator code.</value>
+    <value>Невалидан код за достъп.</value>
   </data>
   <data name="INVALID_LOGIN_ATTEMPT" xml:space="preserve">
     <value>Невалиден опит за достъп</value>
   </data>
   <data name="INVALID_RECOVERY_CODE" xml:space="preserve">
-    <value>Invalid recovery code entered.</value>
+    <value>Невалиден код за възстановяване</value>
   </data>
   <data name="INVALID_VERFICATION_CODE" xml:space="preserve">
     <value>Кода за потвърждение е невалиден.</value>
@@ -451,28 +451,28 @@
     <value>Регистрация</value>
   </data>
   <data name="REGISTER_AS_NEW_USER" xml:space="preserve">
-    <value>Register as a new user</value>
+    <value>Регистрирайте се като нов потребител</value>
   </data>
   <data name="REMEMBER_ME" xml:space="preserve">
-    <value>Remember me</value>
+    <value>Запомни ме</value>
   </data>
   <data name="REMOVE" xml:space="preserve">
-    <value>Remove</value>
+    <value>Премахни</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>Reset</value>
+    <value>Обновяване</value>
   </data>
   <data name="RESET_AUTHENTICATOR_INFO" xml:space="preserve">
-    <value>If you reset your authenticator key your authenticator app will not work until you reconfigure it.</value>
+    <value>Ако пронените ключа за удостоверяване, приложението ви за удостоверяване няма да работи, докато не го конфигурирате отново.</value>
   </data>
   <data name="RESET_AUTHENTICATOR_KEY" xml:space="preserve">
-    <value>Reset authenticator key</value>
+    <value>Обновяване ключът на приложението за автентокация</value>
   </data>
   <data name="RESET_AUTHENTICATOR_STATUS" xml:space="preserve">
-    <value>Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.</value>
+    <value>Ключът на приложението за удостоверяване е променен, трябва да конфигурирате приложението за удостоверяване, като използвате новия ключ.</value>
   </data>
   <data name="RESET_AUTHENTICATOR_TEXT" xml:space="preserve">
-    <value>This process disables 2FA until you verify your authenticator app. If you do not complete your authenticator app configuration you may lose access to your account.</value>
+    <value>Този процес деактивира 2FA, докато не потвърдите приложението за удостоверяване. Ако не завършите конфигурацията на приложението за удостоверяване, може да загубите достъп до профила си.</value>
   </data>
   <data name="RESET_PASSWORD" xml:space="preserve">
     <value>Нулиране на паролата</value>
@@ -490,10 +490,10 @@
     <value>Моля нулирайте паролата си натискайки &lt;a href='{0}'&gt;тук&lt;/a&gt;.</value>
   </data>
   <data name="RESET_RECOVERY_CODES" xml:space="preserve">
-    <value>Reset recovery codes</value>
+    <value>Променете кодовете за възстановяване</value>
   </data>
   <data name="RESET_YOUR_PASSWORD" xml:space="preserve">
-    <value>Reset your password</value>
+    <value>Променете паролата си</value>
   </data>
   <data name="SAVE" xml:space="preserve">
     <value>Запис</value>
@@ -508,7 +508,7 @@
     <value>Вашата парола беше установена</value>
   </data>
   <data name="SET_PASSWORD_TEXT" xml:space="preserve">
-    <value>You do not have a local username/password for this site. Add a local account so you can log in without an external login.</value>
+    <value>Нямате местно потребителско име / парола за този сайт. Добавете местен профил, за да можете да влезете без външно влизане.</value>
   </data>
   <data name="SET_YOUR_PASSWORD" xml:space="preserve">
     <value>Установяване на вашата парола</value>
@@ -520,40 +520,40 @@
     <value>Презимето е задължително</value>
   </data>
   <data name="STATUS_EXTERNAL_LOGIN_ADDED" xml:space="preserve">
-    <value>The external login was added.</value>
+    <value>Външното потребителско име беше добавено.</value>
   </data>
   <data name="STATUS_EXTERNAL_LOGIN_REMOVED" xml:space="preserve">
-    <value>The external login was removed.</value>
+    <value>Външното потребителско име беше премахнато.</value>
   </data>
   <data name="STATUS_GENERATE_CODES" xml:space="preserve">
-    <value>You have generated new recovery codes.</value>
+    <value>Генерирахте нов код за възстановяване.</value>
   </data>
   <data name="STATUS_PROFILE_UPDATED" xml:space="preserve">
-    <value>Your profile has been updated</value>
+    <value>Профилът ви беше обновен успешно.</value>
   </data>
   <data name="STATUS_UPDATE_PROFILE_EMAIL_SEND" xml:space="preserve">
-    <value>Verification email sent. Please check your email.</value>
+    <value>Изпратена е поща за потвърждение. Моля проверете вашата електронна поща.</value>
   </data>
   <data name="SUBMIT" xml:space="preserve">
     <value>Изпращане</value>
   </data>
   <data name="TWOFACTORCODE_REQUIRED" xml:space="preserve">
-    <value>Two-factor code is required</value>
+    <value>Изисква се код за двуфакторна автентикация</value>
   </data>
   <data name="UPDATE_PASSWORD" xml:space="preserve">
-    <value>Update password</value>
+    <value>Обновеване на парола</value>
   </data>
   <data name="USERNAME" xml:space="preserve">
     <value>Потребителско име</value>
   </data>
   <data name="USER_NOTFOUND" xml:space="preserve">
-    <value>Unable to load user with ID '{0}'.</value>
+    <value>Не може да бъде зареден портебител с ID '{0}'.</value>
   </data>
   <data name="VERIFICATION_CODE" xml:space="preserve">
-    <value>Verification code</value>
+    <value>Код за потвърждение</value>
   </data>
   <data name="VERIFICATION_CODE_REQUIRED" xml:space="preserve">
-    <value>Verification code is required</value>
+    <value>Необходим е код за потвърждение</value>
   </data>
   <data name="VERIFY" xml:space="preserve">
     <value>Провери</value>
@@ -826,5 +826,110 @@
   </data>
   <data name="LINK_COPIED" xml:space="preserve">
     <value>Връзка към анкетата:</value>
+  </data>
+  <data name="Anonymous" xml:space="preserve">
+    <value>Анонимен</value>
+  </data>
+  <data name="ANSWER_ANALYSIS" xml:space="preserve">
+    <value>Анализ на получените отговори </value>
+  </data>
+  <data name="ANSWER_COUNT" xml:space="preserve">
+    <value>Брой отговорили</value>
+  </data>
+  <data name="AVERAGE_RATING" xml:space="preserve">
+    <value>Средна оценка</value>
+  </data>
+  <data name="COMPLETED_SURVEY_COUNT" xml:space="preserve">
+    <value>Общ брой на анкетираните</value>
+  </data>
+  <data name="CREATE_QUESTION" xml:space="preserve">
+    <value>Нов въпрос</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_VERIFIED" xml:space="preserve">
+    <value>Вашето приложение за автентикация беше потвърдено.</value>
+  </data>
+  <data name="RECOVERY_CODES" xml:space="preserve">
+    <value>Кодове за възстановяване</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>Приемам</value>
+  </data>
+  <data name="COOKIE_POLICY_DISABLING_COOKIES_HEADING" xml:space="preserve">
+    <value>Деактивиране на бисквитките</value>
+  </data>
+  <data name="COOKIE_POLICY_DISABLING_COOKIES_P1" xml:space="preserve">
+    <value>Можете да деактивирате „бисквитките“, като коригирате настройките на браузъра си (вижте помощта на браузъра за това как да направите това). Имайте предвид, че деактивирането на „бисквитките“ ще се отрази на функционалността на този и на много други уебсайтове, които посещавате. Деактивирането на „бисквитките“ обикновено води до деактивиране на определени функции на този сайт. Затова се препоръчва да не изключвате бисквитките.</value>
+  </data>
+  <data name="COOKIE_POLICY_HEADING" xml:space="preserve">
+    <value>Политика за бисквитките на Система за анкети на BMS</value>
+  </data>
+  <data name="COOKIE_POLICY_HOW_WE_USE_COOKIES_HEADING" xml:space="preserve">
+    <value>Как използваме бисквитките</value>
+  </data>
+  <data name="COOKIE_POLICY_HOW_WE_USE_COOKIES_P1" xml:space="preserve">
+    <value>Използваме „бисквитки“ по различни причини, описани по-долу. За съжаление в повечето случаи не съществуват стандартни опции за деактивиране на „бисквитките“, без изцяло да деактивирате функционалността, която те добавят към този сайт. Препоръчително е да оставите всички бисквитки, ако не сте сигурни дали се нуждаете от тях или не, в случай, че се използват за предоставяне на услуга, която използвате.</value>
+  </data>
+  <data name="COOKIE_POLICY_LEARN_MORE" xml:space="preserve">
+    <value>Научете повече</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_HEADING" xml:space="preserve">
+    <value>Повече информация</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_P1" xml:space="preserve">
+    <value>Надяваме се, че това е изяснило нещата за вас и както беше споменато по-рано, ако има нещо, което не сте сигурни дали имате нужда, обикновено е по-безопасно да оставите „бисквитките“ разрешени, в случай че взаимодействат с функциите, които използвате на нашия сайт.</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_P2" xml:space="preserve">
+    <value>Ако все още търсите повече информация, можете да се свържете с нас чрез един от предпочитаните от нас методи за връзка:</value>
+  </data>
+  <data name="COOKIE_POLICY_MORE_INFORMATION_SURVICE_DESK_MANAGER" xml:space="preserve">
+    <value>Система Survice Desk Manager</value>
+  </data>
+  <data name="COOKIE_POLICY_P1" xml:space="preserve">
+    <value>Политика за бисквитките на системата за анкети на BMS, достъпна на адрес survey.bmsys.eu</value>
+  </data>
+  <data name="COOKIE_POLICY_SUMMARY" xml:space="preserve">
+    <value>Тази страница използва бисквитки. За да продължите работата си е необходимо да се съгласите.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_HEADING" xml:space="preserve">
+    <value>Бисквитките които ние записваме</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P1" xml:space="preserve">
+    <value>Бисквитки свързани с акаунта ви</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI1_P2" xml:space="preserve">
+    <value>Ако създадете акаунт при нас, ние ще използваме бисквитки за управление на процеса на регистрация и обща администрация. Тези „бисквитки“ обикновено се изтриват, когато излезете от системата, но в някои случаи могат да останат след това, за да запомнят предпочитанията на сайта ви, когато са излезли от системата.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P1" xml:space="preserve">
+    <value>Бисквитки за влизане в системата</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI2_P2" xml:space="preserve">
+    <value>Използваме „бисквитки“, когато сте влезли в системата, за да можем ви запомним. Това позволява да не се налага да влизате във всеки един път, когато посетите нова страница на системата. Тези „бисквитки“ обикновено се премахват или изчистват, когато излезете, за да сте сигурни, че имате достъп само до ограничени функции и области, когато сте влезли в системата.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P1" xml:space="preserve">
+    <value>Бисквитки свързани със системата за анкети</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI3_P2" xml:space="preserve">
+    <value>От време на време предлагаме анкети на потребителите, за да ни предоставите интересни идеи, полезни инструменти или да разберем по-точно нашата потребителски желания. Тези проучвания могат да използват бисквитки, за да запомнят кой вече е участвал в проучване или да ви предостави точни резултати след промяна на страниците.</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P1" xml:space="preserve">
+    <value>Бисквитки свързани с формите</value>
+  </data>
+  <data name="COOKIE_POLICY_THE_COOKIES_WE_SET_LI4_P2" xml:space="preserve">
+    <value>Когато изпращате данни чрез формуляр като тези, които се намират на страниците за контакт или формулярите за коментари, бисквитките могат да бъдат настроени да запомнят потребителските ви данни за бъдеща кореспонденция.</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_HEADING" xml:space="preserve">
+    <value>Какво представляват бисквитките</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_P1" xml:space="preserve">
+    <value>Както почти всички професионални сайтове, този сайт използва бисквитки, които са малки файлове, които се изтеглят на вашия компютър, за да подобрят Вашето потребителско изживяване. Тази страница описва информацията, която се събира от нашата система, как я използваме и защо понякога трябва да съхраняваме тези „бисквитки“. Също така ще споделим как можете да предотвратите съхраняването на тези „бисквитки“, но това може да понижи или „прекъсне“ някои елементи от функционалността на сайта.</value>
+  </data>
+  <data name="COOKIE_POLICY_WHAT_ARE_COOKIES_P2" xml:space="preserve">
+    <value>За по-подробна информация относно бисквитките вижте тази &lt;a href="https://bg.wikipedia.org/wiki/HTTP-%D0%B1%D0%B8%D1%81%D0%BA%D0%B2%D0%B8%D1%82%D0%BA%D0%B0"&gt;статия&lt;/a&gt;.</value>
+  </data>
+  <data name="FROM_PAGES" xml:space="preserve">
+    <value>от</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>стр.</value>
   </data>
 </root>

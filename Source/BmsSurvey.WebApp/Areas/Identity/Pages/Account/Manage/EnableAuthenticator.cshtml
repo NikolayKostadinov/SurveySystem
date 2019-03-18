@@ -27,7 +27,7 @@
         </li>
         <li>
             <p>@LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN1")<kbd>@Model.SharedKey</kbd> @LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN1")</p>
-            <div class="alert alert-info">@LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT")<a href="https://go.microsoft.com/fwlink/?Linkid=852423">@LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK")</a>.</div>
+            @*<div class="alert alert-info">@LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT")<a href="https://go.microsoft.com/fwlink/?Linkid=852423">@LayoutLocalizer.GetLocalizedHtmlString("CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK")</a>.</div>*@
             <div id="qrCode"></div>
             <div id="qrCodeData" data-url="@Html.Raw(Model.AuthenticatorUri)"></div>
         </li>
@@ -54,4 +54,13 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript" src="~/js/custom/qrcode.min.js"></script>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrCode"),
+            {
+                text: "@Html.Raw(Model.AuthenticatorUri)",
+                width: 150,
+                height: 150
+            });
+    </script>
 }
