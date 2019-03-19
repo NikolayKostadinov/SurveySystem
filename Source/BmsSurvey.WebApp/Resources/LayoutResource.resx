@@ -929,4 +929,13 @@ will contact you</value>
   <data name="PAGE" xml:space="preserve">
     <value>Page</value>
   </data>
+  <data name="SYSNAME" xml:space="preserve">
+    <value>BMS Survey System</value>
+  </data>
+  <data name="WHEN_WE_BUILT_AND_SUPPORT_OUR_SYSTEMS" xml:space="preserve">
+    <value>WHEN WE BUILT AND SUPPORT OUR SYSTEMS</value>
+  </data>
+  <data name="YOUR_OPINION_MATTER" xml:space="preserve">
+    <value>YOUR_OPINION_MATTER	ВЕШЕТО МНЕНИЕ Е ВАЖНО</value>
+  </data>
 </root>

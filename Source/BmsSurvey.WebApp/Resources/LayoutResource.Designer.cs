@@ -2322,6 +2322,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BMS Survey System.
+        /// </summary>
+        public static string SYSNAME {
+            get {
+                return ResourceManager.GetString("SYSNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employer Id.
         /// </summary>
         public static string TABNUMBER {
@@ -2480,6 +2489,24 @@ namespace BmsSurvey.WebApp.Resources {
         public static string VERIFY {
             get {
                 return ResourceManager.GetString("VERIFY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WHEN WE BUILT AND SUPPORT OUR SYSTEMS.
+        /// </summary>
+        public static string WHEN_WE_BUILT_AND_SUPPORT_OUR_SYSTEMS {
+            get {
+                return ResourceManager.GetString("WHEN_WE_BUILT_AND_SUPPORT_OUR_SYSTEMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to YOUR_OPINION_MATTER	ВЕШЕТО МНЕНИЕ Е ВАЖНО.
+        /// </summary>
+        public static string YOUR_OPINION_MATTER {
+            get {
+                return ResourceManager.GetString("YOUR_OPINION_MATTER", resourceCulture);
             }
         }
         

@@ -932,4 +932,13 @@
   <data name="PAGE" xml:space="preserve">
     <value>стр.</value>
   </data>
+  <data name="SYSNAME" xml:space="preserve">
+    <value>Система за анкети на BMS</value>
+  </data>
+  <data name="WHEN_WE_BUILT_AND_SUPPORT_OUR_SYSTEMS" xml:space="preserve">
+    <value>КОГАТО ПРОЕКТИРАМЕ, ИЗГРАЖДАМЕ И ПОДДЪРЖАМЕ СОФТУЕРНИТЕ СИСТЕМИ</value>
+  </data>
+  <data name="YOUR_OPINION_MATTER" xml:space="preserve">
+    <value>ВЕШЕТО МНЕНИЕ Е ВАЖНО</value>
+  </data>
 </root>

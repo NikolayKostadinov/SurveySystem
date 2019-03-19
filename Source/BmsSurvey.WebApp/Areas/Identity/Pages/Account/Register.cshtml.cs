@@ -121,6 +121,7 @@
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            //todo: Mage Register Page works via CreateUserCommand 
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
@@ -132,6 +133,7 @@
                     SirName = Input.SirName,
                     LastName = Input.LastName,
                     CultureId = Input.CultureId,
+                    TabNumber = Input.TabNumber
                 };
 
                 var result = await userManager.CreateAsync(user, Input.Password);

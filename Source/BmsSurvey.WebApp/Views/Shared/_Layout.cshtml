@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OvertimeReporting.Web</title>
+    <title>@ViewData["Title"] - @LayoutLocalizer.GetLocalizedHtmlString("SYSNAME")</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <environment include="Development">
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -56,23 +56,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                                @LayoutLocalizer.GetLocalizedHtmlString("HOME")
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="SurveySupport" asp-controller="Survey" asp-action="Index">
-                                @LayoutLocalizer.GetLocalizedHtmlString("SURVEYS")
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Administration" asp-page="/Administration">
-                                @LayoutLocalizer.GetLocalizedHtmlString("ADMINISTRATION")
-                            </a>
-                        </li>
-                    </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                                    @LayoutLocalizer.GetLocalizedHtmlString("HOME")
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="SurveySupport" asp-controller="Survey" asp-action="Index">
+                                    @LayoutLocalizer.GetLocalizedHtmlString("SURVEYS")
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-page="/Administration">
+                                    @LayoutLocalizer.GetLocalizedHtmlString("ADMINISTRATION")
+                                </a>
+                            </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
