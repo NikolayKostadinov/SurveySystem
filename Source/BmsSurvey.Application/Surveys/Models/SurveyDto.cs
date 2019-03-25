@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace BmsSurvey.Application.Surveys.Models
 {
-    using System.Data;
-    using System.Linq;
     using Answers.Models;
-    using Exceptions;
-    using Microsoft.AspNetCore.Http;
-    using Newtonsoft.Json;
-    using Questions.Models;
-    using Surveys.Models;
 
     public class SurveyDto : ISurveyDto
     {

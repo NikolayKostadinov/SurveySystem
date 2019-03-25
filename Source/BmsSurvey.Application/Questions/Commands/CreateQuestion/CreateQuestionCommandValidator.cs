@@ -5,13 +5,13 @@
     using Common.Abstract;
     using Domain.Entities;
     using FluentValidation;
+    using Interfaces;
     using Microsoft.EntityFrameworkCore;
-    using Persistence;
     using Resources;
 
     public class CreateQuestionCommandValidator : AbstractValidator<CreateQuestionCommand>
     {
-        public CreateQuestionCommandValidator(BmsSurveyDbContext context)
+        public CreateQuestionCommandValidator(IBmsSurveyDbContext context)
         {
             RuleFor(x => x.SurveyId).NotEmpty().WithMessage(MessageResource.REQUIRED);
             RuleFor(x => x.Text).NotEmpty().WithMessage(MessageResource.REQUIRED);

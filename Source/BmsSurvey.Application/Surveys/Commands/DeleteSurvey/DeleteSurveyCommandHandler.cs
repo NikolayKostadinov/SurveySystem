@@ -5,15 +5,15 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
-    using Persistence;
 
     public class DeleteSurveyCommandHandler : IRequestHandler<DeleteSurveyCommand>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
 
-        public DeleteSurveyCommandHandler(BmsSurveyDbContext context)
+        public DeleteSurveyCommandHandler(IBmsSurveyDbContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
 

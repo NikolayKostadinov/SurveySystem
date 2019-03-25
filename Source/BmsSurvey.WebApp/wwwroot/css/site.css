@@ -66,6 +66,15 @@ body {
     margin-right: 0px;
 }
 
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    -ms-border-radius: .2rem;
+    border-radius: .2rem;
+}
+
 /* ---------- Begin Kendo buttons for grid ---------- */
 .btn-kendo {
     margin-left: 10px;
@@ -605,4 +614,3 @@ div.home-text-wrapper {
 img.home-slogun {
     width: 100%;
 }
-

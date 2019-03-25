@@ -8,15 +8,15 @@ namespace BmsSurvey.Application.Surveys.Commands.CreateSurvey
     using System.Threading.Tasks;
     using AutoMapper;
     using Domain.Entities;
+    using Interfaces;
     using MediatR;
-    using Persistence;
 
     public class CreateSurveyCommandHandler:IRequestHandler<CreateSurveyCommand,int>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public CreateSurveyCommandHandler(BmsSurveyDbContext context, IMapper mapper)
+        public CreateSurveyCommandHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

@@ -1,19 +1,17 @@
 ﻿namespace BmsSurvey.Application.CompletedSurvey.Queries.IsSurveyCompeted
 {
+    using Interfaces;
+    using MediatR;
+    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Threading;
     using System.Threading.Tasks;
-    using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
-    using Exceptions;
-    using MediatR;
-    using Microsoft.EntityFrameworkCore;
-    using Persistence;
 
     public class IsSurveyCompletedQueryHandler:IRequestHandler<IsSurveyCompletedQuery,bool>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
 
-        public IsSurveyCompletedQueryHandler(BmsSurveyDbContext context)
+        public IsSurveyCompletedQueryHandler(IBmsSurveyDbContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
         }

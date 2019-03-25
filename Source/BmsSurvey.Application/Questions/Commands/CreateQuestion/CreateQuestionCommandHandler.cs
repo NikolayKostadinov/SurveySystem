@@ -5,16 +5,16 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using Domain.Entities;
+    using Interfaces;
     using MediatR;
     using Models;
-    using Persistence;
 
     public class CreateQuestionCommandHandler:IRequestHandler<CreateQuestionCommand,QuestionListViewModel>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public CreateQuestionCommandHandler(BmsSurveyDbContext context, IMapper mapper)
+        public CreateQuestionCommandHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

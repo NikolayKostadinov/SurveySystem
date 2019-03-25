@@ -7,17 +7,17 @@ namespace BmsSurvey.Application.Surveys.Queries.GetSurveyById
     using System.Threading;
     using System.Threading.Tasks;
     using AutoMapper;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
 
     public class GetSurveyByIdQueryHandler : IRequestHandler<GetSurveyByIdQuery, SurveySimpleViewModel>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public GetSurveyByIdQueryHandler(BmsSurveyDbContext context, IMapper mapper)
+        public GetSurveyByIdQueryHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

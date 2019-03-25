@@ -17,22 +17,27 @@ namespace BmsSurvey.Persistence
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using Application.Interfaces;
     using Common.Extensions;
     using Common.Interfaces;
     using Domain.Abstract;
     using Domain.Entities;
     using Domain.Entities.Identity;
     using Domain.Entities.Utility;
+    using Domain.Infrastructure;
     using Domain.Interfaces;
+    using FluentValidation.Results;
     using Infrastructure;
     using Interfaces;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using ValidationResult = System.ComponentModel.DataAnnotations.ValidationResult;
 
     #endregion
 
-    public class BmsSurveyDbContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>, IAuditableDbContext
+    public class BmsSurveyDbContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>, 
+        IAuditableDbContext, IBmsSurveyDbContext
     {
 
         private readonly IPersister persister;
@@ -94,35 +99,6 @@ namespace BmsSurvey.Persistence
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             return Task.Factory.StartNew(() => this.SaveChanges());
-        }
-
-        public IEfStatus SaveChangesWithValidation()
-        {
-            var result = new EfStatus();
-            try
-            {
-                result.ResultRecordsCount = SaveChanges(); //then update it
-            }
-            catch (ValidationException ex)
-            {
-                //this.logger.Error(ex.Message, this, ex);
-                return result.SetEfErrors(new List<ValidationResult> { ex.ValidationResult });
-            }
-            catch (DbUpdateException ex)
-            {
-                //this.logger.Error(ex.Message, this, ex);
-
-                if (ex.InnerException?.InnerException is SqlException sqlException 
-                    && (sqlException.Number == 2601 || sqlException.Number == 2627))
-                    return result.SetEfErrors(new List<ValidationResult>
-                    {
-                        new ValidationResult("UniqueConstraintViolation")
-                    });
-                return result.SetEfErrors(new List<ValidationResult> { new ValidationResult("SavingDataError") });
-            }
-            //else it isn't an exception we understand so it throws in the normal way
-
-            return result;
         }
 
         public void BulkInsert<T>(IEnumerable<T> entities) where T : class

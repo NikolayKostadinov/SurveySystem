@@ -1,26 +1,36 @@
-﻿namespace BmsSurvey.WebApp.Areas.Administration.Models.ViewModels
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="RolePresentationViewModel.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
+
+namespace BmsSurvey.Application.Roles.Models
 {
+    #region Using
+
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Application.Interfaces.Mapping;
+    using System.Linq;
     using AutoMapper;
     using Domain.Entities.Identity;
+    using Interfaces.Mapping;
+
+    #endregion
 
     public class RolePresentationViewModel : IMapFrom<Role>, IHaveCustomMapping
     {
-        [Required]
-        public int Id { get; set; }
+        [Required] public int Id { get; set; }
 
-        [Display(Name = "Име")]
-        public string Name { get; set; }
+        [Display(Name = "NAME")] public string Name { get; set; }
 
-        [Display(Name = "Описание")]
-        public string Description { get; set; }
+        [Display(Name = "DESCRIPTION")] public string Description { get; set; }
 
-        [Display(Name = "Потребители")]
-        public IEnumerable<string> Users { get; set; }
+        [Display(Name = "USERS")] public IEnumerable<string> Users { get; set; }
+
         /// <summary>
-        /// Creates the mappings.
+        ///     Creates the mappings.
         /// </summary>
         /// <param name="configuration">The configuration.</param>
         public void CreateMappings(Profile configuration)
@@ -36,7 +46,7 @@
                 .ForMember(p => p.CreatedFrom, opt => opt.Ignore())
                 .ForMember(p => p.ModifiedFrom, opt => opt.Ignore());
             configuration.CreateMap<Role, RolePresentationViewModel>()
-                .ForMember(p => p.Users, opt => opt.Ignore());
+                .ForMember(p => p.Users, opt => opt.MapFrom(p => p.UserRoles.Select(ur => ur.User).Where(u => !u.IsDeleted).ToList()));
         }
     }
 }

@@ -5,17 +5,17 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
 
     public class EditQuestionCommandHandler : IRequestHandler<EditQuestionCommand, QuestionListViewModel>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public EditQuestionCommandHandler(BmsSurveyDbContext context, IMapper mapper)
+        public EditQuestionCommandHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

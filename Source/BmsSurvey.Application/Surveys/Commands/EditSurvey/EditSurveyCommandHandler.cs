@@ -8,16 +8,16 @@
     using AutoMapper;
     using Domain.Entities;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
-    using Persistence;
 
     public class EditSurveyCommandHandler : IRequestHandler<EditSurveyCommand, int>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public EditSurveyCommandHandler(BmsSurveyDbContext context, IMapper mapper)
+        public EditSurveyCommandHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

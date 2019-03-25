@@ -941,4 +941,7 @@
   <data name="YOUR_OPINION_MATTER" xml:space="preserve">
     <value>ВЕШЕТО МНЕНИЕ Е ВАЖНО</value>
   </data>
+  <data name="USERS" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
 </root>

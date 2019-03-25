@@ -938,4 +938,7 @@ will contact you</value>
   <data name="YOUR_OPINION_MATTER" xml:space="preserve">
     <value>YOUR_OPINION_MATTER	ВЕШЕТО МНЕНИЕ Е ВАЖНО</value>
   </data>
+  <data name="USERS" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>

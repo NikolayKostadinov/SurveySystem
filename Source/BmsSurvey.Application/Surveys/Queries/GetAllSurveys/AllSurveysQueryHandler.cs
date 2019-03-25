@@ -8,17 +8,17 @@ namespace BmsSurvey.Application.Surveys.Queries.GetAllSurveys
     using System.Threading;
     using System.Threading.Tasks;
     using AutoMapper;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
 
     public class AllSurveysQueryHandler : IRequestHandler<AllSurveysQuery, IEnumerable<SurveyListRowViewModel>>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IMapper mapper;
 
-        public AllSurveysQueryHandler(BmsSurveyDbContext context, IMapper mapper)
+        public AllSurveysQueryHandler(IBmsSurveyDbContext context, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

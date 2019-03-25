@@ -10,21 +10,17 @@ namespace BmsSurvey.Application.Users.Commands.CreateUser
 {
     #region Using
 
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using AutoMapper;
-    using Common.Interfaces;
     using Domain.Entities.Identity;
     using Exceptions;
     using Infrastructure.Extensions;
-    using Interfaces;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
     using Notifications.UserConfirmEmail;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading;
+    using System.Threading.Tasks;
 
     #endregion
 

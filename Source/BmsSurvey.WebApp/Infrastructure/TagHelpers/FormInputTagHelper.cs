@@ -38,7 +38,7 @@ namespace BmsSurvey.WebApp.Infrastructure.TagHelpers
             base.Process(context, output);
             output.PreElement.AppendHtml("<div class=\"form-group row\">");
             output.PreElement.AppendHtml(CreateLabel()); //inWriter.ToString());
-            output.PreElement.AppendHtml("<div class=\"col-sm-10\">");
+            output.PreElement.AppendHtml("<div class=\"col-sm-9\">");
             output.PostElement.AppendHtml(CreateValidator());
             output.PostElement.AppendHtml("</div></div>");
         }
@@ -51,7 +51,7 @@ namespace BmsSurvey.WebApp.Infrastructure.TagHelpers
                 For.ModelExplorer,
                 For.Name,
                 null,
-                new {@class = "col-sm-2 col-form-label" });
+                new {@class = "col-sm-3 col-form-label" });
             return tagBuilder;
             //tagBuilder.WriteTo(writer, htmlEncoder);
         }

@@ -7,19 +7,19 @@
     using AutoMapper;
     using Common.Extensions;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
     using Questions.Models;
 
     public class SurveyQuestionsQueryHandler : IRequestHandler<SurveyQuestionsQuery, SurveyViewModel>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly ISurveyDto surveyDto;
         private readonly IMapper mapper;
 
-        public SurveyQuestionsQueryHandler(BmsSurveyDbContext context, ISurveyDto surveyDto, IMapper mapper)
+        public SurveyQuestionsQueryHandler(IBmsSurveyDbContext context, ISurveyDto surveyDto, IMapper mapper)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.surveyDto = surveyDto ?? throw new ArgumentNullException(nameof(surveyDto));

@@ -16,15 +16,14 @@ namespace BmsSurvey.Application.Surveys.Commands.SaveSurvey
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
 
     public class SaveSurveyCommandHandler : IRequestHandler<SaveSurveyCommand>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly ISurveyDto surveyDto;
         private readonly IAnswerFactory answerFactory;
 
-        public SaveSurveyCommandHandler(BmsSurveyDbContext context,
+        public SaveSurveyCommandHandler(IBmsSurveyDbContext context,
             ISurveyDto surveyDto,
             IAnswerFactory answerFactory)
         {

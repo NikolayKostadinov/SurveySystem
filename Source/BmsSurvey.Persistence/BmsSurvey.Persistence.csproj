@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BmsSurvey.Application\BmsSurvey.Application.csproj" />
     <ProjectReference Include="..\BmsSurvey.Common\BmsSurvey.Common.csproj" />
     <ProjectReference Include="..\BmsSurvey.Domain\BmsSurvey.Domain.csproj" />
   </ItemGroup>

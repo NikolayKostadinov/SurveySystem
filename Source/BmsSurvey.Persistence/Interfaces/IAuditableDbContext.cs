@@ -17,8 +17,9 @@ namespace BmsSurvey.Persistence.Interfaces
 
     /// <summary>
     /// </summary>
-    public interface IAuditableDbContext : IDbContext
+    public interface IAuditableDbContext
     {
         DbSet<AuditLogRecord> AuditLogRecords { get; set; }
+        DbContext DbContext { get; }
     }
 }

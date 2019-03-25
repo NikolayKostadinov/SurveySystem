@@ -9,15 +9,15 @@ namespace BmsSurvey.Application.Questions.Queries.GetNextQuestionDisplayNumber
     using System.Threading;
     using System.Threading.Tasks;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
-    using Persistence;
 
     public class GetNextQuestionDisplayNumberQueryHandler : IRequestHandler<GetNextQuestionDisplayNumberQuery, int>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
 
-        public GetNextQuestionDisplayNumberQueryHandler(BmsSurveyDbContext context)
+        public GetNextQuestionDisplayNumberQueryHandler(IBmsSurveyDbContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
         }

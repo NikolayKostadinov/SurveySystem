@@ -2466,6 +2466,15 @@ namespace BmsSurvey.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string USERS {
+            get {
+                return ResourceManager.GetString("USERS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Verification code.
         /// </summary>
         public static string VERIFICATION_CODE {

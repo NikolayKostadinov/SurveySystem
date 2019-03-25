@@ -10,14 +10,10 @@ namespace BmsSurvey.WebApp
 {
     #region Using
 
-    using System;
-    using System.Linq;
-    using System.Reflection;
     using Application.Infrastructure;
     using Application.Infrastructure.AutoMapper;
     using Application.Interfaces;
     using Application.Questions.Commands.EvaluateQuestion.Handlers;
-    using Application.Questions.Models.EvaluationModels;
     using Application.Resources;
     using Application.Services;
     using Application.Surveys.Models;
@@ -30,7 +26,6 @@ namespace BmsSurvey.WebApp
     using FluentValidation;
     using FluentValidation.AspNetCore;
     using Infrastructure;
-    using Infrastructure.Automapper;
     using Infrastructure.Interfaces;
     using Infrastructure.Middlewares;
     using Infrastructure.Services;
@@ -55,6 +50,9 @@ namespace BmsSurvey.WebApp
     using Resources;
     using Serilog;
     using Services;
+    using System;
+    using System.Linq;
+    using System.Reflection;
 
     #endregion
 
@@ -83,9 +81,7 @@ namespace BmsSurvey.WebApp
             });
 
             // Add AutoMapper
-            //ToDo: remove second Automapper Profile
-            services.AddAutoMapper(typeof(AutoMapperProfile).GetTypeInfo().Assembly,
-                typeof(AutomapperProfilerWeb).GetTypeInfo().Assembly);
+            services.AddAutoMapper(typeof(AutoMapperProfile).GetTypeInfo().Assembly);
 
             //Services Registration
             services.AddSingleton<IEmailSender, MailSender>();
@@ -93,7 +89,6 @@ namespace BmsSurvey.WebApp
             services.AddSingleton<IPersister, AuditablePersister>();
 
             // Add Application services.
-            services.AddSingleton<IStatusFactory, StatusFactory>();
             services.AddSingleton<IAnswerFactory, AnswerFactory>();
             services.AddSingleton<IIpProvider, IpProvider>();
             services.AddSingleton<ISupportedCulturesService>(
@@ -102,11 +97,11 @@ namespace BmsSurvey.WebApp
             services.AddScoped<ILocalizationUrlService, LocalizationUrlService>();
             services.AddScoped<IUserCreationMessageService, UserCreationMessageService>();
             services.AddScoped<ICurrentPrincipalProvider, CurrentPrincipalProvider>();
-            services.AddScoped<IAuditableDbContext, BmsSurveyDbContext>();
             services.AddScoped<IRatingControlTypeService, RatingControlTypeService>();
             services.AddScoped<ISurveyDto>(sp => SessionSurveyDto.GetSurveyDto(sp));
 
             services.AddQuestionEvaluator();
+            services.AddPersistence();
 
             services.AddTransient<BmsSurveyInitializer>();
 
@@ -215,7 +210,7 @@ namespace BmsSurvey.WebApp
             //        googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
             //        googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             //    });
-                //.AddFacebook(facebookOptions => { ... });
+            //.AddFacebook(facebookOptions => { ... });
 
 
 

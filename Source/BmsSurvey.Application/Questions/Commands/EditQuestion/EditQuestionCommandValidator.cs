@@ -6,15 +6,15 @@
     using Domain.Entities;
     using Exceptions;
     using FluentValidation;
+    using Interfaces;
     using Microsoft.EntityFrameworkCore;
-    using Persistence;
     using Resources;
     using Surveys.Commands.CreateSurvey;
 
     public class EditQuestionCommandValidator : AbstractValidator<EditQuestionCommand>
     {
 
-        public EditQuestionCommandValidator(BmsSurveyDbContext context)
+        public EditQuestionCommandValidator(IBmsSurveyDbContext context)
         {
             RuleFor(x => x.Id).NotEmpty().WithMessage(MessageResource.REQUIRED);
             RuleFor(x => x.Text).NotEmpty().WithMessage(MessageResource.REQUIRED);

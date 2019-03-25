@@ -1,34 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//  ------------------------------------------------------------------------------------------------
+//   <copyright file="SessionSurveyDto.cs" company="Business Management System Ltd.">
+//       Copyright "2019" (c), Business Management System Ltd. 
+//       All rights reserved.
+//   </copyright>
+//   <author>Nikolay.Kostadinov</author>
+//  ------------------------------------------------------------------------------------------------
 
 namespace BmsSurvey.WebApp.Models
 {
-    using System.Reflection.Metadata;
+    #region Using
+
+    using System;
     using Application.Answers.Models;
-    using Application.Questions.Models;
     using Application.Surveys.Models;
     using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.DependencyInjection;
     using Newtonsoft.Json;
 
+    #endregion
+
     public class SessionSurveyDto : SurveyDto
     {
         private const string SessionKey = "SurveyDto";
+
+        [JsonIgnore] public ISession Session { get; set; }
+
         public static SurveyDto GetSurveyDto(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
+            var session = services.GetRequiredService<IHttpContextAccessor>()?
                 .HttpContext.Session;
-            SessionSurveyDto survey = session?.GetJson<SessionSurveyDto>(SessionKey)
-                               ?? new SessionSurveyDto();
+            var survey = session?.GetJson<SessionSurveyDto>(SessionKey)
+                         ?? new SessionSurveyDto();
             survey.Session = session;
             return survey;
         }
-
-        [JsonIgnore]
-        public ISession Session { get; set; }
 
         public override void AddAnswer(AnswerViewModel answer)
         {

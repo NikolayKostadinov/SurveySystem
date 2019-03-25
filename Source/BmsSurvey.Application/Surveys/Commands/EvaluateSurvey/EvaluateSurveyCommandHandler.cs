@@ -9,21 +9,21 @@ namespace BmsSurvey.Application.Surveys.Commands.EvaluateSurvey
     using System.Threading.Tasks;
     using AutoMapper;
     using Exceptions;
+    using Interfaces;
     using MediatR;
     using Microsoft.EntityFrameworkCore;
     using Models;
-    using Persistence;
     using Questions.Commands.EvaluateQuestion.Handlers;
     using Questions.Models.EvaluationModels;
 
     public class EvaluateSurveyCommandHandler:IRequestHandler<EvaluateSurveyCommand, EvaluateSurveyViewModel>
     {
         private readonly IMapper mapper;
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
         private readonly IQuestionEvaluationHandlerFactory factory;
 
         public EvaluateSurveyCommandHandler(IMapper mapper, 
-            BmsSurveyDbContext context,
+            IBmsSurveyDbContext context,
             IQuestionEvaluationHandlerFactory factory)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

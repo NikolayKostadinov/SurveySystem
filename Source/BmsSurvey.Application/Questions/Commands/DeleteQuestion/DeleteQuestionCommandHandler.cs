@@ -11,14 +11,14 @@ namespace BmsSurvey.Application.Questions.Commands.DeleteQuestion
     using System;
     using System.Threading;
     using System.Threading.Tasks;
+    using Interfaces;
     using MediatR;
-    using Persistence;
 
     public class DeleteQuestionCommandHandler:IRequestHandler<DeleteQuestionCommand,Unit>
     {
-        private readonly BmsSurveyDbContext context;
+        private readonly IBmsSurveyDbContext context;
 
-        public DeleteQuestionCommandHandler(BmsSurveyDbContext context)
+        public DeleteQuestionCommandHandler(IBmsSurveyDbContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
 
